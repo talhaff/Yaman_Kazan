@@ -1,0 +1,37 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "Yaman Kazan | Endüstriyel Taahhüt ve Kazan Üretimi",
+    template: "%s | Yaman Kazan",
+  },
+  description: "Rize'de faaliyet gösteren Yaman Kazan, ağır sanayi, kazan üretimi ve endüstriyel tesis kurulumu, mekanik montaj ve bakım hizmetlerinde güvenilir çözüm ortağınızdır.",
+  openGraph: {
+    title: "Yaman Kazan | Endüstriyel Taahhüt ve Kazan Üretimi",
+    description: "Ağır sanayi, kazan üretimi ve endüstriyel tesis kurulumunda lider marka.",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="tr" className={`${inter.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
+        {children}
+      </body>
+    </html>
+  );
+}
