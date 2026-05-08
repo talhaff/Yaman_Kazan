@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
@@ -27,15 +28,19 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
+        scrolled ? "bg-white/95 backdrop-blur-md shadow-lg py-2" : "bg-transparent py-4"
       )}
     >
       <nav className="container mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className={cn("text-2xl font-black tracking-tighter", scrolled ? "text-primary-900" : "text-white")}>
-              YAMAN KAZAN
-            </span>
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3">
+            <Image 
+              src="/img/logoyaman-1.png" 
+              alt="Yaman Kazan Logo" 
+              width={180} 
+              height={50} 
+              className={cn("h-12 w-auto object-contain transition-all", !scrolled && "brightness-0 invert")}
+            />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -81,8 +86,14 @@ export default function Navbar() {
       <div className={cn("lg:hidden", mobileMenuOpen ? "fixed inset-0 z-50" : "hidden")}>
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5">
-              <span className="text-xl font-black text-primary-900">YAMAN KAZAN</span>
+            <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+              <Image 
+                src="/img/logoyaman-1.png" 
+                alt="Yaman Kazan Logo" 
+                width={150} 
+                height={40} 
+                className="h-10 w-auto object-contain"
+              />
             </Link>
             <button
               type="button"

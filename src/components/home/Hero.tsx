@@ -11,8 +11,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/80 to-transparent z-10" />
         <div className="absolute inset-0 bg-black/40 z-0" />
-        {/* Placeholder for B-roll video or large image */}
-        <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center" />
+        <div className="w-full h-full bg-[url('/img/gorsel01.jpeg')] bg-cover bg-center" />
       </div>
 
       <div className="container mx-auto px-6 relative z-20 pt-20">

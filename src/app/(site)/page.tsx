@@ -1,66 +1,90 @@
 import Hero from "@/components/home/Hero";
-import Link from "next/link";
-import { Settings, ShieldCheck, Cpu, Truck } from "lucide-react";
-
-const features = [
-  {
-    name: "Endüstriyel Tesis Taahhüt",
-    description: "Anahtar teslim endüstriyel tesis kurulumu ve proje yönetimi.",
-    icon: Settings,
-  },
-  {
-    name: "Mekanik Montaj",
-    description: "Ağır sanayi ekipmanlarının hassas mekanik montaj işlemleri.",
-    icon: Cpu,
-  },
-  {
-    name: "Kazan Üretimi",
-    description: "Yüksek verimli endüstriyel kazan ve basınçlı kap imalatı.",
-    icon: ShieldCheck,
-  },
-  {
-    name: "Bakım ve Servis",
-    description: "Tesisleriniz için periyodik bakım ve 7/24 teknik servis desteği.",
-    icon: Truck,
-  },
-];
+import ServicesSection from "@/components/home/ServicesSection";
+import { ShieldCheck, Target, Users } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       <Hero />
       
-      {/* Services Section */}
-      <section className="py-24 bg-white">
+      {/* About Brief Section */}
+      <section className="py-32 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-primary-900 text-sm font-bold tracking-widest uppercase mb-4">Faaliyet Alanlarımız</h2>
-            <p className="text-4xl md:text-5xl font-black tracking-tighter text-primary-950">
-              ENDÜSTRİDE UÇTAN UCA <br /> ÇÖZÜMLER SUNUYORUZ
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature) => (
-              <div key={feature.name} className="group p-8 rounded-2xl border border-gray-100 hover:border-secondary-500 hover:shadow-2xl transition-all duration-300">
-                <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary-500 transition-colors">
-                  <feature.icon className="h-6 w-6 text-primary-900 group-hover:text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-primary-950 mb-3">{feature.name}</h3>
-                <p className="text-gray-600 mb-6">{feature.description}</p>
-                <Link href="/faaliyet-alanlari" className="text-sm font-bold text-primary-900 hover:text-secondary-500 flex items-center gap-2">
-                  Detaylı Bilgi
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="relative">
+              <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl">
+                <Image 
+                  src="/img/gorsel02.jpeg" 
+                  alt="Yaman Kazan Atölye" 
+                  fill 
+                  className="object-cover"
+                />
               </div>
-            ))}
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary-600 rounded-2xl -z-10 hidden lg:block" />
+            </div>
+            
+            <div>
+              <span className="text-secondary-600 font-bold tracking-widest uppercase text-sm block mb-4">Hakkımızda</span>
+              <h2 className="text-5xl font-black text-primary-950 tracking-tighter leading-none mb-8">
+                GÜVENLE İNŞA EDİLEN <br /> BİR GELECEK.
+              </h2>
+              <p className="text-gray-600 text-lg leading-relaxed mb-10">
+                Rize'nin sanayi gücü Yaman Kazan, endüstriyel tesis kurulumundan kazan üretimine kadar 
+                geniş bir yelpazede mühendislik çözümleri sunar. Her projede kalite, güvenlik ve 
+                zamanında teslimat prensiplerimizden ödün vermiyoruz.
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center">
+                    <ShieldCheck className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary-950">Yüksek Kalite</h4>
+                    <p className="text-sm text-gray-500">Uluslararası standartlarda üretim.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary-900 rounded-lg flex items-center justify-center">
+                    <Target className="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary-950">Mühendislik</h4>
+                    <p className="text-sm text-gray-500">Hassas hesaplama ve tasarım.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <ServicesSection />
+
+      {/* CTA Section */}
+      <section className="py-24 bg-primary-950 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <Image src="/img/gorsel03.jpeg" alt="Background" fill className="object-cover" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8">
+            PROJENİZ İÇİN BİZE <br /> <span className="text-secondary-500">HEMEN ULAŞIN.</span>
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="tel:+900000000000" className="px-10 py-4 bg-secondary-600 text-white font-bold rounded-md hover:bg-secondary-700 transition-all">
+              Teklif İsteyin
+            </a>
+            <a href="/iletisim" className="px-10 py-4 bg-white text-primary-950 font-bold rounded-md hover:bg-gray-100 transition-all">
+              İletişime Geçin
+            </a>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-primary-900 text-white overflow-hidden relative">
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="py-20 bg-primary-900 text-white">
+        <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div>
               <p className="text-5xl font-black text-secondary-500 mb-2">25+</p>
