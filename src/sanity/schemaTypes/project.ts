@@ -65,9 +65,19 @@ export const project = {
       },
     },
     {
+      name: "startDate",
+      title: "Başlangıç Tarihi",
+      type: "date",
+    },
+    {
       name: "completionDate",
       title: "Tamamlanma Tarihi",
       type: "date",
+    },
+    {
+      name: "location",
+      title: "Proje Yeri / Lokasyon",
+      type: "string",
     },
     {
       name: "client",

@@ -8,7 +8,11 @@ export const ALL_PROJECTS_QUERY = groq`
     slug,
     description,
     mainImage,
+    status,
+    category,
+    startDate,
     completionDate,
+    location,
     client
   }
 `;
@@ -22,7 +26,11 @@ export const PROJECT_BY_SLUG_QUERY = groq`
     description,
     mainImage,
     gallery,
+    status,
+    category,
+    startDate,
     completionDate,
+    location,
     client,
     content
   }
