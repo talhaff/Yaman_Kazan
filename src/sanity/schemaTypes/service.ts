@@ -7,7 +7,7 @@ export const service = {
       name: "title",
       title: "Hizmet Adı",
       type: "string",
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
     },
     {
       name: "slug",
@@ -17,7 +17,7 @@ export const service = {
         source: "title",
         maxLength: 96,
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
     },
     {
       name: "description",

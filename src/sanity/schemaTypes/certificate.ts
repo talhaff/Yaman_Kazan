@@ -7,7 +7,7 @@ export const certificate = {
       name: "title",
       title: "Sertifika Adı",
       type: "string",
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
     },
     {
       name: "issuer",
@@ -26,7 +26,7 @@ export const certificate = {
       options: {
         hotspot: true,
       },
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
     },
   ],
 };
