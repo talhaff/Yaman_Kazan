@@ -49,6 +49,19 @@ export const ALL_SERVICES_QUERY = groq`
   }
 `;
 
+// Belirli bir hizmeti slug ile çek
+export const SERVICE_BY_SLUG_QUERY = groq`
+  *[_type == "service" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    description,
+    mainImage,
+    icon,
+    content
+  }
+`;
+
 // Tüm sertifikaları çek
 export const ALL_CERTIFICATES_QUERY = groq`
   *[_type == "certificate"] | order(issueDate desc) {
