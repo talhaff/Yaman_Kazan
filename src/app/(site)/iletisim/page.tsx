@@ -1,6 +1,7 @@
 import PageHeader from "@/components/ui/PageHeader";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
+import { CONTACT_INFO } from "@/lib/constants";
 
 export const metadata = {
   title: "İletişim",
@@ -35,20 +36,20 @@ export default function IletisimPage() {
                   { 
                     icon: MapPin, 
                     title: "Atölye & Ofis", 
-                    content: "Rize Organize Sanayi Bölgesi, 102. Cadde No:5, Rize, Türkiye",
+                    content: CONTACT_INFO.address,
                     link: "https://maps.google.com" 
                   },
                   { 
                     icon: Phone, 
                     title: "Telefon Hattı", 
-                    content: "+90 (464) 000 00 00", 
-                    link: "tel:+904640000000" 
+                    content: CONTACT_INFO.phone, 
+                    link: `tel:${CONTACT_INFO.phoneRaw}` 
                   },
                   { 
                     icon: Mail, 
                     title: "E-Posta Adresi", 
-                    content: "info@yamankazan.com", 
-                    link: "mailto:info@yamankazan.com" 
+                    content: CONTACT_INFO.email, 
+                    link: `mailto:${CONTACT_INFO.email}` 
                   },
                   { 
                     icon: Clock, 
@@ -79,7 +80,7 @@ export default function IletisimPage() {
               <div className="mt-16 pt-10 border-t border-gray-100">
                 <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Hızlı İletişim</p>
                 <a 
-                  href="https://wa.me/900000000000" 
+                  href={CONTACT_INFO.whatsapp} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-black rounded-2xl hover:scale-105 transition-transform shadow-xl shadow-green-200"

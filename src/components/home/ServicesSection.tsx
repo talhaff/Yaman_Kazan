@@ -42,6 +42,30 @@ const fallbackServices = [
     description: "50 t/h buhar kazanları için yüksek hassasiyetli membran duvar sistemleri ve kaynak prosesleri.",
     image: "/img/membranduvar.jpeg",
     category: "İmalat"
+  },
+  {
+    title: "Hava Kanalı ve Toz Emme Sistemleri",
+    description: "Endüstriyel tesisler için özel tasarım hava kanalları ve toz emme ünitesi imalatı ve montajı.",
+    image: "/img/havakanal.jpeg",
+    category: "İmalat"
+  },
+  {
+    title: "Kanal Geçiş Elemanları",
+    description: "Yüksek sıcaklık ve basınç dayanımlı kanal geçiş elemanları ve genleşme parçaları üretimi.",
+    image: "/img/kanalgecis.jpeg",
+    category: "İmalat"
+  },
+  {
+    title: "Endüstriyel Tesis Kurulumu",
+    description: "Anahtar teslim endüstriyel tesis kurulumu, makine montajı ve devreye alma hizmetleri.",
+    image: "/img/kurulumlar.jpeg",
+    category: "Kurulum"
+  },
+  {
+    title: "Özel Kaynak ve Metal İşleri",
+    description: "Sertifikalı kaynakçılarımızla yüksek basınçlı kaplar ve yapısal çelik kaynak işleri.",
+    image: "/img/Kaynakİşleri.jpeg",
+    category: "İmalat"
   }
 ];
 
@@ -49,14 +73,17 @@ interface ServicesSectionProps {
   data?: any[];
   title?: string;
   subtitle?: string;
+  limit?: number;
 }
 
-export default function ServicesSection({ data, title, subtitle }: ServicesSectionProps) {
+export default function ServicesSection({ data, title, subtitle, limit }: ServicesSectionProps) {
   const sanityData = data || [];
   const mergedServices = [
     ...sanityData,
     ...fallbackServices.filter(fb => !sanityData.some(sd => sd.title === fb.title))
-  ].slice(0, 6);
+  ];
+  
+  const displayServices = limit ? mergedServices.slice(0, limit) : mergedServices;
 
   return (
     <section className="py-24 bg-zinc-50 overflow-hidden">
@@ -93,7 +120,7 @@ export default function ServicesSection({ data, title, subtitle }: ServicesSecti
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-          {mergedServices.map((service, index) => {
+          {displayServices.map((service, index) => {
             const serviceImage = service.mainImage ? urlForImage(service.mainImage).url() : service.image;
             const serviceSlug = service.slug?.current ? `/faaliyet-alanlari/${service.slug.current}` : "#";
 

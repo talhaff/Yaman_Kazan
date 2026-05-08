@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone, ChevronRight, Mail, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { CONTACT_INFO } from "@/lib/constants";
 
 const navigation = [
   { name: "Anasayfa", href: "/" },
@@ -106,7 +107,9 @@ export default function Navbar() {
 
           <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-6">
             <a
-              href="tel:+905000000000"
+              href={CONTACT_INFO.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold transition-all",
                 scrolled 
@@ -241,17 +244,17 @@ export default function Navbar() {
                 >
                   <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-6">İletişim</h4>
                   <div className="space-y-4">
-                    <a href="tel:+905000000000" className="flex items-center gap-4 text-primary-950 group">
+                    <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="flex items-center gap-4 text-primary-950 group">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-50 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
                         <Phone className="h-4 w-4" />
                       </div>
-                      <span className="font-bold">+90 (464) 000 00 00</span>
+                      <span className="font-bold">{CONTACT_INFO.phone}</span>
                     </a>
-                    <a href="mailto:bilgi@yamankazan.com" className="flex items-center gap-4 text-primary-950 group">
+                    <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-4 text-primary-950 group">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-50 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
                         <Mail className="h-4 w-4" />
                       </div>
-                      <span className="font-bold">bilgi@yamankazan.com</span>
+                      <span className="font-bold">{CONTACT_INFO.email}</span>
                     </a>
                   </div>
                 </motion.div>
@@ -259,11 +262,13 @@ export default function Navbar() {
 
               <div className="p-6">
                 <a
-                  href="/iletisim"
+                  href={CONTACT_INFO.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center w-full rounded-2xl bg-primary-900 py-4 text-center text-base font-black text-white shadow-xl shadow-primary-900/20 active:scale-95 transition-transform"
                 >
-                  TEKLİF ALIN
+                  WHATSAPP'TAN TEKLİF ALIN
                 </a>
               </div>
             </motion.div>

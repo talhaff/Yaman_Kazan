@@ -5,8 +5,9 @@ import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/ui/PageHeader";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { CONTACT_INFO } from "@/lib/constants";
 
 export const revalidate = 60;
 
@@ -69,10 +70,15 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ sl
                   </p>
                   
                   <div className="space-y-4 relative z-10">
-                    <Link href="/iletisim" className="block w-full py-5 bg-secondary-600 text-white text-center font-black rounded-2xl hover:bg-secondary-700 transition-all shadow-lg hover:shadow-secondary-600/30">
-                      Teklif İsteyin
-                    </Link>
-                    <a href="tel:+900000000000" className="block w-full py-5 bg-white/10 text-white text-center font-black rounded-2xl hover:bg-white/20 transition-all border border-white/10">
+                    <a 
+                      href={CONTACT_INFO.whatsapp} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full py-5 bg-[#25D366] text-white text-center font-black rounded-2xl hover:bg-opacity-90 transition-all shadow-lg"
+                    >
+                      <MessageCircle className="h-5 w-5" /> WhatsApp Teklif
+                    </a>
+                    <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="block w-full py-5 bg-white/10 text-white text-center font-black rounded-2xl hover:bg-white/20 transition-all border border-white/10">
                       Bizi Arayın
                     </a>
                   </div>

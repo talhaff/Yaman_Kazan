@@ -4,6 +4,7 @@ import { ShieldCheck, Target } from "lucide-react";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { ALL_SERVICES_QUERY } from "@/sanity/lib/queries";
+import { CONTACT_INFO } from "@/lib/constants";
 
 export const revalidate = 60;
 
@@ -69,7 +70,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <ServicesSection data={homeServices} />
+      <ServicesSection data={homeServices} limit={6} />
 
       {/* CTA Section */}
       <section className="py-24 bg-primary-950 relative overflow-hidden">
@@ -81,8 +82,13 @@ export default async function Home() {
             PROJENİZ İÇİN BİZE <br /> <span className="text-secondary-500">HEMEN ULAŞIN.</span>
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="tel:+900000000000" className="px-10 py-4 bg-secondary-600 text-white font-bold rounded-md hover:bg-secondary-700 transition-all">
-              Teklif İsteyin
+            <a 
+              href={CONTACT_INFO.whatsapp} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-10 py-4 bg-[#25D366] text-white font-bold rounded-md hover:bg-opacity-90 transition-all flex items-center gap-2"
+            >
+              WhatsApp'tan Teklif İsteyin
             </a>
             <a href="/iletisim" className="px-10 py-4 bg-white text-primary-950 font-bold rounded-md hover:bg-gray-100 transition-all">
               İletişime Geçin
