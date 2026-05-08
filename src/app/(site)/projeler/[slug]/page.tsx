@@ -3,6 +3,7 @@ import { PROJECT_BY_SLUG_QUERY } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHeader from "@/components/ui/PageHeader";
 import { Calendar, User, Tag, MapPin, CheckCircle2, Clock } from "lucide-react";

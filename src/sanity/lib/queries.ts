@@ -43,8 +43,9 @@ export const ALL_SERVICES_QUERY = groq`
     title,
     slug,
     description,
+    mainImage,
     icon,
-    mainImage
+    content
   }
 `;
 

@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { urlForImage } from "@/sanity/lib/image";
 
-const services = [
+const fallbackServices = [
   {
     title: "Saha Montaj ve Ekipman Kurulumu",
     description: "Endüstriyel tesislerde ekipman montajı, yapısal entegrasyon ve saha kurulum süreçleri uzman ekiplerimizce yönetilmektedir.",
@@ -74,7 +75,23 @@ const services = [
   }
 ];
 
-export default function ServicesSection() {
+interface ServicesSectionProps {
+  data?: any[];
+  title?: string;
+  subtitle?: string;
+}
+
+export default function ServicesSection({ data, title, subtitle }: ServicesSectionProps) {
+  // Merge sanity data with fallback services, ensuring sanity data comes first
+  // and filtering out fallbacks if a sanity item with same title exists
+  const sanityData = data || [];
+  const mergedServices = [
+    ...sanityData,
+    ...fallbackServices.filter(fb => !sanityData.some(sd => sd.title === fb.title))
+  ];
+
+  const displayServices = mergedServices;
+
   return (
     <section className="py-32 bg-zinc-50 overflow-hidden">
       <div className="container mx-auto px-6">
@@ -86,7 +103,7 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               className="text-secondary-600 font-bold tracking-widest uppercase text-sm block mb-4"
             >
-              Uzmanlık Alanlarımız
+              {subtitle || "Uzmanlık Alanlarımız"}
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -94,7 +111,7 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               className="text-5xl md:text-6xl font-black text-primary-950 tracking-tighter leading-none"
             >
-              TEKNOLOJİ VE MÜHENDİSLİK <br /> <span className="text-primary-900/40 italic">BİR ARADA.</span>
+              {title || <>TEKNOLOJİ VE MÜHENDİSLİK <br /> <span className="text-primary-900/40 italic">BİR ARADA.</span></>}
             </motion.h2>
           </div>
           <motion.div
@@ -110,38 +127,45 @@ export default function ServicesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group cursor-pointer"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-6 shadow-2xl shadow-primary-900/10">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-md text-primary-900 text-[10px] font-bold uppercase tracking-wider rounded-full">
-                    {service.category}
-                  </span>
-                </div>
-              </div>
-              <h3 className="text-2xl font-black text-primary-950 mb-3 tracking-tight group-hover:text-secondary-600 transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-gray-500 line-clamp-2 text-sm leading-relaxed mb-4">
-                {service.description}
-              </p>
-              <div className="w-12 h-1 bg-gray-200 group-hover:w-full group-hover:bg-secondary-500 transition-all duration-500" />
-            </motion.div>
-          ))}
+          {displayServices.map((service, index) => {
+            const serviceImage = service.mainImage ? urlForImage(service.mainImage).url() : service.image;
+            const serviceSlug = service.slug?.current ? `/faaliyet-alanlari/${service.slug.current}` : "#";
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <Link href={serviceSlug} className="block">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-6 shadow-2xl shadow-primary-900/10">
+                    <Image
+                      src={serviceImage || "/img/gorsel01.jpeg"}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-md text-primary-900 text-[10px] font-bold uppercase tracking-wider rounded-full">
+                        {service.category || "Hizmet"}
+                      </span>
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-black text-primary-950 mb-3 tracking-tight group-hover:text-secondary-600 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-500 line-clamp-2 text-sm leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  <div className="w-12 h-1 bg-gray-200 group-hover:w-full group-hover:bg-secondary-500 transition-all duration-500" />
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

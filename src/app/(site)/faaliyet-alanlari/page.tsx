@@ -1,12 +1,18 @@
 import PageHeader from "@/components/ui/PageHeader";
 import ServicesSection from "@/components/home/ServicesSection";
+import { client } from "@/sanity/lib/client";
+import { ALL_SERVICES_QUERY } from "@/sanity/lib/queries";
 
 export const metadata = {
   title: "Faaliyet Alanları",
   description: "Yaman Kazan faaliyet alanları ve uzmanlıkları.",
 };
 
-export default function FaaliyetAlanlariPage() {
+export const revalidate = 60;
+
+export default async function FaaliyetAlanlariPage() {
+  const services = await client.fetch(ALL_SERVICES_QUERY);
+
   return (
     <>
       <PageHeader 
@@ -15,10 +21,8 @@ export default function FaaliyetAlanlariPage() {
         imagePath="/img/sahamontajkurulumu.jpeg"
       />
       
-      {/* We reuse the ServicesSection from home, but we can wrap it or modify it slightly if needed. */}
-      {/* For now, reusing the high-quality component is best. */}
       <div className="bg-white">
-        <ServicesSection />
+        <ServicesSection data={services} />
       </div>
     </>
   );

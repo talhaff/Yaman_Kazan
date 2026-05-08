@@ -1,9 +1,18 @@
 import Hero from "@/components/home/Hero";
 import ServicesSection from "@/components/home/ServicesSection";
-import { ShieldCheck, Target, Users } from "lucide-react";
+import { ShieldCheck, Target } from "lucide-react";
 import Image from "next/image";
+import { client } from "@/sanity/lib/client";
+import { ALL_SERVICES_QUERY } from "@/sanity/lib/queries";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const services = await client.fetch(ALL_SERVICES_QUERY);
+  
+  // Limit to 6 services for the homepage
+  const homeServices = services?.slice(0, 6);
+
   return (
     <>
       <Hero />
@@ -60,7 +69,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ServicesSection />
+      <ServicesSection data={homeServices} />
 
       {/* CTA Section */}
       <section className="py-24 bg-primary-950 relative overflow-hidden">
