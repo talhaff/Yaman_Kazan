@@ -29,6 +29,7 @@ export default async function Home() {
                   alt="Yaman Kazan Atölye" 
                   fill 
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary-600 rounded-2xl -z-10 hidden lg:block" />
@@ -75,7 +76,7 @@ export default async function Home() {
       {/* CTA Section */}
       <section className="py-24 bg-primary-950 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <Image src="/img/gorsel03.jpeg" alt="Background" fill className="object-cover" />
+          <Image src="/img/gorsel03.jpeg" alt="Background" fill className="object-cover" sizes="100vw" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8">

@@ -19,7 +19,7 @@ export default function PageHeader({ title, description, imagePath = "/img/gorse
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="w-full h-full"
         >
-          <Image src={imagePath} alt={title} fill className="object-cover" priority />
+          <Image src={imagePath} alt={title} fill className="object-cover" priority sizes="100vw" />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-950/80 to-transparent" />
       </div>

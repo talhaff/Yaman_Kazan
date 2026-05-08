@@ -3,15 +3,23 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary-950">
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
+        <Image 
+          src="/img/gorsel01.jpeg" 
+          alt="Yaman Kazan Fabrika" 
+          fill 
+          priority 
+          className="object-cover object-center"
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/80 to-transparent z-10" />
         <div className="absolute inset-0 bg-black/40 z-0" />
-        <div className="w-full h-full bg-[url('/img/gorsel01.jpeg')] bg-cover bg-center" />
       </div>
 
       <div className="container mx-auto px-6 relative z-20 pt-20">
