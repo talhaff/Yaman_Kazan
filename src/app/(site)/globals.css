@@ -65,3 +65,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@layer utilities {
+  .glass-premium {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl;
+  }
+  
+  .glass-dark {
+    @apply bg-primary-950/80 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  
+  .shadow-premium {
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1), 0 10px 20px -10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .shadow-primary-premium {
+    box-shadow: 0 20px 40px -15px rgba(23, 37, 84, 0.2), 0 10px 20px -10px rgba(23, 37, 84, 0.1);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-950 via-primary-800 to-primary-950;
+  }
+}
+

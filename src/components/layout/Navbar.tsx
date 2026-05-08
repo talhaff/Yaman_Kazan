@@ -51,23 +51,25 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-          scrolled ? "bg-white/95 backdrop-blur-md shadow-lg py-2" : "bg-transparent py-4"
+          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+          scrolled 
+            ? "bg-white/80 backdrop-blur-xl shadow-premium py-2" 
+            : "bg-transparent py-6"
         )}
       >
         <nav className="container mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3">
+            <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3 group">
               <div className={cn(
-                "bg-white p-2 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg",
-                !scrolled ? "bg-white/90" : "bg-white"
+                "p-2 rounded-2xl transition-all duration-500 group-hover:scale-105",
+                scrolled ? "bg-white shadow-sm" : "bg-white/90 shadow-xl"
               )}>
                 <Image 
                   src="/img/logoyaman-1.png" 
                   alt="Yaman Kazan Logo" 
                   width={160} 
                   height={45} 
-                  className="h-10 w-auto object-contain"
+                  className="h-9 md:h-10 w-auto object-contain"
                   priority
                 />
               </div>
@@ -75,30 +77,35 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex lg:gap-x-10 items-center">
+          <div className="hidden lg:flex lg:gap-x-12 items-center">
             {navigation.map((item) => (
               <div key={item.name} className="relative group">
                 <Link
                   href={item.href}
                   className={cn(
-                    "text-sm font-semibold leading-6 transition-colors flex items-center gap-1 py-4",
-                    scrolled ? "text-gray-900 hover:text-secondary-500" : "text-white/90 hover:text-white"
+                    "text-[13px] font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-1 py-4",
+                    scrolled ? "text-primary-950 hover:text-secondary-600" : "text-white/90 hover:text-white"
                   )}
                 >
                   {item.name}
+                  {item.dropdown && (
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  )}
                 </Link>
                 
                 {item.dropdown && (
-                  <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-300 overflow-hidden">
-                    {item.dropdown.map((dropItem) => (
-                      <Link
-                        key={dropItem.name}
-                        href={dropItem.href}
-                        className="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-secondary-600 transition-colors border-b border-gray-50 last:border-0"
-                      >
-                        {dropItem.name}
-                      </Link>
-                    ))}
+                  <div className="absolute top-full left-0 w-72 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <div className="bg-white shadow-2xl rounded-2xl border border-gray-100 overflow-hidden p-2">
+                      {item.dropdown.map((dropItem) => (
+                        <Link
+                          key={dropItem.name}
+                          href={dropItem.href}
+                          className="block px-4 py-3 text-sm font-bold text-primary-900 hover:bg-primary-50 hover:text-secondary-600 rounded-xl transition-all"
+                        >
+                          {dropItem.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -111,14 +118,14 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold transition-all",
+                "flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-black uppercase tracking-tighter transition-all hover:scale-105 active:scale-95 shadow-lg",
                 scrolled 
-                  ? "bg-primary-900 text-white hover:bg-primary-800" 
-                  : "bg-white text-primary-900 hover:bg-gray-100"
+                  ? "bg-primary-950 text-white hover:bg-primary-900 shadow-primary-950/20" 
+                  : "bg-white text-primary-900 hover:bg-gray-50 shadow-white/10"
               )}
             >
               <Phone className="h-4 w-4" />
-              Teklif Al
+              HIZLI TEKLİF
             </a>
           </div>
 
@@ -127,10 +134,10 @@ export default function Navbar() {
             <button
               type="button"
               className={cn(
-                "relative z-[70] flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 active:scale-90",
+                "relative z-[70] flex h-12 w-12 items-center justify-center rounded-2xl transition-all duration-300 active:scale-90 shadow-lg",
                 mobileMenuOpen 
-                  ? "bg-primary-900 text-white" 
-                  : scrolled ? "bg-primary-50 text-primary-950" : "bg-white/10 text-white backdrop-blur-md"
+                  ? "bg-secondary-600 text-white" 
+                  : scrolled ? "bg-primary-950 text-white" : "bg-white text-primary-950"
               )}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -141,7 +148,7 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* Premium Mobile Menu Overlay - Moved outside header to avoid backdrop-blur issues */}
+      {/* Premium Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <>
@@ -149,17 +156,17 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[60] bg-primary-950/40 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-[60] bg-primary-950/60 backdrop-blur-md lg:hidden"
               onClick={() => setMobileMenuOpen(false)}
             />
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 z-[60] w-full bg-white shadow-2xl sm:max-w-sm lg:hidden flex flex-col"
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "100%", opacity: 0 }}
+              transition={{ type: "spring", damping: 30, stiffness: 200 }}
+              className="fixed inset-y-0 right-0 z-[60] w-[85%] max-w-sm bg-white lg:hidden flex flex-col shadow-[-20px_0_60px_-15px_rgba(0,0,0,0.3)]"
             >
-              <div className="flex items-center justify-between px-6 py-5 border-b border-gray-50">
+              <div className="flex items-center justify-between px-8 py-8">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                   <Image 
                     src="/img/logoyaman-1.png" 
@@ -169,44 +176,40 @@ export default function Navbar() {
                     className="h-8 w-auto object-contain"
                   />
                 </Link>
-                {/* Close button inside the menu for better UX */}
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="h-10 w-10 flex items-center justify-center rounded-xl bg-primary-50 text-primary-900"
-                >
-                  <X className="h-6 w-6" />
-                </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto px-6 py-8">
-                <nav className="space-y-6">
+              <div className="flex-1 overflow-y-auto px-8 py-4">
+                <nav className="space-y-4">
                   {navigation.map((item, i) => (
                     <motion.div
                       key={item.name}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.1 }}
                     >
-                      <div className="group">
-                        <Link
-                          href={item.href}
-                          className="flex items-center justify-between py-2 text-2xl font-black text-primary-950 hover:text-secondary-600 transition-colors"
-                          onClick={() => !item.dropdown && setMobileMenuOpen(false)}
-                        >
-                          {item.name}
+                      <div>
+                        <div className="flex items-center justify-between group">
+                          <Link
+                            href={item.href}
+                            className="flex-1 py-3 text-2xl font-black text-primary-950 hover:text-secondary-600 transition-colors tracking-tighter"
+                            onClick={() => !item.dropdown && setMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
                           {item.dropdown && (
-                            <ChevronRight 
-                              className={cn(
-                                "h-6 w-6 transition-transform duration-300",
-                                activeDropdown === item.name ? "rotate-90" : ""
-                              )}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                setActiveDropdown(activeDropdown === item.name ? null : item.name);
-                              }}
-                            />
+                            <button 
+                              onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                              className="p-3 bg-primary-50 rounded-xl text-primary-900 active:scale-90 transition-transform"
+                            >
+                              <ChevronRight 
+                                className={cn(
+                                  "h-5 w-5 transition-transform duration-300",
+                                  activeDropdown === item.name ? "rotate-90" : ""
+                                )}
+                              />
+                            </button>
                           )}
-                        </Link>
+                        </div>
                         
                         {item.dropdown && (
                           <motion.div 
@@ -217,12 +220,12 @@ export default function Navbar() {
                             }}
                             className="overflow-hidden bg-primary-50/50 rounded-2xl mt-2"
                           >
-                            <div className="py-2 px-4 space-y-1">
+                            <div className="py-2 px-2 space-y-1">
                               {item.dropdown.map((dropItem) => (
                                 <Link
                                   key={dropItem.name}
                                   href={dropItem.href}
-                                  className="block py-3 px-2 text-[15px] font-bold text-primary-900/70 hover:text-secondary-600"
+                                  className="block py-4 px-4 text-sm font-bold text-primary-900/80 hover:text-secondary-600 hover:bg-white rounded-xl transition-all"
                                   onClick={() => setMobileMenuOpen(false)}
                                 >
                                   {dropItem.name}
@@ -239,36 +242,42 @@ export default function Navbar() {
                 <motion.div 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
+                  transition={{ delay: 0.6 }}
                   className="mt-12 pt-8 border-t border-gray-100"
                 >
-                  <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-6">İletişim</h4>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">BİZE ULAŞIN</p>
                   <div className="space-y-4">
                     <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="flex items-center gap-4 text-primary-950 group">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-50 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
-                        <Phone className="h-4 w-4" />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 group-hover:bg-primary-950 group-hover:text-white transition-all shadow-sm">
+                        <Phone className="h-5 w-5" />
                       </div>
-                      <span className="font-bold">{CONTACT_INFO.phone}</span>
+                      <div>
+                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">Telefon</p>
+                        <span className="font-black text-lg tracking-tighter">{CONTACT_INFO.phone}</span>
+                      </div>
                     </a>
                     <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-4 text-primary-950 group">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-50 group-hover:bg-secondary-500 group-hover:text-white transition-colors">
-                        <Mail className="h-4 w-4" />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 group-hover:bg-primary-950 group-hover:text-white transition-all shadow-sm">
+                        <Mail className="h-5 w-5" />
                       </div>
-                      <span className="font-bold">{CONTACT_INFO.email}</span>
+                      <div>
+                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">E-Posta</p>
+                        <span className="font-black text-lg tracking-tighter">{CONTACT_INFO.email}</span>
+                      </div>
                     </a>
                   </div>
                 </motion.div>
               </div>
 
-              <div className="p-6">
+              <div className="p-8 space-y-3">
                 <a
                   href={CONTACT_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center w-full rounded-2xl bg-primary-900 py-4 text-center text-base font-black text-white shadow-xl shadow-primary-900/20 active:scale-95 transition-transform"
+                  className="flex items-center justify-center w-full rounded-2xl bg-secondary-600 py-5 text-center text-base font-black text-white shadow-xl shadow-secondary-600/20 active:scale-95 transition-transform uppercase tracking-tighter"
                 >
-                  WHATSAPP'TAN TEKLİF ALIN
+                  WHATSAPP'TAN TEKLİF AL
                 </a>
               </div>
             </motion.div>

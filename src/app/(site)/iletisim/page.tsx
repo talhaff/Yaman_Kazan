@@ -26,12 +26,12 @@ export default function IletisimPage() {
             
             {/* Contact Info (Left) */}
             <div className="lg:col-span-5">
-              <span className="text-secondary-600 font-black tracking-widest uppercase text-xs block mb-4">İletişim Kanalları</span>
-              <h2 className="text-4xl md:text-5xl font-black text-primary-950 tracking-tighter leading-tight mb-12">
-                HAYALİNİZDEKİ PROJEYİ <br /> <span className="text-secondary-600">BİRLİKTE</span> GERÇEKLEŞTİRELİM.
+              <span className="text-secondary-600 font-black tracking-[0.2em] uppercase text-[10px] md:text-xs block mb-6">İletişim Kanalları</span>
+              <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter leading-[0.95] mb-12 uppercase">
+                HAYALİNİZDEKİ PROJEYİ <br /> <span className="text-gradient">BİRLİKTE</span> GERÇEKLEŞTİRELİM.
               </h2>
               
-              <div className="space-y-10">
+              <div className="space-y-8 md:space-y-12">
                 {[
                   { 
                     icon: MapPin, 
@@ -59,17 +59,17 @@ export default function IletisimPage() {
                   },
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-6 group">
-                    <div className="w-16 h-16 bg-zinc-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-primary-900 group-hover:text-white transition-all duration-500 shadow-inner">
+                    <div className="w-16 h-16 bg-primary-50 rounded-[1.25rem] flex items-center justify-center shrink-0 group-hover:bg-primary-950 group-hover:text-white transition-all duration-500 shadow-sm">
                       <item.icon className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-black text-primary-950 text-sm uppercase tracking-widest mb-1">{item.title}</h3>
+                      <h3 className="font-black text-[10px] text-gray-400 uppercase tracking-[0.2em] mb-2">{item.title}</h3>
                       {item.link ? (
-                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-gray-500 font-bold hover:text-secondary-600 transition-colors block text-lg">
+                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-primary-950 font-black hover:text-secondary-600 transition-colors block text-lg md:text-xl tracking-tight">
                           {item.content}
                         </a>
                       ) : (
-                        <p className="text-gray-500 font-bold text-lg">{item.content}</p>
+                        <p className="text-primary-950 font-black text-lg md:text-xl tracking-tight">{item.content}</p>
                       )}
                     </div>
                   </div>
@@ -77,13 +77,13 @@ export default function IletisimPage() {
               </div>
 
               {/* Social / Direct Contact */}
-              <div className="mt-16 pt-10 border-t border-gray-100">
-                <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Hızlı İletişim</p>
+              <div className="mt-20 pt-10 border-t border-gray-100">
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-8">Hızlı İletişim</p>
                 <a 
                   href={CONTACT_INFO.whatsapp} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white font-black rounded-2xl hover:scale-105 transition-transform shadow-xl shadow-green-200"
+                  className="inline-flex items-center gap-4 px-10 py-5 bg-[#25D366] text-white font-black uppercase tracking-tighter rounded-2xl hover:scale-105 transition-transform shadow-2xl shadow-[#25D366]/20"
                 >
                   <MessageCircle className="h-6 w-6" /> WhatsApp Hattı
                 </a>
@@ -100,7 +100,7 @@ export default function IletisimPage() {
       </section>
 
       {/* Map Section */}
-      <section className="h-[30rem] w-full relative overflow-hidden grayscale contrast-125 hover:grayscale-0 transition-all duration-1000">
+      <section className="h-[35rem] w-full relative overflow-hidden grayscale contrast-125 hover:grayscale-0 transition-all duration-1000 border-t border-gray-100">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191195.49845341253!2d40.354133464522434!3d41.02672535728345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40667ab8029d91bd%3A0xe5f8670c53dc30e0!2sRize%2C%20Rize%20Merkez%2FRize!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
           width="100%" 
@@ -110,7 +110,7 @@ export default function IletisimPage() {
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-        <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_rgba(0,0,0,0.1)]"></div>
+        <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_rgba(0,0,0,0.05)]"></div>
       </section>
     </>
   );
