@@ -39,6 +39,32 @@ export const project = {
       of: [{ type: "image", options: { hotspot: true } }],
     },
     {
+      name: "status",
+      title: "Proje Durumu",
+      type: "string",
+      options: {
+        list: [
+          { title: "Tamamlandı", value: "completed" },
+          { title: "Devam Ediyor", value: "ongoing" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "completed",
+    },
+    {
+      name: "category",
+      title: "Kategori",
+      type: "string",
+      options: {
+        list: [
+          { title: "Endüstriyel Tesis", value: "industrial" },
+          { title: "Mekanik Montaj", value: "mechanical" },
+          { title: "Kazan & Basınçlı Kaplar", value: "boiler" },
+          { title: "Revizyon & Bakım", value: "revision" },
+        ],
+      },
+    },
+    {
       name: "completionDate",
       title: "Tamamlanma Tarihi",
       type: "date",
