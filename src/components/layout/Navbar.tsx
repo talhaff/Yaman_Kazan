@@ -8,7 +8,18 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Anasayfa", href: "/" },
-  { name: "Kurumsal", href: "/kurumsal/hakkimizda" },
+  { 
+    name: "Kurumsal", 
+    href: "/kurumsal/hakkimizda",
+    dropdown: [
+      { name: "Hakkımızda", href: "/kurumsal/hakkimizda" },
+      { name: "Referanslar", href: "/kurumsal/referanslar" },
+      { name: "Sertifikalar", href: "/kurumsal/sertifikalar" },
+      { name: "Entegre Yönetim Politikası", href: "/kurumsal/kalite-politikasi" },
+      { name: "Katalog", href: "/kurumsal/katalog" },
+      { name: "Kariyer", href: "/kurumsal/kariyer" },
+    ]
+  },
   { name: "Faaliyet Alanları", href: "/faaliyet-alanlari" },
   { name: "Projeler", href: "/projeler" },
   { name: "İletişim", href: "/iletisim" },
@@ -52,18 +63,33 @@ export default function Navbar() {
             <Menu className={cn("h-6 w-6", scrolled ? "text-gray-900" : "text-white")} />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-10 items-center">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={cn(
-                "text-sm font-semibold leading-6 transition-colors",
-                scrolled ? "text-gray-900 hover:text-secondary-500" : "text-white/90 hover:text-white"
+            <div key={item.name} className="relative group">
+              <Link
+                href={item.href}
+                className={cn(
+                  "text-sm font-semibold leading-6 transition-colors flex items-center gap-1 py-4",
+                  scrolled ? "text-gray-900 hover:text-secondary-500" : "text-white/90 hover:text-white"
+                )}
+              >
+                {item.name}
+              </Link>
+              
+              {item.dropdown && (
+                <div className="absolute top-full left-0 w-64 bg-white shadow-2xl rounded-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-4 group-hover:translate-y-0 transition-all duration-300 overflow-hidden">
+                  {item.dropdown.map((dropItem) => (
+                    <Link
+                      key={dropItem.name}
+                      href={dropItem.href}
+                      className="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-secondary-600 transition-colors border-b border-gray-50 last:border-0"
+                    >
+                      {dropItem.name}
+                    </Link>
+                  ))}
+                </div>
               )}
-            >
-              {item.name}
-            </Link>
+            </div>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -107,14 +133,29 @@ export default function Navbar() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="-block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
+                  <div key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="-block rounded-lg px-3 py-2 text-base font-bold leading-7 text-gray-900 hover:bg-gray-50"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                    {item.dropdown && (
+                      <div className="pl-4 mt-1 space-y-1 border-l-2 border-gray-100 ml-4">
+                        {item.dropdown.map((dropItem) => (
+                          <Link
+                            key={dropItem.name}
+                            href={dropItem.href}
+                            className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-secondary-600"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {dropItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
               <div className="py-6">
