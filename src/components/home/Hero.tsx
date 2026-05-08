@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
@@ -21,9 +21,12 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-widest uppercase bg-secondary-600 text-white rounded-full">
-              Endüstriyel Güç ve Tecrübe
-            </span>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-[2px] bg-secondary-600" />
+              <span className="text-sm font-bold tracking-widest uppercase text-secondary-500">
+                Endüstriyel Güç ve Tecrübe
+              </span>
+            </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.9] tracking-tighter mb-8">
               AĞIR SANAYİDE <br />
               <span className="text-secondary-500">YAMAN</span> ÇÖZÜMLER
@@ -63,8 +66,26 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] font-black uppercase tracking-widest text-white/40">Keşfet</span>
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <ChevronDown className="h-6 w-6 text-secondary-500" />
+        </motion.div>
+      </motion.div>
+
       {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-primary-950 to-transparent z-10" />
     </section>
   );
 }
+
+

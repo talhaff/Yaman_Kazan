@@ -42,36 +42,6 @@ const fallbackServices = [
     description: "50 t/h buhar kazanları için yüksek hassasiyetli membran duvar sistemleri ve kaynak prosesleri.",
     image: "/img/membranduvar.jpeg",
     category: "İmalat"
-  },
-  {
-    title: "Boru Aynası Kaynak İşleri",
-    description: "Isı transfer yüzeylerinde standartlara uygun, kontrollü boru bağlantı kaynakları.",
-    image: "/img/Kaynakİşleri.jpeg",
-    category: "Teknik İşçilik"
-  },
-  {
-    title: "Kanal Geçişleri ve Montajı",
-    description: "Endüstriyel tesis sahasında sızdırmazlık odaklı kanal geçişleri ve bağlantı elemanları montajı.",
-    image: "/img/kanalgecis.jpeg",
-    category: "Saha Hizmetleri"
-  },
-  {
-    title: "Ağır Ekipman Kurulumu",
-    description: "Mühendislik disiplinine uygun, ağır ekipman montajından saha entegrasyonuna tam hizmet.",
-    image: "/img/kurulumlar.jpeg",
-    category: "Saha Hizmetleri"
-  },
-  {
-    title: "Baca ve Hava Kanalları",
-    description: "Endüstriyel baca ve hava kanallarının imalatı, fan bağlantıları ve sistem entegrasyonu.",
-    image: "/img/havakanal.jpeg",
-    category: "İmalat"
-  },
-  {
-    title: "Shell Boiler & Reküperatör",
-    description: "Yüksek tonajlı sistemlerin sahada güvenli kaldırma, yerleştirme ve kontrolü montaj süreçleri.",
-    image: "/img/islemler.jpeg",
-    category: "Enerji"
   }
 ];
 
@@ -82,18 +52,14 @@ interface ServicesSectionProps {
 }
 
 export default function ServicesSection({ data, title, subtitle }: ServicesSectionProps) {
-  // Merge sanity data with fallback services, ensuring sanity data comes first
-  // and filtering out fallbacks if a sanity item with same title exists
   const sanityData = data || [];
   const mergedServices = [
     ...sanityData,
     ...fallbackServices.filter(fb => !sanityData.some(sd => sd.title === fb.title))
-  ];
-
-  const displayServices = mergedServices;
+  ].slice(0, 6);
 
   return (
-    <section className="py-32 bg-zinc-50 overflow-hidden">
+    <section className="py-24 bg-zinc-50 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
@@ -127,7 +93,7 @@ export default function ServicesSection({ data, title, subtitle }: ServicesSecti
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-          {displayServices.map((service, index) => {
+          {mergedServices.map((service, index) => {
             const serviceImage = service.mainImage ? urlForImage(service.mainImage).url() : service.image;
             const serviceSlug = service.slug?.current ? `/faaliyet-alanlari/${service.slug.current}` : "#";
 
@@ -171,3 +137,5 @@ export default function ServicesSection({ data, title, subtitle }: ServicesSecti
     </section>
   );
 }
+
+
