@@ -198,7 +198,7 @@ export default function Navbar() {
                           <Link
                             href={item.href}
                             className="flex-1 py-3 text-2xl font-black text-primary-950 hover:text-secondary-600 transition-colors tracking-tighter"
-                            onClick={() => !item.dropdown && setMobileMenuOpen(false)}
+                            onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.name}
                           </Link>

@@ -65,7 +65,7 @@ export default async function ProjelerPage({
       
       <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-6">
-          <div className="flex gap-4 mb-16 overflow-x-auto pb-4 no-scrollbar">
+          <div className="flex flex-wrap gap-4 mb-16">
             <Link 
               href="/projeler" 
               scroll={false}
