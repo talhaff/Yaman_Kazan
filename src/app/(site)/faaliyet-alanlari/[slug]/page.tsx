@@ -11,15 +11,153 @@ import { CONTACT_INFO } from "@/lib/constants";
 
 export const revalidate = 60;
 
+const fallbackServices = [
+  {
+    title: "Saha Montaj ve Ekipman Kurulumu",
+    description: "Endüstriyel tesislerde ekipman montajı, yapısal entegrasyon ve saha kurulum süreçleri uzman ekiplerimizce yönetilmektedir.",
+    image: "/img/sahamontajkurulumu.jpeg",
+    category: "Saha Hizmetleri",
+    slug: { current: "saha-montaj-ve-ekipman-kurulumu" },
+    content: [
+      {
+        _type: 'block',
+        children: [{ _type: 'span', text: "Yaman Kazan olarak, endüstriyel tesislerin kalbi sayılan mekanik montaj ve ekipman kurulumu süreçlerinde çeyrek asırlık tecrübemizle hizmet veriyoruz. Enerji santrallerinden petrokimya tesislerine kadar geniş bir yelpazede, ağır ekipmanların hassas yerleşimi ve yapısal entegrasyonu konusunda uzman kadromuzla yanınızdayız." }]
+      }
+    ]
+  },
+  {
+    title: "Hidroelektrik Santralleri",
+    description: "Santral sahasındaki operasyonlar, ağır ekipman montajı ve teknik altyapı kurulumunda tam kapsamlı çözümler.",
+    image: "/img/hidroelektriksantral01.jpeg",
+    category: "Enerji",
+    slug: { current: "hidroelektrik-santralleri" },
+    content: [
+      {
+        _type: 'block',
+        children: [{ _type: 'span', text: "Hidroelektrik santrallerin (HES) kurulum ve revizyon süreçlerinde uzmanlaşmış ekibimiz, su türbinlerinden jeneratör gruplarına kadar tüm ağır ekipmanların montajını gerçekleştirmektedir. Yenilenebilir enerji projelerinde sürdürülebilir ve verimli çözümler sunuyoruz." }]
+      }
+    ]
+  },
+  {
+    title: "Çöp Tutucu Izgara Revizyonu",
+    description: "HES su giriş sistemlerinin demontaj, temizlik ve revizyon çalışmaları zorlu saha koşullarında gerçekleştirilir.",
+    image: "/img/ÇöpTutucuIzgaraRevizyonu.jpeg",
+    category: "Revizyon",
+    slug: { current: "cop-tutucu-izgara-revizyonu" },
+    content: [
+      {
+        _type: 'block',
+        children: [{ _type: 'span', text: "HES su giriş yapılarında kritik öneme sahip olan çöp tutucu ızgaraların periyodik bakımı ve revizyonu, santral verimliliğini doğrudan etkiler. Zorlu su altı ve yüzey koşullarında, ızgara sistemlerinin temizliği, yapısal onarımı ve modernizasyonunu gerçekleştiriyoruz." }]
+      }
+    ]
+  },
+  {
+    title: "Kızdırıcı Kolektör Revizyonu",
+    description: "100 t/h - 45 Bar yüksek basınçlı buhar kazanlarında kolektör yenileme ve hassas montaj işlemleri.",
+    image: "/img/BarKızdırıcı.jpeg",
+    category: "Kazan Teknolojileri",
+    slug: { current: "kizdirici-kolektor-revizyonu" },
+    content: [
+      {
+        _type: 'block',
+        children: [{ _type: 'span', text: "Yüksek basınçlı buhar kazanlarında aşırı sıcaklık ve basınç altında çalışan kızdırıcı kolektörlerin revizyonu, üst düzey kaynak ve mühendislik becerisi gerektirir. 45 Bar ve üzeri basınç değerlerine sahip sistemlerde sertifikalı kaynak operasyonları yürütüyoruz." }]
+      }
+    ]
+  },
+  {
+    title: "Multisiklon İmalatı",
+    description: "Toz ayrıştırma sistemlerinde yüksek dayanım ve verimlilik esaslı multisiklon ekipman üretimi.",
+    image: "/img/Multisiklonİmalatı.jpeg",
+    category: "İmalat",
+    slug: { current: "multisiklon-imalati" },
+    content: [
+      {
+        _type: 'block',
+        children: [{ _type: 'span', text: "Endüstriyel emisyon kontrolünde hayati rol oynayan multisiklon sistemleri, tesisinizin hava kalitesini ve çevresel uyumluluğunu sağlar. Yüksek dayanımlı malzemelerden imal edilen siklonlarımız, uzun ömürlü ve düşük bakım maliyetli bir kullanım sunar." }]
+      }
+    ]
+  },
+  {
+    title: "Membran Duvar İmalatı",
+    description: "50 t/h buhar kazanları için yüksek hassasiyetli membran duvar sistemleri ve kaynak prosesleri.",
+    image: "/img/membranduvar.jpeg",
+    category: "İmalat",
+    slug: { current: "membran-duvar-imalati" },
+    content: [
+      {
+        _type: 'block',
+        children: [{ _type: 'span', text: "Buhar kazanı teknolojilerinin temelini oluşturan membran duvar imalatında, otomatik kaynak makinelerimiz ve uzman personelimizle yüksek sızdırmazlık ve ısı transfer verimliliği sağlıyoruz. Projenize özel panel tasarımları gerçekleştiriyoruz." }]
+      }
+    ]
+  },
+  {
+    title: "Hava Kanalı ve Toz Emme Sistemleri",
+    description: "Endüstriyel tesisler için özel tasarım hava kanalları ve toz emme ünitesi imalatı ve montajı.",
+    image: "/img/havakanal.jpeg",
+    category: "İmalat",
+    slug: { current: "hava-kanali-ve-toz-emme-sistemleri" },
+    content: [
+      {
+        _type: 'block',
+        children: [{ _type: 'span', text: "Tesis içi hava sirkülasyonu ve toz yönetimi için tasarladığımız kanal sistemleri, aerodinamik hesaplamalar yapılarak imal edilir. Büyük ölçekli toz emme üniteleri ile sağlıklı bir çalışma ortamı kurgulamanıza yardımcı oluyoruz." }]
+      }
+    ]
+  },
+  {
+    title: "Kanal Geçiş Elemanları",
+    description: "Yüksek sıcaklık ve basınç dayanımlı kanal geçiş elemanları ve genleşme parçaları üretimi.",
+    image: "/img/kanalgecis.jpeg",
+    category: "İmalat",
+    slug: { current: "kanal-gecis-elemanlari" },
+    content: [
+      {
+        _type: 'block',
+        children: [{ _type: 'span', text: "Farklı kesit ve çaplardaki kanalların birleşimi, yüksek ısı genleşmelerinin kompanse edilmesi için özel üretim geçiş elemanları imal ediyoruz. Titreşim ve termal şoklara dayanıklı esnek bağlantı çözümleri sunuyoruz." }]
+      }
+    ]
+  },
+  {
+    title: "Endüstriyel Tesis Kurulumu",
+    description: "Anahtar teslim endüstriyel tesis kurulumu, makine montajı ve devreye alma hizmetleri.",
+    image: "/img/kurulumlar.jpeg",
+    category: "Kurulum",
+    slug: { current: "endustriyel-tesis-kurulumu" },
+    content: [
+      {
+        _type: 'block',
+        children: [{ _type: 'span', text: "Sıfırdan tesis kurulum projelerinde, proje yönetiminden son devreye almaya kadar tüm aşamalarda Yaman Kazan güvencesiyle yanınızdayız. Makine temellerinden çelik konstrüksiyon montajına kadar komplike süreçleri yönetiyoruz." }]
+      }
+    ]
+  },
+  {
+    title: "Özel Kaynak ve Metal İşleri",
+    description: "Sertifikalı kaynakçılarımızla yüksek basınçlı kaplar ve yapısal çelik kaynak işleri.",
+    image: "/img/Kaynakİşleri.jpeg",
+    category: "İmalat",
+    slug: { current: "ozel-kaynak-ve-metal-isleri" },
+    content: [
+      {
+        _type: 'block',
+        children: [{ _type: 'span', text: "Tüm kaynak operasyonlarımız sertifikalı uzmanlarımız tarafından yürütülmektedir. Paslanmaz çelik, karbon çelik ve özel alaşımlı metallerde hassas kaynak işleri, tahribatsız muayene (NDT) süreçleriyle birlikte sunulur." }]
+      }
+    ]
+  }
+];
+
 export default async function HizmetDetayPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const service = await client.fetch(SERVICE_BY_SLUG_QUERY, { slug });
+  let service = await client.fetch(SERVICE_BY_SLUG_QUERY, { slug });
+
+  // If not in Sanity, check fallbackServices
+  if (!service) {
+    service = fallbackServices.find(fb => fb.slug.current === slug);
+  }
 
   if (!service) {
     notFound();
   }
 
-  const mainImageUrl = service.mainImage ? urlForImage(service.mainImage).url() : null;
+  const mainImageUrl = service.mainImage ? urlForImage(service.mainImage).url() : (service.image || null);
 
   return (
     <article className="bg-white min-h-screen">
@@ -44,10 +182,10 @@ export default async function HizmetDetayPage({ params }: { params: Promise<{ sl
                   <PortableText value={service.content || []} />
                 </div>
 
-                {service.mainImage && (
+                {mainImageUrl && (
                   <div className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl mb-12">
                     <Image 
-                      src={mainImageUrl!} 
+                      src={mainImageUrl} 
                       alt={service.title} 
                       fill 
                       className="object-cover"

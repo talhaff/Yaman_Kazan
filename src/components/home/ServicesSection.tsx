@@ -11,61 +11,71 @@ const fallbackServices = [
     title: "Saha Montaj ve Ekipman Kurulumu",
     description: "Endüstriyel tesislerde ekipman montajı, yapısal entegrasyon ve saha kurulum süreçleri uzman ekiplerimizce yönetilmektedir.",
     image: "/img/sahamontajkurulumu.jpeg",
-    category: "Saha Hizmetleri"
+    category: "Saha Hizmetleri",
+    slug: { current: "saha-montaj-ve-ekipman-kurulumu" }
   },
   {
     title: "Hidroelektrik Santralleri",
     description: "Santral sahasındaki operasyonlar, ağır ekipman montajı ve teknik altyapı kurulumunda tam kapsamlı çözümler.",
     image: "/img/hidroelektriksantral01.jpeg",
-    category: "Enerji"
+    category: "Enerji",
+    slug: { current: "hidroelektrik-santralleri" }
   },
   {
     title: "Çöp Tutucu Izgara Revizyonu",
     description: "HES su giriş sistemlerinin demontaj, temizlik ve revizyon çalışmaları zorlu saha koşullarında gerçekleştirilir.",
     image: "/img/ÇöpTutucuIzgaraRevizyonu.jpeg",
-    category: "Revizyon"
+    category: "Revizyon",
+    slug: { current: "cop-tutucu-izgara-revizyonu" }
   },
   {
     title: "Kızdırıcı Kolektör Revizyonu",
     description: "100 t/h - 45 Bar yüksek basınçlı buhar kazanlarında kolektör yenileme ve hassas montaj işlemleri.",
     image: "/img/BarKızdırıcı.jpeg",
-    category: "Kazan Teknolojileri"
+    category: "Kazan Teknolojileri",
+    slug: { current: "kizdirici-kolektor-revizyonu" }
   },
   {
     title: "Multisiklon İmalatı",
     description: "Toz ayrıştırma sistemlerinde yüksek dayanım ve verimlilik esaslı multisiklon ekipman üretimi.",
     image: "/img/Multisiklonİmalatı.jpeg",
-    category: "İmalat"
+    category: "İmalat",
+    slug: { current: "multisiklon-imalati" }
   },
   {
     title: "Membran Duvar İmalatı",
     description: "50 t/h buhar kazanları için yüksek hassasiyetli membran duvar sistemleri ve kaynak prosesleri.",
     image: "/img/membranduvar.jpeg",
-    category: "İmalat"
+    category: "İmalat",
+    slug: { current: "membran-duvar-imalati" }
   },
   {
     title: "Hava Kanalı ve Toz Emme Sistemleri",
     description: "Endüstriyel tesisler için özel tasarım hava kanalları ve toz emme ünitesi imalatı ve montajı.",
     image: "/img/havakanal.jpeg",
-    category: "İmalat"
+    category: "İmalat",
+    slug: { current: "hava-kanali-ve-toz-emme-sistemleri" }
   },
   {
     title: "Kanal Geçiş Elemanları",
     description: "Yüksek sıcaklık ve basınç dayanımlı kanal geçiş elemanları ve genleşme parçaları üretimi.",
     image: "/img/kanalgecis.jpeg",
-    category: "İmalat"
+    category: "İmalat",
+    slug: { current: "kanal-gecis-elemanlari" }
   },
   {
     title: "Endüstriyel Tesis Kurulumu",
     description: "Anahtar teslim endüstriyel tesis kurulumu, makine montajı ve devreye alma hizmetleri.",
     image: "/img/kurulumlar.jpeg",
-    category: "Kurulum"
+    category: "Kurulum",
+    slug: { current: "endustriyel-tesis-kurulumu" }
   },
   {
     title: "Özel Kaynak ve Metal İşleri",
     description: "Sertifikalı kaynakçılarımızla yüksek basınçlı kaplar ve yapısal çelik kaynak işleri.",
     image: "/img/Kaynakİşleri.jpeg",
-    category: "İmalat"
+    category: "İmalat",
+    slug: { current: "ozel-kaynak-ve-metal-isleri" }
   }
 ];
 
@@ -133,10 +143,10 @@ export default function ServicesSection({ data, title, subtitle, limit }: Servic
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
-                className="group"
+                className="group h-full"
               >
-                <Link href={serviceSlug} className="block relative">
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] mb-8 shadow-primary-premium">
+                <Link href={serviceSlug} className="block relative h-full">
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-primary-premium h-full min-h-[450px]">
                     <Image
                       src={serviceImage || "/img/gorsel01.jpeg"}
                       alt={service.title}
@@ -144,16 +154,16 @@ export default function ServicesSection({ data, title, subtitle, limit }: Servic
                       className="object-cover transition-transform duration-1000 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-950/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
                     
-                    <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500">
                       <span className="inline-block px-4 py-1 bg-secondary-600 text-white text-[9px] font-black uppercase tracking-widest rounded-full mb-4">
                         {service.category || "Hizmet"}
                       </span>
                       <h3 className="text-2xl md:text-3xl font-black text-white mb-4 tracking-tighter leading-tight">
                         {service.title}
                       </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-3">
+                      <p className="text-gray-300 text-sm leading-relaxed mb-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500 line-clamp-3">
                         {service.description}
                       </p>
                       <div className="w-12 h-1 bg-secondary-500 group-hover:w-full transition-all duration-700 rounded-full" />
