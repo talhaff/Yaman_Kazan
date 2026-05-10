@@ -18,12 +18,18 @@ const navigation = [
       { name: "Referanslar", href: "/kurumsal/referanslar" },
       { name: "Sertifikalar", href: "/kurumsal/sertifikalar" },
       { name: "Entegre Yönetim Politikası", href: "/kurumsal/kalite-politikasi" },
-      { name: "Katalog", href: "/kurumsal/katalog" },
-      { name: "Kariyer", href: "/kurumsal/kariyer" },
+
     ]
   },
   { name: "Faaliyet Alanları", href: "/faaliyet-alanlari" },
-  { name: "Projeler", href: "/projeler" },
+  { 
+    name: "Projeler", 
+    href: "/projeler",
+    dropdown: [
+      { name: "Tamamlanan Projeler", href: "/projeler?filter=completed" },
+      { name: "Devam Eden Projeler", href: "/projeler?filter=ongoing" },
+    ]
+  },
   { name: "İletişim", href: "/iletisim" },
 ];
 

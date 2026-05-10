@@ -78,15 +78,39 @@ export default function IletisimPage() {
 
               {/* Social / Direct Contact */}
               <div className="mt-20 pt-10 border-t border-gray-100">
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-8">Hızlı İletişim</p>
-                <a 
-                  href={CONTACT_INFO.whatsapp} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-4 px-10 py-5 bg-[#25D366] text-white font-black uppercase tracking-tighter rounded-2xl hover:scale-105 transition-transform shadow-2xl shadow-[#25D366]/20"
-                >
-                  <MessageCircle className="h-6 w-6" /> WhatsApp Hattı
-                </a>
+                <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-8">Hızlı İletişim & Kartvizit</p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href={CONTACT_INFO.whatsapp} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-4 px-10 py-5 bg-[#25D366] text-white font-black uppercase tracking-tighter rounded-2xl hover:scale-105 transition-transform shadow-2xl shadow-[#25D366]/20 flex-1"
+                  >
+                    <MessageCircle className="h-6 w-6" /> WhatsApp Hattı
+                  </a>
+                  <a 
+                    href="/img/kartvizit.jpeg" 
+                    target="_blank"
+                    className="inline-flex items-center justify-center gap-4 px-10 py-5 bg-primary-950 text-white font-black uppercase tracking-tighter rounded-2xl hover:bg-secondary-600 transition-all shadow-2xl shadow-primary-950/20 flex-1"
+                  >
+                    Kartviziti İndir
+                  </a>
+                </div>
+
+                {/* Business Card Preview */}
+                <div className="mt-12 group relative">
+                  <div className="absolute inset-0 bg-secondary-500/20 blur-3xl rounded-full scale-75 group-hover:scale-100 transition-transform duration-700 -z-10 opacity-50"></div>
+                  <div className="relative aspect-[1.6/1] w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-100 transition-all duration-700 group-hover:scale-[1.02] group-hover:rotate-1">
+                    <img 
+                      src="/img/kartvizit.jpeg" 
+                      alt="Yunus Yaman Kartvizit" 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                      <p className="text-white font-black text-xs uppercase tracking-widest">Yunus Yaman — Proje Müdürü</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

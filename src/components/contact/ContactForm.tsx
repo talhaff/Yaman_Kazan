@@ -2,19 +2,54 @@
 
 import { useState } from "react";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
+import { CONTACT_INFO } from "@/lib/constants";
+import { sendContactEmail } from "@/app/actions/contact";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "Genel Bilgi Talebi",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      // 1. WhatsApp Mesajını Hazırla
+      const wpMessage = `Merhaba, İletişim Formundan Yeni Mesaj:\n\n` +
+        `• Ad Soyad: ${formData.name}\n` +
+        `• E-Posta: ${formData.email}\n` +
+        `• Telefon: ${formData.phone}\n` +
+        `• Konu: ${formData.subject}\n\n` +
+        `Mesaj:\n${formData.message}`;
+      
+      const wpUrl = `https://wa.me/${CONTACT_INFO.phoneRaw}?text=${encodeURIComponent(wpMessage)}`;
+
+      // 2. Arka Planda E-Posta Gönderimi (Server Action)
+      await sendContactEmail(formData);
+
+      // 3. Başarılı Durumu ve WhatsApp'a Yönlendirme
       setStatus("success");
-      // Reset form after success would be here
-    }, 1500);
+      
+      // Kısa bir süre sonra WP'ye yönlendir
+      setTimeout(() => {
+        window.open(wpUrl, "_blank");
+      }, 1000);
+
+    } catch (error) {
+      console.error("Form gönderim hatası:", error);
+      setStatus("error");
+    }
   };
 
   if (status === "success") {
@@ -23,15 +58,15 @@ export default function ContactForm() {
         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 text-green-600">
           <CheckCircle2 className="h-10 w-10" />
         </div>
-        <h3 className="text-2xl font-black text-primary-950 mb-4">Mesajınız Alındı!</h3>
+        <h3 className="text-2xl font-black text-primary-950 mb-4">Mesajınız Hazırlandı!</h3>
         <p className="text-gray-600 mb-8 font-medium">
-          Bizimle iletişime geçtiğiniz için teşekkür ederiz. Uzman ekibimiz en kısa sürede size dönüş yapacaktır.
+          Bilgileriniz kaydedildi. Şimdi otomatik olarak WhatsApp hattımıza yönlendiriliyorsunuz...
         </p>
         <button 
           onClick={() => setStatus("idle")}
           className="px-8 py-3 bg-primary-900 text-white font-bold rounded-xl hover:bg-primary-950 transition-all"
         >
-          Yeni Mesaj Gönder
+          Geri Dön
         </button>
       </div>
     );
@@ -50,6 +85,9 @@ export default function ContactForm() {
             <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-1">Adınız Soyadınız</label>
             <input 
               required
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               type="text" 
               className="w-full px-6 py-4 rounded-2xl bg-zinc-50 border-none focus:ring-2 focus:ring-secondary-500 outline-none transition-all font-medium text-primary-950 placeholder:text-gray-300" 
               placeholder="Ahmet Yılmaz" 
@@ -59,6 +97,9 @@ export default function ContactForm() {
             <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-1">E-Posta Adresiniz</label>
             <input 
               required
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               type="email" 
               className="w-full px-6 py-4 rounded-2xl bg-zinc-50 border-none focus:ring-2 focus:ring-secondary-500 outline-none transition-all font-medium text-primary-950 placeholder:text-gray-300" 
               placeholder="ahmet@email.com" 
@@ -71,6 +112,9 @@ export default function ContactForm() {
             <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-1">Telefon No</label>
             <input 
               required
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
               type="tel" 
               className="w-full px-6 py-4 rounded-2xl bg-zinc-50 border-none focus:ring-2 focus:ring-secondary-500 outline-none transition-all font-medium text-primary-950 placeholder:text-gray-300" 
               placeholder="05xx xxx xx xx" 
@@ -78,7 +122,12 @@ export default function ContactForm() {
           </div>
           <div className="space-y-2">
             <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-1">Konu</label>
-            <select className="w-full px-6 py-4 rounded-2xl bg-zinc-50 border-none focus:ring-2 focus:ring-secondary-500 outline-none transition-all font-medium text-primary-950 appearance-none cursor-pointer">
+            <select 
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              className="w-full px-6 py-4 rounded-2xl bg-zinc-50 border-none focus:ring-2 focus:ring-secondary-500 outline-none transition-all font-medium text-primary-950 appearance-none cursor-pointer"
+            >
               <option>Genel Bilgi Talebi</option>
               <option>Teklif İstiyorum</option>
               <option>Teknik Destek</option>
@@ -91,6 +140,9 @@ export default function ContactForm() {
           <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-1">Mesajınız</label>
           <textarea 
             required
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             rows={5} 
             className="w-full px-6 py-4 rounded-2xl bg-zinc-50 border-none focus:ring-2 focus:ring-secondary-500 outline-none transition-all font-medium text-primary-950 placeholder:text-gray-300 resize-none" 
             placeholder="Mesajınızı buraya yazın..."
@@ -105,10 +157,11 @@ export default function ContactForm() {
           {status === "loading" ? (
             <Loader2 className="h-6 w-6 animate-spin" />
           ) : (
-            <>Mesajı Gönder <Send className="h-5 w-5" /></>
+            <>Mesajı Gönder & WP'ye Yönlen <Send className="h-5 w-5" /></>
           )}
         </button>
       </form>
     </div>
   );
 }
+

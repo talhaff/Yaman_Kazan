@@ -10,15 +10,69 @@ import { Calendar, User, Tag, MapPin, CheckCircle2, Clock } from "lucide-react";
 
 export const revalidate = 60;
 
+const fallbackProjects = [
+  {
+    title: "TÜPRAŞ İzmir Günlük Bakım İşleri",
+    category: "revision",
+    mainImage: { asset: { _ref: "fallback-1" }, url: "/img/hidroelektriksantral02.jpeg" },
+    status: "ongoing",
+    slug: { current: "tupras-izmir-bakim" },
+    client: "TÜPRAŞ",
+    location: "İzmir",
+    description: "Tüpraş İzmir rafinerisinde periyodik bakım ve onarım hizmetleri.",
+    content: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Tüpraş İzmir rafinerisinde yürütülen bu proje kapsamında, tesisin günlük mekanik bakım işleri, boru hattı revizyonları ve periyodik kontrol hizmetleri Yaman Kazan uzmanlığıyla sunulmaktadır." }],
+        style: "normal"
+      }
+    ],
+    gallery: [
+      { asset: { _ref: "fallback-gal-1" }, url: "/img/Kaynakİşleri.jpeg" },
+      { asset: { _ref: "fallback-gal-2" }, url: "/img/hidroelektriksantral01.jpeg" }
+    ]
+  },
+  {
+    title: "MOL Macaristan Boru İmalat",
+    category: "mechanical",
+    mainImage: { asset: { _ref: "fallback-2" }, url: "/img/Kaynakİşleri.jpeg" },
+    status: "completed",
+    slug: { current: "mol-macaristan-imalat" },
+    client: "MOL Group",
+    location: "Macaristan",
+    description: "Uluslararası standartlarda boru imalat ve montaj projesi.",
+    content: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Macaristan MOL Group tesisleri için gerçekleştirilen bu projede, yüksek basınçlı hatların imalatı ve montajı gerçekleştirilmiştir. Proje, uluslararası güvenlik ve kalite standartlarına tam uyum içerisinde başarıyla tamamlanmıştır." }],
+        style: "normal"
+      }
+    ],
+    gallery: [
+      { asset: { _ref: "fallback-gal-3" }, url: "/img/islemler.jpeg" },
+      { asset: { _ref: "fallback-gal-4" }, url: "/img/hidroelektriksantral02.jpeg" }
+    ]
+  },
+];
+
 export default async function ProjeDetayPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const project = await client.fetch(PROJECT_BY_SLUG_QUERY, { slug });
+  let project = await client.fetch(PROJECT_BY_SLUG_QUERY, { slug });
+
+  // Eğer Sanity'de yoksa fallbacklerde ara
+  if (!project) {
+    project = fallbackProjects.find(fp => fp.slug.current === slug);
+  }
 
   if (!project) {
     notFound();
   }
 
-  const mainImageUrl = project.mainImage ? urlForImage(project.mainImage).url() : null;
+  const mainImageUrl = project.mainImage?.asset?._ref?.startsWith("fallback") 
+    ? project.mainImage.url 
+    : project.mainImage ? urlForImage(project.mainImage).url() : null;
 
   return (
     <article className="min-h-screen bg-white">
@@ -103,17 +157,23 @@ export default async function ProjeDetayPage({ params }: { params: Promise<{ slu
                       <div className="h-px bg-gray-100 flex-1"></div>
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      {project.gallery.map((img: any, index: number) => (
-                        <div key={index} className="group relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-xl bg-gray-100">
-                          <Image 
-                            src={urlForImage(img).url()} 
-                            alt={`${project.title} - ${index + 1}`} 
-                            fill 
-                            className="object-cover group-hover:scale-110 transition-transform duration-1000"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        </div>
-                      ))}
+                      {project.gallery.map((img: any, index: number) => {
+                        const galleryImgUrl = img.asset?._ref?.startsWith("fallback") 
+                          ? img.url 
+                          : urlForImage(img).url();
+
+                        return (
+                          <div key={index} className="group relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-xl bg-gray-100">
+                            <Image 
+                              src={galleryImgUrl} 
+                              alt={`${project.title} - ${index + 1}`} 
+                              fill 
+                              className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 )}

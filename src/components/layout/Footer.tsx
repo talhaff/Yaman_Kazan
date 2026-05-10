@@ -8,12 +8,12 @@ const footerLinks = {
     { name: "Hakkımızda", href: "/kurumsal/hakkimizda" },
     { name: "Referanslar", href: "/kurumsal/referanslar" },
     { name: "Sertifikalar", href: "/kurumsal/sertifikalar" },
-    { name: "Katalog", href: "/kurumsal/katalog" },
+
   ],
   hizmetler: [
     { name: "Faaliyet Alanları", href: "/faaliyet-alanlari" },
     { name: "Projeler", href: "/projeler" },
-    { name: "Kariyer", href: "/kurumsal/kariyer" },
+
     { name: "İletişim", href: "/iletisim" },
   ],
 };
