@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     template: "%s | Yaman Kazan",
   },
   description: "Rize'de faaliyet gösteren Yaman Kazan, ağır sanayi, kazan üretimi ve endüstriyel tesis kurulumu, mekanik montaj ve bakım hizmetlerinde güvenilir çözüm ortağınızdır.",
+  icons: {
+    icon: "/img/logoyaman-1.png",
+    apple: "/img/logoyaman-1.png",
+  },
   openGraph: {
     title: "Yaman Kazan | Endüstriyel Taahhüt ve Kazan Üretimi",
     description: "Ağır sanayi, kazan üretimi ve endüstriyel tesis kurulumunda lider marka.",
