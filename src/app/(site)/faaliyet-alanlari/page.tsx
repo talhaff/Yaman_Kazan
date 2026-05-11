@@ -1,18 +1,12 @@
 import PageHeader from "@/components/ui/PageHeader";
-import ServicesSection from "@/components/home/ServicesSection";
-import { client } from "@/sanity/lib/client";
-import { ALL_SERVICES_QUERY } from "@/sanity/lib/queries";
+import GigesServicesGrid from "@/components/services/GigesServicesGrid";
 
 export const metadata = {
   title: "Faaliyet Alanları",
   description: "Yaman Kazan faaliyet alanları ve uzmanlıkları.",
 };
 
-export const revalidate = 60;
-
-export default async function FaaliyetAlanlariPage() {
-  const services = await client.fetch(ALL_SERVICES_QUERY);
-
+export default function FaaliyetAlanlariPage() {
   return (
     <>
       <PageHeader 
@@ -22,7 +16,7 @@ export default async function FaaliyetAlanlariPage() {
       />
       
       <div className="bg-white">
-        <ServicesSection data={services} />
+        <GigesServicesGrid />
       </div>
     </>
   );
