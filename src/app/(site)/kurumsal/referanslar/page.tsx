@@ -45,9 +45,9 @@ export default function ReferanslarPage() {
 
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-secondary-600 font-black tracking-[0.2em] uppercase text-xs block mb-4">Küresel İş Ortaklarımız</span>
+            <span className="text-primary-800 font-black tracking-[0.2em] uppercase text-xs block mb-4">Küresel İş Ortaklarımız</span>
             <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter leading-tight uppercase">
-              BİRLİKTE <span className="text-gradient">GÜÇLÜYÜZ</span>
+              BİRLİKTE <span className="text-primary-800">GÜÇLÜYÜZ</span>
             </h2>
           </div>
 
@@ -79,17 +79,17 @@ export default function ReferanslarPage() {
           <div className="mt-32 relative">
             <div className="bg-primary-950 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
               {/* Background Glow */}
-              <div className="absolute -top-24 -right-24 w-64 h-64 bg-secondary-600/20 rounded-full blur-3xl"></div>
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary-800/10 rounded-full blur-3xl"></div>
               
               <div className="relative z-10 max-w-3xl mx-auto">
                 <h3 className="text-3xl md:text-4xl font-black text-white mb-6 tracking-tight uppercase leading-tight">
-                  SİZİN PROJENİZİ DE <br /> <span className="text-secondary-500">BAŞARIYLA</span> TAMAMLAYALIM
+                  SİZİN PROJENİZİ DE <br /> <span className="text-primary-800">BAŞARIYLA</span> TAMAMLAYALIM
                 </h3>
                 <p className="text-white/60 text-lg mb-10 font-medium leading-relaxed">
                   Çeyrek asırlık tecrübemiz ve güçlü teknik altyapımızla endüstriyel tesis projelerinizde en güvenilir çözüm ortağınız olmaya hazırız.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <a href="/iletisim" className="px-10 py-5 bg-secondary-600 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-secondary-500 transition-all hover:scale-105 shadow-xl shadow-secondary-600/20 active:scale-95">
+                  <a href="/iletisim" className="px-10 py-5 bg-white text-primary-950 font-black uppercase tracking-widest rounded-2xl hover:bg-primary-50 transition-all hover:scale-105 shadow-xl active:scale-95">
                     İLETİŞİME GEÇİN
                   </a>
                   <a href="/projeler" className="px-10 py-5 bg-white/5 text-white border border-white/10 font-black uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all">

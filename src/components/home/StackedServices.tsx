@@ -10,17 +10,19 @@ import { services } from "@/constants/services";
 
 export default function StackedServices() {
   return (
-    <section className="bg-white">
-      <div className="container mx-auto px-6 py-20">
-        <div className="flex items-center gap-6 mb-12 md:mb-20">
-          <h2 className="text-5xl md:text-8xl font-black text-primary-950 tracking-tighter uppercase leading-none">
+    <section className="bg-slate-50 py-24 md:py-32">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="flex items-center gap-6 mb-12 md:mb-16">
+          <h2 className="text-4xl md:text-6xl font-black text-primary-950 tracking-tighter uppercase leading-none">
             Hizmetler
           </h2>
-          <div className="flex-1 h-px bg-gray-200 hidden md:block" />
-          <div className="h-3 w-3 rounded-full bg-primary-800" />
+          <div className="flex-1 h-px bg-slate-200 hidden md:block" />
+          <div className="w-6 h-6 rounded-full border-4 border-primary-800 flex items-center justify-center">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary-800" />
+          </div>
         </div>
 
-        <div className="relative">
+        <div className="relative space-y-6 md:space-y-8">
           {services.map((service, index) => (
             <ServiceCard key={index} service={service} index={index} total={services.length} />
           ))}
@@ -33,58 +35,76 @@ export default function StackedServices() {
 function ServiceCard({ service, index, total }: { service: typeof services[0], index: number, total: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Sticky with offset for stacking effect
-  const stickyOffset = 80 + (index * 20); // Each card stays slightly below the previous one
+  // Balanced sticky offset for horizontal focus
+  const stickyOffset = 80 + (index * 32); 
 
   return (
     <div 
       ref={containerRef}
-      className="sticky top-24 mb-10 last:mb-0 w-full"
+      className="sticky mb-10 md:mb-16 w-full"
       style={{ top: `${stickyOffset}px` }}
     >
       <motion.div 
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`relative overflow-hidden rounded-[2rem] md:rounded-[3rem] shadow-2xl ${service.color} min-h-[400px] md:min-h-[500px] flex items-center p-8 md:p-20`}
+        className={`relative overflow-hidden rounded-[2rem] md:rounded-[3.5rem] shadow-2xl ${service.color} min-h-[400px] md:min-h-[500px] flex items-center p-8 md:p-20`}
         style={
           service.color.includes('bg-primary-900') ? { backgroundColor: '#1e3a8a' } : 
           service.color.includes('bg-primary-950') ? { backgroundColor: '#172554' } : 
           service.color.includes('bg-slate-900') ? { backgroundColor: '#0f172a' } : {}
         }
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
-          {/* Number */}
-          <div className="lg:col-span-2">
-            <span className="text-8xl md:text-[12rem] font-black opacity-20 leading-none tracking-tighter select-none">
-              {service.number.split('').map((char, i) => (
-                <span key={i} className="inline-block">{char}</span>
-              ))}
-            </span>
-          </div>
+        {/* Background Number - Spread across the width */}
+        <div className="absolute -left-4 md:left-10 top-1/2 -translate-y-1/2 pointer-events-none opacity-[0.12] md:opacity-[0.18]">
+          <span className="text-[12rem] md:text-[22rem] font-black leading-none tracking-tighter text-white select-none">
+            {service.number}
+          </span>
+        </div>
 
-          {/* Content */}
-          <div className="lg:col-span-10 flex flex-col items-start w-full">
-            <div className="mb-4 flex items-center gap-4">
-              <div className="h-px w-8 md:w-12 bg-current opacity-30" />
-              <span className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] opacity-60">Hizmet Alanı</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-24 items-center w-full relative z-10">
+          {/* Content Side */}
+          <div className="lg:col-span-7 flex flex-col items-start md:pl-12">
+            <div className="mb-4 md:mb-6 flex items-center gap-4">
+              <div className="h-px w-10 md:w-16 bg-current opacity-40" />
+              <span className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] opacity-80">Hizmet Alanı</span>
             </div>
-            <h3 className="text-2xl md:text-5xl lg:text-7xl font-black mb-4 md:mb-8 uppercase tracking-tighter leading-tight md:leading-[0.85]">
+            
+            <h3 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 uppercase tracking-tighter leading-[0.95] text-white">
               {service.title}
             </h3>
-            <p className="text-sm md:text-xl lg:text-2xl opacity-70 mb-8 md:mb-12 max-w-4xl leading-relaxed font-medium">
+            
+            <p className="text-sm md:text-lg lg:text-xl text-white/80 mb-8 md:mb-12 max-w-3xl leading-relaxed font-medium">
               {service.description}
             </p>
+            
             <Link 
               href={`/faaliyet-alanlari/${service.slug}`}
-              className="inline-flex items-center gap-4 md:gap-6 px-8 md:px-12 py-4 md:py-6 bg-white text-primary-950 font-black uppercase tracking-widest text-[9px] md:text-[10px] rounded-xl md:rounded-2xl hover:scale-105 transition-all group shadow-xl"
+              className="inline-flex items-center gap-4 md:gap-6 px-10 md:px-14 py-4 md:py-6 bg-white text-primary-950 font-black uppercase tracking-widest text-[8px] md:text-[10px] rounded-2xl hover:scale-105 transition-all group shadow-2xl"
             >
-              KEŞFEDİN
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-primary-950 flex items-center justify-center group-hover:bg-primary-950 group-hover:border-primary-950 group-hover:text-white transition-all">
+              DAHA FAZLA
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-primary-950/20 flex items-center justify-center group-hover:bg-primary-950 group-hover:text-white transition-all">
                 <ArrowUpRight className="h-4 w-4 md:h-5 md:w-5" />
               </div>
             </Link>
+          </div>
+
+          {/* Image Side - Spread further right */}
+          <div className="lg:col-span-5 hidden lg:block">
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.6 }}
+              className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white/10"
+            >
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary-950/40 to-transparent" />
+            </motion.div>
           </div>
         </div>
       </motion.div>

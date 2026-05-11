@@ -1,12 +1,10 @@
+"use client";
+
 import PageHeader from "@/components/ui/PageHeader";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
 import { CONTACT_INFO } from "@/lib/constants";
-
-export const metadata = {
-  title: "İletişim",
-  description: "Yaman Kazan iletişim bilgileri ve formu.",
-};
+import { motion } from "framer-motion";
 
 export default function IletisimPage() {
   return (
@@ -31,7 +29,7 @@ export default function IletisimPage() {
                 HAYALİNİZDEKİ PROJEYİ <br /> <span className="text-gradient">BİRLİKTE</span> GERÇEKLEŞTİRELİM.
               </h2>
               
-              <div className="space-y-8 md:space-y-12">
+              <div className="space-y-10 md:space-y-14">
                 {[
                   { 
                     icon: MapPin, 
@@ -58,21 +56,28 @@ export default function IletisimPage() {
                     link: null 
                   },
                 ].map((item, idx) => (
-                  <div key={idx} className="flex gap-6 group">
-                    <div className="w-16 h-16 bg-primary-50 rounded-[1.25rem] flex items-center justify-center shrink-0 group-hover:bg-primary-950 group-hover:text-white transition-all duration-500 shadow-sm">
-                      <item.icon className="h-6 w-6" />
+                  <motion.div 
+                    key={idx} 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="flex gap-8 group items-start"
+                  >
+                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-primary-950 group-hover:text-white transition-all duration-500 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] border border-slate-100">
+                      <item.icon className="h-6 w-6 text-primary-950 group-hover:text-white transition-colors duration-500" />
                     </div>
                     <div>
-                      <h3 className="font-black text-[10px] text-gray-400 uppercase tracking-[0.2em] mb-2">{item.title}</h3>
+                      <h3 className="font-black text-[9px] md:text-[10px] text-gray-400 uppercase tracking-[0.3em] mb-3">{item.title}</h3>
                       {item.link ? (
-                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-primary-950 font-black hover:text-secondary-600 transition-colors block text-lg md:text-xl tracking-tight">
+                        <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-primary-950 font-black hover:text-primary-800 transition-colors block text-lg md:text-xl tracking-tight leading-snug max-w-sm">
                           {item.content}
-                        </a>
+                          </a>
                       ) : (
-                        <p className="text-primary-950 font-black text-lg md:text-xl tracking-tight">{item.content}</p>
+                        <p className="text-primary-950 font-black text-lg md:text-xl tracking-tight leading-snug">{item.content}</p>
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>

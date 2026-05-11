@@ -72,9 +72,9 @@ export default async function SertifikalarPage() {
       <section className="py-24 md:py-32 bg-zinc-50/50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-24">
-            <span className="text-secondary-600 font-black tracking-[0.3em] uppercase text-xs block mb-6">Kalite Standartlarımız</span>
+            <span className="text-primary-800 font-black tracking-[0.3em] uppercase text-xs block mb-6">Kalite Standartlarımız</span>
             <h2 className="text-4xl md:text-6xl font-black text-primary-950 mb-8 tracking-tighter leading-tight uppercase">
-              GÜVENİLİR VE <span className="text-gradient">SERTİFİKALI</span> ÇÖZÜMLER
+              GÜVENİLİR VE <span className="text-primary-800">SERTİFİKALI</span> ÇÖZÜMLER
             </h2>
             <p className="text-gray-500 text-lg md:text-xl leading-relaxed font-medium">
               Yaman Kazan, tüm imalat süreçlerinde ASME, EN ve ISO standartlarına tam uyum sağlar. 
@@ -91,7 +91,7 @@ export default async function SertifikalarPage() {
                 Kalite yönetim sistemlerimizin detayları ve üretim süreçlerimizdeki standartlarımız hakkında daha fazla bilgi almak için politikamızı inceleyebilirsiniz.
               </p>
             </div>
-            <a href="/kurumsal/kalite-politikasi" className="px-10 py-5 bg-primary-950 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-secondary-600 transition-all shadow-2xl shadow-primary-950/20 active:scale-95 whitespace-nowrap">
+            <a href="/kurumsal/kalite-politikasi" className="px-10 py-5 bg-primary-950 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-primary-800 transition-all shadow-2xl shadow-primary-950/20 active:scale-95 whitespace-nowrap">
               KALİTE POLİTİKAMIZ
             </a>
           </div>

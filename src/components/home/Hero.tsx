@@ -59,42 +59,42 @@ export default function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="bg-white/95 backdrop-blur-md rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 border border-white/20"
+            className="bg-white/95 backdrop-blur-md rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 border border-white/20"
           >
             <div className="flex items-center gap-4 md:gap-6 w-full md:w-auto">
-              <div className="w-14 h-14 md:w-20 md:h-20 bg-primary-950 rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-secondary-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                <Play className="h-6 w-6 md:h-8 md:w-8 text-white relative z-10 fill-white" />
+              <div className="w-12 h-12 md:w-20 md:h-20 bg-primary-950 rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-primary-800 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                <Play className="h-5 w-5 md:h-8 md:w-8 text-white relative z-10 fill-white" />
               </div>
               <div>
-                <span className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter leading-none">25<span className="text-secondary-600">+</span></span>
-                <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mt-1">Yıllık Deneyim</p>
+                <span className="text-2xl md:text-5xl font-black text-primary-950 tracking-tighter leading-none">25<span className="text-primary-800">+</span></span>
+                <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mt-1">Yıllık Deneyim</p>
               </div>
             </div>
 
             <div className="h-px w-full bg-gray-100 md:hidden" />
             <div className="h-12 w-px bg-gray-100 hidden lg:block" />
 
-            <div className="flex items-center gap-4 md:gap-5 w-full md:w-auto">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-50 rounded-lg md:rounded-xl flex items-center justify-center text-primary-950 shrink-0">
-                <MapPin className="h-5 w-5 md:h-6 md:w-6" />
+            <div className="flex items-center gap-3 md:gap-5 w-full md:w-auto">
+              <div className="w-9 h-9 md:w-12 md:h-12 bg-gray-50 rounded-lg md:rounded-xl flex items-center justify-center text-primary-950 shrink-0">
+                <MapPin className="h-4 w-4 md:h-6 md:w-6" />
               </div>
               <div>
-                <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-0.5">Adres</p>
-                <p className="text-xs md:text-sm font-black text-primary-950 leading-tight">Yeşiloba Mah. No:134/Z27 <br className="hidden md:block" /> Seyhan / ADANA</p>
+                <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-0.5">Adres</p>
+                <p className="text-[10px] md:text-sm font-black text-primary-950 leading-tight">Yeşiloba Mah. No:134/Z27 <br className="hidden md:block" /> Seyhan / ADANA</p>
               </div>
             </div>
 
             <div className="h-px w-full bg-gray-100 md:hidden" />
             <div className="h-12 w-px bg-gray-100 hidden lg:block" />
 
-            <div className="flex items-center gap-4 md:gap-5 w-full md:w-auto">
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-50 rounded-lg md:rounded-xl flex items-center justify-center text-primary-950 shrink-0">
-                <Mail className="h-5 w-5 md:h-6 md:w-6" />
+            <div className="flex items-center gap-3 md:gap-5 w-full md:w-auto">
+              <div className="w-9 h-9 md:w-12 md:h-12 bg-gray-50 rounded-lg md:rounded-xl flex items-center justify-center text-primary-950 shrink-0">
+                <Mail className="h-4 w-4 md:h-6 md:w-6" />
               </div>
               <div className="truncate">
-                <p className="text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-0.5">E-Posta</p>
-                <p className="text-xs md:text-sm font-black text-primary-950 leading-tight truncate">{CONTACT_INFO.email}</p>
+                <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-0.5">E-Posta</p>
+                <p className="text-[10px] md:text-sm font-black text-primary-950 leading-tight truncate">{CONTACT_INFO.email}</p>
               </div>
             </div>
           </motion.div>
