@@ -13,9 +13,9 @@ export default function Home() {
       <Hero />
       
       {/* Giges Style About Section - Optimized */}
-      <section className="py-16 md:py-24 bg-white relative">
+      <section className="py-16 md:py-20 bg-white relative">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             {/* Collage Side */}
             <div className="relative pl-10 pb-10">
@@ -84,7 +84,7 @@ export default function Home() {
               </div>
 
               <Link
-                href="/kurumsal"
+                href="/kurumsal/hakkimizda"
                 className="inline-flex items-center gap-4 text-primary-950 font-black uppercase tracking-widest text-[10px] group"
               >
                 DAHA FAZLA BİLGİ
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
 
           {/* Bottom Stats Grid - Compact */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-24 pt-16 border-t border-slate-100">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16 pt-16 border-t border-slate-100">
             <div className="flex flex-col items-center lg:items-start group">
               <span className="text-3xl md:text-6xl font-black text-white tracking-tighter mb-1 transition-all group-hover:text-primary-800" style={{ WebkitTextStroke: "1px #172554" }}>
                 10<span className="text-primary-800 group-hover:text-primary-950">+</span>
@@ -129,7 +129,7 @@ export default function Home() {
       <StackedServices />
 
       {/* Unified Industrial Power Section - Features & CTA Merged */}
-      <section className="relative bg-primary-950 pt-24 pb-32 md:pt-32 md:pb-40 overflow-hidden">
+      <section className="relative bg-primary-950 pt-10 pb-12 md:pt-32 md:pb-32 overflow-hidden">
         {/* Immersive Background Visual */}
         <div className="absolute inset-0 z-0">
           <Image 
@@ -142,7 +142,7 @@ export default function Home() {
         </div>
 
         <div className="container mx-auto px-6 relative z-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             
             {/* Left Side: Strategic Advantages */}
             <div className="space-y-12">
@@ -237,7 +237,7 @@ export default function Home() {
                       </div>
                     </Link>
                     <Link
-                      href="/kurumsal"
+                      href="/kurumsal/hakkimizda"
                       className="w-full py-6 bg-transparent border border-white/20 text-white font-black uppercase tracking-widest text-[10px] rounded-2xl hover:bg-white/5 transition-all flex items-center justify-center"
                     >
                       TEKNİK KAPASİTEYİ İNCELEYİN

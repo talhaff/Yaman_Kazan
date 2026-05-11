@@ -7,6 +7,7 @@ import { Menu, X, Phone, ChevronRight, Mail, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { CONTACT_INFO } from "@/lib/constants";
+import { usePathname } from "next/navigation";
 
 const navigation = [
   { name: "Anasayfa", href: "/" },
@@ -37,6 +38,14 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -65,7 +74,7 @@ export default function Navbar() {
       >
         <nav className="container mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3 group">
+            <Link href="/" onClick={handleLogoClick} className="-m-1.5 p-1.5 flex items-center gap-3 group">
               <div className="transition-all duration-500 group-hover:scale-105">
                 <Image 
                   src="/img/logoarkaplansız.png" 

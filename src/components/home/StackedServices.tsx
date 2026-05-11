@@ -41,7 +41,7 @@ function ServiceCard({ service, index, total }: { service: typeof services[0], i
   return (
     <div 
       ref={containerRef}
-      className="sticky mb-10 md:mb-16 w-full"
+      className="sticky mb-2 md:mb-16 w-full"
       style={{ top: `${stickyOffset}px` }}
     >
       <motion.div 

@@ -55,9 +55,9 @@ export default function HakkimizdaPage() {
       />
       
       {/* Our Heritage Section - Immersive Grid */}
-      <section className="py-24 md:py-40 bg-white overflow-hidden">
+      <section className="py-10 md:py-40 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -126,13 +126,13 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Vision & Mission - Dark Section */}
-      <section className="py-24 md:py-40 bg-primary-950 relative overflow-hidden">
+      <section className="py-10 md:py-40 bg-primary-950 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#fff_1px,transparent_1px)] bg-[length:40px_40px]" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-32">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -160,9 +160,9 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Values Section - Premium Grid */}
-      <section className="py-24 md:py-40 bg-slate-50">
+      <section className="py-10 md:py-40 bg-slate-50">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-8 md:mb-20">
             <div className="max-w-2xl">
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-px w-12 bg-primary-800" />
