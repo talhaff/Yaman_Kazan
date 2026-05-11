@@ -10,9 +10,9 @@ import { services } from "@/constants/services";
 
 export default function StackedServices() {
   return (
-    <section className="bg-slate-50 py-24 md:py-32">
+    <section className="bg-slate-50 pt-12 pb-24 md:pt-16 md:pb-32">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="flex items-center gap-6 mb-12 md:mb-16">
+        <div className="flex items-center gap-6 mb-8 md:mb-12">
           <h2 className="text-4xl md:text-6xl font-black text-primary-950 tracking-tighter uppercase leading-none">
             Hizmetler
           </h2>
@@ -49,7 +49,7 @@ function ServiceCard({ service, index, total }: { service: typeof services[0], i
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`relative overflow-hidden rounded-[2rem] md:rounded-[3.5rem] shadow-2xl ${service.color} min-h-[400px] md:min-h-[500px] flex items-center p-8 md:p-20`}
+        className={`relative overflow-hidden rounded-[2rem] md:rounded-[3.5rem] shadow-2xl ${service.color} min-h-[320px] md:min-h-[500px] flex items-center p-8 md:p-20`}
         style={
           service.color.includes('bg-primary-900') ? { backgroundColor: '#1e3a8a' } : 
           service.color.includes('bg-primary-950') ? { backgroundColor: '#172554' } : 
@@ -90,20 +90,19 @@ function ServiceCard({ service, index, total }: { service: typeof services[0], i
             </Link>
           </div>
 
-          {/* Image Side - Spread further right */}
+          {/* Image Side - Visible only on desktop */}
           <div className="lg:col-span-5 hidden lg:block">
             <motion.div
-              whileHover={{ scale: 1.03 }}
+              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.6 }}
-              className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white/10"
+              className="relative aspect-[16/10] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white/10 group"
             >
               <Image
                 src={service.image}
                 alt={service.title}
                 fill
-                className="object-cover"
+                className="object-cover transition-all duration-700 brightness-100 md:brightness-[0.8] md:group-hover:brightness-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary-950/40 to-transparent" />
             </motion.div>
           </div>
         </div>

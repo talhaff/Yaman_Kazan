@@ -52,49 +52,50 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Info Bar - Giges Style */}
-      <div className="absolute bottom-0 left-0 w-full z-30 pb-6 md:pb-10 px-4 md:px-6">
+      {/* Info Bar - White Frosted Glass Redesign */}
+      <div className="absolute bottom-0 left-0 w-full z-30 pb-6 md:pb-12 px-4 md:px-8">
         <div className="container mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="bg-white/95 backdrop-blur-md rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 border border-white/20"
+            transition={{ delay: 0.5, duration: 1 }}
+            className="bg-white/10 backdrop-blur-2xl rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 border border-white/20 relative overflow-hidden"
           >
-            <div className="flex items-center gap-4 md:gap-6 w-full md:w-auto">
-              <div className="w-12 h-12 md:w-20 md:h-20 bg-primary-950 rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-primary-800 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                <Play className="h-5 w-5 md:h-8 md:w-8 text-white relative z-10 fill-white" />
+            {/* Soft Ambient Glow */}
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary-400/10 blur-[100px] -z-0" />
+            
+            <div className="flex items-center gap-6 md:gap-8 w-full lg:w-auto group relative z-10">
+              <div className="w-16 h-16 md:w-24 md:h-24 bg-primary-500/10 border border-white/20 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center shrink-0 relative overflow-hidden">
+                <div className="absolute inset-0 bg-primary-500 translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
+                <Play className="h-6 w-6 md:h-10 md:w-10 text-primary-400 group-hover:text-white relative z-10 fill-current" />
               </div>
               <div>
-                <span className="text-2xl md:text-5xl font-black text-primary-950 tracking-tighter leading-none">25<span className="text-primary-800">+</span></span>
-                <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mt-1">Yıllık Deneyim</p>
+                <span className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none block">25<span className="text-primary-400">+</span></span>
+                <p className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.3em] text-white/50 mt-2">Yıllık Deneyim</p>
               </div>
             </div>
 
-            <div className="h-px w-full bg-gray-100 md:hidden" />
-            <div className="h-12 w-px bg-gray-100 hidden lg:block" />
+            <div className="hidden lg:block h-16 w-px bg-white/20" />
 
-            <div className="flex items-center gap-3 md:gap-5 w-full md:w-auto">
-              <div className="w-9 h-9 md:w-12 md:h-12 bg-gray-50 rounded-lg md:rounded-xl flex items-center justify-center text-primary-950 shrink-0">
-                <MapPin className="h-4 w-4 md:h-6 md:w-6" />
+            <div className="flex items-center gap-5 md:gap-7 w-full lg:w-auto relative z-10">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 border border-white/20 rounded-2xl md:rounded-3xl flex items-center justify-center text-primary-300 shrink-0">
+                <MapPin className="h-5 w-5 md:h-7 md:w-7" />
               </div>
               <div>
-                <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-0.5">Adres</p>
-                <p className="text-[10px] md:text-sm font-black text-primary-950 leading-tight">Yeşiloba Mah. No:134/Z27 <br className="hidden md:block" /> Seyhan / ADANA</p>
+                <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-1.5">Merkez Adres</p>
+                <p className="text-xs md:text-sm lg:text-base font-black text-white leading-tight uppercase tracking-tight">Yeşiloba Mah. No:134/Z27 <br className="hidden md:block" /> Seyhan / ADANA</p>
               </div>
             </div>
 
-            <div className="h-px w-full bg-gray-100 md:hidden" />
-            <div className="h-12 w-px bg-gray-100 hidden lg:block" />
+            <div className="hidden lg:block h-16 w-px bg-white/20" />
 
-            <div className="flex items-center gap-3 md:gap-5 w-full md:w-auto">
-              <div className="w-9 h-9 md:w-12 md:h-12 bg-gray-50 rounded-lg md:rounded-xl flex items-center justify-center text-primary-950 shrink-0">
-                <Mail className="h-4 w-4 md:h-6 md:w-6" />
+            <div className="flex items-center gap-5 md:gap-7 w-full lg:w-auto relative z-10">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-white/5 border border-white/20 rounded-2xl md:rounded-3xl flex items-center justify-center text-primary-300 shrink-0">
+                <Mail className="h-5 w-5 md:h-7 md:w-7" />
               </div>
               <div className="truncate">
-                <p className="text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-0.5">E-Posta</p>
-                <p className="text-[10px] md:text-sm font-black text-primary-950 leading-tight truncate">{CONTACT_INFO.email}</p>
+                <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-1.5">Kurumsal İletişim</p>
+                <p className="text-xs md:text-sm lg:text-base font-black text-white leading-tight truncate uppercase tracking-tight">{CONTACT_INFO.email}</p>
               </div>
             </div>
           </motion.div>

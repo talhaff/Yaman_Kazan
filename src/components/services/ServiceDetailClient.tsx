@@ -38,7 +38,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
             src={service.image}
             alt={service.title}
             fill
-            className="object-cover opacity-40 scale-105"
+            className="object-cover opacity-50 scale-105"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary-950/80 via-primary-950/40 to-white" />
@@ -196,7 +196,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  className="object-cover transition-all duration-700"
                 />
               </div>
               <div className="absolute -top-6 -right-6 md:-top-10 md:-right-10 w-24 h-24 md:w-40 md:h-40 border border-primary-400/30 rounded-full animate-pulse" />

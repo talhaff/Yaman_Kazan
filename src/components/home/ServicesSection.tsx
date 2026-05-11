@@ -154,7 +154,7 @@ export default function ServicesSection({ data, title, subtitle, limit }: Servic
                       className="object-cover transition-transform duration-1000 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-950/20 to-transparent opacity-40 md:opacity-70 md:group-hover:opacity-30 transition-opacity duration-500" />
                     
                     <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-transform duration-500">
                       <span className="inline-block px-4 py-1 bg-secondary-600 text-white text-[9px] font-black uppercase tracking-widest rounded-full mb-4">

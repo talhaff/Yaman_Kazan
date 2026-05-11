@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       
       {/* Giges Style About Section - Optimized */}
-      <section className="py-16 md:py-20 bg-white relative">
+      <section className="pt-16 pb-8 md:pt-20 md:pb-12 bg-white relative">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
@@ -95,31 +95,63 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Bottom Stats Grid - Compact */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16 pt-16 border-t border-slate-100">
-            <div className="flex flex-col items-center lg:items-start group">
-              <span className="text-3xl md:text-6xl font-black text-white tracking-tighter mb-1 transition-all group-hover:text-primary-800" style={{ WebkitTextStroke: "1px #172554" }}>
-                10<span className="text-primary-800 group-hover:text-primary-950">+</span>
-              </span>
-              <span className="text-[10px] font-black uppercase tracking-widest text-primary-950/40 group-hover:text-primary-950">Ülkeler</span>
-            </div>
-            <div className="flex flex-col items-center lg:items-start group">
-              <span className="text-3xl md:text-6xl font-black text-white tracking-tighter mb-1 transition-all group-hover:text-primary-800" style={{ WebkitTextStroke: "1px #172554" }}>
-                150<span className="text-primary-800 group-hover:text-primary-950">+</span>
-              </span>
-              <span className="text-[10px] font-black uppercase tracking-widest text-primary-950/40 group-hover:text-primary-950">Projeler</span>
-            </div>
-            <div className="flex flex-col items-center lg:items-start group">
-              <span className="text-3xl md:text-6xl font-black text-white tracking-tighter mb-1 transition-all group-hover:text-primary-800" style={{ WebkitTextStroke: "1px #172554" }}>
-                25<span className="text-primary-800 group-hover:text-primary-950">+</span>
-              </span>
-              <span className="text-[10px] font-black uppercase tracking-widest text-primary-950/40 group-hover:text-primary-950">Yıllık Deneyim</span>
-            </div>
-            <div className="flex flex-col items-center lg:items-start group">
-              <span className="text-3xl md:text-6xl font-black text-white tracking-tighter mb-1 transition-all group-hover:text-primary-800" style={{ WebkitTextStroke: "1px #172554" }}>
-                5K<span className="text-primary-800 group-hover:text-primary-950">+</span>
-              </span>
-              <span className="text-[10px] font-black uppercase tracking-widest text-primary-950/40 group-hover:text-primary-950">Mutlu Müşteri</span>
+          {/* Bottom Stats Grid - Premium Redesign */}
+          <div className="mt-12 md:mt-16 relative overflow-hidden">
+            {/* Subtle background for the whole section */}
+            <div className="absolute inset-0 bg-slate-50/50 rounded-[2rem] md:rounded-[3rem] -z-10" />
+            
+            <div className="grid grid-cols-2 lg:grid-cols-4 relative z-10">
+              {/* Stat 1 */}
+              <div className="flex flex-col items-center py-10 md:py-16 border-r border-b lg:border-b-0 border-slate-200/60 group transition-colors hover:bg-white/40">
+                <div className="relative mb-3 md:mb-4">
+                  <span className="text-4xl md:text-7xl font-black text-primary-950 tracking-tighter leading-none block transform group-hover:scale-105 transition-transform duration-500">
+                    10<span className="text-primary-600">+</span>
+                  </span>
+                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary-600/10 rounded-full overflow-hidden">
+                    <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
+                  </div>
+                </div>
+                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">Ülkeler</span>
+              </div>
+              
+              {/* Stat 2 */}
+              <div className="flex flex-col items-center py-10 md:py-16 border-b lg:border-b-0 lg:border-r border-slate-200/60 group transition-colors hover:bg-white/40">
+                <div className="relative mb-3 md:mb-4">
+                  <span className="text-4xl md:text-7xl font-black text-primary-950 tracking-tighter leading-none block transform group-hover:scale-105 transition-transform duration-500">
+                    150<span className="text-primary-600">+</span>
+                  </span>
+                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary-600/10 rounded-full overflow-hidden">
+                    <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
+                  </div>
+                </div>
+                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">Projeler</span>
+              </div>
+
+              {/* Stat 3 */}
+              <div className="flex flex-col items-center py-10 md:py-16 border-r border-slate-200/60 group transition-colors hover:bg-white/40">
+                <div className="relative mb-3 md:mb-4">
+                  <span className="text-4xl md:text-7xl font-black text-primary-950 tracking-tighter leading-none block transform group-hover:scale-105 transition-transform duration-500">
+                    25<span className="text-primary-600">+</span>
+                  </span>
+                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary-600/10 rounded-full overflow-hidden">
+                    <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
+                  </div>
+                </div>
+                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">Yıllık Deneyim</span>
+              </div>
+
+              {/* Stat 4 */}
+              <div className="flex flex-col items-center py-10 md:py-16 group transition-colors hover:bg-white/40">
+                <div className="relative mb-3 md:mb-4">
+                  <span className="text-4xl md:text-7xl font-black text-primary-950 tracking-tighter leading-none block transform group-hover:scale-105 transition-transform duration-500">
+                    5K<span className="text-primary-600">+</span>
+                  </span>
+                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary-600/10 rounded-full overflow-hidden">
+                    <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
+                  </div>
+                </div>
+                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">Mutlu Müşteri</span>
+              </div>
             </div>
           </div>
         </div>

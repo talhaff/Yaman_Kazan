@@ -27,7 +27,7 @@ export const services = [
     number: "4",
     title: "Tesis Kurulumu",
     description: "Yeni üretim hatları ve endüstriyel tesislerin planlanmasından fiziksel kurulumuna kadar tüm aşamalarda uzman kadromuzla yanınızdayız.",
-    image: "/img/gorsel01.jpeg",
+    image: "/img/kurulumlar.jpeg",
     slug: "tesis-kurulumu",
     color: "bg-slate-900 text-white"
   },
