@@ -102,6 +102,7 @@ function ServiceCard({ service, index, total }: { service: typeof services[0], i
                 alt={service.title}
                 fill
                 className="object-cover transition-all duration-700 brightness-100 md:brightness-[0.8] md:group-hover:brightness-110"
+                sizes="(max-width: 1024px) 100vw, 40vw"
               />
             </motion.div>
           </div>

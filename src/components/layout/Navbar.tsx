@@ -79,10 +79,12 @@ export default function Navbar() {
                 <Image 
                   src="/img/logoarkaplansız.png" 
                   alt="Yaman Kazan Logo" 
-                  width={300} 
-                  height={100} 
+                  width={600} 
+                  height={200} 
+                  quality={100}
+                  unoptimized
                   className={cn(
-                    "h-16 md:h-24 w-auto object-contain transition-all duration-300",
+                    "h-14 md:h-20 w-auto object-contain transition-all duration-300",
                     !scrolled && "brightness-0 invert"
                   )}
                   priority
@@ -184,9 +186,11 @@ export default function Navbar() {
                   <Image 
                     src="/img/logoarkaplansız.png" 
                     alt="Yaman Kazan Logo" 
-                    width={200} 
-                    height={70} 
-                    className="h-12 w-auto object-contain"
+                    width={400} 
+                    height={140} 
+                    quality={100}
+                    unoptimized
+                    className="h-10 w-auto object-contain"
                   />
                 </Link>
               </div>

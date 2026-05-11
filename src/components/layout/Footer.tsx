@@ -46,9 +46,11 @@ export default function Footer() {
                 <Image 
                   src="/img/logoarkaplansız.png" 
                   alt="Yaman Kazan Logo" 
-                  width={350} 
-                  height={120} 
-                  className="h-16 md:h-24 w-auto object-contain brightness-0 invert"
+                  width={700} 
+                  height={240} 
+                  quality={100}
+                  unoptimized
+                  className="h-14 md:h-20 w-auto object-contain brightness-0 invert"
                 />
               </div>
             </Link>
