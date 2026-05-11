@@ -3,6 +3,7 @@ import { client } from "@/sanity/lib/client";
 import { ALL_CERTIFICATES_QUERY } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/image";
 import CertificateGallery from "@/components/certificates/CertificateGallery";
+import Link from "next/link";
 
 export const metadata = {
   title: "Sertifikalar",
@@ -54,6 +55,7 @@ export default async function SertifikalarPage() {
   const sanityCertificates = await client.fetch(ALL_CERTIFICATES_QUERY);
   const sanityData = sanityCertificates || [];
   
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const displayCerts = (sanityData.length > 0 ? sanityData : fallbackCertificates).map((cert: any) => ({
     title: cert.title,
     issuer: cert.issuer,
@@ -91,9 +93,9 @@ export default async function SertifikalarPage() {
                 Kalite yönetim sistemlerimizin detayları ve üretim süreçlerimizdeki standartlarımız hakkında daha fazla bilgi almak için politikamızı inceleyebilirsiniz.
               </p>
             </div>
-            <a href="/kurumsal/kalite-politikasi" className="px-10 py-5 bg-primary-950 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-primary-800 transition-all shadow-2xl shadow-primary-950/20 active:scale-95 whitespace-nowrap">
+            <Link href="/kurumsal/kalite-politikasi" className="px-10 py-5 bg-primary-950 text-white font-black uppercase tracking-widest rounded-2xl hover:bg-primary-800 transition-all shadow-2xl shadow-primary-950/20 active:scale-95 whitespace-nowrap">
               KALİTE POLİTİKAMIZ
-            </a>
+            </Link>
           </div>
         </div>
       </section>

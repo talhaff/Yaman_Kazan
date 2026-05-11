@@ -36,6 +36,19 @@ const fallbackProjects = [
   },
 ];
 
+interface Project {
+  title: string;
+  category?: string;
+  image?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mainImage?: any;
+  status?: string;
+  slug?: { current: string };
+  client?: string;
+  location?: string;
+  description?: string;
+}
+
 export default async function ProjelerPage({ 
   searchParams 
 }: { 
@@ -50,9 +63,9 @@ export default async function ProjelerPage({
 
   // Filtreleme mantığı
   if (filter === "completed") {
-    displayProjects = displayProjects.filter((p: any) => p.status === "completed" || p.status === "Tamamlandı");
+    displayProjects = displayProjects.filter((p: Project) => p.status === "completed" || p.status === "Tamamlandı");
   } else if (filter === "ongoing") {
-    displayProjects = displayProjects.filter((p: any) => p.status === "ongoing" || p.status === "Devam Ediyor");
+    displayProjects = displayProjects.filter((p: Project) => p.status === "ongoing" || p.status === "Devam Ediyor");
   }
 
   return (
@@ -97,7 +110,7 @@ export default async function ProjelerPage({
 
           {displayProjects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16">
-              {displayProjects.map((project: any, index: number) => {
+              {displayProjects.map((project: Project, index: number) => {
                 const projectImage = project.mainImage 
                   ? urlForImage(project.mainImage).url() 
                   : project.image;

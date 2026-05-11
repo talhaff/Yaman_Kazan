@@ -13,7 +13,7 @@ import {
   ArrowRight
 } from "lucide-react";
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, React.ElementType> = {
   "1": Wind,
   "2": Building2,
   "3": Settings,

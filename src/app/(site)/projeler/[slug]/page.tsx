@@ -128,9 +128,9 @@ export default async function ProjeDetayPage({ params }: { params: Promise<{ slu
                   </div>
 
                   <div className="mt-12">
-                    <a href="/iletisim" className="block w-full py-5 bg-secondary-600 text-white text-center font-black rounded-2xl hover:bg-secondary-700 transition-all shadow-lg hover:shadow-secondary-600/30 transform hover:-translate-y-1 uppercase tracking-wider text-sm">
+                    <Link href="/iletisim" className="block w-full py-5 bg-secondary-600 text-white text-center font-black rounded-2xl hover:bg-secondary-700 transition-all shadow-lg hover:shadow-secondary-600/30 transform hover:-translate-y-1 uppercase tracking-wider text-sm">
                       Benzer Proje İçin Teklif Alın
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export default async function ProjeDetayPage({ params }: { params: Promise<{ slu
                       <div className="h-px bg-gray-100 flex-1"></div>
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      {project.gallery.map((img: any, index: number) => {
+                      {project.gallery.map((img: { asset?: { _ref: string }, url: string }, index: number) => {
                         const galleryImgUrl = img.asset?._ref?.startsWith("fallback") 
                           ? img.url 
                           : urlForImage(img).url();

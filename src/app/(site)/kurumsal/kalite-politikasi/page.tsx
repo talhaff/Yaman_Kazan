@@ -42,7 +42,7 @@ export default function KalitePolitikasiPage() {
 
             <div className="mt-12 p-6 bg-primary-900 rounded-2xl text-white">
               <p className="font-medium italic leading-relaxed text-center">
-                "Yaman Kazan olarak vizyonumuz; üstlendiğimiz tüm projelerde uluslararası standartlara uymak, çevreye saygılı olmak ve çalışanlarımızın güvenliğini her şeyin üstünde tutarak sektörde öncü ve kalıcı bir marka olmaktır."
+                &quot;Yaman Kazan olarak vizyonumuz; üstlendiğimiz tüm projelerde uluslararası standartlara uymak, çevreye saygılı olmak ve çalışanlarımızın güvenliğini her şeyin üstünde tutarak sektörde öncü ve kalıcı bir marka olmaktır.&quot;
               </p>
               <div className="text-center mt-4">
                 <span className="font-bold block text-secondary-500">Yunus Yaman</span>

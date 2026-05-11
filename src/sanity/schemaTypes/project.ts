@@ -7,7 +7,7 @@ export const project = {
       name: "title",
       title: "Proje Adı",
       type: "string",
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
     },
     {
       name: "slug",
@@ -17,7 +17,7 @@ export const project = {
         source: "title",
         maxLength: 96,
       },
-      validation: (Rule: { required: () => any }) => Rule.required(),
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
     },
     {
       name: "description",

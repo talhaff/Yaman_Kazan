@@ -6,7 +6,17 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { urlForImage } from "@/sanity/lib/image";
 
-const fallbackServices = [
+interface Service {
+  title: string;
+  description: string;
+  image: string;
+  category?: string;
+  slug: { current: string };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mainImage?: any;
+}
+
+const fallbackServices: Service[] = [
   {
     title: "Saha Montaj ve Ekipman Kurulumu",
     description: "Endüstriyel tesislerde ekipman montajı, yapısal entegrasyon ve saha kurulum süreçleri uzman ekiplerimizce yönetilmektedir.",
@@ -80,7 +90,7 @@ const fallbackServices = [
 ];
 
 interface ServicesSectionProps {
-  data?: any[];
+  data?: Service[];
   title?: string;
   subtitle?: string;
   limit?: number;

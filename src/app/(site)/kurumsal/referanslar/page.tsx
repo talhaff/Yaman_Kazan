@@ -1,5 +1,6 @@
 import PageHeader from "@/components/ui/PageHeader";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "Referanslar",
@@ -89,12 +90,12 @@ export default function ReferanslarPage() {
                   Çeyrek asırlık tecrübemiz ve güçlü teknik altyapımızla endüstriyel tesis projelerinizde en güvenilir çözüm ortağınız olmaya hazırız.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <a href="/iletisim" className="px-10 py-5 bg-white text-primary-950 font-black uppercase tracking-widest rounded-2xl hover:bg-primary-50 transition-all hover:scale-105 shadow-xl active:scale-95">
+                  <Link href="/iletisim" className="px-10 py-5 bg-white text-primary-950 font-black uppercase tracking-widest rounded-2xl hover:bg-primary-50 transition-all hover:scale-105 shadow-xl active:scale-95">
                     İLETİŞİME GEÇİN
-                  </a>
-                  <a href="/projeler" className="px-10 py-5 bg-white/5 text-white border border-white/10 font-black uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all">
+                  </Link>
+                  <Link href="/projeler" className="px-10 py-5 bg-white/5 text-white border border-white/10 font-black uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all">
                     PROJELERİMİZİ İNCELEYİN
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

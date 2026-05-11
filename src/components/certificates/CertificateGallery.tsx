@@ -28,15 +28,24 @@ export default function CertificateGallery({ certificates }: CertificateGalleryP
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
 
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImage]);
+
   const openLightbox = (img: string, index: number) => {
     setSelectedImage(img);
     setCurrentIndex(index);
-    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
     setSelectedImage(null);
-    document.body.style.overflow = "unset";
   };
 
   const nextImage = (e: React.MouseEvent) => {

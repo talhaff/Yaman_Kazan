@@ -78,7 +78,7 @@ export default function HakkimizdaPage() {
                   Yaman Kazan, endüstriyel tesislerin her türlü mekanik montajı, ağır ekipman kurulumu ve basınçlı kaplar alanında faaliyet gösteren köklü bir mühendislik markasıdır.
                 </p>
                 <p>
-                  Adana'da temelleri atılan yolculuğumuz, bugün ulusal ve uluslararası arenada stratejik öneme sahip dev projelere imza atan bir mühendislik merkezine dönüşmüştür.
+                  Adana&apos;da temelleri atılan yolculuğumuz, bugün ulusal ve uluslararası arenada stratejik öneme sahip dev projelere imza atan bir mühendislik merkezine dönüşmüştür.
                 </p>
               </div>
 
