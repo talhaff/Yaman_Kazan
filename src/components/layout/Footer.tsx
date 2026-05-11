@@ -31,13 +31,13 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-5">
             <Link href="/" className="inline-block mb-10 group">
-              <div className="bg-white p-3 rounded-2xl transition-transform duration-500 group-hover:scale-105 shadow-xl">
+              <div className="transition-all duration-500 group-hover:scale-105">
                 <Image 
-                  src="/img/logoyaman-1.png" 
+                  src="/img/logoarkaplansız.png" 
                   alt="Yaman Kazan Logo" 
-                  width={200} 
-                  height={56} 
-                  className="h-9 md:h-10 w-auto object-contain"
+                  width={350} 
+                  height={120} 
+                  className="h-20 md:h-28 w-auto object-contain brightness-0 invert"
                 />
               </div>
             </Link>
@@ -47,16 +47,14 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a 
-                href={CONTACT_INFO.whatsapp} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-secondary-600 hover:border-secondary-600 transition-all group"
+                href={`tel:${CONTACT_INFO.phoneRaw}`} 
+                className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary-800 hover:border-primary-800 transition-all group"
               >
                 <Phone className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" />
               </a>
               <a 
                 href={`mailto:${CONTACT_INFO.email}`}
-                className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-secondary-600 hover:border-secondary-600 transition-all group"
+                className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-primary-800 hover:border-primary-800 transition-all group"
               >
                 <Mail className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" />
               </a>
@@ -70,13 +68,13 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-10 relative inline-block">
                 Kurumsal
-                <div className="absolute -bottom-2 left-0 w-8 h-1 bg-secondary-600 rounded-full" />
+                <div className="absolute -bottom-2 left-0 w-8 h-1 bg-primary-600 rounded-full" />
               </h4>
               <ul className="space-y-4">
                 {footerLinks.kurumsal.map((link) => (
                   <li key={link.name}>
                     <Link href={link.href} className="text-gray-400 hover:text-white transition-colors font-bold text-sm flex items-center gap-2 group">
-                      <div className="w-1.5 h-1.5 rounded-full bg-secondary-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                       {link.name}
                     </Link>
                   </li>
@@ -105,20 +103,20 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-black text-xs uppercase tracking-[0.3em] mb-10 relative inline-block">
                 İletişim
-                <div className="absolute -bottom-2 left-0 w-8 h-1 bg-secondary-600 rounded-full" />
+                <div className="absolute -bottom-2 left-0 w-8 h-1 bg-primary-600 rounded-full" />
               </h4>
               <ul className="space-y-8">
                 <li className="flex gap-4 group">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-secondary-600 group-hover:border-secondary-600 transition-all">
-                    <MapPin className="h-5 w-5 text-secondary-500 group-hover:text-white transition-colors" />
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-primary-800 group-hover:border-primary-800 transition-all">
+                    <MapPin className="h-5 w-5 text-primary-400 group-hover:text-white transition-colors" />
                   </div>
                   <span className="text-gray-400 text-sm leading-relaxed font-medium">
                     {CONTACT_INFO.address}
                   </span>
                 </li>
                 <li className="flex gap-4 group">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-secondary-600 group-hover:border-secondary-600 transition-all">
-                    <Phone className="h-5 w-5 text-secondary-500 group-hover:text-white transition-colors" />
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-primary-800 group-hover:border-primary-800 transition-all">
+                    <Phone className="h-5 w-5 text-primary-400 group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[10px] font-black uppercase tracking-widest text-gray-500">Bizi Arayın</span>

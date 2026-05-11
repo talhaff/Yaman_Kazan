@@ -34,7 +34,7 @@ export default function HakkimizdaPage() {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Yaman Kazan, endüstriyel tesislerin her türlü mekanik montajı, ağır ekipman kurulumu, basınçlı kaplar ve buhar kazanı imalatı alanında faaliyet gösteren köklü bir mühendislik firmasıdır. Rize'de başlayan yolculuğumuz, bugün ulusal ve uluslararası arenada dev projelere imza atan bir markaya dönüşmüştür.
+                  Yaman Kazan, endüstriyel tesislerin her türlü mekanik montajı, ağır ekipman kurulumu, basınçlı kaplar ve buhar kazanı imalatı alanında faaliyet gösteren köklü bir mühendislik firmasıdır. Adana'da başlayan yolculuğumuz, bugün ulusal ve uluslararası arenada dev projelere imza atan bir markaya dönüşmüştür.
                 </p>
                 <p>
                   Yer aldığımız tüm projelerde; yüksek kalite standartlarının gerekliliklerini, müşterilerimizin beklentilerini ve sahaya özel mühendislik çözümlerini bir arada sunuyoruz. Modern atölyelerimizde gerçekleştirdiğimiz imalat süreçlerinden, zorlu şantiye koşullarındaki montaj operasyonlarına kadar her aşamada profesyonel ekibimizle çalışıyoruz.

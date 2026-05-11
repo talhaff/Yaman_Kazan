@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import WhatsAppFloating from "@/components/ui/WhatsAppFloating";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
     default: "Yaman Kazan | Endüstriyel Taahhüt ve Kazan Üretimi",
     template: "%s | Yaman Kazan",
   },
-  description: "Rize'de faaliyet gösteren Yaman Kazan, ağır sanayi, kazan üretimi ve endüstriyel tesis kurulumu, mekanik montaj ve bakım hizmetlerinde güvenilir çözüm ortağınızdır.",
+  description: "Adana'da faaliyet gösteren Yaman Kazan, ağır sanayi, kazan üretimi ve endüstriyel tesis kurulumu, mekanik montaj ve bakım hizmetlerinde güvenilir çözüm ortağınızdır.",
   icons: {
     icon: "/img/logoyaman-1.png",
     apple: "/img/logoyaman-1.png",
@@ -40,7 +39,6 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
-        <WhatsAppFloating />
       </body>
     </html>
   );

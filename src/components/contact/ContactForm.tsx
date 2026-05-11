@@ -25,26 +25,14 @@ export default function ContactForm() {
     setStatus("loading");
     
     try {
-      // 1. WhatsApp Mesajını Hazırla
-      const wpMessage = `Merhaba, İletişim Formundan Yeni Mesaj:\n\n` +
-        `• Ad Soyad: ${formData.name}\n` +
-        `• E-Posta: ${formData.email}\n` +
-        `• Telefon: ${formData.phone}\n` +
-        `• Konu: ${formData.subject}\n\n` +
-        `Mesaj:\n${formData.message}`;
-      
-      const wpUrl = `https://wa.me/${CONTACT_INFO.phoneRaw}?text=${encodeURIComponent(wpMessage)}`;
-
       // 2. Arka Planda E-Posta Gönderimi (Server Action)
-      await sendContactEmail(formData);
+      const result = await sendContactEmail(formData);
 
-      // 3. Başarılı Durumu ve WhatsApp'a Yönlendirme
-      setStatus("success");
-      
-      // Kısa bir süre sonra WP'ye yönlendir
-      setTimeout(() => {
-        window.open(wpUrl, "_blank");
-      }, 1000);
+      if (result.success) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
 
     } catch (error) {
       console.error("Form gönderim hatası:", error);
@@ -58,15 +46,15 @@ export default function ContactForm() {
         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8 text-green-600">
           <CheckCircle2 className="h-10 w-10" />
         </div>
-        <h3 className="text-2xl font-black text-primary-950 mb-4">Mesajınız Hazırlandı!</h3>
+        <h3 className="text-2xl font-black text-primary-950 mb-4">Mesajınız Alındı!</h3>
         <p className="text-gray-600 mb-8 font-medium">
-          Bilgileriniz kaydedildi. Şimdi otomatik olarak WhatsApp hattımıza yönlendiriliyorsunuz...
+          Mesajınız başarıyla iletildi. Uzman ekibimiz en kısa sürede belirttiğiniz e-posta adresi üzerinden size dönüş yapacaktır.
         </p>
         <button 
           onClick={() => setStatus("idle")}
           className="px-8 py-3 bg-primary-900 text-white font-bold rounded-xl hover:bg-primary-950 transition-all"
         >
-          Geri Dön
+          Yeni Mesaj Gönder
         </button>
       </div>
     );
@@ -157,7 +145,7 @@ export default function ContactForm() {
           {status === "loading" ? (
             <Loader2 className="h-6 w-6 animate-spin" />
           ) : (
-            <>Mesajı Gönder & WP'ye Yönlen <Send className="h-5 w-5" /></>
+            <>Mesajı Gönder <Send className="h-5 w-5" /></>
           )}
         </button>
       </form>

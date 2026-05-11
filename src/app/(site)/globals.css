@@ -13,17 +13,17 @@
   --color-primary-900: #1e3a8a; /* Güven veren Lacivert */
   --color-primary-950: #172554;
 
-  --color-secondary-50: #fef2f2;
-  --color-secondary-100: #fee2e2;
-  --color-secondary-200: #fecaca;
-  --color-secondary-300: #fca5a5;
-  --color-secondary-400: #f87171;
-  --color-secondary-500: #ef4444; /* Enerji ve Ateş Kırmızısı */
-  --color-secondary-600: #dc2626;
-  --color-secondary-700: #b91c1c;
-  --color-secondary-800: #991b1b;
-  --color-secondary-900: #7f1d1d;
-  --color-secondary-950: #450a0a;
+  --color-secondary-50: #f0f7ff;
+  --color-secondary-100: #e0effe;
+  --color-secondary-200: #bae0fd;
+  --color-secondary-300: #7cc7fb;
+  --color-secondary-400: #38a9f8;
+  --color-secondary-500: #0e8ce9; /* Blue accent instead of Red */
+  --color-secondary-600: #026dc7;
+  --color-secondary-700: #0357a1;
+  --color-secondary-800: #074a85;
+  --color-secondary-900: #0c3f6e;
+  --color-secondary-950: #082849;
 
   --color-neutral-50: #f8fafc;
   --color-neutral-100: #f1f5f9;

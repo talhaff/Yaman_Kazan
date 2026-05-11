@@ -37,7 +37,7 @@ export default function IletisimPage() {
                     icon: MapPin, 
                     title: "Atölye & Ofis", 
                     content: CONTACT_INFO.address,
-                    link: "https://maps.google.com" 
+                    link: "https://www.google.com/maps/search/?api=1&query=Yeşiloba+Mah.+Şehit+Pilot+Fehmi+Alemdar+Bulv.+No:+134/Z27+Seyhan/ADANA" 
                   },
                   { 
                     icon: Phone, 
@@ -75,43 +75,6 @@ export default function IletisimPage() {
                   </div>
                 ))}
               </div>
-
-              {/* Social / Direct Contact */}
-              <div className="mt-20 pt-10 border-t border-gray-100">
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-8">Hızlı İletişim & Kartvizit</p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a 
-                    href={CONTACT_INFO.whatsapp} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-4 px-10 py-5 bg-[#25D366] text-white font-black uppercase tracking-tighter rounded-2xl hover:scale-105 transition-transform shadow-2xl shadow-[#25D366]/20 flex-1"
-                  >
-                    <MessageCircle className="h-6 w-6" /> WhatsApp Hattı
-                  </a>
-                  <a 
-                    href="/img/kartvizit.jpeg" 
-                    target="_blank"
-                    className="inline-flex items-center justify-center gap-4 px-10 py-5 bg-primary-950 text-white font-black uppercase tracking-tighter rounded-2xl hover:bg-secondary-600 transition-all shadow-2xl shadow-primary-950/20 flex-1"
-                  >
-                    Kartviziti İndir
-                  </a>
-                </div>
-
-                {/* Business Card Preview */}
-                <div className="mt-12 group relative">
-                  <div className="absolute inset-0 bg-secondary-500/20 blur-3xl rounded-full scale-75 group-hover:scale-100 transition-transform duration-700 -z-10 opacity-50"></div>
-                  <div className="relative aspect-[1.6/1] w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-100 transition-all duration-700 group-hover:scale-[1.02] group-hover:rotate-1">
-                    <img 
-                      src="/img/kartvizit.jpeg" 
-                      alt="Yunus Yaman Kartvizit" 
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-                      <p className="text-white font-black text-xs uppercase tracking-widest">Yunus Yaman — Proje Müdürü</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Contact Form (Right) */}
@@ -126,7 +89,7 @@ export default function IletisimPage() {
       {/* Map Section */}
       <section className="h-[35rem] w-full relative overflow-hidden grayscale contrast-125 hover:grayscale-0 transition-all duration-1000 border-t border-gray-100">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d191195.49845341253!2d40.354133464522434!3d41.02672535728345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40667ab8029d91bd%3A0xe5f8670c53dc30e0!2sRize%2C%20Rize%20Merkez%2FRize!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
+          src="https://maps.google.com/maps?q=Yeşiloba%20Mah.%20Şehit%20Pilot%20Fehmi%20Alemdar%20Bulv.%20No:%20134/Z27%20Seyhan/ADANA&t=&z=15&ie=UTF8&iwloc=&output=embed" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 

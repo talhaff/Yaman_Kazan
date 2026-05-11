@@ -1,134 +1,112 @@
+"use client";
+
 import Hero from "@/components/home/Hero";
-import ServicesSection from "@/components/home/ServicesSection";
-import { ShieldCheck, Target } from "lucide-react";
-import Image from "next/image";
-import { client } from "@/sanity/lib/client";
-import { ALL_SERVICES_QUERY } from "@/sanity/lib/queries";
-import { CONTACT_INFO } from "@/lib/constants";
+import StackedServices from "@/components/home/StackedServices";
+import { ShieldCheck, Target, Award, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-export const revalidate = 60;
-
-export default async function Home() {
-  const services = await client.fetch(ALL_SERVICES_QUERY);
-  
-  // Limit to 6 services for the homepage
-  const homeServices = services?.slice(0, 6);
-
+export default function Home() {
   return (
     <>
       <Hero />
       
-      {/* About Brief Section */}
-      <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+      {/* Welcome / About Section - Refined & Elegant */}
+      <section className="py-20 md:py-32 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
-            <div className="relative group">
-              <div className="aspect-[4/5] md:aspect-square lg:aspect-[4/5] relative rounded-[2rem] overflow-hidden shadow-primary-premium">
-                <Image 
-                  src="/img/gorsel02.jpeg" 
-                  alt="Yaman Kazan Atölye" 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center"
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px w-8 bg-primary-800" />
+                <span className="text-primary-950 font-bold tracking-[0.3em] uppercase text-[9px]">
+                  Kurumsal Kimlik
+                </span>
+                <div className="h-px w-8 bg-primary-800" />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 md:w-64 md:h-64 bg-secondary-600 rounded-[2rem] -z-10 hidden sm:block" />
-            </div>
-            
-            <div className="pt-8 lg:pt-0">
-              <span className="text-secondary-600 font-black tracking-[0.2em] uppercase text-[10px] md:text-xs block mb-6">
-                Hakkımızda
-              </span>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-primary-950 tracking-tighter leading-[0.95] mb-10 uppercase">
-                GÜVENLE İNŞA EDİLEN <br /> <span className="text-gradient">BİR GELECEK.</span>
+              
+              <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter leading-tight mb-8 uppercase">
+                GÜVENLE İNŞA EDİLEN <br /> <span className="text-primary-800">BİR GELECEK.</span>
               </h2>
-              <p className="text-gray-600 text-lg md:text-xl leading-relaxed mb-12 font-medium">
-                Rize'nin sanayi gücü Yaman Kazan, endüstriyel tesis kurulumundan kazan üretimine kadar 
-                geniş bir yelpazede mühendislik çözümleri sunar. Her projede kalite, güvenlik ve 
-                zamanında teslimat prensiplerimizden ödün vermiyoruz.
+              
+              <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-12 max-w-2xl font-medium">
+                Yaman Kazan olarak, çeyrek asırlık tecrübemizle endüstriyel tesislerin kalbinde yer alıyoruz. Mühendislik tutkumuz ve kalite odaklı yaklaşımımızla sınırları zorluyoruz.
               </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-                <div className="flex gap-5 p-6 bg-primary-50 rounded-2xl border border-primary-100/50 hover:border-secondary-500/30 transition-colors group">
-                  <div className="flex-shrink-0 w-14 h-14 bg-primary-900 rounded-xl flex items-center justify-center shadow-lg shadow-primary-900/20 group-hover:scale-110 transition-transform">
-                    <ShieldCheck className="h-7 w-7 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-primary-950 tracking-tight">Yüksek Kalite</h4>
-                    <p className="text-sm text-gray-500 font-medium">Uluslararası standartlarda üretim.</p>
-                  </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-12 md:gap-24 border-t border-gray-100 pt-12 w-full max-w-2xl">
+                <div className="flex flex-col items-center">
+                  <span className="text-5xl md:text-6xl font-black text-primary-950 mb-1 tracking-tighter">150<span className="text-primary-800">+</span></span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Proje</span>
                 </div>
-                <div className="flex gap-5 p-6 bg-primary-50 rounded-2xl border border-primary-100/50 hover:border-secondary-500/30 transition-colors group">
-                  <div className="flex-shrink-0 w-14 h-14 bg-primary-900 rounded-xl flex items-center justify-center shadow-lg shadow-primary-900/20 group-hover:scale-110 transition-transform">
-                    <Target className="h-7 w-7 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-primary-950 tracking-tight">Mühendislik</h4>
-                    <p className="text-sm text-gray-500 font-medium">Hassas hesaplama ve tasarım.</p>
-                  </div>
+                <div className="w-px h-12 bg-gray-100 hidden sm:block" />
+                <div className="flex flex-col items-center">
+                  <span className="text-5xl md:text-6xl font-black text-primary-950 mb-1 tracking-tighter">50<span className="text-primary-800">+</span></span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Uzman</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      <ServicesSection data={homeServices} limit={6} />
+      {/* Services Section - The Stacked Cards */}
+      <StackedServices />
 
-      {/* CTA Section */}
-      <section className="py-24 md:py-32 bg-primary-950 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <Image src="/img/gorsel03.jpeg" alt="Background" fill className="object-cover" sizes="100vw" />
+      {/* Trust & Quality Section - Minimalist Engineering */}
+      <section className="py-32 bg-primary-950 text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white to-transparent" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/80 to-transparent z-0" />
         
-        <div className="container mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-[0.95] mb-12 uppercase">
-            PROJENİZ İÇİN BİZE <br /> <span className="text-secondary-500">HEMEN ULAŞIN.</span>
-          </h2>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a 
-              href={CONTACT_INFO.whatsapp} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-10 py-5 bg-[#25D366] text-white font-black uppercase tracking-tighter rounded-2xl hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-2xl shadow-[#25D366]/20"
-            >
-              WhatsApp'tan Teklif İsteyin
-            </a>
-            <a 
-              href="/iletisim" 
-              className="px-10 py-5 bg-white text-primary-950 font-black uppercase tracking-tighter rounded-2xl hover:bg-primary-50 transition-all text-center shadow-2xl shadow-black/20"
-            >
-              İletişime Geçin
-            </a>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-white/10 rounded-[2rem] overflow-hidden">
+            <div className="p-12 md:p-16 border-b lg:border-b-0 lg:border-r border-white/10 hover:bg-white/5 transition-colors group text-center md:text-left">
+              <ShieldCheck className="h-12 w-12 text-primary-400 mb-8 mx-auto md:mx-0 group-hover:scale-110 transition-transform" />
+              <h4 className="text-2xl font-black uppercase tracking-tighter mb-4">Yüksek Güvenlik</h4>
+              <p className="text-gray-400 text-sm leading-relaxed font-medium">Sıfır kaza vizyonuyla, uluslararası İSG standartlarını tüm operasyonlarımızın merkezine koyuyoruz.</p>
+            </div>
+            <div className="p-12 md:p-16 border-b lg:border-b-0 lg:border-r border-white/10 hover:bg-white/5 transition-colors group text-center md:text-left">
+              <Target className="h-12 w-12 text-primary-400 mb-8 mx-auto md:mx-0 group-hover:scale-110 transition-transform" />
+              <h4 className="text-2xl font-black uppercase tracking-tighter mb-4">Hassas Mühendislik</h4>
+              <p className="text-gray-400 text-sm leading-relaxed font-medium">En zorlu toleranslarda bile kusursuz sonuçlar için ileri teknoloji mühendislik yazılımları ve uzman kadro.</p>
+            </div>
+            <div className="p-12 md:p-16 hover:bg-white/5 transition-colors group text-center md:text-left">
+              <Award className="h-12 w-12 text-primary-400 mb-8 mx-auto md:mx-0 group-hover:scale-110 transition-transform" />
+              <h4 className="text-2xl font-black uppercase tracking-tighter mb-4">Kalite Belgesi</h4>
+              <p className="text-gray-400 text-sm leading-relaxed font-medium">ISO ve ASME standartlarında sertifikalandırılmış süreçlerimizle sürdürülebilir kaliteyi garanti ediyoruz.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 md:py-32 bg-primary-900 text-white">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 text-center">
-            <div className="group">
-              <p className="text-5xl md:text-6xl font-black text-secondary-500 mb-3 group-hover:scale-110 transition-transform">25+</p>
-              <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-primary-100">Yıllık Tecrübe</p>
+      {/* Final CTA Section - Refined & High Impact */}
+      <section className="py-24 md:py-32 bg-white text-center">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center"
+          >
+            <h2 className="text-4xl md:text-6xl font-black text-primary-950 tracking-tighter leading-tight mb-12 uppercase">
+              ENDÜSTRİYEL <br /> <span className="text-primary-800">GÜCÜNÜZÜ ARTIRIN.</span>
+            </h2>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <Link
+                href="/iletisim"
+                className="px-12 py-5 bg-primary-950 text-white font-black uppercase tracking-widest text-[10px] rounded-xl hover:bg-primary-900 transition-all shadow-xl flex items-center gap-4 group"
+              >
+                PROJE BAŞLATIN
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
-            <div className="group">
-              <p className="text-5xl md:text-6xl font-black text-secondary-500 mb-3 group-hover:scale-110 transition-transform">500+</p>
-              <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-primary-100">Tamamlanan Proje</p>
-            </div>
-            <div className="group">
-              <p className="text-5xl md:text-6xl font-black text-secondary-500 mb-3 group-hover:scale-110 transition-transform">100%</p>
-              <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-primary-100">Müşteri Memnuniyeti</p>
-            </div>
-            <div className="group">
-              <p className="text-5xl md:text-6xl font-black text-secondary-500 mb-3 group-hover:scale-110 transition-transform">24/7</p>
-              <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-primary-100">Teknik Destek</p>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>
   );
 }
-

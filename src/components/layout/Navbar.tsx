@@ -66,16 +66,16 @@ export default function Navbar() {
         <nav className="container mx-auto flex items-center justify-between px-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-3 group">
-              <div className={cn(
-                "p-2 rounded-2xl transition-all duration-500 group-hover:scale-105",
-                scrolled ? "bg-white shadow-sm" : "bg-white/90 shadow-xl"
-              )}>
+              <div className="transition-all duration-500 group-hover:scale-105">
                 <Image 
-                  src="/img/logoyaman-1.png" 
+                  src="/img/logoarkaplansız.png" 
                   alt="Yaman Kazan Logo" 
-                  width={160} 
-                  height={45} 
-                  className="h-9 md:h-10 w-auto object-contain"
+                  width={300} 
+                  height={100} 
+                  className={cn(
+                    "h-16 md:h-24 w-auto object-contain transition-all duration-300",
+                    !scrolled && "brightness-0 invert"
+                  )}
                   priority
                 />
               </div>
@@ -95,7 +95,7 @@ export default function Navbar() {
                 >
                   {item.name}
                   {item.dropdown && (
-                    <div className="w-1.5 h-1.5 rounded-full bg-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                   )}
                 </Link>
                 
@@ -106,7 +106,7 @@ export default function Navbar() {
                         <Link
                           key={dropItem.name}
                           href={dropItem.href}
-                          className="block px-4 py-3 text-sm font-bold text-primary-900 hover:bg-primary-50 hover:text-secondary-600 rounded-xl transition-all"
+                          className="block px-4 py-3 text-sm font-bold text-primary-900 hover:bg-primary-50 hover:text-primary-600 rounded-xl transition-all"
                         >
                           {dropItem.name}
                         </Link>
@@ -120,9 +120,7 @@ export default function Navbar() {
 
           <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-6">
             <a
-              href={CONTACT_INFO.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${CONTACT_INFO.email}`}
               className={cn(
                 "flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-black uppercase tracking-tighter transition-all hover:scale-105 active:scale-95 shadow-lg",
                 scrolled 
@@ -130,7 +128,7 @@ export default function Navbar() {
                   : "bg-white text-primary-900 hover:bg-gray-50 shadow-white/10"
               )}
             >
-              <Phone className="h-4 w-4" />
+              <Mail className="h-4 w-4" />
               HIZLI TEKLİF
             </a>
           </div>
@@ -175,11 +173,11 @@ export default function Navbar() {
               <div className="flex items-center justify-between px-8 py-8">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                   <Image 
-                    src="/img/logoyaman-1.png" 
+                    src="/img/logoarkaplansız.png" 
                     alt="Yaman Kazan Logo" 
-                    width={140} 
-                    height={40} 
-                    className="h-8 w-auto object-contain"
+                    width={200} 
+                    height={70} 
+                    className="h-12 w-auto object-contain"
                   />
                 </Link>
               </div>
@@ -197,7 +195,7 @@ export default function Navbar() {
                         <div className="flex items-center justify-between group">
                           <Link
                             href={item.href}
-                            className="flex-1 py-3 text-2xl font-black text-primary-950 hover:text-secondary-600 transition-colors tracking-tighter"
+                            className="flex-1 py-3 text-2xl font-black text-primary-950 hover:text-primary-600 transition-colors tracking-tighter"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {item.name}
@@ -277,13 +275,11 @@ export default function Navbar() {
 
               <div className="p-8 space-y-3">
                 <a
-                  href={CONTACT_INFO.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${CONTACT_INFO.email}`}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center w-full rounded-2xl bg-secondary-600 py-5 text-center text-base font-black text-white shadow-xl shadow-secondary-600/20 active:scale-95 transition-transform uppercase tracking-tighter"
+                  className="flex items-center justify-center w-full rounded-2xl bg-primary-950 py-5 text-center text-base font-black text-white shadow-xl shadow-primary-950/20 active:scale-95 transition-transform uppercase tracking-tighter"
                 >
-                  WHATSAPP'TAN TEKLİF AL
+                  E-POSTA İLE TEKLİF AL
                 </a>
               </div>
             </motion.div>

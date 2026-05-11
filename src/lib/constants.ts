@@ -1,8 +1,8 @@
 export const CONTACT_INFO = {
-  phone: "+90 539 416 27 61",
-  phoneRaw: "905394162761",
-  whatsapp: "https://wa.me/905394162761",
+  phone: "0546 484 49 19",
+  phoneRaw: "905464844919",
+  whatsapp: "#", // WhatsApp kaldırıldı
   email: "talhaozcanf@gmail.com",
-  address: "Rize Organize Sanayi Bölgesi, 102. Cadde No:5, Rize, Türkiye",
+  address: "Yeşiloba Mah. Şehit Pilot Fehmi Alemdar Bulv. No: 134/Z27 Efer 4 San. Sitesi Seyhan/ADANA",
   owner: "Yunus Yaman",
 };
