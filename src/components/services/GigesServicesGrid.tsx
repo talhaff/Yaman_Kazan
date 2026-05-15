@@ -7,8 +7,6 @@ import {
   Wind, 
   Building2, 
   Settings, 
-  Truck, 
-  ClipboardList, 
   Wrench,
   ArrowRight
 } from "lucide-react";
@@ -17,9 +15,7 @@ const iconMap: Record<string, React.ElementType> = {
   "1": Wind,
   "2": Building2,
   "3": Settings,
-  "4": Truck,
-  "5": ClipboardList,
-  "6": Wrench,
+  "4": Wrench,
 };
 
 export default function GigesServicesGrid() {

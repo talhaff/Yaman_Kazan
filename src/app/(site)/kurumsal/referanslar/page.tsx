@@ -87,7 +87,7 @@ export default function ReferanslarPage() {
                   SİZİN PROJENİZİ DE <br /> <span className="text-primary-800">BAŞARIYLA</span> TAMAMLAYALIM
                 </h3>
                 <p className="text-white/60 text-lg mb-10 font-medium leading-relaxed">
-                  Çeyrek asırlık tecrübemiz ve güçlü teknik altyapımızla endüstriyel tesis projelerinizde en güvenilir çözüm ortağınız olmaya hazırız.
+                  Tecrübeli saha kadromuz ve uygulama disiplinimiz ile endüstriyel tesis projelerinizde en güvenilir çözüm ortağınız olmaya hazırız.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Link href="/iletisim" className="px-10 py-5 bg-white text-primary-950 font-black uppercase tracking-widest rounded-2xl hover:bg-primary-50 transition-all hover:scale-105 shadow-xl active:scale-95">

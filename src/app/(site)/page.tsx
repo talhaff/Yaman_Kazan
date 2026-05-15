@@ -76,10 +76,10 @@ export default function Home() {
               
               <div className="space-y-5 text-slate-500 font-medium text-base md:text-lg leading-relaxed mb-8">
                 <p>
-                  Yaman Kazan Endüstri Tesisleri İmalat ve Bakım Hizmetleri, yer aldığı tüm projelerde; uluslararası standartların gerekliliklerini, müşterinin beklentilerini ve maksimum hizmet kalitesini bir arada sunmaktadır.
+                  <strong className="text-primary-950">Yaman Kazan ve Makine</strong>, AFYON Şeker Fabrikası, RİZE Doğuş Çay gibi dev sanayi kuruluşlarının buhar kazanı imalat, kurulum ve revizyon projelerini başarıyla tamamlamış lider bir mühendislik firmasıdır.
                 </p>
                 <p className="text-sm opacity-80">
-                  Çeyrek asırlık tecrübemizle, endüstriyel tesislerin kalbinde sürdürülebilir mühendislik çözümleri üretiyoruz.
+                  Kazan imalatı, anahtar teslim buhar kazanı kurulumu (örn: 40 t/h) ve yüksek basınçlı sistemlerin bakım/revizyon süreçlerinde (örn: 100 t/h - 45 bar) uzman kadromuzla güvenilir çözümler sunuyoruz.
                 </p>
               </div>
 
@@ -131,7 +131,7 @@ export default function Home() {
               <div className="flex flex-col items-center py-10 md:py-16 border-r border-slate-200/60 group transition-colors hover:bg-white/40">
                 <div className="relative mb-3 md:mb-4">
                   <span className="text-4xl md:text-7xl font-black text-primary-950 tracking-tighter leading-none block transform group-hover:scale-105 transition-transform duration-500">
-                    25<span className="text-primary-600">+</span>
+                    10<span className="text-primary-600">+</span>
                   </span>
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary-600/10 rounded-full overflow-hidden">
                     <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
@@ -186,7 +186,7 @@ export default function Home() {
                   TEKNOLOJİ VE <br /> <span className="text-primary-500">GÜVENİN</span> MERKEZİ.
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed max-w-xl font-medium">
-                  Yaman Kazan, her projede mühendislik hassasiyeti ve sarsılmaz bir iş güvenliği kültürü ile hareket eder.
+                  Yaman Kazan ve Makine, her projede kaliteli işçilik, iş güvenliği ve zamanında teslim anlayışı ile hareket eder.
                 </p>
               </div>
 

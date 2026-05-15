@@ -75,10 +75,19 @@ export default function HakkimizdaPage() {
               
               <div className="space-y-8 text-gray-600 text-lg leading-relaxed font-medium">
                 <p>
-                  Yaman Kazan, endüstriyel tesislerin her türlü mekanik montajı, ağır ekipman kurulumu ve basınçlı kaplar alanında faaliyet gösteren köklü bir mühendislik markasıdır.
+                  <strong className="text-primary-950">Yaman Kazan ve Makine</strong>, AFYON Şeker Fabrikası ve RİZE Doğuş Çay gibi endüstri devlerine yüksek kapasiteli buhar kazanı çözümleri sunan, imalat ve taahhüt alanında öncü bir mühendislik firmasıdır.
                 </p>
                 <p>
-                  Adana&apos;da temelleri atılan yolculuğumuz, bugün ulusal ve uluslararası arenada stratejik öneme sahip dev projelere imza atan bir mühendislik merkezine dönüşmüştür.
+                  Firmamız; kazan imalatı, 40 t/h gibi yüksek kapasiteli sistemlerin anahtar teslim kurulumu ve yüksek basınçlı sistemlerin (örn. 100 t/h - 45 bar) revizyon süreçlerini tek çatı altında yürüterek, sanayi tesislerine güvenilir ve sürdürülebilir çözümler sağlamaktadır.
+                </p>
+                <p>
+                  Başta şeker fabrikaları, çay fabrikaları, enerji tesisleri ve ağır sanayi kuruluşları olmak üzere; buhar kazanı imalatı ve kurulumu, yüksek basınçlı mekanik tesisatlar, endüstriyel borulama ve çelik konstrüksiyon uygulamalarında uzmanlaşmış bulunmaktayız.
+                </p>
+                <p>
+                  Yürüttüğümüz projelerde önceliğimiz; kaliteli işçilik, iş güvenliği, zamanında teslim ve uzun ömürlü uygulamalar ortaya koymaktır. Her projeyi yalnızca bir iş olarak değil, arkasında durduğumuz bir referans olarak görmekteyiz.
+                </p>
+                <p>
+                  Tecrübeli saha kadromuz ve uygulama disiplinimiz ile, müşterilerimize kazan projeleri başta olmak üzere tüm ihtiyaçlarına uygun mühendislik çözümleri sunmaya devam ediyoruz.
                 </p>
               </div>
 

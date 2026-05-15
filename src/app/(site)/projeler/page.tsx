@@ -15,6 +15,36 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 const fallbackProjects = [
   {
+    title: "Afyon Şeker Fabrikası Kazan Kurulumu",
+    category: "boiler",
+    image: "/img/sahamontajkurulumu.jpeg",
+    status: "completed",
+    slug: { current: "afyon-seker-kazan-kurulumu" },
+    client: "Afyon Şeker",
+    location: "Afyonkarahisar",
+    description: "40 t/h kapasiteli anahtar teslim buhar kazanı kurulumu."
+  },
+  {
+    title: "Rize Doğuş Çay Kazan Kurulumu",
+    category: "boiler",
+    image: "/img/buharkazan_01.jpeg",
+    status: "completed",
+    slug: { current: "rize-dogus-cay-kazan-kurulumu" },
+    client: "Doğuş Çay",
+    location: "Rize",
+    description: "40 t/h kapasiteli anahtar teslim buhar kazanı kurulumu."
+  },
+  {
+    title: "Afyon Şeker Fabrikası Kazan Revizyonu",
+    category: "revision",
+    image: "/img/buharkazan_02.jpeg",
+    status: "completed",
+    slug: { current: "afyon-seker-kazan-revizyonu" },
+    client: "Afyon Şeker",
+    location: "Afyonkarahisar",
+    description: "2 adet 100 t/h kapasiteli 45 bar basınçlı buhar kazanının kapsamlı revizyon çalışmaları."
+  },
+  {
     title: "TÜPRAŞ İzmir Günlük Bakım İşleri",
     category: "revision",
     image: "/img/hidroelektriksantral02.jpeg",
@@ -23,17 +53,7 @@ const fallbackProjects = [
     client: "TÜPRAŞ",
     location: "İzmir",
     description: "Tüpraş İzmir rafinerisinde periyodik bakım ve onarım hizmetleri."
-  },
-  {
-    title: "MOL Macaristan Boru İmalat",
-    category: "mechanical",
-    image: "/img/Kaynakİşleri.jpeg",
-    status: "completed",
-    slug: { current: "mol-macaristan-imalat" },
-    client: "MOL Group",
-    location: "Macaristan",
-    description: "Uluslararası standartlarda boru imalat ve montaj projesi."
-  },
+  }
 ];
 
 interface Project {

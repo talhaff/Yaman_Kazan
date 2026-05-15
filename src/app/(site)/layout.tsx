@@ -12,17 +12,17 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Yaman Kazan | Endüstriyel Taahhüt ve Kazan Üretimi",
+    default: "Yaman Kazan ve Makine | Buhar Kazanları, Mekanik Tesisat ve Çelik Konstrüksiyon",
     template: "%s | Yaman Kazan",
   },
-  description: "Adana'da faaliyet gösteren Yaman Kazan, ağır sanayi, kazan üretimi ve endüstriyel tesis kurulumu, mekanik montaj ve bakım hizmetlerinde güvenilir çözüm ortağınızdır.",
+  description: "Yaman Kazan ve Makine, endüstriyel tesislere yönelik buhar kazanları, mekanik tesisat ve çelik konstrüksiyon alanlarında faaliyet gösteren bir imalat ve taahhüt firmasıdır.",
   icons: {
     icon: "/img/logoyaman-1.png",
     apple: "/img/logoyaman-1.png",
   },
   openGraph: {
-    title: "Yaman Kazan | Endüstriyel Taahhüt ve Kazan Üretimi",
-    description: "Ağır sanayi, kazan üretimi ve endüstriyel tesis kurulumunda lider marka.",
+    title: "Yaman Kazan ve Makine | Buhar Kazanları, Mekanik Tesisat ve Çelik Konstrüksiyon",
+    description: "Endüstriyel tesislere yönelik buhar kazanları, mekanik tesisat ve çelik konstrüksiyon alanlarında imalat ve taahhüt.",
     locale: "tr_TR",
     type: "website",
   },

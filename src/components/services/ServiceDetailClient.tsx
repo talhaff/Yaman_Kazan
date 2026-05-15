@@ -6,8 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { 
   ArrowLeft, 
-  CheckCircle2, 
-  Factory, 
   ShieldCheck, 
   Zap, 
   ArrowRight,
@@ -85,8 +83,82 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
         </motion.div>
       </section>
 
+      {/* Tamamlanan Projeler - Right After Hero */}
+      {service.detailSections && service.detailSections.length > 0 && (
+        <section className="relative z-20 -mt-8 md:-mt-16 pb-12 md:pb-20">
+          <div className="container mx-auto px-6">
+            {/* Section Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-4 mb-8 md:mb-12"
+            >
+              <div className="h-px flex-1 bg-gradient-to-r from-primary-800/30 to-transparent" />
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary-800" />
+                <span className="text-primary-950 font-black uppercase tracking-[0.3em] text-[9px] md:text-[11px]">Tamamlanan Projeler</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-primary-800" />
+              </div>
+              <div className="h-px flex-1 bg-gradient-to-l from-primary-800/30 to-transparent" />
+            </motion.div>
+
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto">
+              {service.detailSections.map((section, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.15, ease: "easeOut" }}
+                  className="group bg-white rounded-xl md:rounded-2xl overflow-hidden border border-slate-200/60 shadow-lg shadow-primary-950/[0.03] hover:shadow-xl hover:shadow-primary-950/[0.06] transition-all duration-500 hover:-translate-y-0.5"
+                >
+                  {/* Card Image */}
+                  <div className="relative w-full aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={section.image}
+                      alt={section.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                    {/* Title overlay on image */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <div className="w-5 h-5 rounded bg-white/90 backdrop-blur-sm flex items-center justify-center">
+                          <span className="text-primary-950 font-black text-[10px]">0{idx + 1}</span>
+                        </div>
+                        <div className="h-px flex-1 bg-white/20" />
+                      </div>
+                      <h3 className="text-white text-sm md:text-[15px] font-bold leading-snug drop-shadow-lg">
+                        {section.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="p-4 md:p-5">
+                    <div className="space-y-2">
+                      {section.paragraphs.map((paragraph, pIdx) => (
+                        <p
+                          key={pIdx}
+                          className="text-slate-500 text-[11px] md:text-xs leading-relaxed"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Intro Info Section */}
-      <section className="relative z-20 -mt-8 md:-mt-24 pb-24">
+      <section className="relative z-10 pb-24">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
             <motion.div 
@@ -101,7 +173,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
               
               <div className="prose prose-sm md:prose-lg max-w-none text-slate-500 font-medium leading-relaxed mb-10 md:mb-12">
                 <p>
-                  Yaman Kazan olarak, endüstriyel dünyada sürdürülebilirlik ve verimliliği odağımıza alıyoruz. {service.title} süreçlerimizde, uluslararası standartları en ileri teknoloji mühendislik çözümleriyle birleştirerek projenize değer katıyoruz.
+                  Yaman Kazan ve Makine olarak, endüstriyel tesislere yönelik güvenilir ve sürdürülebilir çözümler sunmaktayız. {service.title} süreçlerimizde, sahadaki tecrübemiz ve uygulama gücümüz ile projenize değer katıyoruz.
                 </p>
                 <p>
                   Her bir adımda güvenlik, hassasiyet ve kaliteyi garanti eden uzman kadromuz, sahadaki en zorlu koşullarda bile kusursuz operasyonlar yürütmektedir.
@@ -162,46 +234,97 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
         </div>
       </section>
 
-      {/* Dark Details Section */}
-      <section className="py-16 md:py-32 bg-slate-900 text-white overflow-hidden relative">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-center">
-            <div className="flex-1">
-              <span className="text-primary-400 font-bold uppercase tracking-[0.4em] text-[8px] md:text-[10px] block mb-4 md:mb-6">Mühendislik Gücü</span>
-              <h2 className="text-3xl md:text-6xl font-black tracking-tighter uppercase leading-none mb-8 md:mb-12">
-                HİZMET <br /> <span className="text-primary-400">STANDARTLARIMIZ</span>
-              </h2>
-              
-              <div className="space-y-8 md:space-y-12">
-                <div className="flex gap-6 md:gap-8 group">
-                  <span className="text-2xl md:text-3xl font-black text-white/20 group-hover:text-primary-400 transition-colors">01</span>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 uppercase">Analiz ve Tasarım</h3>
-                    <p className="text-white/50 text-xs md:text-sm leading-relaxed max-w-md font-medium">Saha keşfi ve teknik analizler ile ihtiyaca en uygun sistem tasarımı.</p>
-                  </div>
-                </div>
-                <div className="flex gap-6 md:gap-8 group">
-                  <span className="text-2xl md:text-3xl font-black text-white/20 group-hover:text-primary-400 transition-colors">02</span>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 uppercase">Kurulum ve Montaj</h3>
-                    <p className="text-white/50 text-xs md:text-sm leading-relaxed max-w-md font-medium">Sertifikalı ekipler ve modern ekipmanlar ile hatasız saha operasyonları.</p>
-                  </div>
-                </div>
-              </div>
+      {/* Premium Standards Section */}
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        {/* Full Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/img/industrial_standards.png"
+            alt="Endüstriyel Standartlar"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-primary-950/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-950/50 via-transparent to-primary-950/70" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16 md:mb-20"
+          >
+            <span className="inline-block text-primary-400 font-bold uppercase tracking-[0.5em] text-[8px] md:text-[10px] mb-4 md:mb-5">Mühendislik Gücü</span>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase leading-none">
+              Hizmet <span className="text-primary-400">Standartlarımız</span>
+            </h2>
+            <div className="flex items-center justify-center gap-3 mt-6">
+              <div className="h-px w-12 md:w-20 bg-gradient-to-r from-transparent to-primary-400/50" />
+              <div className="w-2 h-2 rounded-full bg-primary-400" />
+              <div className="h-px w-12 md:w-20 bg-gradient-to-l from-transparent to-primary-400/50" />
             </div>
-            
-            <div className="flex-1 relative w-full">
-              <div className="relative aspect-square rounded-[2rem] md:rounded-[4rem] overflow-hidden md:rotate-3 group-hover:rotate-0 transition-transform duration-700">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-all duration-700"
-                />
-              </div>
-              <div className="absolute -top-6 -right-6 md:-top-10 md:-right-10 w-24 h-24 md:w-40 md:h-40 border border-primary-400/30 rounded-full animate-pulse" />
-              <div className="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 w-40 h-40 md:w-60 md:h-60 border border-white/5 rounded-full" />
-            </div>
+          </motion.div>
+
+          {/* Standards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 max-w-6xl mx-auto">
+            {[
+              {
+                icon: <Target className="h-7 w-7" />,
+                number: "01",
+                title: "Analiz ve Tasarım",
+                desc: "Saha keşfi ve teknik analizler ile ihtiyaca en uygun sistem tasarımı gerçekleştiriyoruz."
+              },
+              {
+                icon: <ShieldCheck className="h-7 w-7" />,
+                number: "02",
+                title: "Kalite Kontrol",
+                desc: "ISO ve ASME standartlarında belgelendirilmiş kalite güvence süreçleri uyguluyoruz."
+              },
+              {
+                icon: <Zap className="h-7 w-7" />,
+                number: "03",
+                title: "Kurulum ve Montaj",
+                desc: "Sertifikalı ekipler ve modern ekipmanlar ile hatasız saha operasyonları yürütüyoruz."
+              },
+              {
+                icon: <Award className="h-7 w-7" />,
+                number: "04",
+                title: "Devreye Alma",
+                desc: "Tüm sistemlerin sorunsuz çalışması için kapsamlı test ve devreye alma süreçleri."
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
+                className="group relative bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-7 hover:bg-white/[0.12] hover:border-primary-400/30 transition-all duration-500"
+              >
+                {/* Number Badge */}
+                <span className="absolute top-5 right-5 text-white/[0.07] font-black text-4xl leading-none select-none group-hover:text-primary-400/15 transition-colors">
+                  {item.number}
+                </span>
+
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-xl bg-primary-400/10 border border-primary-400/20 flex items-center justify-center mb-5 group-hover:bg-primary-400/20 group-hover:border-primary-400/40 transition-all duration-500">
+                  <div className="text-primary-400">{item.icon}</div>
+                </div>
+
+                {/* Content */}
+                <h3 className="text-white font-bold text-sm md:text-base uppercase tracking-tight mb-2.5">
+                  {item.title}
+                </h3>
+                <p className="text-white/40 text-xs md:text-[13px] leading-relaxed group-hover:text-white/60 transition-colors">
+                  {item.desc}
+                </p>
+
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-primary-400/0 to-transparent group-hover:via-primary-400/30 transition-all duration-700" />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

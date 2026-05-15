@@ -55,8 +55,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-md font-medium">
-              Endüstriyel tesis taahhüt, mekanik montaj ve kazan üretimi konularında 
-              çeyrek asırlık tecrübemizle küresel standartlarda çözümler sunuyoruz.
+              Endüstri devleri için yüksek kapasiteli buhar kazanları imalatı, anahtar teslim kurulumu ve yüksek basınçlı sistemlerin revizyon çalışmalarında uzmanlaşmış öncü mühendislik firması.
             </p>
             <div className="flex gap-4">
               <a 
