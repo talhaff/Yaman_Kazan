@@ -8,6 +8,7 @@ import {
   Building2, 
   Settings, 
   Wrench,
+  Construction,
   ArrowRight
 } from "lucide-react";
 
@@ -16,6 +17,7 @@ const iconMap: Record<string, React.ElementType> = {
   "2": Building2,
   "3": Settings,
   "4": Wrench,
+  "5": Construction,
 };
 
 export default function GigesServicesGrid() {

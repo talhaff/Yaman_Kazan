@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -14,8 +14,21 @@ import {
 } from "lucide-react";
 import { Service } from "@/constants/services";
 
+const buharKazaniTabs = [
+  { id: 'buhar-kazani', title: 'Buhar Kazanı', content: 'Buhar kazanları, endüstriyel tesislerde yüksek kapasiteli ve verimli buhar üretimi sağlamak amacıyla tasarlanmış, ileri mühendislik ürünü sistemlerdir. Fabrikaların enerji ihtiyacını güvenli ve kesintisiz şekilde karşılar.' },
+  { id: 'sicak-su-kazani', title: 'Sıcak Su Kazanı', content: 'Sıcak su kazanları, merkezi ısıtma ve endüstriyel prosesler için güvenilir sıcak su sağlayan yüksek verimli ünitelerdir. Düşük yakıt tüketimi ile maksimum performans sunar.' },
+  { id: 'tanklar', title: 'Tanklar', content: 'Basınçlı ve basınçsız depolama tankları, endüstriyel akışkanların ve gazların güvenli bir şekilde muhafaza edilmesi için uluslararası ASME ve EN standartlarında üretilmektedir.' },
+  { id: 'ekonomizer', title: 'Ekonomizer', content: 'Ekonomizer sistemleri, atık baca gazı ısısını geri kazanarak kazan besi suyunu ısıtan, bu sayede kazan verimliliğini %5-10 aralığında artıran çevreci ekipmanlardır.' },
+  { id: 'degazor-kondens', title: 'Degazör & Kondens', content: 'Degazör ve kondens tankı sistemleri, kazan besi suyundaki çözünmüş oksijen ve karbondioksit gazlarını uzaklaştırarak korozyonu önler, sistemin kullanım ömrünü ciddi oranda uzatır.' },
+  { id: 'elektrostatik-filtre', title: 'Elektrostatik Filtre', content: 'Elektrostatik toz tutucu filtreler, baca gazındaki zararlı partikülleri yüksek voltaj alanıyla tutarak çevre emisyon standartlarının %99 verimle karşılanmasını sağlar.' },
+  { id: 'rekuperator', title: 'Reküperatör', content: 'Reküperatörler, sistemden atılan sıcak gazların enerjisini geri kazanarak yanma havasını ön ısıtmaya tabi tutar. Böylece genel sistem verimliliğini maksimize ederek yakıt maliyetlerini düşürür.' },
+  { id: 'multisiklon', title: 'Multisiklon', content: 'Multisiklon filtreler, özellikle katı yakıtlı sistemlerde baca gazındaki iri kül ve kurum partiküllerinin santrifüj kuvveti ile mekanik olarak ayrıştırılmasında kullanılır.' },
+  { id: 'shell-boiler', title: 'Shell Boiler', content: 'Shell boiler (alev duman borulu kazanlar), kompakt yapıları, kolay bakımları ve yüksek buhar kaliteleri ile küçük ve orta ölçekli endüstri tesislerinin vazgeçilmez enerji kaynaklarıdır.' }
+];
+
 export default function ServiceDetailClient({ service }: { service: Service }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [activeTab, setActiveTab] = useState(0);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -23,6 +36,8 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
 
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
+  const isBuharKazani = service.slug === 'buhar-kazani-imalat-ve-kurulumu';
 
   return (
     <div className="bg-white min-h-screen" ref={containerRef}>
@@ -84,7 +99,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
       </section>
 
       {/* Tamamlanan Projeler - Right After Hero */}
-      {service.detailSections && service.detailSections.length > 0 && (
+      {service.detailSections && service.detailSections.length > 0 && !isBuharKazani && (
         <section className="relative z-20 -mt-8 md:-mt-16 pb-12 md:pb-20">
           <div className="container mx-auto px-6">
             {/* Section Header */}
@@ -158,81 +173,172 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
       )}
 
       {/* Intro Info Section */}
-      <section className="relative z-10 pb-24">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="lg:col-span-7 bg-white p-6 md:p-16 lg:p-20 rounded-[2rem] md:rounded-[3rem] shadow-2xl shadow-primary-950/10 border border-slate-50"
-            >
-              <p className="text-lg md:text-3xl lg:text-4xl text-primary-950 leading-[1.15] font-black tracking-tighter mb-8 md:mb-12">
-                {service.description}
-              </p>
+      {isBuharKazani ? (
+        <section className="relative z-10 pb-24 -mt-16 md:-mt-24">
+          <div className="container mx-auto px-6">
+            <div className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl shadow-primary-950/10 border border-slate-50 overflow-hidden">
               
-              <div className="prose prose-sm md:prose-lg max-w-none text-slate-500 font-medium leading-relaxed mb-10 md:mb-12">
-                <p>
-                  Yaman Kazan ve Makine olarak, endüstriyel tesislere yönelik güvenilir ve sürdürülebilir çözümler sunmaktayız. {service.title} süreçlerimizde, sahadaki tecrübemiz ve uygulama gücümüz ile projenize değer katıyoruz.
-                </p>
-                <p>
-                  Her bir adımda güvenlik, hassasiyet ve kaliteyi garanti eden uzman kadromuz, sahadaki en zorlu koşullarda bile kusursuz operasyonlar yürütmektedir.
-                </p>
+              {/* Tabs Navigation */}
+              <div className="flex overflow-x-auto hide-scrollbar border-b border-slate-100 bg-slate-50/50">
+                {buharKazaniTabs.map((tab, idx) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(idx)}
+                    className={`whitespace-nowrap px-8 py-6 text-[11px] font-black uppercase tracking-widest transition-all ${
+                      activeTab === idx 
+                        ? 'text-primary-600 border-b-2 border-primary-600 bg-white' 
+                        : 'text-slate-400 hover:text-primary-900 hover:bg-white'
+                    }`}
+                  >
+                    {tab.title}
+                  </button>
+                ))}
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col gap-6 p-8 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-3xl group hover:bg-primary-950 transition-all duration-500 border border-slate-100 hover:border-primary-900">
-                  <ShieldCheck className="h-10 w-10 text-primary-800 group-hover:text-primary-400 transition-colors" />
-                  <div>
-                    <h4 className="text-xl font-black text-primary-950 group-hover:text-white uppercase tracking-tighter mb-2">Sertifikalı Güvenlik</h4>
-                    <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors leading-relaxed">Tüm süreçlerimiz ISO ve ASME standartlarında belgelendirilmiştir.</p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-6 p-8 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-3xl group hover:bg-primary-950 transition-all duration-500 border border-slate-100 hover:border-primary-900">
-                  <Zap className="h-10 w-10 text-primary-800 group-hover:text-primary-400 transition-colors" />
-                  <div>
-                    <h4 className="text-xl font-black text-primary-950 group-hover:text-white uppercase tracking-tighter mb-2">Teknolojik Altyapı</h4>
-                    <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors leading-relaxed">En son teknoloji ekipmanlar ve yazılımlar ile hata payını sıfıra indiriyoruz.</p>
-                  </div>
-                </div>
+              {/* Tab Content */}
+              <div className="p-8 md:p-16 lg:p-20">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={activeTab}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -15 }}
+                    transition={{ duration: 0.3 }}
+                    className="max-w-6xl mx-auto"
+                  >
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                      <div>
+                        <div className="flex items-center gap-4 mb-6">
+                          <div className="h-px w-12 bg-primary-600" />
+                          <span className="text-xs font-black uppercase tracking-[0.4em] text-primary-600">Ürün Grubu</span>
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-black text-primary-950 tracking-tighter uppercase mb-8 leading-[1.1]">
+                          {buharKazaniTabs[activeTab].title}
+                        </h2>
+                        <p className="text-lg md:text-xl text-slate-600 leading-relaxed font-medium mb-12">
+                          {buharKazaniTabs[activeTab].content}
+                        </p>
+                        
+                        <div className="flex flex-col gap-5">
+                          <div className="flex items-center gap-5 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                            <div className="h-12 w-12 rounded-xl bg-white shadow-sm flex items-center justify-center shrink-0">
+                              <ShieldCheck className="h-6 w-6 text-primary-600" />
+                            </div>
+                            <div>
+                              <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">Yüksek Kalite Standartları</h4>
+                              <p className="text-xs font-medium text-slate-500 mt-1">Uluslararası ASME ve ISO normlarına tam uyum.</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-5 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                            <div className="h-12 w-12 rounded-xl bg-white shadow-sm flex items-center justify-center shrink-0">
+                              <Zap className="h-6 w-6 text-primary-600" />
+                            </div>
+                            <div>
+                              <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">Maksimum Verimlilik</h4>
+                              <p className="text-xs font-medium text-slate-500 mt-1">Düşük yakıt tüketimi ve optimize edilmiş performans.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="aspect-[4/5] rounded-[2.5rem] bg-slate-100 relative overflow-hidden shadow-2xl shadow-primary-950/10 border border-slate-50">
+                        {/* Placeholder image, can be made dynamic per tab if needed later */}
+                        <Image 
+                          src="/img/buharkazan_04.jpeg" 
+                          alt={buharKazaniTabs[activeTab].title} 
+                          fill 
+                          className="object-cover hover:scale-105 transition-transform duration-1000" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 to-transparent" />
+                        <div className="absolute bottom-8 left-8 right-8">
+                          <p className="text-white font-bold text-lg drop-shadow-md">{buharKazaniTabs[activeTab].title} Sistemleri</p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
               </div>
-            </motion.div>
 
-            <aside className="lg:col-span-5 space-y-8 lg:sticky lg:top-32 pb-12">
-              <div className="bg-primary-900 rounded-[2.5rem] md:rounded-[3rem] p-10 md:p-12 text-white relative overflow-hidden group shadow-2xl shadow-primary-900/20">
-                <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
-                <h3 className="text-2xl font-black mb-6 uppercase tracking-tighter">Proje Başlatın</h3>
-                <p className="text-white/70 mb-10 text-sm md:text-base leading-relaxed font-medium">
-                  {service.title} ve diğer hizmetlerimiz hakkında detaylı bilgi ve özel fiyat teklifi için mühendislik ekibimizle iletişime geçin.
-                </p>
-                <Link
-                  href="/iletisim"
-                  className="flex items-center justify-between px-8 py-5 md:py-6 bg-white text-primary-950 font-black uppercase tracking-widest text-[9px] md:text-[10px] rounded-2xl hover:scale-[1.02] transition-all shadow-xl group"
-                >
-                  TEKLİF ALIN
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-
-              <div className="p-8 md:p-10 border border-slate-100 rounded-[2.5rem] space-y-6 bg-white shadow-sm">
-                <h4 className="font-black text-primary-950 uppercase tracking-tighter text-lg mb-6 border-b border-slate-50 pb-4">Neden Yaman Kazan?</h4>
-                <div className="flex items-center gap-4 text-sm font-bold text-slate-600">
-                  <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
-                    <Target className="h-4 w-4 text-primary-800" />
-                  </div>
-                  <span>Hedef Odaklı Çözümler</span>
-                </div>
-                <div className="flex items-center gap-4 text-sm font-bold text-slate-600">
-                  <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
-                    <Award className="h-4 w-4 text-primary-800" />
-                  </div>
-                  <span>Üstün İşçilik Garantisi</span>
-                </div>
-              </div>
-            </aside>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className="relative z-10 pb-24">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="lg:col-span-7 bg-white p-6 md:p-16 lg:p-20 rounded-[2rem] md:rounded-[3rem] shadow-2xl shadow-primary-950/10 border border-slate-50"
+              >
+                <p className="text-lg md:text-3xl lg:text-4xl text-primary-950 leading-[1.15] font-black tracking-tighter mb-8 md:mb-12">
+                  {service.description}
+                </p>
+                
+                <div className="prose prose-sm md:prose-lg max-w-none text-slate-500 font-medium leading-relaxed mb-10 md:mb-12">
+                  <p>
+                    Yaman Kazan ve Makine olarak, endüstriyel tesislere yönelik güvenilir ve sürdürülebilir çözümler sunmaktayız. {service.title} süreçlerimizde, sahadaki tecrübemiz ve uygulama gücümüz ile projenize değer katıyoruz.
+                  </p>
+                  <p>
+                    Her bir adımda güvenlik, hassasiyet ve kaliteyi garanti eden uzman kadromuz, sahadaki en zorlu koşullarda bile kusursuz operasyonlar yürütmektedir.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="flex flex-col gap-6 p-8 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-3xl group hover:bg-primary-950 transition-all duration-500 border border-slate-100 hover:border-primary-900">
+                    <ShieldCheck className="h-10 w-10 text-primary-800 group-hover:text-primary-400 transition-colors" />
+                    <div>
+                      <h4 className="text-xl font-black text-primary-950 group-hover:text-white uppercase tracking-tighter mb-2">Sertifikalı Güvenlik</h4>
+                      <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors leading-relaxed">Tüm süreçlerimiz ISO ve ASME standartlarında belgelendirilmiştir.</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-6 p-8 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-3xl group hover:bg-primary-950 transition-all duration-500 border border-slate-100 hover:border-primary-900">
+                    <Zap className="h-10 w-10 text-primary-800 group-hover:text-primary-400 transition-colors" />
+                    <div>
+                      <h4 className="text-xl font-black text-primary-950 group-hover:text-white uppercase tracking-tighter mb-2">Teknolojik Altyapı</h4>
+                      <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors leading-relaxed">En son teknoloji ekipmanlar ve yazılımlar ile hata payını sıfıra indiriyoruz.</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <aside className="lg:col-span-5 space-y-8 lg:sticky lg:top-32 pb-12">
+                <div className="bg-primary-900 rounded-[2.5rem] md:rounded-[3rem] p-10 md:p-12 text-white relative overflow-hidden group shadow-2xl shadow-primary-900/20">
+                  <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
+                  <h3 className="text-2xl font-black mb-6 uppercase tracking-tighter">Proje Başlatın</h3>
+                  <p className="text-white/70 mb-10 text-sm md:text-base leading-relaxed font-medium">
+                    {service.title} ve diğer hizmetlerimiz hakkında detaylı bilgi ve özel fiyat teklifi için mühendislik ekibimizle iletişime geçin.
+                  </p>
+                  <Link
+                    href="/iletisim"
+                    className="flex items-center justify-between px-8 py-5 md:py-6 bg-white text-primary-950 font-black uppercase tracking-widest text-[9px] md:text-[10px] rounded-2xl hover:scale-[1.02] transition-all shadow-xl group"
+                  >
+                    TEKLİF ALIN
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+
+                <div className="p-8 md:p-10 border border-slate-100 rounded-[2.5rem] space-y-6 bg-white shadow-sm">
+                  <h4 className="font-black text-primary-950 uppercase tracking-tighter text-lg mb-6 border-b border-slate-50 pb-4">Neden Yaman Kazan?</h4>
+                  <div className="flex items-center gap-4 text-sm font-bold text-slate-600">
+                    <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
+                      <Target className="h-4 w-4 text-primary-800" />
+                    </div>
+                    <span>Hedef Odaklı Çözümler</span>
+                  </div>
+                  <div className="flex items-center gap-4 text-sm font-bold text-slate-600">
+                    <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
+                      <Award className="h-4 w-4 text-primary-800" />
+                    </div>
+                    <span>Üstün İşçilik Garantisi</span>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Premium Standards Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">

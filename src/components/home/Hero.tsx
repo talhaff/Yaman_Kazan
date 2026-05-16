@@ -31,11 +31,11 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[0.95] tracking-tighter mb-8 uppercase">
-              ENDÜSTRİYEL KAZAN <br />
-              <span className="text-primary-400" style={{ color: '#609afa' }}>İMALAT & KURULUM</span>
+              ENDÜSTRİYEL TESİSLERİN <br />
+              <span className="text-primary-400" style={{ color: '#609afa' }}>GÜVENİLİR ÇÖZÜM ORTAĞI</span>
             </h1>
             <p className="text-base md:text-lg text-gray-200 mb-10 max-w-xl leading-relaxed font-medium">
-              Yaman Kazan ve Makine; AFYON Şeker Fabrikası ve RİZE Doğuş Çay gibi öncü tesislere anahtar teslim kazan kurulumu (40 t/h), yüksek kapasiteli buhar kazanı revizyonu (100 t/h - 45 bar) ve profesyonel bakım hizmetleri sunan sektörün lider çözüm ortağınızdır.
+              Yaman Kazan ve Makine, yüksek kapasiteli buhar sistemlerinden endüstriyel tesis kurulumlarına kadar her aşamada yenilikçi mühendislik çözümleri sunar. Deneyimli kadromuz ve kalite odaklı yaklaşımımızla, projelerinizde verimliliği ve güvenliği en üst düzeye taşıyoruz.
             </p>
             <div className="flex flex-wrap gap-5">
               <Link
@@ -70,7 +70,7 @@ export default function Hero() {
                 <Play className="h-6 w-6 md:h-10 md:w-10 text-primary-400 group-hover:text-white relative z-10 fill-current" />
               </div>
               <div>
-                <span className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none block">10<span className="text-primary-400">+</span></span>
+                <span className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none block">8<span className="text-primary-400">+</span></span>
                 <p className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.3em] text-white/50 mt-2">Yıllık Deneyim</p>
               </div>
             </div>

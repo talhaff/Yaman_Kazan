@@ -76,10 +76,10 @@ export default function Home() {
               
               <div className="space-y-5 text-slate-500 font-medium text-base md:text-lg leading-relaxed mb-8">
                 <p>
-                  <strong className="text-primary-950">Yaman Kazan ve Makine</strong>, AFYON Şeker Fabrikası, RİZE Doğuş Çay gibi dev sanayi kuruluşlarının buhar kazanı imalat, kurulum ve revizyon projelerini başarıyla tamamlamış lider bir mühendislik firmasıdır.
+                  <strong className="text-primary-950">Yaman Kazan ve Makine</strong>, endüstriyel tesislerin ihtiyaç duyduğu yüksek teknolojili buhar sistemleri ve mekanik çözümler konusunda uzmanlaşmış, sektörün güvenilir mühendislik partneridir.
                 </p>
                 <p className="text-sm opacity-80">
-                  Kazan imalatı, anahtar teslim buhar kazanı kurulumu (örn: 40 t/h) ve yüksek basınçlı sistemlerin bakım/revizyon süreçlerinde (örn: 100 t/h - 45 bar) uzman kadromuzla güvenilir çözümler sunuyoruz.
+                  Mühendislik disiplini ve yenilikçi üretim tekniklerini bir araya getirerek, anahtar teslim projelerden periyodik bakımlara kadar geniş bir spektrumda kesintisiz hizmet sağlıyoruz.
                 </p>
               </div>
 
@@ -105,7 +105,7 @@ export default function Home() {
               <div className="flex flex-col items-center py-10 md:py-16 border-r border-b lg:border-b-0 border-slate-200/60 group transition-colors hover:bg-white/40">
                 <div className="relative mb-3 md:mb-4">
                   <span className="text-4xl md:text-7xl font-black text-primary-950 tracking-tighter leading-none block transform group-hover:scale-105 transition-transform duration-500">
-                    10<span className="text-primary-600">+</span>
+                    3<span className="text-primary-600">+</span>
                   </span>
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary-600/10 rounded-full overflow-hidden">
                     <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
@@ -118,7 +118,7 @@ export default function Home() {
               <div className="flex flex-col items-center py-10 md:py-16 border-b lg:border-b-0 lg:border-r border-slate-200/60 group transition-colors hover:bg-white/40">
                 <div className="relative mb-3 md:mb-4">
                   <span className="text-4xl md:text-7xl font-black text-primary-950 tracking-tighter leading-none block transform group-hover:scale-105 transition-transform duration-500">
-                    150<span className="text-primary-600">+</span>
+                    63<span className="text-primary-600">+</span>
                   </span>
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary-600/10 rounded-full overflow-hidden">
                     <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
@@ -131,7 +131,7 @@ export default function Home() {
               <div className="flex flex-col items-center py-10 md:py-16 border-r border-slate-200/60 group transition-colors hover:bg-white/40">
                 <div className="relative mb-3 md:mb-4">
                   <span className="text-4xl md:text-7xl font-black text-primary-950 tracking-tighter leading-none block transform group-hover:scale-105 transition-transform duration-500">
-                    10<span className="text-primary-600">+</span>
+                    8<span className="text-primary-600">+</span>
                   </span>
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary-600/10 rounded-full overflow-hidden">
                     <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
@@ -144,7 +144,7 @@ export default function Home() {
               <div className="flex flex-col items-center py-10 md:py-16 group transition-colors hover:bg-white/40">
                 <div className="relative mb-3 md:mb-4">
                   <span className="text-4xl md:text-7xl font-black text-primary-950 tracking-tighter leading-none block transform group-hover:scale-105 transition-transform duration-500">
-                    5K<span className="text-primary-600">+</span>
+                    500<span className="text-primary-600">+</span>
                   </span>
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary-600/10 rounded-full overflow-hidden">
                     <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />

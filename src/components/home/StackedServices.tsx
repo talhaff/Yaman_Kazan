@@ -53,7 +53,8 @@ function ServiceCard({ service, index, total }: { service: typeof services[0], i
         style={
           service.color.includes('bg-primary-900') ? { backgroundColor: '#1e3a8a' } : 
           service.color.includes('bg-primary-950') ? { backgroundColor: '#172554' } : 
-          service.color.includes('bg-slate-900') ? { backgroundColor: '#0f172a' } : {}
+          service.color.includes('bg-slate-900') ? { backgroundColor: '#0f172a' } : 
+          service.color.includes('bg-slate-800') ? { backgroundColor: '#1e293b' } : {}
         }
       >
         {/* Background Number - Spread across the width */}

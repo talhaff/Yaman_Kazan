@@ -17,15 +17,15 @@ export interface Service {
 export const services: Service[] = [
   {
     number: "1",
-    title: "Buhar Kazanı İmalat ve Kurulumu",
+    title: "Endüstriyel Buhar Kazanları",
     description: "AFYON Şeker Fabrikası ve RİZE Doğuş Çay (40 t/h) projelerimizde olduğu gibi yüksek kapasiteli buhar kazanlarının anahtar teslim imalat ve kurulumunu gerçekleştiriyoruz.",
-    image: "/img/sahamontajkurulumu.jpeg",
+    image: "/img/buharkazan_04.jpeg",
     slug: "buhar-kazani-imalat-ve-kurulumu",
     color: "bg-slate-900 text-white"
   },
   {
     number: "2",
-    title: "Kazan Revizyon ve Modernizasyonu",
+    title: "Endüstriyel Tesis Taahhüt Hizmetleri",
     description: "100 t/h kapasiteli, 45 bar basınca sahip sistemlerin (örn: Afyon Şeker) kapsamlı bakım, basınç dayanım testleri ve modernizasyon çalışmalarını profesyonelce yürütüyoruz.",
     image: "/img/kurulumlar.jpeg",
     slug: "kazan-revizyon-ve-modernizasyonu",
@@ -33,11 +33,29 @@ export const services: Service[] = [
   },
   {
     number: "3",
-    title: "Mekanik Montaj Hizmetleri",
+    title: "Mekanik Tesisat Hizmetleri",
     description: "Kazan daireleri, borulama sistemleri ve yardımcı işletme üniteleri için yüksek basınç normlarına uygun hassas mekanik montaj ve devreye alma hizmetleri.",
-    image: "/img/Kaynakİşleri.jpeg",
+    image: "/img/mekanik_04.png",
     slug: "mekanik-montaj-hizmetleri",
-    color: "bg-primary-900 text-white"
+    color: "bg-primary-900 text-white",
+    detailSections: [
+      {
+        title: "Endüstriyel Borulama ve Tesisat Çözümleri",
+        image: "/img/mekanik_01.jpeg",
+        paragraphs: [
+          "Buhar, kondens, kızgın yağ ve gaz hatları için yüksek basınç standartlarında borulama hizmetleri sunuyoruz. Sertifikalı kaynakçılarımız ve uzman mühendis kadromuzla tesisat güvenliğini garanti altına alıyoruz.",
+          "Projelendirmeden montaja kadar tüm süreçlerde malzeme seçimi ve uygulama kalitesini en üst düzeyde tutarak, işletmenizin enerji verimliliğini artırıyoruz."
+        ]
+      },
+      {
+        title: "Ekipman Montaj ve Devreye Alma",
+        image: "/img/mekanik_02.jpeg",
+        paragraphs: [
+          "Eşanjörler, pompalar, vanalar ve diğer yardımcı ekipmanların hassas montajını gerçekleştiriyoruz. Sistem bütünlüğünü koruyarak, devreye alma öncesi gerekli testleri titizlikle tamamlıyoruz.",
+          "Mekanik tesisatın her noktasında sızdırmazlık ve performans testlerini uygulayarak, tesisin sorunsuz çalışmasını sağlıyoruz."
+        ]
+      }
+    ]
   },
   {
     number: "4",
@@ -63,6 +81,32 @@ export const services: Service[] = [
           "45 bar işletme basıncına sahip 100 t/h kapasiteli buhar kazanında, kullanım ömrünü tamamlayan ve deformasyona uğrayan membran duvar borularının söküm ve yenileme çalışmaları gerçekleştirilmiştir.",
           "Çalışma kapsamında mevcut hasarlı membran paneller kontrollü şekilde demonte edilmiş, saha ölçülerine uygun olarak hazırlanan yeni membran boruları ve fin kaynakları montaj sahasında yerlerine uygulanmıştır. Montaj sonrası tüm kaynak imalatları prosedüre uygun şekilde tamamlanmış, gerekli kontroller yapılarak sistem işletmeye hazır hale getirilmiştir.",
           "İş süresince yüksek sıcaklık ve dar çalışma alanı şartlarına uygun emniyet tedbirleri alınmış, saha organizasyonu kontrollü şekilde yürütülmüştür. Çalışmalar planlanan süre içerisinde başarıyla tamamlanmıştır."
+        ]
+      }
+    ]
+  },
+  {
+    number: "5",
+    title: "Çelik Konstrüksiyon",
+    description: "Endüstriyel tesisler, depo yapıları ve ağır sanayi üniteleri için yüksek dayanımlı çelik konstrüksiyon imalat ve montaj hizmetleri sunuyoruz.",
+    image: "/img/celik_01.jpeg",
+    slug: "celik-konstruksiyon-imalat-ve-montaj",
+    color: "bg-slate-800 text-white",
+    detailSections: [
+      {
+        title: "Endüstriyel Çelik Yapı İmalatı",
+        image: "/img/celik_02.jpeg",
+        paragraphs: [
+          "Fabrika binaları, hangarlar ve çok katlı endüstriyel yapılar için uluslararası standartlarda çelik konstrüksiyon imalatı gerçekleştiriyoruz. Tasarım aşamasından montaja kadar tüm süreçlerde mühendislik hassasiyetiyle çalışıyoruz.",
+          "Kullandığımız yüksek kaliteli çelik malzemeler ve ileri kaynak teknolojileri sayesinde, yapılarınızın statik ömrünü maksimize ederken güvenliği en üst düzeyde tutuyoruz."
+        ]
+      },
+      {
+        title: "Saha Montaj ve Uygulama Hizmetleri",
+        image: "/img/celik_03.jpeg",
+        paragraphs: [
+          "Uzman saha ekiplerimizle, en zorlu saha koşullarında bile hızlı ve güvenli montaj operasyonları yürütüyoruz. Vinç organizasyonu ve iş güvenliği prosedürlerimizle projelerinizi zamanında teslim ediyoruz.",
+          "Mevcut tesislerinize entegre edilecek ilave çelik yapılar veya güçlendirme projeleri için de yerinde çözümler üreterek operasyonel sürekliliğinizi destekliyoruz."
         ]
       }
     ]

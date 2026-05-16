@@ -14,6 +14,8 @@ const topReferences = [
   { name: "Efor Çay", logo: "/img/efor.jpeg" },
   { name: "Diageo", logo: "/img/diageo.jpeg" },
   { name: "Adana Çimento", logo: "/img/adana.jpeg" },
+  { name: "Koçentek", logo: "/img/kocentek.jpeg" },
+  { name: "Ofçay", logo: "/img/ofcay.jpeg" },
 ];
 
 const otherReferences = [

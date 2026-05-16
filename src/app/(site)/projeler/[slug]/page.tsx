@@ -12,47 +12,132 @@ export const revalidate = 60;
 
 const fallbackProjects = [
   {
-    title: "TÜPRAŞ İzmir Günlük Bakım İşleri",
-    category: "revision",
-    mainImage: { asset: { _ref: "fallback-1" }, url: "/img/hidroelektriksantral02.jpeg" },
-    status: "ongoing",
-    slug: { current: "tupras-izmir-bakim" },
-    client: "TÜPRAŞ",
-    location: "İzmir",
-    description: "Tüpraş İzmir rafinerisinde periyodik bakım ve onarım hizmetleri.",
+    title: "Afyon Şeker Fabrikası Kazan Kurulumu",
+    category: "boiler",
+    mainImage: { asset: { _ref: "fallback-afyon-ins" }, url: "/img/buharkazan_01.jpeg" },
+    status: "completed",
+    slug: { current: "afyon-seker-kazan-kurulumu" },
+    client: "Afyon Şeker",
+    location: "Afyonkarahisar",
+    description: "40 t/h kapasiteli anahtar teslim buhar kazanı kurulumu projesi.",
     content: [
       {
         _key: "1",
         _type: "block",
-        children: [{ _key: "1a", _type: "span", text: "Tüpraş İzmir rafinerisinde yürütülen bu proje kapsamında, tesisin günlük mekanik bakım işleri, boru hattı revizyonları ve periyodik kontrol hizmetleri Yaman Kazan uzmanlığıyla sunulmaktadır." }],
+        children: [{ _key: "1a", _type: "span", text: "Afyon Şeker Fabrikası bünyesinde yürütülen bu proje kapsamında, 40 t/h kapasiteli anahtar teslim buhar kazanı kurulumu tüm mekanik ve otomasyon sistemleriyle birlikte başarıyla tamamlanmıştır." }],
         style: "normal"
       }
     ],
     gallery: [
-      { asset: { _ref: "fallback-gal-1" }, url: "/img/Kaynakİşleri.jpeg" },
-      { asset: { _ref: "fallback-gal-2" }, url: "/img/hidroelektriksantral01.jpeg" }
+      { asset: { _ref: "fallback-gal-afyon-ins-1" }, url: "/img/sahamontajkurulumu.jpeg" }
+    ]
+  },
+
+  {
+    title: "Şeker Fabrikası Kazan Revizyonu",
+    category: "revision",
+    mainImage: { asset: { _ref: "fallback-afyon-rev" }, url: "/img/buharkazan_02.jpeg" },
+    status: "completed",
+    slug: { current: "afyon-seker-kazan-revizyonu" },
+    client: "Afyon Şeker",
+    location: "Afyonkarahisar",
+    description: "100 t/h kapasiteli buhar kazanı membran duvar değişimi ve kapsamlı revizyon projesi.",
+    content: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Afyon Şeker Fabrikası bünyesinde bulunan 100 t/h kapasiteli ve 45 bar işletme basıncına sahip buhar kazanının membran duvar panellerinin yenilenmesi ve genel revizyon çalışmaları başarıyla tamamlanmıştır." }],
+        style: "normal"
+      }
+    ],
+    gallery: [
+      { asset: { _ref: "fallback-gal-afyon-rev-1" }, url: "/img/buharkazan_01.jpeg" }
     ]
   },
   {
-    title: "MOL Macaristan Boru İmalat",
-    category: "mechanical",
-    mainImage: { asset: { _ref: "fallback-2" }, url: "/img/Kaynakİşleri.jpeg" },
-    status: "completed",
-    slug: { current: "mol-macaristan-imalat" },
-    client: "MOL Group",
-    location: "Macaristan",
-    description: "Uluslararası standartlarda boru imalat ve montaj projesi.",
+    title: "Efor Yatırım Çelik Konstrüksiyon İmalatı",
+    category: "industrial",
+    mainImage: { asset: { _ref: "fallback-efor" }, url: "/img/celik_01.jpeg" },
+    status: "ongoing",
+    slug: { current: "efor-yatirim-celik-konstruksiyon" },
+    client: "Efor Yatırım",
+    location: "Arhavi / Artvin",
+    description: "1.250 m² endüstriyel çelik konstrüksiyon imalat ve montaj çalışmaları.",
     content: [
       {
         _key: "1",
         _type: "block",
-        children: [{ _key: "1a", _type: "span", text: "Macaristan MOL Group tesisleri için gerçekleştirilen bu projede, yüksek basınçlı hatların imalatı ve montajı gerçekleştirilmiştir. Proje, uluslararası güvenlik ve kalite standartlarına tam uyum içerisinde başarıyla tamamlanmıştır." }],
+        children: [{ _key: "1a", _type: "span", text: "Artvin Arhavi'de Efor Yatırım bünyesinde yürütülen proje kapsamında, 1.250 m² kapalı alana sahip endüstriyel tesisin tüm çelik konstrüksiyon imalat ve montaj süreçleri Yaman Kazan uzmanlığıyla devam etmektedir." }],
         style: "normal"
       }
     ],
     gallery: [
-      { asset: { _ref: "fallback-gal-3" }, url: "/img/islemler.jpeg" },
-      { asset: { _ref: "fallback-gal-4" }, url: "/img/hidroelektriksantral02.jpeg" }
+      { asset: { _ref: "fallback-gal-efor-1" }, url: "/img/celik_02.jpeg" },
+      { asset: { _ref: "fallback-gal-efor-2" }, url: "/img/celik_03.jpeg" }
+    ]
+  },
+  {
+    title: "Efor Çay Doğalgaz Yakıtlı Kazan Projesi",
+    category: "boiler",
+    mainImage: { asset: { _ref: "fallback-eforcay" }, url: "/img/gorsel02.jpeg" },
+    status: "ongoing",
+    slug: { current: "efor-cay-dogalgaz-kazan" },
+    client: "Efor Çay",
+    location: "Rize",
+    description: "Doğalgaz yakıtlı kazan dairesi kurulum ve montaj çalışmaları.",
+    content: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Rize'de bulunan Efor Çay tesisleri için doğalgaz yakıtlı modern kazan dairesi kurulum çalışmaları Yaman Kazan uzmanlığıyla devam etmektedir. Proje kapsamında yüksek verimli sistemlerin montajı ve devreye alma süreçleri titizlikle yürütülmektedir." }],
+        style: "normal"
+      }
+    ],
+    gallery: [
+      { asset: { _ref: "fallback-gal-eforcay-1" }, url: "/img/buharkazan_04.jpeg" }
+    ]
+  },
+  {
+    title: "50 t/h Kazan Dom (Dram) İmalatı",
+    category: "boiler",
+    mainImage: { asset: { _ref: "fallback-dom" }, url: "/img/buharkazan_05.jpeg" },
+    status: "ongoing",
+    slug: { current: "50-th-kazan-dom-imalati" },
+    client: "Endüstriyel Tesis",
+    location: "Saha Uygulaması",
+    description: "50 t/h kapasiteli yüksek basınçlı kazan dom ünitesi imalat ve montajı.",
+    content: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Buhar kazanlarında su ve buharın birbirinden ayrıldığı, doymuş buharın toplandığı en kritik basınçlı kap bileşeni olan dram (dom) ünitesinin 50 t/h kapasiteli yeni nesil bir kazan için imalat ve montaj süreçleri titizlikle yürütülmektedir. Proje kapsamında yüksek mukavemetli çelik kullanımı ve hassas kaynak teknikleri ön planda tutulmaktadır." }],
+        style: "normal"
+      }
+    ],
+    gallery: [
+      { asset: { _ref: "fallback-gal-dom-1" }, url: "/img/buharkazan_01.jpeg" }
+    ]
+  },
+  {
+    title: "Entek HES Çöp Tutucu Izgara Revizyonu",
+    category: "revision",
+    mainImage: { asset: { _ref: "fallback-entek" }, url: "/img/hidroelektriksantral02.jpeg" },
+    status: "completed",
+    slug: { current: "entek-hes-izgara-revizyonu" },
+    client: "Entek Koç Holding",
+    location: "Mersin / Mut",
+    description: "Hidroelektrik Santrali Çöp Tutucu Izgara Revizyonu.",
+    content: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Hidroelektrik santrallerinde su girişini korumak amacıyla kullanılan çöp tutucu ızgaraların demontaj, temizlik ve revizyon çalışmaları; zorlu saha koşullarında uzman ekiplerimiz tarafından güvenli ve kontrollü şekilde gerçekleştirilmektedir." }],
+        style: "normal"
+      }
+    ],
+    gallery: [
+      { asset: { _ref: "fallback-gal-entek-1" }, url: "/img/ÇöpTutucuIzgaraRevizyonu.jpeg" },
+      { asset: { _ref: "fallback-gal-entek-2" }, url: "/img/hidroelektriksantral03.jpeg" }
     ]
   },
 ];

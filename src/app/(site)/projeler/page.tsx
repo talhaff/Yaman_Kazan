@@ -17,42 +17,63 @@ const fallbackProjects = [
   {
     title: "Afyon Şeker Fabrikası Kazan Kurulumu",
     category: "boiler",
-    image: "/img/sahamontajkurulumu.jpeg",
+    image: "/img/buharkazan_01.jpeg",
     status: "completed",
     slug: { current: "afyon-seker-kazan-kurulumu" },
     client: "Afyon Şeker",
     location: "Afyonkarahisar",
-    description: "40 t/h kapasiteli anahtar teslim buhar kazanı kurulumu."
+    description: "40 t/h kapasiteli anahtar teslim buhar kazanı kurulumu projesi."
   },
+
   {
-    title: "Rize Doğuş Çay Kazan Kurulumu",
-    category: "boiler",
-    image: "/img/buharkazan_01.jpeg",
-    status: "completed",
-    slug: { current: "rize-dogus-cay-kazan-kurulumu" },
-    client: "Doğuş Çay",
-    location: "Rize",
-    description: "40 t/h kapasiteli anahtar teslim buhar kazanı kurulumu."
-  },
-  {
-    title: "Afyon Şeker Fabrikası Kazan Revizyonu",
+    title: "Şeker Fabrikası Kazan Revizyonu",
     category: "revision",
     image: "/img/buharkazan_02.jpeg",
     status: "completed",
     slug: { current: "afyon-seker-kazan-revizyonu" },
     client: "Afyon Şeker",
     location: "Afyonkarahisar",
-    description: "2 adet 100 t/h kapasiteli 45 bar basınçlı buhar kazanının kapsamlı revizyon çalışmaları."
+    description: "100 t/h kapasiteli buhar kazanı membran duvar değişimi ve kapsamlı revizyon projesi."
   },
   {
-    title: "TÜPRAŞ İzmir Günlük Bakım İşleri",
+    title: "Efor Yatırım Çelik Konstrüksiyon İmalatı",
+    category: "industrial",
+    image: "/img/celik_01.jpeg",
+    status: "ongoing",
+    slug: { current: "efor-yatirim-celik-konstruksiyon" },
+    client: "Efor Yatırım",
+    location: "Arhavi / Artvin",
+    description: "1.250 m² endüstriyel çelik konstrüksiyon imalat ve montaj çalışmaları."
+  },
+  {
+    title: "Efor Çay Doğalgaz Yakıtlı Kazan Projesi",
+    category: "boiler",
+    image: "/img/gorsel02.jpeg",
+    status: "ongoing",
+    slug: { current: "efor-cay-dogalgaz-kazan" },
+    client: "Efor Çay",
+    location: "Rize",
+    description: "Doğalgaz yakıtlı kazan dairesi kurulum ve montaj çalışmaları."
+  },
+  {
+    title: "50 t/h Kazan Dom (Dram) İmalatı",
+    category: "boiler",
+    image: "/img/buharkazan_05.jpeg",
+    status: "ongoing",
+    slug: { current: "50-th-kazan-dom-imalati" },
+    client: "Endüstriyel Tesis",
+    location: "Saha Uygulaması",
+    description: "50 t/h kapasiteli yüksek basınçlı kazan dom ünitesi imalat ve montajı."
+  },
+  {
+    title: "Entek HES Çöp Tutucu Izgara Revizyonu",
     category: "revision",
     image: "/img/hidroelektriksantral02.jpeg",
-    status: "ongoing",
-    slug: { current: "tupras-izmir-bakim" },
-    client: "TÜPRAŞ",
-    location: "İzmir",
-    description: "Tüpraş İzmir rafinerisinde periyodik bakım ve onarım hizmetleri."
+    status: "completed",
+    slug: { current: "entek-hes-izgara-revizyonu" },
+    client: "Entek Koç Holding",
+    location: "Mersin / Mut",
+    description: "Hidroelektrik Santrali Çöp Tutucu Izgara Revizyonu."
   }
 ];
 
