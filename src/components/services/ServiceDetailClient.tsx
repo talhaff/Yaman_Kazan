@@ -98,79 +98,6 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
         </motion.div>
       </section>
 
-      {/* Tamamlanan Projeler - Right After Hero */}
-      {service.detailSections && service.detailSections.length > 0 && !isBuharKazani && (
-        <section className="relative z-20 -mt-8 md:-mt-16 pb-12 md:pb-20">
-          <div className="container mx-auto px-6">
-            {/* Section Header */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-4 mb-8 md:mb-12"
-            >
-              <div className="h-px flex-1 bg-gradient-to-r from-primary-800/30 to-transparent" />
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary-800" />
-                <span className="text-primary-950 font-black uppercase tracking-[0.3em] text-[9px] md:text-[11px]">Tamamlanan Projeler</span>
-                <div className="w-1.5 h-1.5 rounded-full bg-primary-800" />
-              </div>
-              <div className="h-px flex-1 bg-gradient-to-l from-primary-800/30 to-transparent" />
-            </motion.div>
-
-            {/* Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto">
-              {service.detailSections.map((section, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.15, ease: "easeOut" }}
-                  className="group bg-white rounded-xl md:rounded-2xl overflow-hidden border border-slate-200/60 shadow-lg shadow-primary-950/[0.03] hover:shadow-xl hover:shadow-primary-950/[0.06] transition-all duration-500 hover:-translate-y-0.5"
-                >
-                  {/* Card Image */}
-                  <div className="relative w-full aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={section.image}
-                      alt={section.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-                    {/* Title overlay on image */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <div className="w-5 h-5 rounded bg-white/90 backdrop-blur-sm flex items-center justify-center">
-                          <span className="text-primary-950 font-black text-[10px]">0{idx + 1}</span>
-                        </div>
-                        <div className="h-px flex-1 bg-white/20" />
-                      </div>
-                      <h3 className="text-white text-sm md:text-[15px] font-bold leading-snug drop-shadow-lg">
-                        {section.title}
-                      </h3>
-                    </div>
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="p-4 md:p-5">
-                    <div className="space-y-2">
-                      {section.paragraphs.map((paragraph, pIdx) => (
-                        <p
-                          key={pIdx}
-                          className="text-slate-500 text-[11px] md:text-xs leading-relaxed"
-                        >
-                          {paragraph}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Intro Info Section */}
       {isBuharKazani ? (
@@ -335,6 +262,80 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                   </div>
                 </div>
               </aside>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Hizmet Detayları - Moved Below Intro */}
+      {service.detailSections && service.detailSections.length > 0 && !isBuharKazani && (
+        <section className="relative z-20 pb-12 md:pb-20 mt-12 md:mt-16">
+          <div className="container mx-auto px-6">
+            {/* Section Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-4 mb-8 md:mb-12"
+            >
+              <div className="h-px flex-1 bg-gradient-to-r from-primary-800/30 to-transparent" />
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary-800" />
+                <span className="text-primary-950 font-black uppercase tracking-[0.3em] text-[9px] md:text-[11px]">Uygulama Detayları</span>
+                <div className="w-1.5 h-1.5 rounded-full bg-primary-800" />
+              </div>
+              <div className="h-px flex-1 bg-gradient-to-l from-primary-800/30 to-transparent" />
+            </motion.div>
+
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto">
+              {service.detailSections.map((section, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.15, ease: "easeOut" }}
+                  className="group bg-white rounded-xl md:rounded-2xl overflow-hidden border border-slate-200/60 shadow-lg shadow-primary-950/[0.03] hover:shadow-xl hover:shadow-primary-950/[0.06] transition-all duration-500 hover:-translate-y-0.5"
+                >
+                  {/* Card Image */}
+                  <div className="relative w-full aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={section.image}
+                      alt={section.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                    {/* Title overlay on image */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <div className="w-5 h-5 rounded bg-white/90 backdrop-blur-sm flex items-center justify-center">
+                          <span className="text-primary-950 font-black text-[10px]">0{idx + 1}</span>
+                        </div>
+                        <div className="h-px flex-1 bg-white/20" />
+                      </div>
+                      <h3 className="text-white text-sm md:text-[15px] font-bold leading-snug drop-shadow-lg">
+                        {section.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="p-4 md:p-5">
+                    <div className="space-y-2">
+                      {section.paragraphs.map((paragraph, pIdx) => (
+                        <p
+                          key={pIdx}
+                          className="text-slate-500 text-[11px] md:text-xs leading-relaxed"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
