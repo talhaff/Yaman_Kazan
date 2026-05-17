@@ -12,7 +12,7 @@ export default function FaaliyetAlanlariPage() {
       <PageHeader 
         title="Faaliyet Alanlarımız" 
         description="Endüstriyel tesis kurulumundan ağır ekipman montajına kadar mühendisliğin gücünü sahaya yansıtıyoruz."
-        imagePath="/img/sahamontajkurulumu.jpeg"
+        imagePath="/img/faaliyetarka01.png"
       />
       
       <div className="bg-white">

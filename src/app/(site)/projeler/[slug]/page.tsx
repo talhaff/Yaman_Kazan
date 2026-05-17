@@ -12,7 +12,7 @@ export const revalidate = 60;
 
 const fallbackProjects = [
   {
-    title: "Afyon Şeker Fabrikası Yataklı Buhar Kazanı Montajı",
+    title: "Afyon Şeker Fabrikası Akışkan Yataklı Buhar Kazanı Montajı",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-afyon-montaj" }, url: "/img/kurulumlar.jpeg" },
     status: "completed",
@@ -72,7 +72,7 @@ const fallbackProjects = [
       }
     ],
     gallery: [
-      { asset: { _ref: "fallback-gal-afyon-rev-1" }, url: "/img/buharkazan_01.jpeg" }
+      { asset: { _ref: "fallback-gal-afyon-rev-1" }, url: "/img/buharkazan_02.jpeg" }
     ]
   },
   {
@@ -98,12 +98,11 @@ const fallbackProjects = [
     ]
   },
   {
-    title: "Efor Çay Doğalgaz Yakıtlı Kazan Projesi",
+    title: "Doğalgaz Yakıtlı Kazan Projesi",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-eforcay" }, url: "/img/gorsel02.jpeg" },
     status: "ongoing",
-    slug: { current: "efor-cay-dogalgaz-kazan" },
-    client: "Efor Çay",
+    slug: { current: "dogalgaz-yakitli-kazan" },
     location: "Rize",
     description: "Doğalgaz yakıtlı kazan dairesi kurulum ve montaj çalışmaları.",
     content: [

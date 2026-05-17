@@ -15,7 +15,7 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 const fallbackProjects = [
   {
-    title: "Afyon Şeker Fabrikası Yataklı Buhar Kazanı Montajı",
+    title: "Afyon Şeker Fabrikası Akışkan Yataklı Buhar Kazanı Montajı",
     category: "boiler",
     image: "/img/kurulumlar.jpeg",
     status: "completed",
@@ -56,12 +56,11 @@ const fallbackProjects = [
     description: "1.250 m² endüstriyel çelik konstrüksiyon imalat ve montaj çalışmaları."
   },
   {
-    title: "Efor Çay Doğalgaz Yakıtlı Kazan Projesi",
+    title: "Doğalgaz Yakıtlı Kazan Projesi",
     category: "boiler",
     image: "/img/gorsel02.jpeg",
     status: "ongoing",
-    slug: { current: "efor-cay-dogalgaz-kazan" },
-    client: "Efor Çay",
+    slug: { current: "dogalgaz-yakitli-kazan" },
     location: "Rize",
     description: "Doğalgaz yakıtlı kazan dairesi kurulum ve montaj çalışmaları."
   },

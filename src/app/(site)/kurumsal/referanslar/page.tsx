@@ -16,6 +16,7 @@ const topReferences = [
   { name: "Adana Çimento", logo: "/img/adana.jpeg" },
   { name: "Koçentek", logo: "/img/kocentek.jpeg" },
   { name: "Ofçay", logo: "/img/ofcay.jpeg" },
+  { name: "Türkşeker", logo: "/img/turkseker01.png" },
 ];
 
 const otherReferences = [
