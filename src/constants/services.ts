@@ -89,7 +89,7 @@ export const services: Service[] = [
     description: "Endüstriyel tesislerin sürdürülebilirliği için periyodik bakım, onarım ve revizyon hizmetleri ile işletme verimliliğinizi koruyoruz.",
     image: "/img/islemler.jpeg",
     slug: "bakim-hizmetleri",
-    color: "bg-secondary-600 text-white",
+    color: "bg-slate-700 text-white",
     detailSections: [
       {
         title: "Buhar Kazanı Demontaj ve Taşıma Çalışmaları",
