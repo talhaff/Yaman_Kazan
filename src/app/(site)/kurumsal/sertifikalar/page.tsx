@@ -17,19 +17,19 @@ const fallbackCertificates = [
     title: "ISO 45001:2018", 
     issuer: "Kalite Yönetim Sistemi Sertifikası", 
     image: "/img/sertifika1.png", 
-    code: "QMS-2026-YK"
+    code: "OHS-2026-YK"
   },
   { 
     title: "ISO 9001:2015", 
-    issuer: "Kaynak Kalite Güvence Sertifikası", 
+    issuer: "Kalite Yönetim Sistemi Sertifikası", 
     image: "/img/sertifika2.png", 
-    code: "WELD-2026-YK"
+    code: "QMS-2026-YK"
   },
   { 
     title: "ISO 14001:2015", 
-    issuer: "Basınçlı Ekipmanlar Uygunluk Belgesi", 
+    issuer: "Çevre Yönetim Sistemi Sertifikası", 
     image: "/img/sertifika3.png",
-    code: "PED-2026-YK"
+    code: "ENV-2026-YK"
   },
 ];
 

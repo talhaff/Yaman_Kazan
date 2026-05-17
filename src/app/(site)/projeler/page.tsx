@@ -15,7 +15,7 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 const fallbackProjects = [
   {
-    title: "Afyon Şeker Fabrikası Akışkan Yataklı Buhar Kazanı Montajı",
+    title: "Şeker Fabrikası Akışkan Yataklı Buhar Kazanı Montajı",
     category: "boiler",
     image: "/img/kurulumlar.jpeg",
     status: "completed",

@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Background Overlay */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/img/hero-premium.png" 
+          src="/img/faaliyetarka01.png" 
           alt="Yaman Kazan Endüstriyel Tesis" 
           fill 
           priority 

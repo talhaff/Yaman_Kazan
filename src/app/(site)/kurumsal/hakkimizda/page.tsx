@@ -72,7 +72,7 @@ export default function HakkimizdaPage() {
             >
               <div className="aspect-[4/5] relative rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)]">
                 <Image 
-                  src="/img/kurumsal_miras.png" 
+                  src="/img/kurumsal_miras01.png" 
                   alt="Yaman Kazan Endüstriyel Miras" 
                   fill 
                   className="object-cover" 
