@@ -2,6 +2,7 @@
 
 import Hero from "@/components/home/Hero";
 import StackedServices from "@/components/home/StackedServices";
+import Sectors from "@/components/home/Sectors";
 import { ShieldCheck, Target, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -159,6 +160,9 @@ export default function Home() {
 
       {/* Services Section - The Stacked Cards */}
       <StackedServices />
+
+      {/* Sectors We Serve Grid Section */}
+      <Sectors />
 
       {/* Unified Industrial Power Section - Features & CTA Merged */}
       <section className="relative bg-primary-950 pt-10 pb-12 md:pt-32 md:pb-32 overflow-hidden">

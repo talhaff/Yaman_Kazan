@@ -15,39 +15,21 @@ export const revalidate = 60;
 const fallbackCertificates = [
   { 
     title: "ISO 9001:2015", 
-    issuer: "Kalite Yönetim Sistemi", 
-    image: "/img/proje01.jpeg", 
-    code: "QMS-2024-001"
-  },
-  { 
-    title: "ISO 14001:2015", 
-    issuer: "Çevre Yönetim Sistemi", 
-    image: "/img/proje02.jpeg", 
-    code: "EMS-2024-002"
-  },
-  { 
-    title: "ISO 45001:2018", 
-    issuer: "İş Sağlığı ve Güvenliği", 
-    image: "/img/proje03.jpeg",
-    code: "OHS-2024-003"
+    issuer: "Kalite Yönetim Sistemi Sertifikası", 
+    image: "/img/sertifika1.png", 
+    code: "QMS-2026-YK"
   },
   { 
     title: "EN ISO 3834-2", 
-    issuer: "Metalik Malzemelerin Kaynağı", 
-    image: "/img/proje04.jpeg",
-    code: "WELD-2024-004"
+    issuer: "Kaynak Kalite Güvence Sertifikası", 
+    image: "/img/sertifika2.png", 
+    code: "WELD-2026-YK"
   },
   { 
-    title: "ASME U-Stamp", 
-    issuer: "Basınçlı Kaplar Üretim", 
-    image: "/img/proje05.jpeg",
-    code: "ASME-2024-005"
-  },
-  { 
-    title: "CE Belgesi", 
-    issuer: "Avrupa Standartları Uygunluk", 
-    image: "/img/proje06.jpeg",
-    code: "CE-2024-006"
+    title: "CE BELGESİ (2014/68/EU)", 
+    issuer: "Basınçlı Ekipmanlar Uygunluk Belgesi", 
+    image: "/img/sertifika3.png",
+    code: "PED-2026-YK"
   },
 ];
 

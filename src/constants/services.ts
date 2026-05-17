@@ -61,7 +61,7 @@ export const services: Service[] = [
     number: "4",
     title: "Mekanik Tesisat Hizmetleri",
     description: "Kazan daireleri, borulama sistemleri ve yardımcı işletme üniteleri için yüksek basınç normlarına uygun hassas mekanik montaj ve devreye alma hizmetleri.",
-    image: "/img/mekanik_04.png",
+    image: "/img/image.png",
     slug: "mekanik-montaj-hizmetleri",
     color: "bg-primary-900 text-white",
     detailSections: [
@@ -89,7 +89,7 @@ export const services: Service[] = [
     description: "Endüstriyel tesislerin sürdürülebilirliği için periyodik bakım, onarım ve revizyon hizmetleri ile işletme verimliliğinizi koruyoruz.",
     image: "/img/islemler.jpeg",
     slug: "bakim-hizmetleri",
-    color: "bg-primary-900 text-white",
+    color: "bg-secondary-600 text-white",
     detailSections: [
       {
         title: "Buhar Kazanı Demontaj ve Taşıma Çalışmaları",
