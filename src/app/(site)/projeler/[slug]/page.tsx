@@ -29,7 +29,7 @@ const fallbackProjects = [
       }
     ],
     gallery: [
-      { asset: { _ref: "fallback-gal-afyon-ins-1" }, url: "/img/sahamontajkurulumu.jpeg" }
+      { asset: { _ref: "fallback-gal-afyon-ins-1" }, url: "/img/buharkazan_01.jpeg" }
     ]
   },
 
@@ -115,7 +115,7 @@ const fallbackProjects = [
       }
     ],
     gallery: [
-      { asset: { _ref: "fallback-gal-dom-1" }, url: "/img/buharkazan_01.jpeg" }
+      { asset: { _ref: "fallback-gal-dom-1" }, url: "/img/buharkazan_05.jpeg" }
     ]
   },
   {

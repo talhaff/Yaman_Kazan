@@ -105,13 +105,13 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
           <div className="container mx-auto px-6">
             <div className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl shadow-primary-950/10 border border-slate-50 overflow-hidden">
               
-              {/* Tabs Navigation */}
-              <div className="flex overflow-x-auto hide-scrollbar border-b border-slate-100 bg-slate-50/50">
+              {/* Desktop Tabs Navigation (Hidden on Mobile) */}
+              <div className="hidden md:flex overflow-x-auto hide-scrollbar border-b border-slate-100 bg-slate-50/50 scroll-smooth">
                 {buharKazaniTabs.map((tab, idx) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(idx)}
-                    className={`whitespace-nowrap px-8 py-6 text-[11px] font-black uppercase tracking-widest transition-all ${
+                    className={`whitespace-nowrap shrink-0 px-8 py-6 text-[11px] font-black uppercase tracking-widest transition-all ${
                       activeTab === idx 
                         ? 'text-primary-600 border-b-2 border-primary-600 bg-white' 
                         : 'text-slate-400 hover:text-primary-900 hover:bg-white'
@@ -122,8 +122,32 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                 ))}
               </div>
 
+              {/* Mobile Grid Navigation (Hidden on Desktop) */}
+              <div className="md:hidden grid grid-cols-2 gap-2.5 p-4 bg-slate-50/50 border-b border-slate-100">
+                {buharKazaniTabs.map((tab, idx) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(idx)}
+                    className={`px-3 py-3 text-[10px] font-black uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center gap-2 border ${
+                      idx === buharKazaniTabs.length - 1 ? 'col-span-2' : ''
+                    } ${
+                      activeTab === idx 
+                        ? 'bg-primary-600 text-white border-primary-600 shadow-md shadow-primary-600/10' 
+                        : 'bg-white text-slate-600 border-slate-200/80 active:bg-slate-50'
+                    }`}
+                  >
+                    <span className={`w-5 h-5 rounded-md flex items-center justify-center text-[9px] font-black shrink-0 ${
+                      activeTab === idx ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-400'
+                    }`}>
+                      0{idx + 1}
+                    </span>
+                    <span className="truncate">{tab.title}</span>
+                  </button>
+                ))}
+              </div>
+
               {/* Tab Content */}
-              <div className="p-8 md:p-16 lg:p-20">
+              <div className="p-6 md:p-16 lg:p-20">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeTab}
@@ -139,10 +163,10 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                           <div className="h-px w-12 bg-primary-600" />
                           <span className="text-xs font-black uppercase tracking-[0.4em] text-primary-600">Ürün Grubu</span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-black text-primary-950 tracking-tighter uppercase mb-8 leading-[1.1]">
+                        <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter uppercase mb-6 md:mb-8 leading-[1.1]">
                           {buharKazaniTabs[activeTab].title}
                         </h2>
-                        <p className="text-lg md:text-xl text-slate-600 leading-relaxed font-medium mb-12">
+                        <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium mb-8 md:mb-12">
                           {buharKazaniTabs[activeTab].content}
                         </p>
                         
@@ -168,7 +192,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                         </div>
                       </div>
                       
-                      <div className="aspect-[4/5] rounded-[2.5rem] bg-slate-100 relative overflow-hidden shadow-2xl shadow-primary-950/10 border border-slate-50">
+                      <div className="aspect-square md:aspect-[4/5] rounded-[2rem] md:rounded-[2.5rem] bg-slate-100 relative overflow-hidden shadow-2xl shadow-primary-950/10 border border-slate-50">
                         {/* Placeholder image, can be made dynamic per tab if needed later */}
                         <Image 
                           src="/img/buharkazan_04.jpeg" 
@@ -177,8 +201,8 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                           className="object-cover hover:scale-105 transition-transform duration-1000" 
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 to-transparent" />
-                        <div className="absolute bottom-8 left-8 right-8">
-                          <p className="text-white font-bold text-lg drop-shadow-md">{buharKazaniTabs[activeTab].title} Sistemleri</p>
+                        <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 right-6 md:right-8">
+                          <p className="text-white font-bold text-base md:text-lg drop-shadow-md">{buharKazaniTabs[activeTab].title} Sistemleri</p>
                         </div>
                       </div>
                     </div>
