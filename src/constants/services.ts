@@ -26,7 +26,7 @@ export const services: Service[] = [
   {
     number: "2",
     title: "Endüstriyel Tesis Taahhüt Hizmetleri",
-    description: "Endüstriyel tesisler için anahtar teslim mekanik kurulumlar, yüksek basınçlı borulama sistemleri, teknolojik ekipman montajları ve kapsamlı altyapı projelerini uluslararası kalite standartlarında taahhüt ediyoruz.",
+    description: "Endüstriyel tesisler için anahtar teslim mekanik kurulumlar, yüksek basınçlı borulama sistemleri, teknolojik ekipman montajlarını uluslararası kalite standartlarında taahhüt ediyoruz.",
     image: "/img/kurulumlar.jpeg",
     slug: "kazan-revizyon-ve-modernizasyonu",
     color: "bg-primary-950 text-white"
