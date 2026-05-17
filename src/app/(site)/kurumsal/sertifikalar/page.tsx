@@ -14,19 +14,19 @@ export const revalidate = 60;
 
 const fallbackCertificates = [
   { 
-    title: "ISO 9001:2015", 
+    title: "ISO 45001:2018", 
     issuer: "Kalite Yönetim Sistemi Sertifikası", 
     image: "/img/sertifika1.png", 
     code: "QMS-2026-YK"
   },
   { 
-    title: "EN ISO 3834-2", 
+    title: "ISO 9001:2015", 
     issuer: "Kaynak Kalite Güvence Sertifikası", 
     image: "/img/sertifika2.png", 
     code: "WELD-2026-YK"
   },
   { 
-    title: "CE BELGESİ (2014/68/EU)", 
+    title: "ISO 14001:2015", 
     issuer: "Basınçlı Ekipmanlar Uygunluk Belgesi", 
     image: "/img/sertifika3.png",
     code: "PED-2026-YK"
