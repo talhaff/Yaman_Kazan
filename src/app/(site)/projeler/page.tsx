@@ -15,6 +15,16 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 const fallbackProjects = [
   {
+    title: "Afyon Şeker Fabrikası Yataklı Buhar Kazanı Montajı",
+    category: "boiler",
+    image: "/img/kurulumlar.jpeg",
+    status: "completed",
+    slug: { current: "afyon-seker-40-th-kazan-montaji" },
+    client: "Afyon Şeker",
+    location: "Afyonkarahisar",
+    description: "Afyon Şeker Fabrikası 40 t/h bölünmüş ocak akışkan yataklı buhar kazanı montaj sürecimiz tamamlanmıştır."
+  },
+  {
     title: "Doğuş Çay Fabrikası Kazan Demontajı",
     category: "boiler",
     image: "/img/buharkazan_01.jpeg",   

@@ -38,19 +38,16 @@ export default function HakkimizdaPage() {
               
               <div className="space-y-8 text-gray-600 text-lg leading-relaxed font-medium">
                 <p>
-                  <strong className="text-primary-950">Yaman Kazan ve Makine</strong>, AFYON Şeker Fabrikası ve RİZE Doğuş Çay gibi endüstri devlerine yüksek kapasiteli buhar kazanı çözümleri sunan, imalat ve taahhüt alanında öncü bir mühendislik firmasıdır.
+                  <strong className="text-primary-950">Yaman Kazan ve Makine</strong>, endüstriyel tesislerin ihtiyaç duyduğu yüksek kapasiteli buhar kazanları, basınçlı kaplar ve mekanik sistemlerin tasarımı, imalatı ve kurulumunda uzmanlaşmış öncü bir mühendislik firmasıdır. Kuruluşumuzdan bu yana, teknolojik gelişmeleri ve küresel standartları yakından takip ederek ağır sanayi tesislerine güvenli, verimli ve uzun ömürlü mühendislik çözümleri sunmaktayız.
                 </p>
                 <p>
-                  Firmamız; kazan imalatı, 40 t/h gibi yüksek kapasiteli sistemlerin anahtar teslim kurulumu ve yüksek basınçlı sistemlerin (örn. 100 t/h - 45 bar) revizyon süreçlerini tek çatı altında yürüterek, sanayi tesislerine güvenilir ve sürdürülebilir çözümler sağlamaktadır.
+                  Firmamız; yüksek kapasiteli buhar üretim tesislerinin anahtar teslim kurulumlarından, mevcut sistemlerin yüksek basınç dayanımlı revizyon çalışmalarına kadar tüm süreçleri tek bir çatı altında başarıyla yürütmektedir. Tasarımdan üretime, saha montajından devreye almaya kadar her aşamada üstün mühendislik disiplini ve kusursuz işçilik standartlarını uygulamaktayız.
                 </p>
                 <p>
-                  Başta şeker fabrikaları, çay fabrikaları, enerji tesisleri ve ağır sanayi kuruluşları olmak üzere; buhar kazanı imalatı ve kurulumu, yüksek basınçlı mekanik tesisatlar, endüstriyel borulama ve çelik konstrüksiyon uygulamalarında uzmanlaşmış bulunmaktayız.
+                  Geniş faaliyet alanlarımız kapsamında; endüstriyel tesis taahhüt hizmetleri, yüksek basınçlı borulama ve proses hatları, çelik konstrüksiyon imalatları ile mekanik tesisat uygulamalarında uzmanlaşmış durumdayız. Gıda, çimento, enerji ve ağır sanayi sektörlerindeki üreticilerin güvenilir çözüm ortağı olarak, tesislerin operasyonel sürekliliğini ve enerji verimliliğini maksimize etmekteyiz.
                 </p>
                 <p>
-                  Yürüttüğümüz projelerde önceliğimiz; kaliteli işçilik, iş güvenliği, zamanında teslim ve uzun ömürlü uygulamalar ortaya koymaktır. Her projeyi yalnızca bir iş olarak değil, arkasında durduğumuz bir referans olarak görmekteyiz.
-                </p>
-                <p>
-                  Tecrübeli saha kadromuz ve uygulama disiplinimiz ile, müşterilerimize kazan projeleri başta olmak üzere tüm ihtiyaçlarına uygun mühendislik çözümleri sunmaya devam ediyoruz.
+                  Yürüttüğümüz tüm projelerde temel önceliğimiz; iş sağlığı ve güvenliği ilkelerinden taviz vermemek, uluslararası kalite normlarında üretim yapmak ve taahhütlerimizi zamanında eksiksiz teslim etmektir. Mühendislik gücümüzü modern üretim tesisimiz ve sahada tecrübeli uzman ekiplerimizle birleştirerek, imza attığımız her projede güvenilirliğin simgesi olmaya devam ediyoruz.
                 </p>
               </div>
 

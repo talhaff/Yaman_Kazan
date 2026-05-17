@@ -12,6 +12,27 @@ export const revalidate = 60;
 
 const fallbackProjects = [
   {
+    title: "Afyon Şeker Fabrikası Yataklı Buhar Kazanı Montajı",
+    category: "boiler",
+    mainImage: { asset: { _ref: "fallback-afyon-montaj" }, url: "/img/kurulumlar.jpeg" },
+    status: "completed",
+    slug: { current: "afyon-seker-40-th-kazan-montaji" },
+    client: "Afyon Şeker",
+    location: "Afyonkarahisar",
+    description: "Afyon Şeker Fabrikası 40 t/h bölünmüş ocak akışkan yataklı buhar kazanı montaj sürecimiz tamamlanmıştır.",
+    content: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Afyon Şeker Fabrikası bünyesinde gerçekleştirdiğimiz bu kapsamlı proje kapsamında; 40 t/h kapasiteli, bölünmüş ocak akışkan yataklı buhar kazanının tüm saha montajı, mekanik kurulumları ve yardımcı ekipman entegrasyonları uzman teknik kadromuz tarafından başarıyla tamamlanmıştır. Yüksek mühendislik disipliniyle yürütülen montaj süreci sonrasında tüm sistem başarıyla test edilerek devreye alınmıştır." }],
+        style: "normal"
+      }
+    ],
+    gallery: [
+      { asset: { _ref: "fallback-gal-afyon-montaj-1" }, url: "/img/kurulumlar.jpeg" }
+    ]
+  },
+  {
     title: "Doğuş Çay Kazan Demontajı",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-afyon-ins" }, url: "/img/buharkazan_01.jpeg" },
