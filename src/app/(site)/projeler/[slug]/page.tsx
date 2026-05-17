@@ -12,19 +12,19 @@ export const revalidate = 60;
 
 const fallbackProjects = [
   {
-    title: "Şeker Fabrikası Akışkan Yataklı Buhar Kazanı Montajı",
+    title: "Akışkan Yataklı Buhar Kazanı Montajı",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-afyon-montaj" }, url: "/img/kurulumlar.jpeg" },
     status: "completed",
-    slug: { current: "afyon-seker-40-th-kazan-montaji" },
-    client: "Afyon Şeker",
-    location: "Afyonkarahisar",
-    description: "Afyon Şeker Fabrikası 40 t/h bölünmüş ocak akışkan yataklı buhar kazanı montaj sürecimiz tamamlanmıştır.",
+    slug: { current: "akiskan-yatakli-buhar-kazani-montaji" },
+    client: "Şeker Üretim Tesisleri",
+    location: "Türkiye",
+    description: "40 t/h bölünmüş ocak akışkan yataklı buhar kazanı montaj sürecimiz başarıyla tamamlanmıştır.",
     content: [
       {
         _key: "1",
         _type: "block",
-        children: [{ _key: "1a", _type: "span", text: "Afyon Şeker Fabrikası bünyesinde gerçekleştirdiğimiz bu kapsamlı proje kapsamında; 40 t/h kapasiteli, bölünmüş ocak akışkan yataklı buhar kazanının tüm saha montajı, mekanik kurulumları ve yardımcı ekipman entegrasyonları uzman teknik kadromuz tarafından başarıyla tamamlanmıştır. Yüksek mühendislik disipliniyle yürütülen montaj süreci sonrasında tüm sistem başarıyla test edilerek devreye alınmıştır." }],
+        children: [{ _key: "1a", _type: "span", text: "Endüstriyel şeker fabrikası tesisleri bünyesinde gerçekleştirdiğimiz bu kapsamlı proje kapsamında; 40 t/h kapasiteli, bölünmüş ocak akışkan yataklı buhar kazanının tüm saha montajı, mekanik kurulumları ve yardımcı ekipman entegrasyonları uzman teknik kadromuz tarafından başarıyla tamamlanmıştır. Yüksek mühendislik disipliniyle yürütülen montaj süreci sonrasında tüm sistem başarıyla test edilerek devreye alınmıştır." }],
         style: "normal"
       }
     ],
@@ -33,19 +33,19 @@ const fallbackProjects = [
     ]
   },
   {
-    title: "Doğuş Çay Kazan Demontajı",
+    title: "Yüksek Kapasiteli Buhar Kazanı Demontajı",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-afyon-ins" }, url: "/img/buharkazan_01.jpeg" },
     status: "completed",
-    slug: { current: "dogus-cay-kazan-demontaji" },
-    client: "Doğuş Çay",
-    location: "Rize",
-    description: "Doğuş Çay Fabrikası bünyesinde ömrünü tamamlamış olan yüksek kapasiteli buhar kazanının ve yardımcı ekipmanlarının güvenli demontajı, saha içi nakliyesi ve taşıma çalışmaları başarıyla tamamlanmıştır.",
+    slug: { current: "yuksek-kapasiteli-buhar-kazani-demontaji" },
+    client: "Çay Sanayisi Tesisleri",
+    location: "Türkiye",
+    description: "Endüstriyel gıda fabrikası bünyesinde ömrünü tamamlamış olan yüksek kapasiteli buhar kazanının ve yardımcı ekipmanlarının güvenli demontajı, saha içi nakliyesi ve taşıma çalışmaları başarıyla tamamlanmıştır.",
     content: [
       {
         _key: "1",
         _type: "block",
-        children: [{ _key: "1a", _type: "span", text: "Doğuş Çay Rize Fabrikası bünyesinde yürütülen bu proje kapsamında, kullanım ömrünü tamamlamış olan 40 t/h kapasiteli buhar kazanının ve bağlı tüm mekanik ünitelerin demontaj çalışmaları başarıyla gerçekleştirilmiştir. Operasyon boyunca, yüksek tonajlı kaldırma ve saha içi taşıma işlemleri uzman ekiplerimiz tarafından iş sağlığı ve güvenliği prosedürlerine tam uyum gösterilerek, planlanan takvim içinde sorunsuz bir şekilde tamamlanmıştır." }],
+        children: [{ _key: "1a", _type: "span", text: "Endüstriyel çay üretim tesisi bünyesinde yürütülen bu proje kapsamında, kullanım ömrünü tamamlamış olan 40 t/h kapasiteli buhar kazanının ve bağlı tüm mekanik ünitelerin demontaj çalışmaları başarıyla gerçekleştirilmiştir. Operasyon boyunca, yüksek tonajlı kaldırma ve saha içi taşıma işlemleri uzman ekiplerimiz tarafından iş sağlığı ve güvenliği prosedürlerine tam uyum gösterilerek, planlanan takvim içinde sorunsuz bir şekilde tamamlanmıştır." }],
         style: "normal"
       }
     ],
@@ -55,19 +55,19 @@ const fallbackProjects = [
   },
 
   {
-    title: "Şeker Fabrikası Kazan Revizyonu",
+    title: "Endüstriyel Kazan Revizyonu ve Modernizasyonu",
     category: "revision",
     mainImage: { asset: { _ref: "fallback-afyon-rev" }, url: "/img/buharkazan_02.jpeg" },
     status: "completed",
-    slug: { current: "afyon-seker-kazan-revizyonu" },
-    client: "Afyon Şeker",
-    location: "Afyonkarahisar",
+    slug: { current: "endustriyel-kazan-revizyonu" },
+    client: "Buhar Üretim Tesisleri",
+    location: "Türkiye",
     description: "100 t/h kapasiteli buhar kazanı membran duvar değişimi ve kapsamlı revizyon projesi.",
     content: [
       {
         _key: "1",
         _type: "block",
-        children: [{ _key: "1a", _type: "span", text: "Afyon Şeker Fabrikası bünyesinde bulunan 100 t/h kapasiteli ve 45 bar işletme basıncına sahip buhar kazanının membran duvar panellerinin yenilenmesi ve genel revizyon çalışmaları başarıyla tamamlanmıştır." }],
+        children: [{ _key: "1a", _type: "span", text: "Endüstriyel şeker fabrikası tesisleri bünyesinde bulunan 100 t/h kapasiteli ve 45 bar işletme basıncına sahip buhar kazanının membran duvar panellerinin yenilenmesi ve genel revizyon çalışmaları başarıyla tamamlanmıştır." }],
         style: "normal"
       }
     ],
@@ -76,19 +76,19 @@ const fallbackProjects = [
     ]
   },
   {
-    title: "Efor Yatırım Çelik Konstrüksiyon İmalatı",
+    title: "Endüstriyel Çelik Konstrüksiyon İmalatı",
     category: "industrial",
     mainImage: { asset: { _ref: "fallback-efor" }, url: "/img/celik_01.jpeg" },
     status: "ongoing",
-    slug: { current: "efor-yatirim-celik-konstruksiyon" },
-    client: "Efor Yatırım",
-    location: "Arhavi / Artvin",
+    slug: { current: "endustriyel-celik-konstruksiyon" },
+    client: "Sanayi Tesisi Yatırımcısı",
+    location: "Türkiye",
     description: "1.250 m² endüstriyel çelik konstrüksiyon imalat ve montaj çalışmaları.",
     content: [
       {
         _key: "1",
         _type: "block",
-        children: [{ _key: "1a", _type: "span", text: "Artvin Arhavi'de Efor Yatırım bünyesinde yürütülen proje kapsamında, 1.250 m² kapalı alana sahip endüstriyel tesisin tüm çelik konstrüksiyon imalat ve montaj süreçleri Yaman Kazan uzmanlığıyla devam etmektedir." }],
+        children: [{ _key: "1a", _type: "span", text: "1.250 m² kapalı alana sahip modern bir endüstriyel tesisin tüm çelik konstrüksiyon imalat ve montaj süreçleri Yaman Kazan uzmanlığıyla başarıyla sürdürülmektedir." }],
         style: "normal"
       }
     ],
@@ -103,13 +103,14 @@ const fallbackProjects = [
     mainImage: { asset: { _ref: "fallback-eforcay" }, url: "/img/gorsel02.jpeg" },
     status: "ongoing",
     slug: { current: "dogalgaz-yakitli-kazan" },
-    location: "Rize",
+    client: "Enerji Tesisleri",
+    location: "Türkiye",
     description: "Doğalgaz yakıtlı kazan dairesi kurulum ve montaj çalışmaları.",
     content: [
       {
         _key: "1",
         _type: "block",
-        children: [{ _key: "1a", _type: "span", text: "Rize'de bulunan Efor Çay tesisleri için doğalgaz yakıtlı modern kazan dairesi kurulum çalışmaları Yaman Kazan uzmanlığıyla devam etmektedir. Proje kapsamında yüksek verimli sistemlerin montajı ve devreye alma süreçleri titizlikle yürütülmektedir." }],
+        children: [{ _key: "1a", _type: "span", text: "Modern çay fabrikası tesisleri için doğalgaz yakıtlı modern kazan dairesi kurulum çalışmaları Yaman Kazan uzmanlığıyla devam etmektedir. Proje kapsamında yüksek verimli sistemlerin montajı ve devreye alma süreçleri titizlikle yürütülmektedir." }],
         style: "normal"
       }
     ],
@@ -139,13 +140,13 @@ const fallbackProjects = [
     ]
   },
   {
-    title: "Entek HES Çöp Tutucu Izgara Revizyonu",
+    title: "Hidroelektrik Santrali Çöp Tutucu Izgara Revizyonu",
     category: "revision",
     mainImage: { asset: { _ref: "fallback-entek" }, url: "/img/hidroelektriksantral02.jpeg" },
     status: "completed",
-    slug: { current: "entek-hes-izgara-revizyonu" },
-    client: "Entek Koç Holding",
-    location: "Mersin / Mut",
+    slug: { current: "hidroelektrik-santrali-izgara-revizyonu" },
+    client: "Enerji Üretim Şirketi",
+    location: "Türkiye",
     description: "Hidroelektrik santrallerinde su girişini korumak amacıyla kullanılan çöp tutucu ızgaraların demontaj, temizlik ve revizyon çalışmaları; zorlu saha koşullarında uzman ekiplerimiz tarafından güvenli ve kontrollü şekilde gerçekleştirilmektedir.",
     content: [
       {

@@ -15,44 +15,44 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 const fallbackProjects = [
   {
-    title: "Şeker Fabrikası Akışkan Yataklı Buhar Kazanı Montajı",
+    title: "Akışkan Yataklı Buhar Kazanı Montajı",
     category: "boiler",
     image: "/img/kurulumlar.jpeg",
     status: "completed",
-    slug: { current: "afyon-seker-40-th-kazan-montaji" },
-    client: "Afyon Şeker",
-    location: "Afyonkarahisar",
-    description: "Afyon Şeker Fabrikası 40 t/h bölünmüş ocak akışkan yataklı buhar kazanı montaj sürecimiz tamamlanmıştır."
+    slug: { current: "akiskan-yatakli-buhar-kazani-montaji" },
+    client: "Şeker Üretim Tesisleri",
+    location: "Türkiye",
+    description: "40 t/h bölünmüş ocak akışkan yataklı buhar kazanı montaj sürecimiz başarıyla tamamlanmıştır."
   },
   {
-    title: "Doğuş Çay Fabrikası Kazan Demontajı",
+    title: "Yüksek Kapasiteli Buhar Kazanı Demontajı",
     category: "boiler",
     image: "/img/buharkazan_01.jpeg",   
     status: "completed",
-    slug: { current: "dogus-cay-kazan-demontaji" },
-    client: "Doğuş Çay",
-    location: "Rize",
-    description: "Doğuş Çay Fabrikası bünyesinde ömrünü tamamlamış olan yüksek kapasiteli buhar kazanının ve yardımcı ekipmanlarının güvenli demontajı, saha içi nakliyesi ve taşıma çalışmaları başarıyla tamamlanmıştır."
+    slug: { current: "yuksek-kapasiteli-buhar-kazani-demontaji" },
+    client: "Çay Sanayisi Tesisleri",
+    location: "Türkiye",
+    description: "Endüstriyel gıda fabrikası bünyesinde ömrünü tamamlamış olan yüksek kapasiteli buhar kazanının ve yardımcı ekipmanlarının güvenli demontajı, saha içi nakliyesi ve taşıma çalışmaları başarıyla tamamlanmıştır."
   },
 
   {
-    title: "Şeker Fabrikası Kazan Revizyonu",
+    title: "Endüstriyel Kazan Revizyonu ve Modernizasyonu",
     category: "revision",
     image: "/img/buharkazan_02.jpeg",
     status: "completed",
-    slug: { current: "afyon-seker-kazan-revizyonu" },
-    client: "Afyon Şeker",
-    location: "Afyonkarahisar",
+    slug: { current: "endustriyel-kazan-revizyonu" },
+    client: "Buhar Üretim Tesisleri",
+    location: "Türkiye",
     description: "100 t/h kapasiteli buhar kazanı membran duvar değişimi ve kapsamlı revizyon projesi."
   },
   {
-    title: "Efor Yatırım Çelik Konstrüksiyon İmalatı",
+    title: "Endüstriyel Çelik Konstrüksiyon İmalatı",
     category: "industrial",
     image: "/img/celik_01.jpeg",
     status: "ongoing",
-    slug: { current: "efor-yatirim-celik-konstruksiyon" },
-    client: "Efor Yatırım",
-    location: "Arhavi / Artvin",
+    slug: { current: "endustriyel-celik-konstruksiyon" },
+    client: "Sanayi Tesisi Yatırımcısı",
+    location: "Türkiye",
     description: "1.250 m² endüstriyel çelik konstrüksiyon imalat ve montaj çalışmaları."
   },
   {
@@ -61,7 +61,8 @@ const fallbackProjects = [
     image: "/img/gorsel02.jpeg",
     status: "ongoing",
     slug: { current: "dogalgaz-yakitli-kazan" },
-    location: "Rize",
+    client: "Enerji Tesisleri",
+    location: "Türkiye",
     description: "Doğalgaz yakıtlı kazan dairesi kurulum ve montaj çalışmaları."
   },
   {
@@ -75,13 +76,13 @@ const fallbackProjects = [
     description: "50 t/h kapasiteli yüksek basınçlı kazan dom ünitesi imalat ve montajı."
   },
   {
-    title: "Entek HES Çöp Tutucu Izgara Revizyonu",
+    title: "Hidroelektrik Santrali Çöp Tutucu Izgara Revizyonu",
     category: "revision",
     image: "/img/hidroelektriksantral02.jpeg",
     status: "completed",
-    slug: { current: "entek-hes-izgara-revizyonu" },
-    client: "Entek Koç Holding",
-    location: "Mersin / Mut",
+    slug: { current: "hidroelektrik-santrali-izgara-revizyonu" },
+    client: "Enerji Üretim Şirketi",
+    location: "Türkiye",
     description: "Hidroelektrik santrallerinde su girişini korumak amacıyla kullanılan çöp tutucu ızgaraların demontaj, temizlik ve revizyon çalışmaları; zorlu saha koşullarında uzman ekiplerimiz tarafından güvenli ve kontrollü şekilde gerçekleştirilmektedir."
   }
 ];
