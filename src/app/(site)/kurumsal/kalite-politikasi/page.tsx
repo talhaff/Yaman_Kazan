@@ -21,7 +21,7 @@ export default function KalitePolitikasiPage() {
       <PageHeader 
         title="Entegre Yönetim Sistemi Politikası" 
         description="Kalite, çevre ve iş güvenliği standartlarına tavizsiz bağlıyız."
-        imagePath="/img/gorsel03.jpeg"
+        imagePath="/img/kurumsalarka.png"
       />
       
       <section className="py-24 bg-white">

@@ -241,7 +241,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                     <ShieldCheck className="h-10 w-10 text-primary-800 group-hover:text-primary-400 transition-colors" />
                     <div>
                       <h4 className="text-xl font-black text-primary-950 group-hover:text-white uppercase tracking-tighter mb-2">Sertifikalı Güvenlik</h4>
-                      <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors leading-relaxed">Tüm süreçlerimiz ISO ve ASME standartlarında belgelendirilmiştir.</p>
+                      <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors leading-relaxed">Tüm operasyonlarımız EN standartları ve ISO yönetim sistemlerine uygun şekilde yürütülmektedir.</p>
                     </div>
                   </div>
                   <div className="flex flex-col gap-6 p-8 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-3xl group hover:bg-primary-950 transition-all duration-500 border border-slate-100 hover:border-primary-900">

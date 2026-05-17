@@ -50,7 +50,7 @@ export default async function SertifikalarPage() {
       <PageHeader 
         title="Kalite & Sertifikalar" 
         description="Uluslararası standartlarda üretim kalitemizi belgeleyen sertifikalarımız."
-        imagePath="/img/gorsel03.jpeg"
+        imagePath="/img/kurumsalarka.png"
       />
       
       <section className="py-24 md:py-32 bg-zinc-50/50">

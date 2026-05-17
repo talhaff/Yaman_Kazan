@@ -14,7 +14,7 @@ export default function HakkimizdaPage() {
       <PageHeader 
         title="Kurumsal Kimliğimiz" 
         description="Mühendislik mirasını teknolojiyle harmanlayarak endüstrinin geleceğine yön veriyoruz."
-        imagePath="/img/kurumsal_vizyon.png"
+        imagePath="/img/kurumsalarka.png"
       />
       
       {/* Our Heritage Section - Immersive Grid */}
@@ -70,14 +70,13 @@ export default function HakkimizdaPage() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="aspect-[4/5] relative rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)]">
+              <div className="aspect-[2/3] relative rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] bg-slate-50 border border-slate-100">
                 <Image 
-                  src="/img/kurumsal_miras01.png" 
+                  src="/img/hakkimizdaarka01.png" 
                   alt="Yaman Kazan Endüstriyel Miras" 
                   fill 
                   className="object-cover" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/40 to-transparent" />
               </div>
               
               {/* Floating Badge */}

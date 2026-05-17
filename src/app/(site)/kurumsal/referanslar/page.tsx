@@ -39,7 +39,7 @@ export default function ReferanslarPage() {
       <PageHeader 
         title="Referanslarımız" 
         description="Sektörün devleriyle birlikte çalışıyor, Türkiye'nin ve dünyanın en büyük sanayi projelerine imza atıyoruz."
-        imagePath="/img/hidroelektriksantral01.jpeg"
+        imagePath="/img/kurumsalarka.png"
       />
       
       <section className="py-24 bg-white relative overflow-hidden">
