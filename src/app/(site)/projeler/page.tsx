@@ -15,14 +15,14 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 const fallbackProjects = [
   {
-    title: "Afyon Şeker Fabrikası Kazan Kurulumu",
+    title: "Doğuş Çay Fabrikası Kazan Demontajı",
     category: "boiler",
-    image: "/img/buharkazan_01.jpeg",
+    image: "/img/buharkazan_01.jpeg",   
     status: "completed",
-    slug: { current: "afyon-seker-kazan-kurulumu" },
-    client: "Afyon Şeker",
-    location: "Afyonkarahisar",
-    description: "40 t/h kapasiteli anahtar teslim buhar kazanı kurulumu projesi."
+    slug: { current: "dogus-cay-kazan-demontaji" },
+    client: "Doğuş Çay",
+    location: "Rize",
+    description: "Doğuş Çay Fabrikası bünyesinde ömrünü tamamlamış olan yüksek kapasiteli buhar kazanının ve yardımcı ekipmanlarının güvenli demontajı, saha içi nakliyesi ve taşıma çalışmaları başarıyla tamamlanmıştır."
   },
 
   {
@@ -73,7 +73,7 @@ const fallbackProjects = [
     slug: { current: "entek-hes-izgara-revizyonu" },
     client: "Entek Koç Holding",
     location: "Mersin / Mut",
-    description: "Hidroelektrik Santrali Çöp Tutucu Izgara Revizyonu."
+    description: "Hidroelektrik santrallerinde su girişini korumak amacıyla kullanılan çöp tutucu ızgaraların demontaj, temizlik ve revizyon çalışmaları; zorlu saha koşullarında uzman ekiplerimiz tarafından güvenli ve kontrollü şekilde gerçekleştirilmektedir."
   }
 ];
 

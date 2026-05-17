@@ -29,7 +29,25 @@ export const services: Service[] = [
     description: "Endüstriyel tesisler için anahtar teslim mekanik kurulumlar, yüksek basınçlı borulama sistemleri, teknolojik ekipman montajlarını uluslararası kalite standartlarında taahhüt ediyoruz.",
     image: "/img/kurulumlar.jpeg",
     slug: "kazan-revizyon-ve-modernizasyonu",
-    color: "bg-primary-950 text-white"
+    color: "bg-primary-950 text-white",
+    detailSections: [
+      {
+        title: "Endüstriyel Kazan ve Mekanik Tesisat Kurulumu",
+        image: "/img/islemler.jpeg",
+        paragraphs: [
+          "Endüstriyel tesislerin kalbi olan yüksek kapasiteli buhar ve kızgın su kazanlarının, yardımcı ünitelerin ve mekanik ekipmanların montaj süreçlerini yüksek mühendislik standartlarında yürütüyoruz.",
+          "Uluslararası normlara uygun olarak tasarlanan borulama hatları, vana grupları ve kontrol üniteleri, uzman kadromuz tarafından sahada güvenli ve hassas bir şekilde konumlandırılarak devreye almaya hazır hale getirilmektedir."
+        ]
+      },
+      {
+        title: "Yüksek Basınçlı Tesisat ve Endüstriyel Borulama Taahhütleri",
+        image: "/img/islemler2.jpeg",
+        paragraphs: [
+          "Sanayi tesislerinin operasyonel verimliliği için kritik öneme sahip olan yüksek basınçlı buhar hatları, gaz ve sıvı akışkan tesisatlarının taahhüt ve kurulum süreçlerini üstleniyoruz.",
+          "Sertifikalı kaynak tekniklerimiz, tahribatsız test (NDT) uygulamalarımız ve sızdırmazlık testlerimiz ile hatların uzun ömürlü, yüksek güvenlikli ve minimum kayıplı çalışmasını garanti altına alıyoruz."
+        ]
+      }
+    ]
   },
   {
     number: "3",
