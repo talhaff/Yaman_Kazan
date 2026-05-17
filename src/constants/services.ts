@@ -26,13 +26,39 @@ export const services: Service[] = [
   {
     number: "2",
     title: "Endüstriyel Tesis Taahhüt Hizmetleri",
-    description: "100 t/h kapasiteli, 45 bar basınca sahip sistemlerin (örn: Afyon Şeker) kapsamlı bakım, basınç dayanım testleri ve modernizasyon çalışmalarını profesyonelce yürütüyoruz.",
+    description: "Endüstriyel tesisler için anahtar teslim mekanik kurulumlar, yüksek basınçlı borulama sistemleri, teknolojik ekipman montajları ve kapsamlı altyapı projelerini uluslararası kalite standartlarında taahhüt ediyoruz.",
     image: "/img/kurulumlar.jpeg",
     slug: "kazan-revizyon-ve-modernizasyonu",
     color: "bg-primary-950 text-white"
   },
   {
     number: "3",
+    title: "Çelik Konstrüksiyon",
+    description: "Endüstriyel tesisler, depo yapıları ve ağır sanayi üniteleri için yüksek dayanımlı çelik konstrüksiyon imalat ve montaj hizmetleri sunuyoruz.",
+    image: "/img/celik_01.jpeg",
+    slug: "celik-konstruksiyon-imalat-ve-montaj",
+    color: "bg-slate-800 text-white",
+    detailSections: [
+      {
+        title: "Endüstriyel Çelik Yapı İmalatı",
+        image: "/img/celik_02.jpeg",
+        paragraphs: [
+          "Fabrika binaları, hangarlar ve çok katlı endüstriyel yapılar için uluslararası standartlarda çelik konstrüksiyon imalatı gerçekleştiriyoruz. Tasarım aşamasından montaja kadar tüm süreçlerde mühendislik hassasiyetiyle çalışıyoruz.",
+          "Kullandığımız yüksek kaliteli çelik malzemeler ve ileri kaynak teknolojileri sayesinde, yapılarınızın statik ömrünü maksimize ederken güvenliği en üst düzeyde tutuyoruz."
+        ]
+      },
+      {
+        title: "Saha Montaj ve Uygulama Hizmetleri",
+        image: "/img/celik_03.jpeg",
+        paragraphs: [
+          "Uzman saha ekiplerimizle, en zorlu saha koşullarında bile hızlı ve güvenli montaj operasyonları yürütüyoruz. Vinç organizasyonu ve iş güvenliği prosedürlerimizle projelerinizi zamanında teslim ediyoruz.",
+          "Mevcut tesislerinize entegre edilecek ilave çelik yapılar veya güçlendirme projeleri için de yerinde çözümler üreterek operasyonel sürekliliğinizi destekliyoruz."
+        ]
+      }
+    ]
+  },
+  {
+    number: "4",
     title: "Mekanik Tesisat Hizmetleri",
     description: "Kazan daireleri, borulama sistemleri ve yardımcı işletme üniteleri için yüksek basınç normlarına uygun hassas mekanik montaj ve devreye alma hizmetleri.",
     image: "/img/mekanik_04.png",
@@ -58,7 +84,7 @@ export const services: Service[] = [
     ]
   },
   {
-    number: "4",
+    number: "5",
     title: "Bakım Hizmetleri",
     description: "Endüstriyel tesislerin sürdürülebilirliği için periyodik bakım, onarım ve revizyon hizmetleri ile işletme verimliliğinizi koruyoruz.",
     image: "/img/islemler.jpeg",
@@ -84,32 +110,5 @@ export const services: Service[] = [
         ]
       }
     ]
-  },
-  {
-    number: "5",
-    title: "Çelik Konstrüksiyon",
-    description: "Endüstriyel tesisler, depo yapıları ve ağır sanayi üniteleri için yüksek dayanımlı çelik konstrüksiyon imalat ve montaj hizmetleri sunuyoruz.",
-    image: "/img/celik_01.jpeg",
-    slug: "celik-konstruksiyon-imalat-ve-montaj",
-    color: "bg-slate-800 text-white",
-    detailSections: [
-      {
-        title: "Endüstriyel Çelik Yapı İmalatı",
-        image: "/img/celik_02.jpeg",
-        paragraphs: [
-          "Fabrika binaları, hangarlar ve çok katlı endüstriyel yapılar için uluslararası standartlarda çelik konstrüksiyon imalatı gerçekleştiriyoruz. Tasarım aşamasından montaja kadar tüm süreçlerde mühendislik hassasiyetiyle çalışıyoruz.",
-          "Kullandığımız yüksek kaliteli çelik malzemeler ve ileri kaynak teknolojileri sayesinde, yapılarınızın statik ömrünü maksimize ederken güvenliği en üst düzeyde tutuyoruz."
-        ]
-      },
-      {
-        title: "Saha Montaj ve Uygulama Hizmetleri",
-        image: "/img/celik_03.jpeg",
-        paragraphs: [
-          "Uzman saha ekiplerimizle, en zorlu saha koşullarında bile hızlı ve güvenli montaj operasyonları yürütüyoruz. Vinç organizasyonu ve iş güvenliği prosedürlerimizle projelerinizi zamanında teslim ediyoruz.",
-          "Mevcut tesislerinize entegre edilecek ilave çelik yapılar veya güçlendirme projeleri için de yerinde çözümler üreterek operasyonel sürekliliğinizi destekliyoruz."
-        ]
-      }
-    ]
   }
 ];
-

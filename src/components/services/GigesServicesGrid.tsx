@@ -15,9 +15,9 @@ import {
 const iconMap: Record<string, React.ElementType> = {
   "1": Wind,
   "2": Building2,
-  "3": Settings,
-  "4": Wrench,
-  "5": Construction,
+  "3": Construction,
+  "4": Settings,
+  "5": Wrench,
 };
 
 export default function GigesServicesGrid() {
