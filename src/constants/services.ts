@@ -98,6 +98,14 @@ export const services: Service[] = [
           "Eşanjörler, pompalar, vanalar ve diğer yardımcı ekipmanların hassas montajını gerçekleştiriyoruz. Sistem bütünlüğünü koruyarak, devreye alma öncesi gerekli testleri titizlikle tamamlıyoruz.",
           "Mekanik tesisatın her noktasında sızdırmazlık ve performans testlerini uygulayarak, tesisin sorunsuz çalışmasını sağlıyoruz."
         ]
+      },
+      {
+        title: "Saha Borulama ve Hassas Kaynak Hizmetleri",
+        image: "/img/mekanik_05.jpeg",
+        paragraphs: [
+          "Endüstriyel tesislerin açık saha borulama hatlarında, yüksek basınç standartlarına uygun yerinde (saha) montaj ve hassas kaynak işlemlerini gerçekleştiriyoruz. Boru hatlarının hatasız şekilde hizalanması, askılama ve destek elemanlarının kurulumu uzman ekiplerimizce titizlikle yapılmaktadır.",
+          "Saha kaynak operasyonlarında, zorlu çevre koşullarına rağmen sızdırmazlık ve mukavemet standartlarından ödün vermeden, sertifikalı kaynak yöntemleri ve deneyimli kadromuzla yüksek güvenlikli birleştirme çözümleri sunuyoruz."
+        ]
       }
     ]
   },

@@ -95,7 +95,7 @@ export default function Hero() {
               </div>
               <div className="truncate">
                 <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-1.5">Kurumsal İletişim</p>
-                <p className="text-xs md:text-sm lg:text-base font-black text-white leading-tight truncate uppercase tracking-tight">{CONTACT_INFO.email}</p>
+                <p className="text-xs md:text-sm lg:text-base font-black text-white leading-tight truncate lowercase tracking-tight">{CONTACT_INFO.email}</p>
               </div>
             </div>
           </motion.div>
