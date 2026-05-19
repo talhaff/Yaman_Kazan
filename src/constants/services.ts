@@ -46,6 +46,13 @@ export const services: Service[] = [
           "Sanayi tesislerinin operasyonel verimliliği için kritik öneme sahip olan yüksek basınçlı buhar hatları, gaz ve sıvı akışkan tesisatlarının taahhüt ve kurulum süreçlerini üstleniyoruz.",
           "Sertifikalı kaynak tekniklerimiz, tahribatsız test (NDT) uygulamalarımız ve sızdırmazlık testlerimiz ile hatların uzun ömürlü, yüksek güvenlikli ve minimum kayıplı çalışmasını garanti altına alıyoruz."
         ]
+      },
+      {
+        title: "Steam Drum Montaj ve Bağlantı Çalışmaları",
+        image: "/img/taahhuthizmet.jpeg",
+        paragraphs: [
+          "Akışkan yataklı buhar kazanı sistemine ait Steam Drum ünitesinin montaj ve bağlantı çalışmaları; yüksek mühendislik standartları ve kontrollü saha uygulamalarıyla uzman ekiplerimiz tarafından gerçekleştirilmektedir."
+        ]
       }
     ]
   },
@@ -113,7 +120,7 @@ export const services: Service[] = [
     number: "5",
     title: "Bakım Hizmetleri",
     description: "Endüstriyel tesislerin sürdürülebilirliği için periyodik bakım, onarım ve revizyon hizmetleri ile işletme verimliliğinizi koruyoruz.",
-    image: "/img/islemler.jpeg",
+    image: "/img/buharkazan_02.jpeg",
     slug: "bakim-hizmetleri",
     color: "bg-slate-700 text-white",
     detailSections: [
