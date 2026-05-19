@@ -15,6 +15,16 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 const fallbackProjects = [
   {
+    title: "50 t/h Bölünmüş Ocak",
+    category: "boiler",
+    image: "/img/bolunmusolc.jpeg",
+    status: "completed",
+    slug: { current: "50-th-bolunmus-ocak" },
+    client: "Endüstriyel Çay Fabrikası",
+    location: "Türkiye",
+    description: "50 t/h kapasiteli, bölünmüş ocak akışkan yataklı buhar kazanının tüm saha montajı, mekanik kurulumları ve yardımcı ekipman entegrasyonları uzman teknik kadromuz tarafından başarıyla tamamlanmıştır."
+  },
+  {
     title: "Akışkan Yataklı Buhar Kazanı Montajı",
     category: "boiler",
     image: "/img/kurulumlar.jpeg",

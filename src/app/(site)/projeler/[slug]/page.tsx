@@ -12,6 +12,28 @@ export const revalidate = 60;
 
 const fallbackProjects = [
   {
+    title: "50 t/h Bölünmüş Ocak",
+    category: "boiler",
+    mainImage: { asset: { _ref: "fallback-bolunmus-ocak" }, url: "/img/bolunmusolc.jpeg" },
+    status: "completed",
+    slug: { current: "50-th-bolunmus-ocak" },
+    client: "Endüstriyel Çay Fabrikası",
+    location: "Türkiye",
+    description: "50 t/h kapasiteli, bölünmüş ocak akışkan yataklı buhar kazanının tüm saha montajı, mekanik kurulumları ve yardımcı ekipman entegrasyonları uzman teknik kadromuz tarafından başarıyla tamamlanmıştır.",
+    content: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Endüstriyel çay fabrikası tesisleri bünyesinde gerçekleştirdiğimiz bu kapsamlı proje kapsamında; 50 t/h kapasiteli, bölünmüş ocak akışkan yataklı buhar kazanının tüm saha montajı, mekanik kurulumları ve yardımcı ekipman entegrasyonları uzman teknik kadromuz tarafından başarıyla tamamlanmıştır. Yüksek mühendislik disiplini ve kalite standartları doğrultusunda yürütülen montaj süreci sonrasında sistem devreye alınarak başarıyla işletmeye teslim edilmiştir." }],
+        style: "normal"
+      }
+    ],
+    gallery: [
+      { asset: { _ref: "fallback-gal-bolunmus-ocak-1" }, url: "/img/bolunmusolc.jpeg" },
+      { asset: { _ref: "fallback-gal-bolunmus-ocak-2" }, url: "/img/bolunmusolc2.jpeg" }
+    ]
+  },
+  {
     title: "Akışkan Yataklı Buhar Kazanı Montajı",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-afyon-montaj" }, url: "/img/kurulumlar.jpeg" },

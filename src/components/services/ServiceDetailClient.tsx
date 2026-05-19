@@ -16,7 +16,7 @@ import { Service } from "@/constants/services";
 
 interface TabData {
   id: string;
-  title: string;
+  title: string;  
   content: string;
   images?: string[];
 }
@@ -104,7 +104,7 @@ Sistemden çıkan yüksek sıcaklıktaki baca gazı içerisindeki ısı enerjisi
 Reküperatör sistemleri; yakıt tasarrufu sağlar, baca gazı sıcaklığını düşürür, yanma verimini artırır, enerji kayıplarını azaltır ve işletme maliyetlerini düşürür.
 
 Yaman Kazan olarak projeye özel reküperatör imalatı, revizyonu, montajı ve bakım hizmetleri sunmaktayız.`, 
-    images: ['/img/rekuperator.png', '/img/rekuperator2.png.jpeg'] 
+    images: ['/img/rekuperator1.png', '/img/rekuperator2.png.jpeg'] 
   },
   { 
     id: 'multisiklon', 
