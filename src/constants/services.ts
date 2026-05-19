@@ -18,7 +18,7 @@ export const services: Service[] = [
   {
     number: "1",
     title: "Endüstriyel Buhar Kazanları",
-    description: "AFYON Şeker Fabrikası ve RİZE Doğuş Çay (40 t/h) projelerimizde olduğu gibi yüksek kapasiteli buhar kazanlarının anahtar teslim imalat ve kurulumunu gerçekleştiriyoruz.",
+    description: "Endüstriyel tesislerin ihtiyaç duyduğu yüksek kapasiteli buhar kazanlarının anahtar teslim imalatı, mekanik kurulumu, devreye alınması ve yardımcı ekipman entegrasyonu hizmetlerini sunuyoruz.",
     image: "/img/buharkazan_06.jpeg",
     slug: "buhar-kazani-imalat-ve-kurulumu",
     color: "bg-slate-900 text-white"
