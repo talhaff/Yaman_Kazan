@@ -35,65 +35,75 @@ Yaman Kazan olarak fabrikaların ve endüstriyel proseslerin enerji gereksinimle
   { 
     id: 'sicak-su-kazani', 
     title: 'Sıcak Su Kazanı', 
-    content: `Sıcak Su Kazanları, endüstriyel tesislerde ve ısıtma sistemlerinde ihtiyaç duyulan sıcak suyun güvenli, verimli ve sürekli şekilde üretilmesini sağlayan basınçlı sistemlerdir.
+    content: `Sıcak su kazanları, endüstriyel tesislerde ve ısıtma sistemlerinde ihtiyaç duyulan sıcak suyun güvenli, verimli ve sürekli şekilde üretilmesini sağlayan basınçlı sistemlerdir.
 
-Doğalgaz, katı, sıvı ve biyokütle yakıt seçenekleriyle; yüksek verim ve düşük işletme maliyeti prensiplerine göre projeye özel olarak tasarlanır.
+Yakıt türüne ve kapasiteye göre projelendirilen sıcak su kazanları; fabrikalar, oteller, hastaneler, konut projeleri, endüstriyel tesisler ve proses hatları gibi birçok alanda kullanılmaktadır.
 
-Yaman Kazan olarak fabrikalar, oteller, hastaneler ve proses hatları için özel sıcak su kazanı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
+Sistemler yüksek verim, düşük yakıt tüketimi ve güvenli işletme prensibine göre tasarlanmakta olup; doğalgazlı, katı yakıtlı, sıvı yakıtlı ve biyokütle yakıtlı olarak üretilebilmektedir.
+
+Yaman Kazan olarak projeye özel sıcak su kazanı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
   },
   { 
     id: 'tanklar', 
     title: 'Basınçlı Tanklar', 
-    content: `Basınçlı Tanklar, sıvı ve gazların belirli sıcaklık ve basınç değerleri altında güvenli şekilde depolanmasını ve proses içerisinde kontrollü olarak kullanılmasını sağlayan kritik endüstriyel ekipmanlardır.
+    content: `Basınçlı tanklar, sıvı ve gazların belirli sıcaklık ve basınç değerleri altında güvenli şekilde depolanması ve proses içerisinde kontrollü olarak kullanılmasını sağlayan endüstriyel ekipmanlardır.
 
-Çalışma basıncı, sıcaklık, akışkan tipi ve kapasite ihtiyaçları göz önüne alınarak uluslararası standartlara (ASME, EN) uygun olarak projeye özel tasarlanıp imal edilir.
+Yüksek mühendislik ve kalite standartlarına göre üretilen basınçlı tank sistemleri; proses güvenliği, sistem sürekliliği ve işletme verimliliği açısından kritik öneme sahiptir. Projelendirme ve imalat aşamalarında; çalışma basıncı, sıcaklık değerleri, akışkan tipi, kapasite ihtiyaçları ve uluslararası standartlar esas alınmaktadır.
 
-Yaman Kazan olarak kondens, degazör, hava, genleşme, yakıt ve proses tankları başta olmak üzere endüstriyel tesisler için yüksek dayanımlı basınçlı tank imalatı, montajı ve revizyon hizmetleri sunmaktayız.` 
+Başlıca uygulama alanları; kondens tankları, degazör tankları, hava tankları, genleşme tankları, yakıt tankları, proses tankları, flaş tanklar ve kimyasal depolama tanklarıdır.
+
+Yaman Kazan olarak projeye özel basınçlı tank imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
   },
   { 
     id: 'ekonomizer', 
     title: 'Ekonomizer', 
-    content: `Ekonomizer, buhar kazanı sistemlerinde baca gazı içerisindeki atık ısı enerjisinin geri kazanılmasıyla kazan besi suyunun ön ısıtılmasını sağlayan yüksek verimli ekipmandır.
+    content: `Ekonomizer, buhar kazanı sistemlerinde baca gazı içerisinde bulunan atık ısı enerjisinin geri kazanılarak kazan besi suyunun ön ısıtılmasını sağlayan yüksek verimli ısı geri kazanım ekipmanıdır.
 
-Besi suyunu kazan öncesinde ısıtarak yakıt tüketimini düşürür, termal verimliliği artırır, baca sıcaklığını azaltır ve işletme maliyetlerini minimize eder.
+Sistemden çıkan yüksek sıcaklıktaki baca gazı ekonomizer yüzeylerinden geçirilerek besi suyuna kontrollü şekilde ısı transferi sağlanır. Bu sayede kazan giriş suyu sıcaklığı artırılarak yakıt tüketimi düşürülür, termal verimlilik yükseltilir ve işletme maliyetleri minimize edilir. Ekonomizer sistemleri özellikle buhar kazanları, yüksek basınçlı sistemler, katı yakıtlı ve biyokütle kazanları, enerji üretim tesisleri ve endüstriyel proseslerde yaygın olarak kullanılmaktadır.
 
-Yaman Kazan olarak yüksek enerji tüketimine sahip tesisler, buhar kazanları ve endüstriyel proses sistemleri için projeye özel ekonomizer imalatı, montajı ve bakım hizmetleri sunmaktayız.` 
+Başlıca avantajları; yakıt tüketimini azaltması, kazan verimini artırması, baca gazı sıcaklığını düşürmesi, enerji kayıplarını minimize etmesi, işletme maliyetlerini düşürmesi ve sistem performansını artırmasıdır.
+
+Yaman Kazan olarak projeye özel ekonomizer imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
   },
   { 
     id: 'degazor', 
     title: 'Degazör', 
-    content: `Degazör, kazan besi suyunda çözünmüş halde bulunan ve korozyona sebep olan oksijen (O2) ile karbondioksit (CO2) gibi gazların sistemden uzaklaştırılmasını sağlayan ekipmandır.
+    content: `Degazör, kazan besi suyunda bulunan çözünmüş oksijen ve karbondioksit gibi gazların sistemden uzaklaştırılmasını sağlayan ekipmandır.
 
-Kazan besi suyundaki bu zararlı gazları termik veya vakum yöntemleriyle ayrıştırarak boru ve ekipmanlardaki korozyon riskini azaltır, kazan ve tesisat ömrünü uzatır.
+Kazan sistemlerinde bulunan zararlı gazlar yüksek sıcaklık altında ayrıştırılarak korozyon riski azaltılır ve sistem ömrü artırılır. Degazör sistemleri; kazan ömrünü uzatır, boru ve ekipmanlarda korozyonu azaltır, sistem güvenliğini artırır, besi suyu kalitesini iyileştirir ve enerji verimliliğine katkı sağlar.
 
-Yaman Kazan olarak yüksek basınçlı buhar sistemleri için uluslararası standartlarda güvenilir termik degazör imalatı ve kurulumu gerçekleştirmekteyiz.` 
+Özellikle yüksek basınçlı buhar sistemlerinde degazör kullanımı büyük önem taşımaktadır. Yaman Kazan olarak projeye özel degazör imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
   },
   { 
     id: 'kondens', 
     title: 'Kondens Tankı', 
-    content: `Kondens tankı, buhar sistemlerinde oluşan yoğuşma suyunun (kondens) toplanarak tekrar sisteme geri kazandırılmasını sağlayan ekipmandır.
+    content: `Kondens tankı, buhar sistemlerinde oluşan yoğuşma suyunun (kondens) toplanarak tekrar sisteme kazandırılmasını sağlayan ekipmandır.
 
-Buhar kullanım noktalarında oluşan sıcak kondens suyunu toplayıp besi suyu sistemine geri göndererek su kayıplarını azaltır ve yakıt tasarrufu sağlar.
+Buhar kullanım noktalarında oluşan sıcak kondens suyu tank içerisinde toplanır ve besi suyu sistemine geri gönderilerek enerji tasarrufu sağlanır.
 
-Yaman Kazan olarak endüstriyel buhar tesislerinde verimliliği maksimize eden yüksek kaliteli kondens tankı imalatı ve kurulumu gerçekleştirmekteyiz.` 
+Kondens sistemleri; yakıt tüketimini azaltır, enerji verimliliğini artırır, su kayıplarını azaltır ve sistemin daha verimli çalışmasını sağlar. Yaman Kazan olarak projeye özel kondens tankı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
   },
   { 
     id: 'elektrostatik-filtre', 
     title: 'Elektrostatik Filtre', 
-    content: `Elektrostatik Filtre, endüstriyel tesislerde baca gazı içerisindeki toz ve partiküllerin yüksek verimle tutulmasını sağlayan emisyon kontrol sistemidir.
+    content: `Elektrostatik filtre, endüstriyel tesislerde baca gazı içerisindeki toz ve partiküllerin yüksek verimle tutulmasını sağlayan emisyon kontrol sistemidir.
 
-Baca gazındaki partikülleri elektriksel yükleme prensibiyle ayrıştırarak toplama plakalarında biriktirir, böylece toz emisyonlarını minimuma indirip çevre mevzuatına uyum sağlar.
+Sistem, baca gazı içerisindeki partikülleri elektriksel yükleme prensibi ile ayrıştırarak toplama plakalarında biriktirir ve çevreye temiz gaz çıkışı sağlar. Kömürlü kazanlar, biyokütle tesisleri, buhar kazanları, termik sistemler ve yüksek emisyon oluşan proseslerde yaygın olarak kullanılmaktadır.
 
-Yaman Kazan olarak yüksek emisyon oluşan buhar kazanları, termik ve biyokütle tesisleri için özel elektrostatik filtre imalatı, montajı ve bakım hizmetleri sunmaktayız.`
+Elektrostatik filtre sistemleri; toz emisyonunu minimum seviyeye indirir, çevre mevzuatına uyum sağlar, baca çıkış kalitesini artırır, yüksek filtreleme verimi sunar ve sürekli, verimli çalışma sağlar.
+
+Yaman Kazan olarak projeye özel elektrostatik filtre imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
   },
   { 
     id: 'rekuperator', 
     title: 'Reküperatör', 
     content: `Reküperatör, kazan ve endüstriyel yanma sistemlerinde baca gazı sıcaklığını geri kazanarak enerji verimliliğini artıran ısı geri kazanım ekipmanıdır.
 
-Sistemden çıkan yüksek sıcaklıktaki ısı enerjisini geri kazanarak yakıt tüketimini azaltır, yanma verimini artırır ve işletme maliyetlerini düşürür.
+Sistemden çıkan yüksek sıcaklıktaki baca gazı içerisindeki ısı enerjisi geri kazanılarak yanma havasının veya proses havasının ön ısıtılmasında kullanılır. Bu sayede yakıt tüketimi azaltılır ve sistem verimi artırılır. Buhar kazanları, termik yağ kazanları, katı yakıtlı sistemler, biyokütle tesisleri ve endüstriyel proses hatlarında yaygın olarak kullanılmaktadır.
 
-Yaman Kazan olarak endüstriyel proses hatlarına, buhar ve termik yağ kazanlarına özel reküperatör imalatı, montajı ve bakım hizmetleri sunmaktayız.`, 
+Reküperatör sistemleri; yakıt tasarrufu sağlar, baca gazı sıcaklığını düşürür, yanma verimini artırır, enerji kayıplarını azaltır ve işletme maliyetlerini düşürür.
+
+Yaman Kazan olarak projeye özel reküperatör imalatı, revizyonu, montajı ve bakım hizmetleri sunmaktayız.`, 
     images: ['/img/rekuperator.png'] 
   },
   { 
@@ -111,9 +121,11 @@ Yaman Kazan olarak kömür, biyokütle ve endüstriyel buhar kazanlarına özel 
     title: 'Shell Boiler', 
     content: `Shell Boiler, sıcak gazların borular içerisinden geçtiği ve suyun kazan gövdesi içerisinde bulunduğu, endüstriyel buhar üretiminde yaygın olarak kullanılan yüksek verimli kazan sistemidir.
 
-Fire Tube (Alev Duman Borulu) olarak da bilinen bu sistemler; kompakt yapısı, yüksek işletme güvenliği, kolay bakımı ve stabil buhar üretimi ile birçok endüstriyel tesiste tercih edilmektedir.
+“Fire Tube Boiler” olarak da bilinen bu sistemlerde yanma sonucu oluşan sıcak gazlar duman boruları içerisinden geçirilerek gövde içerisindeki suya ısı transferi sağlar ve buhar üretimi gerçekleştirilir. Shell boiler sistemleri; kompakt yapısı, yüksek işletme güvenliği, kolay bakım imkanı, verimli ısı transferi ve stabil buhar üretimi gibi avantajları sayesinde birçok endüstriyel tesiste tercih edilmektedir.
 
-Yaman Kazan olarak buhar kapasitesi, çalışma basıncı ve proses ihtiyaçlarınıza göre projeye özel shell boiler imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
+Sistemler projeye özel olarak; buhar kapasitesi, çalışma basıncı, yakıt tipi, ısıl verim değerleri ve proses ihtiyaçları esas alınarak tasarlanmakta ve üretilmektedir.
+
+Yaman Kazan olarak projeye özel shell boiler imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
   },
   { 
     id: 'steam-drum', 
