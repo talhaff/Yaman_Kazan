@@ -61,7 +61,7 @@ export default async function SertifikalarPage() {
               GÜVENİLİR VE <span className="text-primary-800">SERTİFİKALI</span> ÇÖZÜMLER
             </h2>
             <p className="text-gray-500 text-lg md:text-xl leading-relaxed font-medium">
-              Yaman Kazan, tüm imalat süreçlerinde ASME, EN ve ISO standartlarına tam uyum sağlar. 
+              Yaman Kazan, tüm imalat süreçlerinde EN standartlarına ve ISO yönetim sistemlerine tam uyum sağlar. 
               Sertifikalarımız, teknik uzmanlığımızın ve kaliteye olan bağlılığımızın birer kanıtıdır.
             </p>
           </div>

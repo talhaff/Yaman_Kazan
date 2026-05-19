@@ -30,7 +30,9 @@ const fallbackProjects = [
     ],
     gallery: [
       { asset: { _ref: "fallback-gal-bolunmus-ocak-1" }, url: "/img/bolunmusolc.jpeg" },
-      { asset: { _ref: "fallback-gal-bolunmus-ocak-2" }, url: "/img/bolunmusolc2.jpeg" }
+      { asset: { _ref: "fallback-gal-bolunmus-ocak-2" }, url: "/img/bolunmusolc2.jpeg" },
+      { asset: { _ref: "fallback-gal-bolunmus-ocak-3" }, url: "/img/bolunmusolc3.jpeg" },
+      { asset: { _ref: "fallback-gal-bolunmus-ocak-4" }, url: "/img/celik_04.jpeg" }
     ]
   },
   {

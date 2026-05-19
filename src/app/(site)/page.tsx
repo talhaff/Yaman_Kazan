@@ -145,7 +145,7 @@ export default function Home() {
               <div className="flex flex-col items-center py-10 md:py-16 group transition-colors hover:bg-white/40">
                 <div className="relative mb-3 md:mb-4">
                   <span className="text-4xl md:text-7xl font-black text-primary-950 tracking-tighter leading-none block transform group-hover:scale-105 transition-transform duration-500">
-                    500<span className="text-primary-600">+</span>
+                    270<span className="text-primary-600">+</span>
                   </span>
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-primary-600/10 rounded-full overflow-hidden">
                     <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
@@ -241,7 +241,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-lg font-black text-white uppercase tracking-tighter mb-2">Kalite Belgesi</h4>
-                    <p className="text-sm text-gray-500 leading-relaxed max-w-sm font-medium">ISO ve ASME standartlarında sertifikalandırılmış sürdürülebilir kalite garantisi.</p>
+                    <p className="text-sm text-gray-500 leading-relaxed max-w-sm font-medium">ISO ve EN standartlarında sertifikalandırılmış sürdürülebilir kalite garantisi.</p>
                   </div>
                 </motion.div>
               </div>

@@ -29,7 +29,7 @@ const buharKazaniTabs: TabData[] = [
 
 İhtiyaca göre katı, sıvı, gaz ve biyokütle yakıt tiplerine uyumlu; yüksek işletme güvenliği, maksimum ısı transferi ve minimum yakıt tüketimi standartlarıyla projeye özel olarak imal edilir.
 
-Yaman Kazan olarak fabrikaların ve endüstriyel proseslerin enerji gereksinimlerini karşılamak üzere uluslararası ASME ve EN normlarında buhar kazanı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.`,
+Yaman Kazan olarak fabrikaların ve endüstriyel proseslerin enerji gereksinimlerini karşılamak üzere uluslararası EN standartları ve ISO yönetim sistemlerine uygun şekilde buhar kazanı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.`,
     images: ['/img/buharkazan_04.jpeg', '/img/buharkazan_06.jpeg']
   },
   { 
