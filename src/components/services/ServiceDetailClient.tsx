@@ -30,7 +30,8 @@ const buharKazaniTabs: TabData[] = [
   { id: 'elektrostatik-filtre', title: 'Elektrostatik Filtre', content: 'Elektrostatik toz tutucu filtreler, baca gazındaki zararlı partikülleri yüksek voltaj alanıyla tutarak çevre emisyon standartlarının %99 verimle karşılanmasını sağlar.' },
   { id: 'rekuperator', title: 'Reküperatör', content: 'Reküperatörler, sistemden atılan sıcak gazların enerjisini geri kazanarak yanma havasını ön ısıtmaya tabi tutar. Böylece genel sistem verimliliğini maksimize ederek yakıt maliyetlerini düşürür.', images: ['/img/rekuperator.png'] },
   { id: 'multisiklon', title: 'Multisiklon', content: 'Multisiklon filtreler, özellikle katı yakıtlı sistemlerde baca gazındaki iri kül ve kurum partiküllerinin santrifüj kuvveti ile mekanik olarak ayrıştırılmasında kullanılır.', images: ['/img/multisiklon.jpeg', '/img/multisiklon2.jpeg'] },
-  { id: 'shell-boiler', title: 'Shell Boiler', content: 'Shell boiler (alev duman borulu kazanlar), kompakt yapıları, kolay bakımları ve yüksek buhar kaliteleri ile küçük ve orta ölçekli endüstri tesislerinin vazgeçilmez enerji kaynaklarıdır.' }
+  { id: 'shell-boiler', title: 'Shell Boiler', content: 'Shell boiler (alev duman borulu kazanlar), kompakt yapıları, kolay bakımları ve yüksek buhar kaliteleri ile küçük ve orta ölçekli endüstri tesislerinin vazgeçilmez enerji kaynaklarıdır.' },
+  { id: 'steam-drum', title: 'Steam Drum', content: 'Buhar dramları (steam drum), su borulu buhar kazanlarında su ve buharın ayrıştığı, kazan sirkülasyonunun merkezi olan ve prosese kuru buhar üretimini sağlayan kritik basınçlı kaplardır.', images: ['/img/dom.jpeg', '/img/dom2.jpeg'] }
 ];
 
 export default function ServiceDetailClient({ service }: { service: Service }) {
