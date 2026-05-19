@@ -104,7 +104,7 @@ Sistemden çıkan yüksek sıcaklıktaki baca gazı içerisindeki ısı enerjisi
 Reküperatör sistemleri; yakıt tasarrufu sağlar, baca gazı sıcaklığını düşürür, yanma verimini artırır, enerji kayıplarını azaltır ve işletme maliyetlerini düşürür.
 
 Yaman Kazan olarak projeye özel reküperatör imalatı, revizyonu, montajı ve bakım hizmetleri sunmaktayız.`, 
-    images: ['/img/rekuperator.png'] 
+    images: ['/img/rekuperator.png', '/img/rekuperator2.png.jpeg'] 
   },
   { 
     id: 'multisiklon', 
@@ -114,7 +114,7 @@ Yaman Kazan olarak projeye özel reküperatör imalatı, revizyonu, montajı ve 
 Özel siklon hücreleri ve merkezkaç kuvveti sayesinde baca gazındaki külleri ayrıştırarak çevre emisyonlarını azaltır ve ana filtre sistemlerinin yükünü düşürür.
 
 Yaman Kazan olarak kömür, biyokütle ve endüstriyel buhar kazanlarına özel multisiklon imalatı, montajı ve bakım hizmetleri sunmaktayız.`, 
-    images: ['/img/multisiklon.jpeg', '/img/multisiklon2.jpeg'] 
+    images: ['/img/multisiklon.jpeg', '/img/multisiklon2.jpeg', '/img/multisiklonimalati.jpeg'] 
   },
   { 
     id: 'shell-boiler', 
@@ -125,7 +125,8 @@ Yaman Kazan olarak kömür, biyokütle ve endüstriyel buhar kazanlarına özel 
 
 Sistemler projeye özel olarak; buhar kapasitesi, çalışma basıncı, yakıt tipi, ısıl verim değerleri ve proses ihtiyaçları esas alınarak tasarlanmakta ve üretilmektedir.
 
-Yaman Kazan olarak projeye özel shell boiler imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
+Yaman Kazan olarak projeye özel shell boiler imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.`,
+    images: ['/img/kaynakisleri.jpeg'] 
   },
   { 
     id: 'steam-drum', 
