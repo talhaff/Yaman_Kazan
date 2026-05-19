@@ -15,7 +15,7 @@ export const revalidate = 60; // Revalidate every 60 seconds
 
 const fallbackProjects = [
   {
-    title: "50 t/h Bölünmüş Ocak",
+    title: "50 t/h Bölünmüş Ocak Buhar Kazanı Montajı",
     category: "boiler",
     image: "/img/bolunmusolc.jpeg",
     status: "completed",
@@ -25,7 +25,7 @@ const fallbackProjects = [
     description: "50 t/h kapasiteli, bölünmüş ocak akışkan yataklı buhar kazanının tüm saha montajı, mekanik kurulumları ve yardımcı ekipman entegrasyonları uzman teknik kadromuz tarafından başarıyla tamamlanmıştır."
   },
   {
-    title: "Akışkan Yataklı Buhar Kazanı Montajı",
+    title: "40 t/h Akışkan Yataklı Buhar Kazanı Montajı",
     category: "boiler",
     image: "/img/kurulumlar.jpeg",
     status: "completed",
@@ -35,14 +35,14 @@ const fallbackProjects = [
     description: "40 t/h bölünmüş ocak akışkan yataklı buhar kazanı montaj sürecimiz başarıyla tamamlanmıştır."
   },
   {
-    title: "Yüksek Kapasiteli Buhar Kazanı Demontajı",
+    title: "25 t/h Akışkan Yataklı Buhar Kazanı Demontajı",
     category: "boiler",
     image: "/img/buharkazan_01.jpeg",   
     status: "completed",
-    slug: { current: "yuksek-kapasiteli-buhar-kazani-demontaji" },
+    slug: { current: "25-th-akiskan-yatakli-buhar-kazani-demontaji" },
     client: "Çay Sanayisi Tesisleri",
     location: "Türkiye",
-    description: "Endüstriyel gıda fabrikası bünyesinde ömrünü tamamlamış olan yüksek kapasiteli buhar kazanının ve yardımcı ekipmanlarının güvenli demontajı, saha içi nakliyesi ve taşıma çalışmaları başarıyla tamamlanmıştır."
+    description: "Endüstriyel çay üretim tesisi bünyesinde yürütülen bu proje kapsamında, kullanım ömrünü tamamlamış olan 25 t/h kapasiteli akışkan yataklı buhar kazanının ve bağlı mekanik ekipmanların demontaj çalışmaları başarıyla tamamlanmıştır. Süreç boyunca gerçekleştirilen yüksek tonajlı kaldırma, söküm ve saha içi taşıma operasyonları; uzman ekiplerimiz tarafından iş sağlığı ve güvenliği standartlarına uygun şekilde, planlanan iş programı doğrultusunda sorunsuz olarak yürütülmüştür."
   },
 
   {
@@ -73,17 +73,17 @@ const fallbackProjects = [
     slug: { current: "dogalgaz-yakitli-kazan" },
     client: "Enerji Tesisleri",
     location: "Türkiye",
-    description: "Doğalgaz yakıtlı kazan dairesi kurulum ve montaj çalışmaları."
+    description: "Endüstriyel proseslerde yüksek verimlilik sağlamak amacıyla projelendirilen 10 t/h kapasiteli doğalgaz yakıtlı buhar kazanının imalat çalışmaları, uzman üretim ekibimiz tarafından kalite ve mühendislik standartları doğrultusunda titizlikle yürütülmektedir."
   },
   {
-    title: "50 t/h Kazan Dom (Dram) İmalatı",
+    title: "50 t/h Steam Drum İmalatı",
     category: "boiler",
     image: "/img/buharkazan_05.jpeg",
     status: "ongoing",
-    slug: { current: "50-th-kazan-dom-imalati" },
+    slug: { current: "50-th-steam-drum-imalati" },
     client: "Endüstriyel Tesis",
     location: "Saha Uygulaması",
-    description: "50 t/h kapasiteli yüksek basınçlı kazan dom ünitesi imalat ve montajı."
+    description: "50 t/h kapasiteli yeni nesil buhar kazanı sistemi için kullanılan Steam Drum (Buhar Tamburu) ünitesinin imalat çalışmaları; yüksek mühendislik standartları, hassas kaynak uygulamaları ve kontrollü üretim süreçleriyle uzman ekibimiz tarafından gerçekleştirilmektedir."
   },
   {
     title: "Hidroelektrik Santrali Çöp Tutucu Izgara Revizyonu",
@@ -93,7 +93,7 @@ const fallbackProjects = [
     slug: { current: "hidroelektrik-santrali-izgara-revizyonu" },
     client: "Enerji Üretim Şirketi",
     location: "Türkiye",
-    description: "Hidroelektrik santrallerinde su girişini korumak amacıyla kullanılan çöp tutucu ızgaraların demontaj, temizlik ve revizyon çalışmaları; zorlu saha koşullarında uzman ekiplerimiz tarafından güvenli ve kontrollü şekilde gerçekleştirilmektedir."
+    description: "Hidroelektrik santrali çöp tutucu ızgara sistemlerinin demontaj, revizyon ve yeniden montaj çalışmaları; uzman ekiplerimiz tarafından güvenli, kontrollü ve planlı şekilde başarıyla tamamlanmıştır."
   }
 ];
 
