@@ -53,7 +53,7 @@ export const services: Service[] = [
     number: "3",
     title: "Çelik Konstrüksiyon",
     description: "Endüstriyel tesisler, depo yapıları ve ağır sanayi üniteleri için yüksek dayanımlı çelik konstrüksiyon imalat ve montaj hizmetleri sunuyoruz.",
-    image: "/img/celik_01.jpeg",
+    image: "/img/celik_02.jpeg",
     slug: "celik-konstruksiyon-imalat-ve-montaj",
     color: "bg-slate-800 text-white",
     detailSections: [

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -14,21 +14,41 @@ import {
 } from "lucide-react";
 import { Service } from "@/constants/services";
 
-const buharKazaniTabs = [
+interface TabData {
+  id: string;
+  title: string;
+  content: string;
+  images?: string[];
+}
+
+const buharKazaniTabs: TabData[] = [
   { id: 'buhar-kazani', title: 'Buhar Kazanı', content: 'Buhar kazanları, endüstriyel tesislerde yüksek kapasiteli ve verimli buhar üretimi sağlamak amacıyla tasarlanmış, ileri mühendislik ürünü sistemlerdir. Fabrikaların enerji ihtiyacını güvenli ve kesintisiz şekilde karşılar.' },
   { id: 'sicak-su-kazani', title: 'Sıcak Su Kazanı', content: 'Sıcak su kazanları, merkezi ısıtma ve endüstriyel prosesler için güvenilir sıcak su sağlayan yüksek verimli ünitelerdir. Düşük yakıt tüketimi ile maksimum performans sunar.' },
   { id: 'tanklar', title: 'Tanklar', content: 'Basınçlı ve basınçsız depolama tankları, endüstriyel akışkanların ve gazların güvenli bir şekilde muhafaza edilmesi için uluslararası ASME ve EN standartlarında üretilmektedir.' },
   { id: 'ekonomizer', title: 'Ekonomizer', content: 'Ekonomizer sistemleri, atık baca gazı ısısını geri kazanarak kazan besi suyunu ısıtan, bu sayede kazan verimliliğini %5-10 aralığında artıran çevreci ekipmanlardır.' },
   { id: 'degazor-kondens', title: 'Degazör & Kondens', content: 'Degazör ve kondens tankı sistemleri, kazan besi suyundaki çözünmüş oksijen ve karbondioksit gazlarını uzaklaştırarak korozyonu önler, sistemin kullanım ömrünü ciddi oranda uzatır.' },
   { id: 'elektrostatik-filtre', title: 'Elektrostatik Filtre', content: 'Elektrostatik toz tutucu filtreler, baca gazındaki zararlı partikülleri yüksek voltaj alanıyla tutarak çevre emisyon standartlarının %99 verimle karşılanmasını sağlar.' },
-  { id: 'rekuperator', title: 'Reküperatör', content: 'Reküperatörler, sistemden atılan sıcak gazların enerjisini geri kazanarak yanma havasını ön ısıtmaya tabi tutar. Böylece genel sistem verimliliğini maksimize ederek yakıt maliyetlerini düşürür.' },
-  { id: 'multisiklon', title: 'Multisiklon', content: 'Multisiklon filtreler, özellikle katı yakıtlı sistemlerde baca gazındaki iri kül ve kurum partiküllerinin santrifüj kuvveti ile mekanik olarak ayrıştırılmasında kullanılır.' },
+  { id: 'rekuperator', title: 'Reküperatör', content: 'Reküperatörler, sistemden atılan sıcak gazların enerjisini geri kazanarak yanma havasını ön ısıtmaya tabi tutar. Böylece genel sistem verimliliğini maksimize ederek yakıt maliyetlerini düşürür.', images: ['/img/rekuperator.png'] },
+  { id: 'multisiklon', title: 'Multisiklon', content: 'Multisiklon filtreler, özellikle katı yakıtlı sistemlerde baca gazındaki iri kül ve kurum partiküllerinin santrifüj kuvveti ile mekanik olarak ayrıştırılmasında kullanılır.', images: ['/img/multisiklon.jpeg', '/img/multisiklon2.jpeg'] },
   { id: 'shell-boiler', title: 'Shell Boiler', content: 'Shell boiler (alev duman borulu kazanlar), kompakt yapıları, kolay bakımları ve yüksek buhar kaliteleri ile küçük ve orta ölçekli endüstri tesislerinin vazgeçilmez enerji kaynaklarıdır.' }
 ];
 
 export default function ServiceDetailClient({ service }: { service: Service }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState(0);
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
+
+  useEffect(() => {
+    setCurrentImageIdx(0);
+    const images = buharKazaniTabs[activeTab].images || [];
+    if (images.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIdx((prev) => (prev + 1) % images.length);
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [activeTab]);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -106,15 +126,15 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
             <div className="bg-white rounded-[2rem] md:rounded-[3rem] shadow-2xl shadow-primary-950/10 border border-slate-50 overflow-hidden">
               
               {/* Desktop Tabs Navigation (Hidden on Mobile) */}
-              <div className="hidden md:flex overflow-x-auto hide-scrollbar border-b border-slate-100 bg-slate-50/50 scroll-smooth">
+              <div className="hidden md:flex flex-wrap justify-center border-b border-slate-100 bg-slate-50/50">
                 {buharKazaniTabs.map((tab, idx) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(idx)}
-                    className={`whitespace-nowrap shrink-0 px-8 py-6 text-[11px] font-black uppercase tracking-widest transition-all ${
+                    className={`px-5 lg:px-7 py-5 text-[10px] lg:text-[11px] font-black uppercase tracking-widest transition-all ${
                       activeTab === idx 
                         ? 'text-primary-600 border-b-2 border-primary-600 bg-white' 
-                        : 'text-slate-400 hover:text-primary-900 hover:bg-white'
+                        : 'text-slate-400 hover:text-primary-900 hover:bg-white border-b-2 border-transparent'
                     }`}
                   >
                     {tab.title}
@@ -177,7 +197,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                             </div>
                             <div>
                               <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">Yüksek Kalite Standartları</h4>
-                              <p className="text-xs font-medium text-slate-500 mt-1">Uluslararası ASME ve ISO normlarına tam uyum.</p>
+                              <p className="text-xs font-medium text-slate-500 mt-1">EN standartları ve ISO yönetim sistemlerine uygun şekilde yürütülmektedir.</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-5 p-4 rounded-2xl bg-slate-50 border border-slate-100">
@@ -192,17 +212,41 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                         </div>
                       </div>
                       
-                      <div className="aspect-square md:aspect-[4/5] rounded-[2rem] md:rounded-[2.5rem] bg-slate-100 relative overflow-hidden shadow-2xl shadow-primary-950/10 border border-slate-50">
-                        {/* Placeholder image, can be made dynamic per tab if needed later */}
-                        <Image 
-                          src="/img/buharkazan_04.jpeg" 
-                          alt={buharKazaniTabs[activeTab].title} 
-                          fill 
-                          className="object-cover hover:scale-105 transition-transform duration-1000" 
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary-950/60 to-transparent" />
-                        <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 right-6 md:right-8">
+                      <div className="w-full aspect-[4/3] md:aspect-[4/3] lg:aspect-[4/3] rounded-[2rem] md:rounded-[2.5rem] bg-slate-900 relative overflow-hidden shadow-2xl shadow-primary-950/10 border border-slate-50">
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={currentImageIdx}
+                            initial={{ opacity: 0, scale: 1.05 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.8, ease: "easeInOut" }}
+                            className="absolute inset-0"
+                          >
+                            <Image 
+                              src={(buharKazaniTabs[activeTab].images || ["/img/buharkazan_04.jpeg"])[currentImageIdx]} 
+                              alt={`${buharKazaniTabs[activeTab].title} ${currentImageIdx + 1}`} 
+                              fill 
+                              className="object-contain" 
+                            />
+                          </motion.div>
+                        </AnimatePresence>
+                        
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent pointer-events-none" />
+                        
+                        <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 right-6 md:right-8 z-10 flex flex-col gap-3 pointer-events-none">
                           <p className="text-white font-bold text-base md:text-lg drop-shadow-md">{buharKazaniTabs[activeTab].title} Sistemleri</p>
+                          
+                          {/* Carousel Indicators */}
+                          {(buharKazaniTabs[activeTab].images || []).length > 1 && (
+                            <div className="flex items-center gap-1.5">
+                              {buharKazaniTabs[activeTab].images!.map((_, idx) => (
+                                <div 
+                                  key={idx} 
+                                  className={`h-1.5 rounded-full transition-all duration-500 ${currentImageIdx === idx ? 'w-6 bg-primary-400' : 'w-1.5 bg-white/40'}`}
+                                />
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
