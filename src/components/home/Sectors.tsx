@@ -48,7 +48,7 @@ export default function Sectors() {
           </div>
           <div className="lg:col-span-5 border-l-2 border-secondary-800/30 pl-6 lg:pl-8">
             <p className="text-slate-400 font-medium leading-relaxed text-sm md:text-base">
-              Yaman Kazan ve Makine, yüksek mühendislik disiplini ve teknik imalat gücüyle gıdadan enerjiye, çimentodan ağır sanayiye kadar Türkiye'nin lokomotif sektörlerine anahtar teslim çözümler sunmaktadır.
+              Yaman Kazan ve Makine, yüksek mühendislik disiplini ve teknik imalat gücüyle gıdadan enerjiye, çimentodan ağır sanayiye kadar birçok farklı endüstriyel sektöre anahtar teslim çözümler sunmaktadır.
             </p>
           </div>
         </div>
