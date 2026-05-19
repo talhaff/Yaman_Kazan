@@ -55,7 +55,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-md font-medium">
-              Endüstri devleri için yüksek kapasiteli buhar kazanları imalatı, anahtar teslim kurulumu ve yüksek basınçlı sistemlerin revizyon çalışmalarında uzmanlaşmış öncü mühendislik firması.
+              Endüstriyel tesisler için yüksek kapasiteli buhar kazanları imalatı, anahtar teslim kurulumu ve yüksek basınçlı sistemlerin revizyon çalışmalarında güvenilir mühendislik çözümleri sunuyoruz.
             </p>
             <div className="flex gap-4">
               <a 
