@@ -29,7 +29,8 @@ const buharKazaniTabs: TabData[] = [
 
 İhtiyaca göre katı, sıvı, gaz ve biyokütle yakıt tiplerine uyumlu; yüksek işletme güvenliği, maksimum ısı transferi ve minimum yakıt tüketimi standartlarıyla projeye özel olarak imal edilir.
 
-Yaman Kazan olarak fabrikaların ve endüstriyel proseslerin enerji gereksinimlerini karşılamak üzere uluslararası ASME ve EN normlarında buhar kazanı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
+Yaman Kazan olarak fabrikaların ve endüstriyel proseslerin enerji gereksinimlerini karşılamak üzere uluslararası ASME ve EN normlarında buhar kazanı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.`,
+    images: ['/img/buharkazan_04.jpeg', '/img/buharkazan_06.jpeg']
   },
   { 
     id: 'sicak-su-kazani', 
@@ -121,8 +122,7 @@ Yaman Kazan olarak buhar kapasitesi, çalışma basıncı ve proses ihtiyaçlar�
 
 Proses gereksinimlerine göre seviye kontrol, emniyet, blöf ve besi suyu hatlarıyla donatılarak projeye özel tasarlanıp imal edilir.
 
-Yaman Kazan olarak endüstriyel tesisler için yüksek dayanımlı steam drum imalatı, revizyonu, montajı ve bakım hizmetleri sunmaktayız.`, 
-    images: ['/img/dom.jpeg', '/img/dom2.jpeg'] 
+Yaman Kazan olarak endüstriyel tesisler için yüksek dayanımlı steam drum imalatı, revizyonu, montajı ve bakım hizmetleri sunmaktayız.` 
   }
 ];
 
@@ -130,6 +130,9 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState(0);
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
+
+  const activeTabItem = buharKazaniTabs[activeTab];
+  const hasImages = !!(activeTabItem.images && activeTabItem.images.length > 0);
 
   useEffect(() => {
     setCurrentImageIdx(0);
@@ -270,21 +273,95 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                     transition={{ duration: 0.3 }}
                     className="max-w-6xl mx-auto"
                   >
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                      <div>
+                    {hasImages ? (
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                        <div>
+                          <div className="flex items-center gap-4 mb-6">
+                            <div className="h-px w-12 bg-primary-600" />
+                            <span className="text-xs font-black uppercase tracking-[0.4em] text-primary-600">Ürün Grubu</span>
+                          </div>
+                          <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter uppercase mb-6 md:mb-8 leading-[1.1]">
+                            {activeTabItem.title}
+                          </h2>
+                          <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium mb-8 md:mb-12 whitespace-pre-line">
+                            {activeTabItem.content}
+                          </p>
+                          
+                          <div className="flex flex-col gap-5">
+                            <div className="flex items-center gap-5 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                              <div className="h-12 w-12 rounded-xl bg-white shadow-sm flex items-center justify-center shrink-0">
+                                <ShieldCheck className="h-6 w-6 text-primary-600" />
+                              </div>
+                              <div>
+                                <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">Yüksek Kalite Standartları</h4>
+                                <p className="text-xs font-medium text-slate-500 mt-1">EN standartları ve ISO yönetim sistemlerine uygun şekilde yürütülmektedir.</p>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-5 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                              <div className="h-12 w-12 rounded-xl bg-white shadow-sm flex items-center justify-center shrink-0">
+                                <Zap className="h-6 w-6 text-primary-600" />
+                              </div>
+                              <div>
+                                <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">Maksimum Verimlilik</h4>
+                                <p className="text-xs font-medium text-slate-500 mt-1">Düşük yakıt tüketimi ve optimize edilmiş performans.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="w-full aspect-[4/3] md:aspect-[4/3] lg:aspect-[4/3] rounded-[2rem] md:rounded-[2.5rem] bg-slate-900 relative overflow-hidden shadow-2xl shadow-primary-950/10 border border-slate-50">
+                          <AnimatePresence mode="wait">
+                            <motion.div
+                              key={currentImageIdx}
+                              initial={{ opacity: 0, scale: 1.05 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.8, ease: "easeInOut" }}
+                              className="absolute inset-0"
+                            >
+                              <Image 
+                                src={activeTabItem.images![currentImageIdx]} 
+                                alt={`${activeTabItem.title} ${currentImageIdx + 1}`} 
+                                fill 
+                                className="object-contain" 
+                              />
+                            </motion.div>
+                          </AnimatePresence>
+                          
+                          <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent pointer-events-none" />
+                          
+                          <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 right-6 md:right-8 z-10 flex flex-col gap-3 pointer-events-none">
+                            <p className="text-white font-bold text-base md:text-lg drop-shadow-md">{activeTabItem.title} Sistemleri</p>
+                            
+                            {/* Carousel Indicators */}
+                            {activeTabItem.images!.length > 1 && (
+                              <div className="flex items-center gap-1.5">
+                                {activeTabItem.images!.map((_, idx) => (
+                                  <div 
+                                    key={idx} 
+                                    className={`h-1.5 rounded-full transition-all duration-500 ${currentImageIdx === idx ? 'w-6 bg-primary-400' : 'w-1.5 bg-white/40'}`}
+                                  />
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="max-w-4xl mx-auto">
                         <div className="flex items-center gap-4 mb-6">
                           <div className="h-px w-12 bg-primary-600" />
                           <span className="text-xs font-black uppercase tracking-[0.4em] text-primary-600">Ürün Grubu</span>
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter uppercase mb-6 md:mb-8 leading-[1.1]">
-                          {buharKazaniTabs[activeTab].title}
+                          {activeTabItem.title}
                         </h2>
                         <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium mb-8 md:mb-12 whitespace-pre-line">
-                          {buharKazaniTabs[activeTab].content}
+                          {activeTabItem.content}
                         </p>
                         
-                        <div className="flex flex-col gap-5">
-                          <div className="flex items-center gap-5 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
+                          <div className="flex items-center gap-5 p-5 rounded-2xl bg-slate-50 border border-slate-100">
                             <div className="h-12 w-12 rounded-xl bg-white shadow-sm flex items-center justify-center shrink-0">
                               <ShieldCheck className="h-6 w-6 text-primary-600" />
                             </div>
@@ -293,7 +370,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                               <p className="text-xs font-medium text-slate-500 mt-1">EN standartları ve ISO yönetim sistemlerine uygun şekilde yürütülmektedir.</p>
                             </div>
                           </div>
-                          <div className="flex items-center gap-5 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                          <div className="flex items-center gap-5 p-5 rounded-2xl bg-slate-50 border border-slate-100">
                             <div className="h-12 w-12 rounded-xl bg-white shadow-sm flex items-center justify-center shrink-0">
                               <Zap className="h-6 w-6 text-primary-600" />
                             </div>
@@ -304,45 +381,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                           </div>
                         </div>
                       </div>
-                      
-                      <div className="w-full aspect-[4/3] md:aspect-[4/3] lg:aspect-[4/3] rounded-[2rem] md:rounded-[2.5rem] bg-slate-900 relative overflow-hidden shadow-2xl shadow-primary-950/10 border border-slate-50">
-                        <AnimatePresence mode="wait">
-                          <motion.div
-                            key={currentImageIdx}
-                            initial={{ opacity: 0, scale: 1.05 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.8, ease: "easeInOut" }}
-                            className="absolute inset-0"
-                          >
-                            <Image 
-                              src={(buharKazaniTabs[activeTab].images || ["/img/buharkazan_04.jpeg"])[currentImageIdx]} 
-                              alt={`${buharKazaniTabs[activeTab].title} ${currentImageIdx + 1}`} 
-                              fill 
-                              className="object-contain" 
-                            />
-                          </motion.div>
-                        </AnimatePresence>
-                        
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent pointer-events-none" />
-                        
-                        <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 right-6 md:right-8 z-10 flex flex-col gap-3 pointer-events-none">
-                          <p className="text-white font-bold text-base md:text-lg drop-shadow-md">{buharKazaniTabs[activeTab].title} Sistemleri</p>
-                          
-                          {/* Carousel Indicators */}
-                          {(buharKazaniTabs[activeTab].images || []).length > 1 && (
-                            <div className="flex items-center gap-1.5">
-                              {buharKazaniTabs[activeTab].images!.map((_, idx) => (
-                                <div 
-                                  key={idx} 
-                                  className={`h-1.5 rounded-full transition-all duration-500 ${currentImageIdx === idx ? 'w-6 bg-primary-400' : 'w-1.5 bg-white/40'}`}
-                                />
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+                    )}
                   </motion.div>
                 </AnimatePresence>
               </div>
