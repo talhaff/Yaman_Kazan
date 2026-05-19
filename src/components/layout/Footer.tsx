@@ -44,7 +44,7 @@ export default function Footer() {
             <Link href="/" onClick={handleLogoClick} className="inline-block mb-8 group">
               <div className="transition-all duration-500 group-hover:scale-105">
                 <Image 
-                  src="/img/logoarkaplansız.png" 
+                  src="/img/logoarkaplansiz.png" 
                   alt="Yaman Kazan Logo" 
                   width={700} 
                   height={240} 

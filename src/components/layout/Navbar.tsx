@@ -77,7 +77,7 @@ export default function Navbar() {
             <Link href="/" onClick={handleLogoClick} className="-m-1.5 p-1.5 flex items-center gap-3 group">
               <div className="transition-all duration-500 group-hover:scale-105">
                 <Image 
-                  src="/img/logoarkaplansız.png" 
+                  src="/img/logoarkaplansiz.png" 
                   alt="Yaman Kazan Logo" 
                   width={600} 
                   height={200} 
@@ -184,7 +184,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between px-8 py-8">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                   <Image 
-                    src="/img/logoarkaplansız.png" 
+                    src="/img/logoarkaplansiz.png" 
                     alt="Yaman Kazan Logo" 
                     width={400} 
                     height={140} 

@@ -22,16 +22,108 @@ interface TabData {
 }
 
 const buharKazaniTabs: TabData[] = [
-  { id: 'buhar-kazani', title: 'Buhar Kazanı', content: 'Buhar kazanları, endüstriyel tesislerde yüksek kapasiteli ve verimli buhar üretimi sağlamak amacıyla tasarlanmış, ileri mühendislik ürünü sistemlerdir. Fabrikaların enerji ihtiyacını güvenli ve kesintisiz şekilde karşılar.' },
-  { id: 'sicak-su-kazani', title: 'Sıcak Su Kazanı', content: 'Sıcak su kazanları, merkezi ısıtma ve endüstriyel prosesler için güvenilir sıcak su sağlayan yüksek verimli ünitelerdir. Düşük yakıt tüketimi ile maksimum performans sunar.' },
-  { id: 'tanklar', title: 'Tanklar', content: 'Basınçlı ve basınçsız depolama tankları, endüstriyel akışkanların ve gazların güvenli bir şekilde muhafaza edilmesi için uluslararası ASME ve EN standartlarında üretilmektedir.' },
-  { id: 'ekonomizer', title: 'Ekonomizer', content: 'Ekonomizer sistemleri, atık baca gazı ısısını geri kazanarak kazan besi suyunu ısıtan, bu sayede kazan verimliliğini %5-10 aralığında artıran çevreci ekipmanlardır.' },
-  { id: 'degazor-kondens', title: 'Degazör & Kondens', content: 'Degazör ve kondens tankı sistemleri, kazan besi suyundaki çözünmüş oksijen ve karbondioksit gazlarını uzaklaştırarak korozyonu önler, sistemin kullanım ömrünü ciddi oranda uzatır.' },
-  { id: 'elektrostatik-filtre', title: 'Elektrostatik Filtre', content: 'Elektrostatik toz tutucu filtreler, baca gazındaki zararlı partikülleri yüksek voltaj alanıyla tutarak çevre emisyon standartlarının %99 verimle karşılanmasını sağlar.' },
-  { id: 'rekuperator', title: 'Reküperatör', content: 'Reküperatörler, sistemden atılan sıcak gazların enerjisini geri kazanarak yanma havasını ön ısıtmaya tabi tutar. Böylece genel sistem verimliliğini maksimize ederek yakıt maliyetlerini düşürür.', images: ['/img/rekuperator.png'] },
-  { id: 'multisiklon', title: 'Multisiklon', content: 'Multisiklon filtreler, özellikle katı yakıtlı sistemlerde baca gazındaki iri kül ve kurum partiküllerinin santrifüj kuvveti ile mekanik olarak ayrıştırılmasında kullanılır.', images: ['/img/multisiklon.jpeg', '/img/multisiklon2.jpeg'] },
-  { id: 'shell-boiler', title: 'Shell Boiler', content: 'Shell boiler (alev duman borulu kazanlar), kompakt yapıları, kolay bakımları ve yüksek buhar kaliteleri ile küçük ve orta ölçekli endüstri tesislerinin vazgeçilmez enerji kaynaklarıdır.' },
-  { id: 'steam-drum', title: 'Steam Drum', content: 'Buhar dramları (steam drum), su borulu buhar kazanlarında su ve buharın ayrıştığı, kazan sirkülasyonunun merkezi olan ve prosese kuru buhar üretimini sağlayan kritik basınçlı kaplardır.', images: ['/img/dom.jpeg', '/img/dom2.jpeg'] }
+  { 
+    id: 'buhar-kazani', 
+    title: 'Buhar Kazanı', 
+    content: `Buhar Kazanları, endüstriyel tesislerin yüksek kapasiteli, kesintisiz ve yüksek verimli buhar ihtiyacını karşılamak amacıyla tasarlanmış ileri mühendislik ürünü basınçlı sistemlerdir.
+
+İhtiyaca göre katı, sıvı, gaz ve biyokütle yakıt tiplerine uyumlu; yüksek işletme güvenliği, maksimum ısı transferi ve minimum yakıt tüketimi standartlarıyla projeye özel olarak imal edilir.
+
+Yaman Kazan olarak fabrikaların ve endüstriyel proseslerin enerji gereksinimlerini karşılamak üzere uluslararası ASME ve EN normlarında buhar kazanı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
+  },
+  { 
+    id: 'sicak-su-kazani', 
+    title: 'Sıcak Su Kazanı', 
+    content: `Sıcak Su Kazanları, endüstriyel tesislerde ve ısıtma sistemlerinde ihtiyaç duyulan sıcak suyun güvenli, verimli ve sürekli şekilde üretilmesini sağlayan basınçlı sistemlerdir.
+
+Doğalgaz, katı, sıvı ve biyokütle yakıt seçenekleriyle; yüksek verim ve düşük işletme maliyeti prensiplerine göre projeye özel olarak tasarlanır.
+
+Yaman Kazan olarak fabrikalar, oteller, hastaneler ve proses hatları için özel sıcak su kazanı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
+  },
+  { 
+    id: 'tanklar', 
+    title: 'Basınçlı Tanklar', 
+    content: `Basınçlı Tanklar, sıvı ve gazların belirli sıcaklık ve basınç değerleri altında güvenli şekilde depolanmasını ve proses içerisinde kontrollü olarak kullanılmasını sağlayan kritik endüstriyel ekipmanlardır.
+
+Çalışma basıncı, sıcaklık, akışkan tipi ve kapasite ihtiyaçları göz önüne alınarak uluslararası standartlara (ASME, EN) uygun olarak projeye özel tasarlanıp imal edilir.
+
+Yaman Kazan olarak kondens, degazör, hava, genleşme, yakıt ve proses tankları başta olmak üzere endüstriyel tesisler için yüksek dayanımlı basınçlı tank imalatı, montajı ve revizyon hizmetleri sunmaktayız.` 
+  },
+  { 
+    id: 'ekonomizer', 
+    title: 'Ekonomizer', 
+    content: `Ekonomizer, buhar kazanı sistemlerinde baca gazı içerisindeki atık ısı enerjisinin geri kazanılmasıyla kazan besi suyunun ön ısıtılmasını sağlayan yüksek verimli ekipmandır.
+
+Besi suyunu kazan öncesinde ısıtarak yakıt tüketimini düşürür, termal verimliliği artırır, baca sıcaklığını azaltır ve işletme maliyetlerini minimize eder.
+
+Yaman Kazan olarak yüksek enerji tüketimine sahip tesisler, buhar kazanları ve endüstriyel proses sistemleri için projeye özel ekonomizer imalatı, montajı ve bakım hizmetleri sunmaktayız.` 
+  },
+  { 
+    id: 'degazor', 
+    title: 'Degazör', 
+    content: `Degazör, kazan besi suyunda çözünmüş halde bulunan ve korozyona sebep olan oksijen (O2) ile karbondioksit (CO2) gibi gazların sistemden uzaklaştırılmasını sağlayan ekipmandır.
+
+Kazan besi suyundaki bu zararlı gazları termik veya vakum yöntemleriyle ayrıştırarak boru ve ekipmanlardaki korozyon riskini azaltır, kazan ve tesisat ömrünü uzatır.
+
+Yaman Kazan olarak yüksek basınçlı buhar sistemleri için uluslararası standartlarda güvenilir termik degazör imalatı ve kurulumu gerçekleştirmekteyiz.` 
+  },
+  { 
+    id: 'kondens', 
+    title: 'Kondens Tankı', 
+    content: `Kondens tankı, buhar sistemlerinde oluşan yoğuşma suyunun (kondens) toplanarak tekrar sisteme geri kazandırılmasını sağlayan ekipmandır.
+
+Buhar kullanım noktalarında oluşan sıcak kondens suyunu toplayıp besi suyu sistemine geri göndererek su kayıplarını azaltır ve yakıt tasarrufu sağlar.
+
+Yaman Kazan olarak endüstriyel buhar tesislerinde verimliliği maksimize eden yüksek kaliteli kondens tankı imalatı ve kurulumu gerçekleştirmekteyiz.` 
+  },
+  { 
+    id: 'elektrostatik-filtre', 
+    title: 'Elektrostatik Filtre', 
+    content: `Elektrostatik Filtre, endüstriyel tesislerde baca gazı içerisindeki toz ve partiküllerin yüksek verimle tutulmasını sağlayan emisyon kontrol sistemidir.
+
+Baca gazındaki partikülleri elektriksel yükleme prensibiyle ayrıştırarak toplama plakalarında biriktirir, böylece toz emisyonlarını minimuma indirip çevre mevzuatına uyum sağlar.
+
+Yaman Kazan olarak yüksek emisyon oluşan buhar kazanları, termik ve biyokütle tesisleri için özel elektrostatik filtre imalatı, montajı ve bakım hizmetleri sunmaktayız.`
+  },
+  { 
+    id: 'rekuperator', 
+    title: 'Reküperatör', 
+    content: `Reküperatör, kazan ve endüstriyel yanma sistemlerinde baca gazı sıcaklığını geri kazanarak enerji verimliliğini artıran ısı geri kazanım ekipmanıdır.
+
+Sistemden çıkan yüksek sıcaklıktaki ısı enerjisini geri kazanarak yakıt tüketimini azaltır, yanma verimini artırır ve işletme maliyetlerini düşürür.
+
+Yaman Kazan olarak endüstriyel proses hatlarına, buhar ve termik yağ kazanlarına özel reküperatör imalatı, montajı ve bakım hizmetleri sunmaktayız.`, 
+    images: ['/img/rekuperator.png'] 
+  },
+  { 
+    id: 'multisiklon', 
+    title: 'Multisiklon', 
+    content: `Multisiklon, katı yakıtlı kazan sistemlerinde baca gazı içerisindeki toz ve iri partiküllerin tutulmasını sağlayan mekanik filtreleme ekipmanıdır.
+
+Özel siklon hücreleri ve merkezkaç kuvveti sayesinde baca gazındaki külleri ayrıştırarak çevre emisyonlarını azaltır ve ana filtre sistemlerinin yükünü düşürür.
+
+Yaman Kazan olarak kömür, biyokütle ve endüstriyel buhar kazanlarına özel multisiklon imalatı, montajı ve bakım hizmetleri sunmaktayız.`, 
+    images: ['/img/multisiklon.jpeg', '/img/multisiklon2.jpeg'] 
+  },
+  { 
+    id: 'shell-boiler', 
+    title: 'Shell Boiler', 
+    content: `Shell Boiler, sıcak gazların borular içerisinden geçtiği ve suyun kazan gövdesi içerisinde bulunduğu, endüstriyel buhar üretiminde yaygın olarak kullanılan yüksek verimli kazan sistemidir.
+
+Fire Tube (Alev Duman Borulu) olarak da bilinen bu sistemler; kompakt yapısı, yüksek işletme güvenliği, kolay bakımı ve stabil buhar üretimi ile birçok endüstriyel tesiste tercih edilmektedir.
+
+Yaman Kazan olarak buhar kapasitesi, çalışma basıncı ve proses ihtiyaçlarınıza göre projeye özel shell boiler imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
+  },
+  { 
+    id: 'steam-drum', 
+    title: 'Steam Drum', 
+    content: `Steam Drum, su borulu buhar kazanlarında su ve buharın güvenli şekilde ayrıştırılmasını sağlayan ana basınçlı ekipmandır.
+
+Proses gereksinimlerine göre seviye kontrol, emniyet, blöf ve besi suyu hatlarıyla donatılarak projeye özel tasarlanıp imal edilir.
+
+Yaman Kazan olarak endüstriyel tesisler için yüksek dayanımlı steam drum imalatı, revizyonu, montajı ve bakım hizmetleri sunmaktayız.`, 
+    images: ['/img/dom.jpeg', '/img/dom2.jpeg'] 
+  }
 ];
 
 export default function ServiceDetailClient({ service }: { service: Service }) {
@@ -187,7 +279,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                         <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter uppercase mb-6 md:mb-8 leading-[1.1]">
                           {buharKazaniTabs[activeTab].title}
                         </h2>
-                        <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium mb-8 md:mb-12">
+                        <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium mb-8 md:mb-12 whitespace-pre-line">
                           {buharKazaniTabs[activeTab].content}
                         </p>
                         
