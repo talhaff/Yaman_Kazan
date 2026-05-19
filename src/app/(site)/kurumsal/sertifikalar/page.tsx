@@ -15,7 +15,7 @@ export const revalidate = 60;
 const fallbackCertificates = [
   { 
     title: "ISO 45001:2018", 
-    issuer: "Kalite Yönetim Sistemi Sertifikası", 
+    issuer: "İş Sağlığı ve Güvenliği Yönetim Sistemi Sertifikası", 
     image: "/img/sertifika1.png", 
     code: "OHS-2026-YK"
   },

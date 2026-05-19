@@ -114,7 +114,7 @@ export default function HakkimizdaPage() {
                 <h3 className="text-xl font-black text-white uppercase tracking-widest">Vizyonumuz</h3>
               </div>
               <p className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-snug group-hover:text-primary-400 transition-colors duration-500">
-                Yüksek mühendislik standartlarımızla, endüstriyel kazan ve basınçlı kaplar sektöründe Türkiye'nin en güvenilir ve yenilikçi çözüm ortağı olmayı sürdürmek.
+                Endüstriyel kazan, basınçlı kaplar ve mekanik tesisat alanlarında; mühendislik kalitesi, güvenilir uygulama anlayışı ve sürdürülebilir çözümlerimizle sektörün tercih edilen firmaları arasında yer almak.
               </p>
             </motion.div>
             
