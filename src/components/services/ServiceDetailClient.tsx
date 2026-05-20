@@ -58,12 +58,14 @@ Yakıt türüne ve kapasiteye göre projelendirilen sıcak su kazanları; fabrik
 
 Sistemler yüksek verim, düşük yakıt tüketimi ve güvenli işletme prensibine göre tasarlanmakta olup; doğalgazlı, katı yakıtlı, sıvı yakıtlı ve biyokütle yakıtlı olarak üretilebilmektedir.
 
-Yaman Kazan olarak projeye özel sıcak su kazanı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
+Yaman Kazan olarak projeye özel sıcak su kazanı imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.`,
+    images: ['/img/sicaksukazani.jpeg']
   },
   { 
     id: 'tanklar', 
     title: 'Basınçlı Kaplar', 
     titleEn: 'Pressure Vessels',
+    images: ['/img/basinclilap.jpeg'],
     contentEn: `Pressure vessels are industrial equipment that allow liquids and gases to be stored safely under certain temperature and pressure values and to be used in a controlled manner in the process.
 
 Pressure vessel systems produced according to high engineering and quality standards are of critical importance for process safety, system continuity and operational efficiency. In the design and manufacturing stages, operating pressure, temperature values, fluid type, capacity requirements and international standards are taken as basis.
