@@ -44,7 +44,7 @@ export default function Sectors() {
             <span className="inline-block px-4 py-1.5 bg-secondary-950/60 border border-secondary-500/20 text-secondary-400 text-[9px] font-black uppercase tracking-[0.3em] rounded-full mb-6">
               {t("sectors.subtitle")}
             </span>
-            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.95]" dangerouslySetInnerHTML={{ __html: t("sectors.title").replace(' SEKTÖRLER', '<br /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-white">SEKTÖRLER</span>').replace(' SECTORS', '<br /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-white">SECTORS</span>') }}>
+            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.95]" dangerouslySetInnerHTML={{ __html: t("sectors.title").replace(' SEKTÖRLER', '<br /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-white">SEKTÖRLER</span>').replace('SECTORS', '<span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-white">SECTORS</span> <br />') }}>
             </h2>
           </div>
           <div className="lg:col-span-5 border-l-2 border-secondary-800/30 pl-6 lg:pl-8">

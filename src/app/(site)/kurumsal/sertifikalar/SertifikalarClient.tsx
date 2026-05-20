@@ -22,13 +22,13 @@ export default function SertifikalarClient({ certificates }: { certificates: Cer
   }));
 
   return (
-    <>
+    <article className="bg-white min-h-screen">
       <PageHeader 
         title={t("cert.title")} 
         description={t("cert.desc")}
         imagePath="/img/kurumsalarka.png"
       />
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-zinc-50/50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-24">
           <span className="text-primary-800 font-black tracking-[0.3em] uppercase text-xs block mb-6">{t("cert.subtitle")}</span>
@@ -59,6 +59,6 @@ export default function SertifikalarClient({ certificates }: { certificates: Cer
         </div>
       </div>
     </section>
-  </>
+  </article>
 );
 }

@@ -33,7 +33,7 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[0.95] tracking-tighter mb-8 uppercase" dangerouslySetInnerHTML={{ __html: t("hero.title").replace('GÜVENİLİR ÇÖZÜM ORTAĞI', '<br /> <span class="text-primary-400" style="color: #609afa">GÜVENİLİR ÇÖZÜM ORTAĞI</span>').replace('RELIABLE SOLUTION PARTNER', '<br /> <span class="text-primary-400" style="color: #609afa">RELIABLE SOLUTION PARTNER</span>') }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[0.95] tracking-tighter mb-8 uppercase" dangerouslySetInnerHTML={{ __html: t("hero.title").replace('GÜVENİLİR ÇÖZÜM ORTAĞI', '<br /> <span class="text-primary-400" style="color: #609afa">GÜVENİLİR ÇÖZÜM ORTAĞI</span>').replace('TRUSTED SOLUTION PARTNER', '<br /> <span class="text-primary-400" style="color: #609afa">TRUSTED SOLUTION PARTNER</span>').replace('RELIABLE SOLUTION PARTNER', '<br /> <span class="text-primary-400" style="color: #609afa">RELIABLE SOLUTION PARTNER</span>') }}>
             </h1>
             <p className="text-base md:text-lg text-gray-200 mb-10 max-w-xl leading-relaxed font-medium">
               {t("hero.description")}
@@ -83,7 +83,7 @@ export default function Hero() {
                 <MapPin className="h-5 w-5 md:h-7 md:w-7" />
               </div>
               <div>
-                <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-1.5">{t("footer.address")}</p>
+                <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-1.5">{t("hero.hqAddress")}</p>
                 <p className="text-xs md:text-sm lg:text-base font-black text-white leading-tight uppercase tracking-tight" dangerouslySetInnerHTML={{ __html: CONTACT_INFO.address.replace('Seyhan / ADANA', '<br class="hidden md:block" /> Seyhan / ADANA') }} />
               </div>
             </div>

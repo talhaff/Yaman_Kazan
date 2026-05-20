@@ -760,7 +760,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <h2 className="text-3xl md:text-6xl font-black text-primary-950 tracking-tighter uppercase leading-none mb-8 md:mb-12" dangerouslySetInnerHTML={{ __html: t("srv.partner").replace('ORTAK OLUN.', '<br /> <span class="text-primary-800">ORTAK OLUN.</span>').replace('PARTNER IN OUR STRENGTH.', '<br /> <span class="text-primary-800">PARTNER IN OUR STRENGTH.</span>') }}>
+            <h2 className="text-3xl md:text-6xl font-black text-primary-950 tracking-tighter uppercase leading-none mb-8 md:mb-12" dangerouslySetInnerHTML={{ __html: t("srv.partner").replace('ORTAK OLUN.', '<br /> <span class="text-primary-800">ORTAK OLUN.</span>').replace('IN OUR STRENGTH.', '<br /> <span class="text-primary-800">IN OUR STRENGTH.</span>') }}>
             </h2>
             <Link
               href="/faaliyet-alanlari"
