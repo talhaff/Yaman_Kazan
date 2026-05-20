@@ -7,6 +7,16 @@ import { CONTACT_INFO } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { useTranslation } from "@/lib/LanguageContext";
 
+const WhatsAppIcon = ({ className }: { className?: string }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    className={className}
+  >
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.451 5.437.002 9.851-4.403 9.854-9.842.002-2.635-1.02-5.11-2.885-6.974C16.376 1.947 13.9 .924 11.27.924c-5.44 0-9.858 4.406-9.86 9.848-.001 1.702.449 3.361 1.309 4.815L1.616 21.6l6.031-1.582zM18.06 14.93c-.33-.165-1.937-.957-2.234-1.063-.3-.11-.517-.165-.73.165-.213.33-.825 1.063-1.012 1.28-.187.217-.375.242-.705.077c-.33-.165-1.393-.513-2.653-1.64-1-.89-1.674-1.99-1.872-2.33-.198-.33-.022-.508.143-.672.15-.147.33-.385.495-.578.165-.193.22-.33.33-.55.11-.22.055-.413-.028-.578-.083-.165-.73-1.76-1-.242-.265-.605-.56-1.2-.56-.63 0-1.155-.03-1.265-.083-.11-.055-.22-.083-.33-.083-.11 0-.275.04-.413.193-.138.15-.523.51-.523 1.24s.536 1.43.612 1.54c.077.11 1.055 1.612 2.556 2.26.357.155.636.248.854.318.36.113.686.097.944.06.288-.04.88-.36 1.004-.707.125-.347.125-.644.088-.707-.037-.063-.165-.1-.495-.265z" />
+  </svg>
+);
+
 export default function IletisimClient() {
   const { t } = useTranslation();
 
@@ -41,10 +51,10 @@ export default function IletisimClient() {
                     link: "https://www.google.com/maps/search/?api=1&query=Yeşiloba+Mah.+Şehit+Pilot+Fehmi+Alemdar+Bulv.+No:+134/Z27+Seyhan/ADANA" 
                   },
                   { 
-                    icon: Phone, 
-                    title: t("contact.phone"), 
-                    content: CONTACT_INFO.phone, 
-                    link: `tel:${CONTACT_INFO.phoneRaw}` 
+                    icon: WhatsAppIcon, 
+                    title: t("contact.whatsapp"), 
+                    content: t("contact.whatsappDetail"), 
+                    link: CONTACT_INFO.whatsapp 
                   },
                   { 
                     icon: Mail, 

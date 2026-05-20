@@ -62,22 +62,22 @@ Yaman Kazan olarak projeye özel sıcak su kazanı imalatı, montajı, revizyonu
   },
   { 
     id: 'tanklar', 
-    title: 'Basınçlı Tanklar', 
+    title: 'Basınçlı Kaplar', 
     titleEn: 'Pressure Vessels',
     contentEn: `Pressure vessels are industrial equipment that allow liquids and gases to be stored safely under certain temperature and pressure values and to be used in a controlled manner in the process.
 
 Pressure vessel systems produced according to high engineering and quality standards are of critical importance for process safety, system continuity and operational efficiency. In the design and manufacturing stages, operating pressure, temperature values, fluid type, capacity requirements and international standards are taken as basis.
 
-Main application areas are condensate tanks, deaerator tanks, air tanks, expansion tanks, fuel tanks, process tanks, flash tanks and chemical storage tanks.
+Main application areas are condensate vessels, deaerator vessels, air vessels, expansion vessels, fuel vessels, process vessels, flash vessels and chemical storage vessels.
 
 As Yaman Kazan, we provide project-specific pressure vessel manufacturing, assembly, revision, and maintenance services.`,
-    content: `Basınçlı tanklar, sıvı ve gazların belirli sıcaklık ve basınç değerleri altında güvenli şekilde depolanması ve proses içerisinde kontrollü olarak kullanılmasını sağlayan endüstriyel ekipmanlardır.
+    content: `Basınçlı kaplar, sıvı ve gazların belirli sıcaklık ve basınç değerleri altında güvenli şekilde depolanması ve proses içerisinde kontrollü olarak kullanılmasını sağlayan endüstriyel ekipmanlardır.
 
-Yüksek mühendislik ve kalite standartlarına göre üretilen basınçlı tank sistemleri; proses güvenliği, sistem sürekliliği ve işletme verimliliği açısından kritik öneme sahiptir. Projelendirme ve imalat aşamalarında; çalışma basıncı, sıcaklık değerleri, akışkan tipi, kapasite ihtiyaçları ve uluslararası standartlar esas alınmaktadır.
+Yüksek mühendislik ve kalite standartlarına göre üretilen basınçlı kap sistemleri; proses güvenliği, sistem sürekliliği ve işletme verimliliği açısından kritik öneme sahiptir. Projelendirme ve imalat aşamalarında; çalışma basıncı, sıcaklık değerleri, akışkan tipi, kapasite ihtiyaçları ve uluslararası standartlar esas alınmaktadır.
 
-Başlıca uygulama alanları; kondens tankları, degazör tankları, hava tankları, genleşme tankları, yakıt tankları, proses tankları, flaş tanklar ve kimyasal depolama tanklarıdır.
+Başlıca uygulama alanları; kondens kapları, degazör kapları, hava kapları, genleşme kapları, yakıt kapları, proses kapları, flaş kaplar ve kimyasal depolama kaplarıdır.
 
-Yaman Kazan olarak projeye özel basınçlı tank imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
+Yaman Kazan olarak projeye özel basınçlı kap imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
   },
   { 
     id: 'ekonomizer', 
@@ -85,7 +85,7 @@ Yaman Kazan olarak projeye özel basınçlı tank imalatı, montajı, revizyonu 
     titleEn: 'Economizer',
     contentEn: `The economizer is a high-efficiency heat recovery equipment that recovers the waste heat energy in the flue gas in steam boiler systems and pre-heats the boiler feed water.
 
-The heat energy in the high-temperature flue gas coming out of the system is passed through the economizer surfaces and heat transfer is provided to the feed water in a controlled manner. In this way, the fuel consumption is reduced by increasing the boiler inlet water temperature, the thermal efficiency is increased and the operating costs are minimized. Economizer systems are widely used especially in steam boilers, high-pressure systems, solid fuel and biomass boilers, power generation facilities and industrial processes.
+The heat energy in the high-temperature flue   gas coming out of the system is passed through the economizer surfaces and heat transfer is provided to the feed water in a controlled manner. In this way, the fuel consumption is reduced by increasing the boiler inlet water temperature, the thermal efficiency is increased and the operating costs are minimized. Economizer systems are widely used especially in steam boilers, high-pressure systems, solid fuel and biomass boilers, power generation facilities and industrial processes.
 
 Main advantages; reducing fuel consumption, increasing boiler efficiency, reducing flue gas temperature, minimizing energy losses, reducing operating costs and increasing system performance.
 
@@ -255,7 +255,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
   return (
     <div className="bg-white min-h-screen" ref={containerRef}>
       {/* Premium Hero Section */}
-      <section className="relative min-h-[75vh] md:min-h-[90vh] flex items-center overflow-hidden bg-primary-950 pb-20">
+      <section className="relative min-h-[50vh] md:min-h-[90vh] flex items-center overflow-hidden bg-primary-950 pb-16 md:pb-20">
         <motion.div 
           style={{ y: imageY }}
           className="absolute inset-0 z-0"
@@ -270,7 +270,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
           <div className="absolute inset-0 bg-gradient-to-b from-primary-950/80 via-primary-950/40 to-white" />
         </motion.div>
 
-        <div className="container mx-auto px-6 relative z-10 pt-20">
+        <div className="container mx-auto px-6 relative z-10 pt-24 md:pt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -279,7 +279,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
           >
             <Link 
               href="/faaliyet-alanlari"
-              className="relative z-50 inline-flex items-center gap-3 md:gap-4 text-white hover:text-primary-400 font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[9px] md:text-[11px] transition-all mb-12 md:mb-16 group cursor-pointer"
+              className="relative z-50 inline-flex items-center gap-3 md:gap-4 text-white hover:text-primary-400 font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[9px] md:text-[11px] transition-all mb-6 md:mb-16 group cursor-pointer"
             >
               <div className="w-8 h-8 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-primary-400 group-hover:border-primary-400 group-hover:text-primary-950 transition-all duration-300">
                 <ArrowLeft className="h-3 w-3 md:h-5 md:w-5 transition-transform group-hover:-translate-x-1" />
@@ -287,7 +287,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
               <span className="drop-shadow-md">{t("srv.allServices")}</span>
             </Link>
 
-            <div className="flex items-center gap-4 md:gap-6 mb-6 md:mb-8">
+            <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-8">
               <span className="text-white font-black text-5xl md:text-9xl opacity-20 leading-none select-none">
                 0{service.number}
               </span>
@@ -295,7 +295,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
               <span className="text-white font-black uppercase tracking-[0.3em] md:tracking-[0.5em] text-[7px] md:text-[10px] drop-shadow-md">{t("srv.area")}</span>
             </div>
             
-            <h1 className="text-3xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-8 md:mb-12 max-w-4xl drop-shadow-2xl">
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-4 md:mb-12 max-w-4xl drop-shadow-2xl">
               {serviceTitle}
             </h1>
           </motion.div>
@@ -304,7 +304,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
         {/* Decorative Scroll Indicator */}
         <motion.div 
           style={{ opacity }}
-          className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 md:gap-4"
+          className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-4"
         >
           <span className="text-white/30 text-[8px] md:text-[9px] font-bold uppercase tracking-widest">{t("hero.discover")}</span>
           <div className="w-px h-8 md:h-12 bg-gradient-to-b from-primary-400 to-transparent" />
