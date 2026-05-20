@@ -1,7 +1,9 @@
 import { client } from "@/sanity/lib/client";
-import { PROJECT_BY_SLUG_QUERY } from "@/sanity/lib/queries";
+import { PROJECT_BY_SLUG_QUERY, ALL_PROJECTS_QUERY } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import ProjectDetailClient from "./ProjectDetailClient";
+import type { Metadata } from "next";
+import { urlForImage } from "@/sanity/lib/image";
 
 export const revalidate = 60;
 
@@ -275,20 +277,119 @@ const fallbackProjects = [
   },
 ];
 
-export default async function ProjeDetayPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+async function getProjectBySlug(slug: string) {
   let project = await client.fetch(PROJECT_BY_SLUG_QUERY, { slug });
-
-  // Eğer Sanity'de yoksa fallbacklerde ara
   if (!project) {
-    project = fallbackProjects.find(fp => fp.slug.current === slug);
+    project = fallbackProjects.find((fp) => fp.slug.current === slug);
   }
+  return project;
+}
+
+export async function generateStaticParams() {
+  let sanityProjects: any[] = [];
+  try {
+    sanityProjects = await client.fetch(ALL_PROJECTS_QUERY);
+  } catch (error) {
+    console.error("Error fetching projects for static params:", error);
+  }
+
+  const sanitySlugs = (sanityProjects || [])
+    .map((p: any) => p.slug?.current)
+    .filter(Boolean);
+
+  const fallbackSlugs = fallbackProjects.map((fp) => fp.slug.current);
+
+  const allSlugs = Array.from(new Set([...sanitySlugs, ...fallbackSlugs]));
+
+  return allSlugs.map((slug) => ({
+    slug,
+  }));
+}
+
+export async function generateMetadata({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
+
+  if (!project) {
+    return {
+      title: "Proje Bulunamadı | Yaman Kazan",
+      description: "Aradığınız proje bulunamadı.",
+    };
+  }
+
+  const title = `${project.title} | Projelerimiz`;
+  const description = project.description;
+
+  const imageUrl = project.mainImage?.asset?._ref?.startsWith("fallback") 
+    ? project.mainImage.url 
+    : project.mainImage ? urlForImage(project.mainImage).url() : "/img/about-main.png";
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/projeler/${slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://yamankazan.com/projeler/${slug}`,
+      images: [
+        {
+          url: imageUrl,
+          alt: project.title,
+        },
+      ],
+      type: "article",
+    },
+  };
+}
+
+export default async function ProjeDetayPage({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }> 
+}) {
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
+  const imageUrl = project.mainImage?.asset?._ref?.startsWith("fallback") 
+    ? project.mainImage.url 
+    : project.mainImage ? urlForImage(project.mainImage).url() : "/img/about-main.png";
+
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": `https://yamankazan.com/projeler/${slug}/#project`,
+    "name": project.title,
+    "description": project.description,
+    "image": imageUrl.startsWith("http") ? imageUrl : `https://yamankazan.com${imageUrl}`,
+    "provider": {
+      "@type": "Organization",
+      "name": "Yaman Kazan ve Makine",
+      "url": "https://yamankazan.com"
+    },
+    "locationCreated": {
+      "@type": "Place",
+      "name": project.location || "Türkiye"
+    }
+  };
+
   return (
-    <ProjectDetailClient project={project} />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
+      <ProjectDetailClient project={project} />
+    </>
   );
 }
