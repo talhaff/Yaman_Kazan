@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { services } from "@/constants/services";
+import { useTranslation } from "@/lib/LanguageContext";
 import { 
   Wind, 
   Building2, 
@@ -21,12 +22,16 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export default function GigesServicesGrid() {
+  const { t, language } = useTranslation();
+
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
           {services.map((service, index) => {
             const Icon = iconMap[service.number] || Settings;
+            const serviceTitle = language === 'en' && service.titleEn ? service.titleEn : service.title;
+            const serviceDesc = language === 'en' && service.descriptionEn ? service.descriptionEn : service.description;
             
             return (
               <motion.div
@@ -54,15 +59,15 @@ export default function GigesServicesGrid() {
                     </div>
 
                     <h3 className="text-xl md:text-2xl font-black text-primary-950 mb-6 uppercase tracking-tighter leading-tight group-hover:text-primary-800 transition-colors mt-4">
-                      {service.title}
+                      {serviceTitle}
                     </h3>
                     
                     <p className="text-slate-500 text-[13px] leading-relaxed mb-8 line-clamp-3 px-2 font-medium">
-                      {service.description}
+                      {serviceDesc}
                     </p>
 
                     <div className="mt-auto flex items-center justify-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary-950 group-hover:gap-4 transition-all pb-6">
-                      Detayları Gör <ArrowRight className="w-4 h-4 text-primary-800" />
+                      {t("srv.viewDetails")} <ArrowRight className="w-4 h-4 text-primary-800" />
                     </div>
 
                     {/* Bottom Brand Accent - Angled Shape */}

@@ -5,8 +5,11 @@ import { ArrowRight, Play, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { CONTACT_INFO } from "@/lib/constants";
+import { useTranslation } from "@/lib/LanguageContext";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-primary-950">
       {/* Background Overlay */}
@@ -30,19 +33,17 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[0.95] tracking-tighter mb-8 uppercase">
-              ENDÜSTRİYEL TESİSLERİN <br />
-              <span className="text-primary-400" style={{ color: '#609afa' }}>GÜVENİLİR ÇÖZÜM ORTAĞI</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[0.95] tracking-tighter mb-8 uppercase" dangerouslySetInnerHTML={{ __html: t("hero.title").replace('GÜVENİLİR ÇÖZÜM ORTAĞI', '<br /> <span class="text-primary-400" style="color: #609afa">GÜVENİLİR ÇÖZÜM ORTAĞI</span>').replace('RELIABLE SOLUTION PARTNER', '<br /> <span class="text-primary-400" style="color: #609afa">RELIABLE SOLUTION PARTNER</span>') }}>
             </h1>
             <p className="text-base md:text-lg text-gray-200 mb-10 max-w-xl leading-relaxed font-medium">
-              Yaman Kazan ve Makine, yüksek kapasiteli buhar sistemlerinden endüstriyel tesis kurulumlarına kadar her aşamada yenilikçi mühendislik çözümleri sunar. Deneyimli kadromuz ve kalite odaklı yaklaşımımızla, projelerinizde verimliliği ve güvenliği en üst düzeye taşıyoruz.
+              {t("hero.description")}
             </p>
             <div className="flex flex-wrap gap-5">
               <Link
                 href="/iletisim"
                 className="px-10 py-5 bg-primary-800 text-white font-black uppercase tracking-tighter rounded-2xl hover:bg-primary-900 transition-all duration-500 flex items-center justify-center gap-3 group shadow-2xl"
               >
-                İletişim
+                {t("nav.contact")}
                 <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-primary-900 transition-all">
                   <ArrowRight className="h-4 w-4" />
                 </div>
@@ -71,7 +72,7 @@ export default function Hero() {
               </div>
               <div>
                 <span className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none block">8<span className="text-primary-400">+</span></span>
-                <p className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.3em] text-white/50 mt-2">Yıllık Deneyim</p>
+                <p className="text-[10px] md:text-[12px] font-black uppercase tracking-[0.3em] text-white/50 mt-2">{t("stats.years")}</p>
               </div>
             </div>
 
@@ -82,8 +83,8 @@ export default function Hero() {
                 <MapPin className="h-5 w-5 md:h-7 md:w-7" />
               </div>
               <div>
-                <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-1.5">Merkez Adres</p>
-                <p className="text-xs md:text-sm lg:text-base font-black text-white leading-tight uppercase tracking-tight">Yeşiloba Mah. No:134/Z27 <br className="hidden md:block" /> Seyhan / ADANA</p>
+                <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-1.5">{t("footer.address")}</p>
+                <p className="text-xs md:text-sm lg:text-base font-black text-white leading-tight uppercase tracking-tight" dangerouslySetInnerHTML={{ __html: CONTACT_INFO.address.replace('Seyhan / ADANA', '<br class="hidden md:block" /> Seyhan / ADANA') }} />
               </div>
             </div>
 
@@ -94,7 +95,7 @@ export default function Hero() {
                 <Mail className="h-5 w-5 md:h-7 md:w-7" />
               </div>
               <div className="truncate">
-                <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-1.5">Kurumsal İletişim</p>
+                <p className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/40 mb-1.5">{t("footer.contactInfo")}</p>
                 <p className="text-xs md:text-sm lg:text-base font-black text-white leading-tight truncate lowercase tracking-tight">{CONTACT_INFO.email}</p>
               </div>
             </div>

@@ -1,30 +1,37 @@
 import { client } from "@/sanity/lib/client";
 import { PROJECT_BY_SLUG_QUERY } from "@/sanity/lib/queries";
-import { urlForImage } from "@/sanity/lib/image";
-import { PortableText } from "@portabletext/react";
-import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import PageHeader from "@/components/ui/PageHeader";
-import { Calendar, User, Tag, MapPin, CheckCircle2, Clock } from "lucide-react";
+import ProjectDetailClient from "./ProjectDetailClient";
 
 export const revalidate = 60;
 
 const fallbackProjects = [
   {
     title: "50 t/h Bölünmüş Ocak Buhar Kazanı Montajı",
+    titleEn: "50 t/h Split Furnace Steam Boiler Installation",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-bolunmus-ocak" }, url: "/img/bolunmusolc.jpeg" },
     status: "completed",
     slug: { current: "50-th-bolunmus-ocak" },
     client: "Endüstriyel Çay Fabrikası",
+    clientEn: "Industrial Tea Factory",
     location: "Türkiye",
+    locationEn: "Turkey",
     description: "50 t/h kapasiteli, bölünmüş ocak akışkan yataklı buhar kazanının tüm saha montajı, mekanik kurulumları ve yardımcı ekipman entegrasyonları uzman teknik kadromuz tarafından başarıyla tamamlanmıştır.",
+    descriptionEn: "All field installation, mechanical setup, and auxiliary equipment integration of the 50 t/h split furnace fluid bed steam boiler have been successfully completed by our expert technical team.",
     content: [
       {
         _key: "1",
         _type: "block",
         children: [{ _key: "1a", _type: "span", text: "Endüstriyel çay fabrikası tesisleri bünyesinde gerçekleştirdiğimiz bu kapsamlı proje kapsamında; 50 t/h kapasiteli, bölünmüş ocak akışkan yataklı buhar kazanının tüm saha montajı, mekanik kurulumları ve yardımcı ekipman entegrasyonları uzman teknik kadromuz tarafından başarıyla tamamlanmıştır. Yüksek mühendislik disiplini ve kalite standartları doğrultusunda yürütülen montaj süreci sonrasında sistem devreye alınarak başarıyla işletmeye teslim edilmiştir." }],
+        style: "normal"
+      }
+    ],
+    contentEn: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Within the scope of this comprehensive project carried out at the industrial tea factory facilities, all field assembly, mechanical installation, and auxiliary equipment integration of the 50 t/h capacity split furnace fluidized bed steam boiler have been successfully completed by our expert technical staff. Following the installation process carried out in accordance with high engineering discipline and quality standards, the system was commissioned and successfully delivered to the management." }],
         style: "normal"
       }
     ],
@@ -36,18 +43,30 @@ const fallbackProjects = [
   },
   {
     title: "40 t/h Akışkan Yataklı Buhar Kazanı Montajı",
+    titleEn: "40 t/h Fluidized Bed Steam Boiler Installation",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-afyon-montaj" }, url: "/img/kurulumlar.jpeg" },
     status: "completed",
     slug: { current: "akiskan-yatakli-buhar-kazani-montaji" },
     client: "Şeker Üretim Tesisleri",
+    clientEn: "Sugar Production Plants",
     location: "Türkiye",
+    locationEn: "Turkey",
     description: "40 t/h bölünmüş ocak akışkan yataklı buhar kazanı montaj sürecimiz başarıyla tamamlanmıştır.",
+    descriptionEn: "Our installation process for the 40 t/h split furnace fluidized bed steam boiler has been successfully completed.",
     content: [
       {
         _key: "1",
         _type: "block",
         children: [{ _key: "1a", _type: "span", text: "Endüstriyel şeker fabrikası tesisleri bünyesinde gerçekleştirdiğimiz bu kapsamlı proje kapsamında; 40 t/h kapasiteli, bölünmüş ocak akışkan yataklı buhar kazanının tüm saha montajı, mekanik kurulumları ve yardımcı ekipman entegrasyonları uzman teknik kadromuz tarafından başarıyla tamamlanmıştır. Yüksek mühendislik disipliniyle yürütülen montaj süreci sonrasında tüm sistem başarıyla test edilerek devreye alınmıştır." }],
+        style: "normal"
+      }
+    ],
+    contentEn: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Within the scope of this comprehensive project carried out at the industrial sugar factory facilities, all field assembly, mechanical installation, and auxiliary equipment integration of the 40 t/h capacity split furnace fluidized bed steam boiler have been successfully completed by our expert technical staff. After the assembly process carried out with high engineering discipline, the entire system was successfully tested and commissioned." }],
         style: "normal"
       }
     ],
@@ -57,13 +76,17 @@ const fallbackProjects = [
   },
   {
     title: "25 t/h Akışkan Yataklı Buhar Kazanı Demontajı",
+    titleEn: "25 t/h Fluidized Bed Steam Boiler Dismantling",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-afyon-ins" }, url: "/img/buharkazan_01.jpeg" },
     status: "completed",
     slug: { current: "25-th-akiskan-yatakli-buhar-kazani-demontaji" },
     client: "Çay Sanayisi Tesisleri",
+    clientEn: "Tea Industry Facilities",
     location: "Türkiye",
+    locationEn: "Turkey",
     description: "Endüstriyel çay üretim tesisi bünyesinde yürütülen bu proje kapsamında, kullanım ömrünü tamamlamış olan 25 t/h kapasiteli akışkan yataklı buhar kazanının ve bağlı mekanik ekipmanların demontaj çalışmaları başarıyla tamamlanmıştır. Süreç boyunca gerçekleştirilen yüksek tonajlı kaldırma, söküm ve saha içi taşıma operasyonları; uzman ekiplerimiz tarafından iş sağlığı ve güvenliği standartlarına uygun şekilde, planlanan iş programı doğrultusunda sorunsuz olarak yürütülmüştür.",
+    descriptionEn: "Within the scope of this project carried out at the industrial tea production facility, dismantling of the 25 t/h capacity fluidized bed steam boiler and connected mechanical equipment that completed its service life was successfully finished. High-tonnage lifting, dismantling, and on-site transport operations carried out during the process were smoothly executed by our expert teams in accordance with occupational health and safety standards.",
     content: [
       {
         _key: "1",
@@ -72,25 +95,44 @@ const fallbackProjects = [
         style: "normal"
       }
     ],
+    contentEn: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Within the scope of this project carried out at the industrial tea production facility, dismantling of the 25 t/h capacity fluidized bed steam boiler and connected mechanical equipment that completed its service life was successfully finished. High-tonnage lifting, dismantling, and on-site transport operations carried out during the process were smoothly executed by our expert teams in accordance with occupational health and safety standards." }],
+        style: "normal"
+      }
+    ],
     gallery: [
       { asset: { _ref: "fallback-gal-afyon-ins-1" }, url: "/img/buharkazan_01.jpeg" }
     ]
   },
-
   {
     title: "Endüstriyel Kazan Revizyonu ve Modernizasyonu",
+    titleEn: "Industrial Boiler Revision and Modernization",
     category: "revision",
     mainImage: { asset: { _ref: "fallback-afyon-rev" }, url: "/img/buharkazan_02.jpeg" },
     status: "completed",
     slug: { current: "endustriyel-kazan-revizyonu" },
     client: "Buhar Üretim Tesisleri",
+    clientEn: "Steam Production Plants",
     location: "Türkiye",
+    locationEn: "Turkey",
     description: "100 t/h kapasiteli buhar kazanı membran duvar değişimi ve kapsamlı revizyon projesi.",
+    descriptionEn: "100 t/h capacity steam boiler membrane wall replacement and comprehensive revision project.",
     content: [
       {
         _key: "1",
         _type: "block",
         children: [{ _key: "1a", _type: "span", text: "Endüstriyel şeker fabrikası tesisleri bünyesinde bulunan 100 t/h kapasiteli ve 45 bar işletme basıncına sahip buhar kazanının membran duvar panellerinin yenilenmesi ve genel revizyon çalışmaları başarıyla tamamlanmıştır." }],
+        style: "normal"
+      }
+    ],
+    contentEn: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Replacement of membrane wall panels and general revision works of the steam boiler with 100 t/h capacity and 45 bar operating pressure located within the industrial sugar factory facilities have been successfully completed." }],
         style: "normal"
       }
     ],
@@ -100,18 +142,30 @@ const fallbackProjects = [
   },
   {
     title: "Endüstriyel Çelik Konstrüksiyon İmalatı",
+    titleEn: "Industrial Steel Structure Manufacturing",
     category: "industrial",
     mainImage: { asset: { _ref: "fallback-efor" }, url: "/img/celik_01.jpeg" },
     status: "ongoing",
     slug: { current: "endustriyel-celik-konstruksiyon" },
     client: "Sanayi Tesisi Yatırımcısı",
+    clientEn: "Industrial Plant Investor",
     location: "Türkiye",
+    locationEn: "Turkey",
     description: "1.250 m² endüstriyel çelik konstrüksiyon imalat ve montaj çalışmaları.",
+    descriptionEn: "1,250 m² industrial steel structure fabrication and installation works.",
     content: [
       {
         _key: "1",
         _type: "block",
         children: [{ _key: "1a", _type: "span", text: "1.250 m² kapalı alana sahip modern bir endüstriyel tesisin tüm çelik konstrüksiyon imalat ve montaj süreçleri Yaman Kazan uzmanlığıyla başarıyla sürdürülmektedir." }],
+        style: "normal"
+      }
+    ],
+    contentEn: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "All steel structure fabrication and assembly processes of a modern industrial facility with 1,250 m² closed area are being successfully carried out with the expertise of Yaman Kazan." }],
         style: "normal"
       }
     ],
@@ -121,18 +175,30 @@ const fallbackProjects = [
   },
   {
     title: "Doğalgaz Yakıtlı Kazan Projesi",
+    titleEn: "Natural Gas Fired Boiler Project",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-eforcay" }, url: "/img/gorsel02.jpeg" },
     status: "ongoing",
     slug: { current: "dogalgaz-yakitli-kazan" },
     client: "Enerji Tesisleri",
+    clientEn: "Energy Facilities",
     location: "Türkiye",
+    locationEn: "Turkey",
     description: "Endüstriyel proseslerde yüksek verimlilik sağlamak amacıyla projelendirilen 10 t/h kapasiteli doğalgaz yakıtlı buhar kazanının imalat çalışmaları, uzman üretim ekibimiz tarafından kalite ve mühendislik standartları doğrultusunda titizlikle yürütülmektedir.",
+    descriptionEn: "The manufacturing works of the 10 t/h capacity natural gas fired steam boiler, designed to provide high efficiency in industrial processes, are being meticulously carried out by our expert production team.",
     content: [
       {
         _key: "1",
         _type: "block",
         children: [{ _key: "1a", _type: "span", text: "Endüstriyel proseslerde yüksek verimlilik sağlamak amacıyla projelendirilen 10 t/h kapasiteli doğalgaz yakıtlı buhar kazanının imalat çalışmaları, uzman üretim ekibimiz tarafından kalite ve mühendislik standartları doğrultusunda titizlikle yürütülmektedir." }],
+        style: "normal"
+      }
+    ],
+    contentEn: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "The manufacturing works of the 10 t/h capacity natural gas fired steam boiler, designed to provide high efficiency in industrial processes, are being meticulously carried out by our expert production team." }],
         style: "normal"
       }
     ],
@@ -142,18 +208,30 @@ const fallbackProjects = [
   },
   {
     title: "50 t/h Steam Drum İmalatı",
+    titleEn: "50 t/h Steam Drum Manufacturing",
     category: "boiler",
     mainImage: { asset: { _ref: "fallback-dom" }, url: "/img/buharkazan_05.jpeg" },
     status: "ongoing",
     slug: { current: "50-th-steam-drum-imalati" },
     client: "Endüstriyel Tesis",
+    clientEn: "Industrial Plant",
     location: "Saha Uygulaması",
+    locationEn: "Field Application",
     description: "50 t/h kapasiteli yeni nesil buhar kazanı sistemi için kullanılan Steam Drum (Buhar Tamburu) ünitesinin imalat çalışmaları; yüksek mühendislik standartları, hassas kaynak uygulamaları ve kontrollü üretim süreçleriyle uzman ekibimiz tarafından gerçekleştirilmektedir.",
+    descriptionEn: "Manufacturing works of the Steam Drum unit used for the new generation steam boiler system with 50 t/h capacity are carried out by our expert team with high engineering standards, precise welding applications and controlled production processes.",
     content: [
       {
         _key: "1",
         _type: "block",
         children: [{ _key: "1a", _type: "span", text: "50 t/h kapasiteli yeni nesil buhar kazanı sistemi için kullanılan Steam Drum (Buhar Tamburu) ünitesinin imalat çalışmaları; yüksek mühendislik standartları, hassas kaynak uygulamaları ve kontrollü üretim süreçleriyle uzman ekibimiz tarafından gerçekleştirilmektedir." }],
+        style: "normal"
+      }
+    ],
+    contentEn: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Manufacturing works of the Steam Drum unit used for the new generation steam boiler system with 50 t/h capacity are carried out by our expert team with high engineering standards, precise welding applications and controlled production processes." }],
         style: "normal"
       }
     ],
@@ -163,18 +241,30 @@ const fallbackProjects = [
   },
   {
     title: "Hidroelektrik Santrali Çöp Tutucu Izgara Revizyonu",
+    titleEn: "Hydroelectric Power Plant Trash Rack Revision",
     category: "revision",
     mainImage: { asset: { _ref: "fallback-entek" }, url: "/img/hidroelektriksantral02.jpeg" },
     status: "completed",
     slug: { current: "hidroelektrik-santrali-izgara-revizyonu" },
     client: "Enerji Üretim Şirketi",
+    clientEn: "Energy Production Company",
     location: "Türkiye",
+    locationEn: "Turkey",
     description: "Hidroelektrik santrali çöp tutucu ızgara sistemlerinin demontaj, revizyon ve yeniden montaj çalışmaları; uzman ekiplerimiz tarafından güvenli, kontrollü ve planlı şekilde başarıyla tamamlanmıştır.",
+    descriptionEn: "Dismantling, revision, and re-assembly of trash rack systems at the hydroelectric power plant have been successfully completed by our expert teams in a safe, controlled, and planned manner.",
     content: [
       {
         _key: "1",
         _type: "block",
         children: [{ _key: "1a", _type: "span", text: "Hidroelektrik santrali çöp tutucu ızgara sistemlerinin demontaj, revizyon ve yeniden montaj çalışmaları; uzman ekiplerimiz tarafından güvenli, kontrollü ve planlı şekilde başarıyla tamamlanmıştır." }],
+        style: "normal"
+      }
+    ],
+    contentEn: [
+      {
+        _key: "1",
+        _type: "block",
+        children: [{ _key: "1a", _type: "span", text: "Dismantling, revision, and re-assembly of trash rack systems at the hydroelectric power plant have been successfully completed by our expert teams in a safe, controlled, and planned manner." }],
         style: "normal"
       }
     ],
@@ -198,72 +288,7 @@ export default async function ProjeDetayPage({ params }: { params: Promise<{ slu
     notFound();
   }
 
-  const mainImageUrl = project.mainImage?.asset?._ref?.startsWith("fallback") 
-    ? project.mainImage.url 
-    : project.mainImage ? urlForImage(project.mainImage).url() : null;
-
   return (
-    <article className="min-h-screen bg-white">
-      <PageHeader 
-        title={project.title} 
-        description={project.description}
-        imagePath={mainImageUrl || "/img/islemler.jpeg"}
-      />
-
-      <section className="py-20 lg:py-28">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <div className="space-y-12">
-            {/* Intro Section */}
-            <div className="prose prose-xl prose-primary max-w-none">
-              <h2 className="text-3xl lg:text-4xl font-black text-primary-950 mb-8 leading-tight">
-                Proje <span className="text-secondary-600">Hakkında</span>
-              </h2>
-              <div className="text-gray-600 leading-relaxed font-medium space-y-6">
-                <PortableText value={project.content || []} />
-              </div>
-            </div>
-
-            {/* Gallery */}
-            {project.gallery && project.gallery.length > 0 && (
-              <div className="pt-12">
-                <h3 className="text-2xl font-black text-primary-950 mb-10 flex items-center gap-4">
-                  Proje <span className="text-secondary-600">Galerisi</span>
-                  <div className="h-px bg-gray-100 flex-1"></div>
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {project.gallery.map((img: { asset?: { _ref: string }, url: string }, index: number) => {
-                    const galleryImgUrl = img.asset?._ref?.startsWith("fallback") 
-                      ? img.url 
-                      : urlForImage(img).url();
-
-                    return (
-                      <div key={index} className="group relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-xl bg-gray-100">
-                        <Image 
-                          src={galleryImgUrl} 
-                          alt={`${project.title} - ${index + 1}`} 
-                          fill 
-                          className="object-cover group-hover:scale-110 transition-transform duration-1000"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Navigation / Bottom CTA */}
-      <section className="bg-zinc-50 py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-black text-primary-950 mb-8">Diğer Projelerimize Göz Atın</h2>
-          <Link href="/projeler" className="inline-flex items-center gap-3 px-10 py-5 bg-white border-2 border-primary-900 text-primary-900 font-black rounded-2xl hover:bg-primary-900 hover:text-white transition-all transform hover:scale-105 shadow-xl">
-            Tüm Projeler <Tag className="h-5 w-5" />
-          </Link>
-        </div>
-      </section>
-    </article>
+    <ProjectDetailClient project={project} />
   );
 }

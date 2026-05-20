@@ -1,11 +1,9 @@
+"use client";
+
 import PageHeader from "@/components/ui/PageHeader";
 import Image from "next/image";
 import Link from "next/link";
-
-export const metadata = {
-  title: "Referanslar",
-  description: "Yaman Kazan iş ortakları ve referansları.",
-};
+import { useTranslation } from "@/lib/LanguageContext";
 
 const topReferences = [
   { name: "Çaykur", logo: "/img/caykur.jpeg" },
@@ -34,11 +32,13 @@ const otherReferences = [
 ];
 
 export default function ReferanslarPage() {
+  const { t } = useTranslation();
+
   return (
     <>
       <PageHeader 
-        title="Referanslarımız" 
-        description="Sektörün devleriyle birlikte çalışıyor, Türkiye'nin ve dünyanın en büyük sanayi projelerine imza atıyoruz."
+        title={t("nav.references")} 
+        description={t("ref.ctaDesc")}
         imagePath="/img/kurumsalarka.png"
       />
       
@@ -49,9 +49,9 @@ export default function ReferanslarPage() {
 
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-primary-800 font-black tracking-[0.2em] uppercase text-xs block mb-4">Küresel İş Ortaklarımız</span>
+            <span className="text-primary-800 font-black tracking-[0.2em] uppercase text-xs block mb-4">{t("ref.subtitle")}</span>
             <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter leading-tight uppercase">
-              BİRLİKTE <span className="text-primary-800">GÜÇLÜYÜZ</span>
+              {t("ref.title1")} <span className="text-primary-800">{t("ref.title2")}</span>
             </h2>
           </div>
 
@@ -87,17 +87,17 @@ export default function ReferanslarPage() {
               
               <div className="relative z-10 max-w-3xl mx-auto">
                 <h3 className="text-3xl md:text-4xl font-black text-white mb-6 tracking-tight uppercase leading-tight">
-                  SİZİN PROJENİZİ DE <br /> <span className="text-primary-800">BAŞARIYLA</span> TAMAMLAYALIM
+                  {t("ref.ctaTitle")}
                 </h3>
                 <p className="text-white/60 text-lg mb-10 font-medium leading-relaxed">
-                  Tecrübeli saha kadromuz ve uygulama disiplinimiz ile endüstriyel tesis projelerinizde en güvenilir çözüm ortağınız olmaya hazırız.
+                  {t("ref.ctaDesc")}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Link href="/iletisim" className="px-10 py-5 bg-white text-primary-950 font-black uppercase tracking-widest rounded-2xl hover:bg-primary-50 transition-all hover:scale-105 shadow-xl active:scale-95">
-                    İLETİŞİME GEÇİN
+                    {t("ref.btn1")}
                   </Link>
                   <Link href="/projeler" className="px-10 py-5 bg-white/5 text-white border border-white/10 font-black uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all">
-                    PROJELERİMİZİ İNCELEYİN
+                    {t("ref.btn2")}
                   </Link>
                 </div>
               </div>
@@ -108,4 +108,3 @@ export default function ReferanslarPage() {
     </>
   );
 }
-

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/lib/LanguageContext";
 
 interface PageHeaderProps {
   title: string;
@@ -10,6 +11,7 @@ interface PageHeaderProps {
 }
 
 export default function PageHeader({ title, description, imagePath = "/img/gorsel03.jpeg" }: PageHeaderProps) {
+  const { t } = useTranslation();
   return (
     <div className="relative pt-32 pb-24 md:pt-48 md:pb-32 bg-primary-950 overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -35,7 +37,7 @@ export default function PageHeader({ title, description, imagePath = "/img/gorse
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="w-8 h-[2px] bg-secondary-600 rounded-full" />
               <span className="text-[10px] md:text-xs font-black tracking-[0.4em] uppercase text-secondary-500">
-                Yaman Kazan Sektörel Güç
+                {t("pageHeader.subtitle")}
               </span>
               <div className="w-8 h-[2px] bg-secondary-600 rounded-full" />
             </div>

@@ -1,26 +1,26 @@
+"use client";
+
 import PageHeader from "@/components/ui/PageHeader";
 import { CheckCircle2 } from "lucide-react";
-
-export const metadata = {
-  title: "Entegre Yönetim Sistemi Politikası",
-  description: "Yaman Kazan entegre yönetim sistemi, iş sağlığı, güvenlik ve kalite politikaları.",
-};
-
-const policies = [
-  "Müşteri beklenti ve ihtiyaçlarını yasal şartlar çerçevesinde karşılamak.",
-  "İş sağlığı ve güvenliği risklerini en aza indirerek güvenli bir çalışma ortamı sağlamak.",
-  "Çevresel etkileri azaltmak, doğal kaynakları verimli kullanmak ve kirliliği önlemek.",
-  "Tüm çalışanların katılımı ile süreçlerimizi sürekli iyileştirmek.",
-  "Kalite, çevre ve İSG performansımızı sürekli olarak artırmak.",
-  "Teknolojik gelişmeleri yakından takip ederek üretim verimliliğini maksimize etmek."
-];
+import { useTranslation } from "@/lib/LanguageContext";
 
 export default function KalitePolitikasiPage() {
+  const { t } = useTranslation();
+
+  const policies = [
+    t("policy.1"),
+    t("policy.2"),
+    t("policy.3"),
+    t("policy.4"),
+    t("policy.5"),
+    t("policy.6"),
+  ];
+
   return (
     <>
       <PageHeader 
-        title="Entegre Yönetim Sistemi Politikası" 
-        description="Kalite, çevre ve iş güvenliği standartlarına tavizsiz bağlıyız."
+        title={t("policy.title")} 
+        description={t("policy.desc")}
         imagePath="/img/kurumsalarka.png"
       />
       
@@ -28,7 +28,7 @@ export default function KalitePolitikasiPage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto bg-zinc-50 p-10 md:p-16 rounded-3xl border border-gray-100 shadow-xl">
             <h2 className="text-2xl md:text-3xl font-black text-primary-950 mb-8 border-b border-gray-200 pb-6">
-              Politikamızın Temel İlkeleri
+              {t("policy.principles")}
             </h2>
             
             <div className="space-y-6">
@@ -42,11 +42,11 @@ export default function KalitePolitikasiPage() {
 
             <div className="mt-12 p-6 bg-primary-900 rounded-2xl text-white">
               <p className="font-medium italic leading-relaxed text-center">
-                &quot;Yaman Kazan olarak vizyonumuz; üstlendiğimiz tüm projelerde uluslararası standartlara uymak, çevreye saygılı olmak ve çalışanlarımızın güvenliğini her şeyin üstünde tutarak sektörde öncü ve kalıcı bir marka olmaktır.&quot;
+                {t("policy.quote")}
               </p>
               <div className="text-center mt-4">
-                <span className="font-bold block text-secondary-500">Yunus Yaman</span>
-                <span className="text-sm text-gray-400">Kurucu & Genel Müdür</span>
+                <span className="font-bold block text-secondary-500">{t("policy.founder")}</span>
+                <span className="text-sm text-gray-400">{t("policy.role")}</span>
               </div>
             </div>
           </div>

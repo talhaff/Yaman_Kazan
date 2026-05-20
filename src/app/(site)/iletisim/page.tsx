@@ -1,17 +1,20 @@
 "use client";
 
 import PageHeader from "@/components/ui/PageHeader";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
 import { CONTACT_INFO } from "@/lib/constants";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/lib/LanguageContext";
 
 export default function IletisimPage() {
+  const { t } = useTranslation();
+
   return (
     <>
       <PageHeader 
-        title="Bize Ulaşın" 
-        description="Projeleriniz için teklif almak veya uzman kadromuzla görüşmek için iletişim kanallarımızı kullanabilirsiniz."
+        title={t("contact.title")} 
+        description={t("contact.desc")}
         imagePath="/img/islemler.jpeg"
       />
       
@@ -24,35 +27,35 @@ export default function IletisimPage() {
             
             {/* Contact Info (Left) */}
             <div className="lg:col-span-5">
-              <span className="text-secondary-600 font-black tracking-[0.2em] uppercase text-[10px] md:text-xs block mb-6">İletişim Kanalları</span>
+              <span className="text-secondary-600 font-black tracking-[0.2em] uppercase text-[10px] md:text-xs block mb-6">{t("contact.subtitle")}</span>
               <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter leading-[0.95] mb-12 uppercase">
-                HAYALİNİZDEKİ PROJEYİ <br /> <span className="text-gradient">BİRLİKTE</span> GERÇEKLEŞTİRELİM.
+                {t("contact.title1")}
               </h2>
               
               <div className="space-y-10 md:space-y-14">
                 {[
                   { 
                     icon: MapPin, 
-                    title: "Atölye & Ofis", 
+                    title: t("contact.address"), 
                     content: CONTACT_INFO.address,
                     link: "https://www.google.com/maps/search/?api=1&query=Yeşiloba+Mah.+Şehit+Pilot+Fehmi+Alemdar+Bulv.+No:+134/Z27+Seyhan/ADANA" 
                   },
                   { 
                     icon: Phone, 
-                    title: "Telefon Hattı", 
+                    title: t("contact.phone"), 
                     content: CONTACT_INFO.phone, 
                     link: `tel:${CONTACT_INFO.phoneRaw}` 
                   },
                   { 
                     icon: Mail, 
-                    title: "E-Posta Adresi", 
+                    title: t("contact.email"), 
                     content: CONTACT_INFO.email, 
                     link: `mailto:${CONTACT_INFO.email}` 
                   },
                   { 
                     icon: Clock, 
-                    title: "Çalışma Saatleri", 
-                    content: "Pazartesi - Cumartesi: 08:30 - 18:30", 
+                    title: t("contact.hours"), 
+                    content: t("contact.hoursDetail"), 
                     link: null 
                   },
                 ].map((item, idx) => (

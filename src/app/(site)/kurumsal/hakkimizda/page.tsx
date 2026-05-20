@@ -3,17 +3,18 @@
 import PageHeader from "@/components/ui/PageHeader";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ShieldCheck, Target, Award, Users, Zap, Globe, ArrowRight } from "lucide-react";
+import { ShieldCheck, Target, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
-
-
+import { useTranslation } from "@/lib/LanguageContext";
 
 export default function HakkimizdaPage() {
+  const { t } = useTranslation();
+
   return (
     <>
       <PageHeader 
-        title="Kurumsal Kimliğimiz" 
-        description="Mühendislik mirasını teknolojiyle harmanlayarak endüstrinin geleceğine yön veriyoruz."
+        title={t("aboutPage.heritage")} 
+        description={t("about.subtitle")}
         imagePath="/img/kurumsalarka.png"
       />
       
@@ -29,37 +30,29 @@ export default function HakkimizdaPage() {
             >
               <div className="flex items-center gap-4 mb-8">
                 <div className="h-px w-12 bg-primary-800" />
-                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary-800">Mirasımız</span>
+                <span className="text-xs font-black uppercase tracking-[0.4em] text-primary-800">{t("aboutPage.heritage")}</span>
               </div>
               
               <h2 className="text-4xl md:text-6xl font-black text-primary-950 tracking-tighter leading-[0.95] mb-10 uppercase">
-                GÜÇLÜ <br /> <span className="text-primary-800">MÜHENDİSLİK</span> İLE <br /> GELECEĞİ İNŞA EDİYORUZ.
+                {t("aboutPage.title")}
               </h2>
               
               <div className="space-y-8 text-gray-600 text-lg leading-relaxed font-medium">
-                <p>
-                  <strong className="text-primary-950">Yaman Kazan ve Makine</strong>, endüstriyel tesislerin ihtiyaç duyduğu yüksek kapasiteli buhar kazanları, basınçlı kaplar ve mekanik sistemlerin tasarımı, imalatı ve kurulumunda uzmanlaşmış öncü bir mühendislik firmasıdır. Kuruluşumuzdan bu yana, teknolojik gelişmeleri ve küresel standartları yakından takip ederek ağır sanayi tesislerine güvenli, verimli ve uzun ömürlü mühendislik çözümleri sunmaktayız.
-                </p>
-                <p>
-                  Firmamız; yüksek kapasiteli buhar üretim tesislerinin anahtar teslim kurulumlarından, mevcut sistemlerin yüksek basınç dayanımlı revizyon çalışmalarına kadar tüm süreçleri tek bir çatı altında başarıyla yürütmektedir. Tasarımdan üretime, saha montajından devreye almaya kadar her aşamada üstün mühendislik disiplini ve kusursuz işçilik standartlarını uygulamaktayız.
-                </p>
-                <p>
-                  Geniş faaliyet alanlarımız kapsamında; endüstriyel tesis taahhüt hizmetleri, yüksek basınçlı borulama ve proses hatları, çelik konstrüksiyon imalatları ile mekanik tesisat uygulamalarında uzmanlaşmış durumdayız. Gıda, çimento, enerji ve ağır sanayi sektörlerindeki üreticilerin güvenilir çözüm ortağı olarak, tesislerin operasyonel sürekliliğini ve enerji verimliliğini maksimize etmekteyiz.
-                </p>
-                <p>
-                  Yürüttüğümüz tüm projelerde temel önceliğimiz; iş sağlığı ve güvenliği ilkelerinden taviz vermemek, uluslararası kalite normlarında üretim yapmak ve taahhütlerimizi zamanında eksiksiz teslim etmektir. Mühendislik gücümüzü modern üretim tesisimiz ve sahada tecrübeli uzman ekiplerimizle birleştirerek, imza attığımız her projede güvenilirliğin simgesi olmaya devam ediyoruz.
-                </p>
+                <p>{t("aboutPage.p1")}</p>
+                <p>{t("aboutPage.p2")}</p>
+                <p>{t("aboutPage.p3")}</p>
+                <p>{t("aboutPage.p4")}</p>
               </div>
 
               <div className="mt-12 flex items-center gap-10">
                 <div>
                   <p className="text-5xl font-black text-primary-950 tracking-tighter">8<span className="text-primary-800">+</span></p>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mt-2">Yıllık Deneyim</p>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mt-2">{t("stats.years")}</p>
                 </div>
                 <div className="h-12 w-px bg-gray-200" />
                 <div>
                   <p className="text-5xl font-black text-primary-950 tracking-tighter">63<span className="text-primary-800">+</span></p>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mt-2">Büyük Proje</p>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mt-2">{t("stats.projects")}</p>
                 </div>
               </div>
             </motion.div>
@@ -84,7 +77,7 @@ export default function HakkimizdaPage() {
                 <div className="flex flex-col items-center">
                   <Award className="h-12 w-12 text-primary-500 mb-4" />
                   <p className="text-xs font-black text-white text-center uppercase tracking-widest leading-relaxed">
-                    Uluslararası <br /> Kalite Standartı
+                    {t("cert.subtitle")}
                   </p>
                 </div>
               </div>
@@ -111,10 +104,10 @@ export default function HakkimizdaPage() {
                 <div className="w-12 h-12 rounded-2xl bg-primary-500/20 flex items-center justify-center">
                   <Target className="h-6 w-6 text-primary-400" />
                 </div>
-                <h3 className="text-xl font-black text-white uppercase tracking-widest">Vizyonumuz</h3>
+                <h3 className="text-xl font-black text-white uppercase tracking-widest">{t("aboutPage.vision")}</h3>
               </div>
               <p className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-snug group-hover:text-primary-400 transition-colors duration-500">
-                Endüstriyel kazan, basınçlı kaplar ve mekanik tesisat alanlarında; mühendislik kalitesi, güvenilir uygulama anlayışı ve sürdürülebilir çözümlerimizle sektörün tercih edilen firmaları arasında yer almak.
+                {t("aboutPage.visionDesc")}
               </p>
             </motion.div>
             
@@ -129,17 +122,15 @@ export default function HakkimizdaPage() {
                 <div className="w-12 h-12 rounded-2xl bg-secondary-500/20 flex items-center justify-center">
                   <ShieldCheck className="h-6 w-6 text-secondary-400" />
                 </div>
-                <h3 className="text-xl font-black text-white uppercase tracking-widest">Misyonumuz</h3>
+                <h3 className="text-xl font-black text-white uppercase tracking-widest">{t("aboutPage.mission")}</h3>
               </div>
               <p className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-snug group-hover:text-secondary-400 transition-colors duration-500">
-                Yenilikçi, sürdürülebilir ve yüksek kaliteli mühendislik hizmetlerini, insan sağlığını ve çevre güvenliğini her şeyin üzerinde tutarak müşterilerimize sunmak.
+                {t("aboutPage.missionDesc")}
               </p>
             </motion.div>
           </div>
         </div>
       </section>
-
-
 
       {/* Simple CTA Finish */}
       <section className="py-24 bg-white">
@@ -148,17 +139,17 @@ export default function HakkimizdaPage() {
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="max-w-2xl">
                 <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-tight mb-6">
-                  SİZİN İÇİN <span className="text-primary-500">DEĞER</span> <br /> ÜRETMEYE HAZIRIZ.
+                  {t("aboutPage.ctaTitle")}
                 </h2>
                 <p className="text-gray-400 text-lg font-medium">
-                  Projelerinizi dünya standartlarında hayata geçirmek için profesyonel ekibimizle tanışın.
+                  {t("aboutPage.ctaDesc")}
                 </p>
               </div>
               <Link
                 href="/iletisim"
                 className="px-12 py-6 bg-white text-primary-950 font-black uppercase tracking-widest text-[10px] rounded-2xl hover:scale-105 transition-all flex items-center justify-center gap-4 group shadow-2xl shrink-0"
               >
-                İLETİŞİME GEÇİN
+                {t("ref.btn1")}
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>

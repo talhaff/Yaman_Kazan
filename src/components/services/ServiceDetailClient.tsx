@@ -13,11 +13,14 @@ import {
   Award
 } from "lucide-react";
 import { Service } from "@/constants/services";
+import { useTranslation } from "@/lib/LanguageContext";
 
 interface TabData {
   id: string;
-  title: string;  
+  title: string;
+  titleEn?: string;
   content: string;
+  contentEn?: string;
   images?: string[];
 }
 
@@ -25,6 +28,12 @@ const buharKazaniTabs: TabData[] = [
   { 
     id: 'buhar-kazani', 
     title: 'Buhar Kazanı', 
+    titleEn: 'Steam Boiler',
+    contentEn: `Steam Boilers are advanced engineering pressurized systems designed to meet the high-capacity, continuous, and high-efficiency steam needs of industrial facilities.
+
+Manufactured project-specifically with compatibility for solid, liquid, gas, and biomass fuel types according to needs, with high operational safety, maximum heat transfer, and minimum fuel consumption standards.
+
+As Yaman Kazan, we provide steam boiler manufacturing, assembly, revision, and maintenance services in accordance with international EN standards and ISO management systems to meet the energy requirements of factories and industrial processes.`,
     content: `Buhar Kazanları, endüstriyel tesislerin yüksek kapasiteli, kesintisiz ve yüksek verimli buhar ihtiyacını karşılamak amacıyla tasarlanmış ileri mühendislik ürünü basınçlı sistemlerdir.
 
 İhtiyaca göre katı, sıvı, gaz ve biyokütle yakıt tiplerine uyumlu; yüksek işletme güvenliği, maksimum ısı transferi ve minimum yakıt tüketimi standartlarıyla projeye özel olarak imal edilir.
@@ -35,6 +44,14 @@ Yaman Kazan olarak fabrikaların ve endüstriyel proseslerin enerji gereksinimle
   { 
     id: 'sicak-su-kazani', 
     title: 'Sıcak Su Kazanı', 
+    titleEn: 'Hot Water Boiler',
+    contentEn: `Hot water boilers are pressurized systems that safely, efficiently, and continuously produce the hot water needed in industrial facilities and heating systems.
+
+Hot water boilers, designed according to fuel type and capacity, are used in many areas such as factories, hotels, hospitals, residential projects, industrial facilities, and process lines.
+
+Systems are designed according to the principles of high efficiency, low fuel consumption, and safe operation; and can be produced with natural gas, solid fuel, liquid fuel, and biomass fuel.
+
+As Yaman Kazan, we provide project-specific hot water boiler manufacturing, assembly, revision, and maintenance services.`,
     content: `Sıcak su kazanları, endüstriyel tesislerde ve ısıtma sistemlerinde ihtiyaç duyulan sıcak suyun güvenli, verimli ve sürekli şekilde üretilmesini sağlayan basınçlı sistemlerdir.
 
 Yakıt türüne ve kapasiteye göre projelendirilen sıcak su kazanları; fabrikalar, oteller, hastaneler, konut projeleri, endüstriyel tesisler ve proses hatları gibi birçok alanda kullanılmaktadır.
@@ -46,6 +63,14 @@ Yaman Kazan olarak projeye özel sıcak su kazanı imalatı, montajı, revizyonu
   { 
     id: 'tanklar', 
     title: 'Basınçlı Tanklar', 
+    titleEn: 'Pressure Vessels',
+    contentEn: `Pressure vessels are industrial equipment that allow liquids and gases to be stored safely under certain temperature and pressure values and to be used in a controlled manner in the process.
+
+Pressure vessel systems produced according to high engineering and quality standards are of critical importance for process safety, system continuity and operational efficiency. In the design and manufacturing stages, operating pressure, temperature values, fluid type, capacity requirements and international standards are taken as basis.
+
+Main application areas are condensate tanks, deaerator tanks, air tanks, expansion tanks, fuel tanks, process tanks, flash tanks and chemical storage tanks.
+
+As Yaman Kazan, we provide project-specific pressure vessel manufacturing, assembly, revision, and maintenance services.`,
     content: `Basınçlı tanklar, sıvı ve gazların belirli sıcaklık ve basınç değerleri altında güvenli şekilde depolanması ve proses içerisinde kontrollü olarak kullanılmasını sağlayan endüstriyel ekipmanlardır.
 
 Yüksek mühendislik ve kalite standartlarına göre üretilen basınçlı tank sistemleri; proses güvenliği, sistem sürekliliği ve işletme verimliliği açısından kritik öneme sahiptir. Projelendirme ve imalat aşamalarında; çalışma basıncı, sıcaklık değerleri, akışkan tipi, kapasite ihtiyaçları ve uluslararası standartlar esas alınmaktadır.
@@ -57,6 +82,14 @@ Yaman Kazan olarak projeye özel basınçlı tank imalatı, montajı, revizyonu 
   { 
     id: 'ekonomizer', 
     title: 'Ekonomizer', 
+    titleEn: 'Economizer',
+    contentEn: `The economizer is a high-efficiency heat recovery equipment that recovers the waste heat energy in the flue gas in steam boiler systems and pre-heats the boiler feed water.
+
+The heat energy in the high-temperature flue gas coming out of the system is passed through the economizer surfaces and heat transfer is provided to the feed water in a controlled manner. In this way, the fuel consumption is reduced by increasing the boiler inlet water temperature, the thermal efficiency is increased and the operating costs are minimized. Economizer systems are widely used especially in steam boilers, high-pressure systems, solid fuel and biomass boilers, power generation facilities and industrial processes.
+
+Main advantages; reducing fuel consumption, increasing boiler efficiency, reducing flue gas temperature, minimizing energy losses, reducing operating costs and increasing system performance.
+
+As Yaman Kazan, we provide project-specific economizer manufacturing, assembly, revision, and maintenance services.`,
     content: `Ekonomizer, buhar kazanı sistemlerinde baca gazı içerisinde bulunan atık ısı enerjisinin geri kazanılarak kazan besi suyunun ön ısıtılmasını sağlayan yüksek verimli ısı geri kazanım ekipmanıdır.
 
 Sistemden çıkan yüksek sıcaklıktaki baca gazı ekonomizer yüzeylerinden geçirilerek besi suyuna kontrollü şekilde ısı transferi sağlanır. Bu sayede kazan giriş suyu sıcaklığı artırılarak yakıt tüketimi düşürülür, termal verimlilik yükseltilir ve işletme maliyetleri minimize edilir. Ekonomizer sistemleri özellikle buhar kazanları, yüksek basınçlı sistemler, katı yakıtlı ve biyokütle kazanları, enerji üretim tesisleri ve endüstriyel proseslerde yaygın olarak kullanılmaktadır.
@@ -68,6 +101,12 @@ Yaman Kazan olarak projeye özel ekonomizer imalatı, montajı, revizyonu ve bak
   { 
     id: 'degazor', 
     title: 'Degazör', 
+    titleEn: 'Deaerator',
+    contentEn: `The deaerator is a piece of equipment that removes dissolved gases such as oxygen and carbon dioxide from the boiler feed water.
+
+Harmful gases in boiler systems are separated at high temperature, reducing the risk of corrosion and extending the system life. Deaerator systems extend boiler life, reduce corrosion in pipes and equipment, increase system safety, improve feed water quality and contribute to energy efficiency.
+
+The use of a deaerator is of great importance especially in high-pressure steam systems. As Yaman Kazan, we provide project-specific deaerator manufacturing, assembly, revision, and maintenance services.`,
     content: `Degazör, kazan besi suyunda bulunan çözünmüş oksijen ve karbondioksit gibi gazların sistemden uzaklaştırılmasını sağlayan ekipmandır.
 
 Kazan sistemlerinde bulunan zararlı gazlar yüksek sıcaklık altında ayrıştırılarak korozyon riski azaltılır ve sistem ömrü artırılır. Degazör sistemleri; kazan ömrünü uzatır, boru ve ekipmanlarda korozyonu azaltır, sistem güvenliğini artırır, besi suyu kalitesini iyileştirir ve enerji verimliliğine katkı sağlar.
@@ -77,6 +116,12 @@ Kazan sistemlerinde bulunan zararlı gazlar yüksek sıcaklık altında ayrışt
   { 
     id: 'kondens', 
     title: 'Kondens Tankı', 
+    titleEn: 'Condensate Tank',
+    contentEn: `The condensate tank is a piece of equipment that collects the condensation water (condensate) formed in steam systems and returns it to the system.
+
+The hot condensate water formed at steam usage points is collected in the tank and sent back to the feed water system, providing energy savings.
+
+Condensate systems reduce fuel consumption, increase energy efficiency, reduce water losses and enable the system to operate more efficiently. As Yaman Kazan, we provide project-specific condensate tank manufacturing, assembly, revision, and maintenance services.`,
     content: `Kondens tankı, buhar sistemlerinde oluşan yoğuşma suyunun (kondens) toplanarak tekrar sisteme kazandırılmasını sağlayan ekipmandır.
 
 Buhar kullanım noktalarında oluşan sıcak kondens suyu tank içerisinde toplanır ve besi suyu sistemine geri gönderilerek enerji tasarrufu sağlanır.
@@ -86,6 +131,14 @@ Kondens sistemleri; yakıt tüketimini azaltır, enerji verimliliğini artırır
   { 
     id: 'elektrostatik-filtre', 
     title: 'Elektrostatik Filtre', 
+    titleEn: 'Electrostatic Filter',
+    contentEn: `The electrostatic filter is an emission control system that highly efficiently captures dust and particles in flue gas in industrial facilities.
+
+The system separates the particles in the flue gas by the principle of electrical charging and accumulates them on the collection plates, providing clean gas output to the environment. It is widely used in coal-fired boilers, biomass plants, steam boilers, thermal systems and processes with high emissions.
+
+Electrostatic filter systems reduce dust emissions to a minimum level, ensure compliance with environmental regulations, increase flue gas outlet quality, provide high filtration efficiency and ensure continuous, efficient operation.
+
+As Yaman Kazan, we provide project-specific electrostatic filter manufacturing, assembly, revision, and maintenance services.`,
     content: `Elektrostatik filtre, endüstriyel tesislerde baca gazı içerisindeki toz ve partiküllerin yüksek verimle tutulmasını sağlayan emisyon kontrol sistemidir.
 
 Sistem, baca gazı içerisindeki partikülleri elektriksel yükleme prensibi ile ayrıştırarak toplama plakalarında biriktirir ve çevreye temiz gaz çıkışı sağlar. Kömürlü kazanlar, biyokütle tesisleri, buhar kazanları, termik sistemler ve yüksek emisyon oluşan proseslerde yaygın olarak kullanılmaktadır.
@@ -97,6 +150,14 @@ Yaman Kazan olarak projeye özel elektrostatik filtre imalatı, montajı, revizy
   { 
     id: 'rekuperator', 
     title: 'Reküperatör', 
+    titleEn: 'Recuperator',
+    contentEn: `The recuperator is a heat recovery equipment that recovers the flue gas temperature in boiler and industrial combustion systems, increasing energy efficiency.
+
+The heat energy in the high-temperature flue gas coming out of the system is recovered and used to pre-heat the combustion air or process air. In this way, fuel consumption is reduced and system efficiency is increased. It is widely used in steam boilers, thermal oil boilers, solid fuel systems, biomass plants and industrial process lines.
+
+Recuperator systems save fuel, reduce flue gas temperature, increase combustion efficiency, reduce energy losses and reduce operating costs.
+
+As Yaman Kazan, we provide project-specific recuperator manufacturing, revision, assembly, and maintenance services.`,
     content: `Reküperatör, kazan ve endüstriyel yanma sistemlerinde baca gazı sıcaklığını geri kazanarak enerji verimliliğini artıran ısı geri kazanım ekipmanıdır.
 
 Sistemden çıkan yüksek sıcaklıktaki baca gazı içerisindeki ısı enerjisi geri kazanılarak yanma havasının veya proses havasının ön ısıtılmasında kullanılır. Bu sayede yakıt tüketimi azaltılır ve sistem verimi artırılır. Buhar kazanları, termik yağ kazanları, katı yakıtlı sistemler, biyokütle tesisleri ve endüstriyel proses hatlarında yaygın olarak kullanılmaktadır.
@@ -109,6 +170,12 @@ Yaman Kazan olarak projeye özel reküperatör imalatı, revizyonu, montajı ve 
   { 
     id: 'multisiklon', 
     title: 'Multisiklon', 
+    titleEn: 'Multicyclone',
+    contentEn: `The multicyclone is a mechanical filtering equipment that captures dust and large particles in the flue gas in solid fuel boiler systems.
+
+Thanks to special cyclone cells and centrifugal force, it separates the ash in the flue gas, reducing environmental emissions and reducing the load on the main filter systems.
+
+As Yaman Kazan, we provide multicyclone manufacturing, assembly and maintenance services specific to coal, biomass and industrial steam boilers.`,
     content: `Multisiklon, katı yakıtlı kazan sistemlerinde baca gazı içerisindeki toz ve iri partiküllerin tutulmasını sağlayan mekanik filtreleme ekipmanıdır.
 
 Özel siklon hücreleri ve merkezkaç kuvveti sayesinde baca gazındaki külleri ayrıştırarak çevre emisyonlarını azaltır ve ana filtre sistemlerinin yükünü düşürür.
@@ -119,6 +186,14 @@ Yaman Kazan olarak kömür, biyokütle ve endüstriyel buhar kazanlarına özel 
   { 
     id: 'shell-boiler', 
     title: 'Shell Boiler', 
+    titleEn: 'Shell Boiler',
+    contentEn: `Shell Boiler, also known as "Fire Tube Boiler", is a high-efficiency boiler system widely used in industrial steam production where hot gases pass through tubes and water is inside the boiler body.
+
+In these systems, the hot gases resulting from combustion pass through the smoke tubes and transfer heat to the water in the body, producing steam. Shell boiler systems are preferred in many industrial facilities due to their advantages such as compact structure, high operational safety, easy maintenance, efficient heat transfer and stable steam production.
+
+Systems are designed and produced project-specifically; based on steam capacity, operating pressure, fuel type, thermal efficiency values and process requirements.
+
+As Yaman Kazan, we provide project-specific shell boiler manufacturing, assembly, revision, and maintenance services.`,
     content: `Shell Boiler, sıcak gazların borular içerisinden geçtiği ve suyun kazan gövdesi içerisinde bulunduğu, endüstriyel buhar üretiminde yaygın olarak kullanılan yüksek verimli kazan sistemidir.
 
 “Fire Tube Boiler” olarak da bilinen bu sistemlerde yanma sonucu oluşan sıcak gazlar duman boruları içerisinden geçirilerek gövde içerisindeki suya ısı transferi sağlar ve buhar üretimi gerçekleştirilir. Shell boiler sistemleri; kompakt yapısı, yüksek işletme güvenliği, kolay bakım imkanı, verimli ısı transferi ve stabil buhar üretimi gibi avantajları sayesinde birçok endüstriyel tesiste tercih edilmektedir.
@@ -131,6 +206,12 @@ Yaman Kazan olarak projeye özel shell boiler imalatı, montajı, revizyonu ve b
   { 
     id: 'steam-drum', 
     title: 'Steam Drum', 
+    titleEn: 'Steam Drum',
+    contentEn: `The Steam Drum is the main pressurized equipment that safely separates water and steam in water-tube steam boilers.
+
+It is designed and manufactured project-specifically, equipped with level control, safety, blowdown, and feed water lines according to process requirements.
+
+As Yaman Kazan, we provide high-strength steam drum manufacturing, revision, assembly, and maintenance services for industrial facilities.`,
     content: `Steam Drum, su borulu buhar kazanlarında su ve buharın güvenli şekilde ayrıştırılmasını sağlayan ana basınçlı ekipmandır.
 
 Proses gereksinimlerine göre seviye kontrol, emniyet, blöf ve besi suyu hatlarıyla donatılarak projeye özel tasarlanıp imal edilir.
@@ -140,6 +221,7 @@ Yaman Kazan olarak endüstriyel tesisler için yüksek dayanımlı steam drum im
 ];
 
 export default function ServiceDetailClient({ service }: { service: Service }) {
+  const { t, language } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState(0);
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
@@ -167,6 +249,8 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   const isBuharKazani = service.slug === 'buhar-kazani-imalat-ve-kurulumu';
+  const serviceTitle = language === 'en' && service.titleEn ? service.titleEn : service.title;
+  const serviceDesc = language === 'en' && service.descriptionEn ? service.descriptionEn : service.description;
 
   return (
     <div className="bg-white min-h-screen" ref={containerRef}>
@@ -178,7 +262,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
         >
           <Image
             src={service.image}
-            alt={service.title}
+            alt={serviceTitle}
             fill
             className="object-cover opacity-50 scale-105"
             priority
@@ -200,7 +284,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
               <div className="w-8 h-8 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-primary-400 group-hover:border-primary-400 group-hover:text-primary-950 transition-all duration-300">
                 <ArrowLeft className="h-3 w-3 md:h-5 md:w-5 transition-transform group-hover:-translate-x-1" />
               </div>
-              <span className="drop-shadow-md">TÜM FAALİYET ALANLARI</span>
+              <span className="drop-shadow-md">{t("srv.allServices")}</span>
             </Link>
 
             <div className="flex items-center gap-4 md:gap-6 mb-6 md:mb-8">
@@ -208,11 +292,11 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                 0{service.number}
               </span>
               <div className="h-0.5 w-10 md:w-20 bg-primary-400 shadow-[0_0_15px_rgba(96,154,250,0.5)]" />
-              <span className="text-white font-black uppercase tracking-[0.3em] md:tracking-[0.5em] text-[7px] md:text-[10px] drop-shadow-md">Uzmanlık Alanı</span>
+              <span className="text-white font-black uppercase tracking-[0.3em] md:tracking-[0.5em] text-[7px] md:text-[10px] drop-shadow-md">{t("srv.area")}</span>
             </div>
             
             <h1 className="text-3xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-8 md:mb-12 max-w-4xl drop-shadow-2xl">
-              {service.title}
+              {serviceTitle}
             </h1>
           </motion.div>
         </div>
@@ -222,7 +306,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
           style={{ opacity }}
           className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 md:gap-4"
         >
-          <span className="text-white/30 text-[8px] md:text-[9px] font-bold uppercase tracking-widest">Keşfedin</span>
+          <span className="text-white/30 text-[8px] md:text-[9px] font-bold uppercase tracking-widest">{t("hero.discover")}</span>
           <div className="w-px h-8 md:h-12 bg-gradient-to-b from-primary-400 to-transparent" />
         </motion.div>
       </section>
@@ -246,7 +330,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                         : 'text-slate-400 hover:text-primary-900 hover:bg-white border-b-2 border-transparent'
                     }`}
                   >
-                    {tab.title}
+                    {language === 'en' && tab.titleEn ? tab.titleEn : tab.title}
                   </button>
                 ))}
               </div>
@@ -270,7 +354,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                     }`}>
                       0{idx + 1}
                     </span>
-                    <span className="truncate">{tab.title}</span>
+                    <span className="truncate">{language === 'en' && tab.titleEn ? tab.titleEn : tab.title}</span>
                   </button>
                 ))}
               </div>
@@ -291,13 +375,13 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                         <div>
                           <div className="flex items-center gap-4 mb-6">
                             <div className="h-px w-12 bg-primary-600" />
-                            <span className="text-xs font-black uppercase tracking-[0.4em] text-primary-600">Ürün Grubu</span>
+                            <span className="text-xs font-black uppercase tracking-[0.4em] text-primary-600">{t("srv.productGrp")}</span>
                           </div>
                           <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter uppercase mb-6 md:mb-8 leading-[1.1]">
-                            {activeTabItem.title}
+                            {language === 'en' && activeTabItem.titleEn ? activeTabItem.titleEn : activeTabItem.title}
                           </h2>
                           <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium mb-8 md:mb-12 whitespace-pre-line">
-                            {activeTabItem.content}
+                            {language === 'en' && activeTabItem.contentEn ? activeTabItem.contentEn : activeTabItem.content}
                           </p>
                           
                           <div className="flex flex-col gap-5">
@@ -306,8 +390,8 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                                 <ShieldCheck className="h-6 w-6 text-primary-600" />
                               </div>
                               <div>
-                                <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">Yüksek Kalite Standartları</h4>
-                                <p className="text-xs font-medium text-slate-500 mt-1">EN standartları ve ISO yönetim sistemlerine uygun şekilde yürütülmektedir.</p>
+                                <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">{t("srv.safe")}</h4>
+                                <p className="text-xs font-medium text-slate-500 mt-1">{t("srv.safeDesc")}</p>
                               </div>
                             </div>
                             <div className="flex items-center gap-5 p-4 rounded-2xl bg-slate-50 border border-slate-100">
@@ -315,8 +399,8 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                                 <Zap className="h-6 w-6 text-primary-600" />
                               </div>
                               <div>
-                                <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">Maksimum Verimlilik</h4>
-                                <p className="text-xs font-medium text-slate-500 mt-1">Düşük yakıt tüketimi ve optimize edilmiş performans.</p>
+                                <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">{t("srv.tech")}</h4>
+                                <p className="text-xs font-medium text-slate-500 mt-1">{t("srv.techDesc")}</p>
                               </div>
                             </div>
                           </div>
@@ -344,7 +428,9 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                           <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent pointer-events-none" />
                           
                           <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 right-6 md:right-8 z-10 flex flex-col gap-3 pointer-events-none">
-                            <p className="text-white font-bold text-base md:text-lg drop-shadow-md">{activeTabItem.title} Sistemleri</p>
+                            <p className="text-white font-bold text-base md:text-lg drop-shadow-md">
+                              {language === 'en' && activeTabItem.titleEn ? `${activeTabItem.titleEn} Systems` : activeTabItem.title}
+                            </p>
                             
                             {/* Carousel Indicators */}
                             {activeTabItem.images!.length > 1 && (
@@ -364,13 +450,13 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                       <div className="max-w-4xl mx-auto">
                         <div className="flex items-center gap-4 mb-6">
                           <div className="h-px w-12 bg-primary-600" />
-                          <span className="text-xs font-black uppercase tracking-[0.4em] text-primary-600">Ürün Grubu</span>
+                          <span className="text-xs font-black uppercase tracking-[0.4em] text-primary-600">{t("srv.productGrp")}</span>
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black text-primary-950 tracking-tighter uppercase mb-6 md:mb-8 leading-[1.1]">
-                          {activeTabItem.title}
+                          {language === 'en' && activeTabItem.titleEn ? activeTabItem.titleEn : activeTabItem.title}
                         </h2>
                         <p className="text-base md:text-xl text-slate-600 leading-relaxed font-medium mb-8 md:mb-12 whitespace-pre-line">
-                          {activeTabItem.content}
+                          {language === 'en' && activeTabItem.contentEn ? activeTabItem.contentEn : activeTabItem.content}
                         </p>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
@@ -379,8 +465,8 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                               <ShieldCheck className="h-6 w-6 text-primary-600" />
                             </div>
                             <div>
-                              <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">Yüksek Kalite Standartları</h4>
-                              <p className="text-xs font-medium text-slate-500 mt-1">EN standartları ve ISO yönetim sistemlerine uygun şekilde yürütülmektedir.</p>
+                              <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">{t("srv.safe")}</h4>
+                              <p className="text-xs font-medium text-slate-500 mt-1">{t("srv.safeDesc")}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-5 p-5 rounded-2xl bg-slate-50 border border-slate-100">
@@ -388,8 +474,8 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                               <Zap className="h-6 w-6 text-primary-600" />
                             </div>
                             <div>
-                              <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">Maksimum Verimlilik</h4>
-                              <p className="text-xs font-medium text-slate-500 mt-1">Düşük yakıt tüketimi ve optimize edilmiş performans.</p>
+                              <h4 className="text-sm font-black text-primary-950 uppercase tracking-tight">{t("srv.tech")}</h4>
+                              <p className="text-xs font-medium text-slate-500 mt-1">{t("srv.techDesc")}</p>
                             </div>
                           </div>
                         </div>
@@ -413,31 +499,44 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                 className="lg:col-span-7 bg-white p-6 md:p-16 lg:p-20 rounded-[2rem] md:rounded-[3rem] shadow-2xl shadow-primary-950/10 border border-slate-50"
               >
                 <p className="text-lg md:text-3xl lg:text-4xl text-primary-950 leading-[1.15] font-black tracking-tighter mb-8 md:mb-12">
-                  {service.description}
+                  {serviceDesc}
                 </p>
                 
                 <div className="prose prose-sm md:prose-lg max-w-none text-slate-500 font-medium leading-relaxed mb-10 md:mb-12">
-                  <p>
-                    Yaman Kazan ve Makine olarak, endüstriyel tesislere yönelik güvenilir ve sürdürülebilir çözümler sunmaktayız. {service.title} süreçlerimizde, sahadaki tecrübemiz ve uygulama gücümüz ile projenize değer katıyoruz.
-                  </p>
-                  <p>
-                    Her bir adımda güvenlik, hassasiyet ve kaliteyi garanti eden uzman kadromuz, sahadaki en zorlu koşullarda bile kusursuz operasyonlar yürütmektedir.
-                  </p>
+                  {language === 'en' ? (
+                    <>
+                      <p>
+                        As Yaman Kazan and Machinery, we offer reliable and sustainable solutions for industrial facilities. In our {serviceTitle} processes, we add value to your project with our experience in the field and our implementation power.
+                      </p>
+                      <p>
+                        Our expert staff, guaranteeing safety, precision and quality at every step, carries out flawless operations even under the most demanding field conditions.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p>
+                        Yaman Kazan ve Makine olarak, endüstriyel tesislere yönelik güvenilir ve sürdürülebilir çözümler sunmaktayız. {serviceTitle} süreçlerimizde, sahadaki tecrübemiz ve uygulama gücümüz ile projenize değer katıyoruz.
+                      </p>
+                      <p>
+                        Her bir adımda güvenlik, hassasiyet ve kaliteyi garanti eden uzman kadromuz, sahadaki en zorlu koşullarda bile kusursuz operasyonlar yürütmektedir.
+                      </p>
+                    </>
+                  )}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="flex flex-col gap-6 p-8 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-3xl group hover:bg-primary-950 transition-all duration-500 border border-slate-100 hover:border-primary-900">
                     <ShieldCheck className="h-10 w-10 text-primary-800 group-hover:text-primary-400 transition-colors" />
                     <div>
-                      <h4 className="text-xl font-black text-primary-950 group-hover:text-white uppercase tracking-tighter mb-2">Sertifikalı Güvenlik</h4>
-                      <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors leading-relaxed">Tüm operasyonlarımız EN standartları ve ISO yönetim sistemlerine uygun şekilde yürütülmektedir.</p>
+                      <h4 className="text-xl font-black text-primary-950 group-hover:text-white uppercase tracking-tighter mb-2">{t("srv.safe")}</h4>
+                      <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors leading-relaxed">{t("srv.safeDesc")}</p>
                     </div>
                   </div>
                   <div className="flex flex-col gap-6 p-8 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-3xl group hover:bg-primary-950 transition-all duration-500 border border-slate-100 hover:border-primary-900">
                     <Zap className="h-10 w-10 text-primary-800 group-hover:text-primary-400 transition-colors" />
                     <div>
-                      <h4 className="text-xl font-black text-primary-950 group-hover:text-white uppercase tracking-tighter mb-2">Teknolojik Altyapı</h4>
-                      <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors leading-relaxed">En son teknoloji ekipmanlar ve yazılımlar ile hata payını sıfıra indiriyoruz.</p>
+                      <h4 className="text-xl font-black text-primary-950 group-hover:text-white uppercase tracking-tighter mb-2">{t("srv.tech")}</h4>
+                      <p className="text-sm text-slate-500 group-hover:text-white/60 transition-colors leading-relaxed">{t("srv.techDesc")}</p>
                     </div>
                   </div>
                 </div>
@@ -446,32 +545,35 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
               <aside className="lg:col-span-5 space-y-8 lg:sticky lg:top-32 pb-12">
                 <div className="bg-primary-900 rounded-[2.5rem] md:rounded-[3rem] p-10 md:p-12 text-white relative overflow-hidden group shadow-2xl shadow-primary-900/20">
                   <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full group-hover:scale-150 transition-transform duration-700" />
-                  <h3 className="text-2xl font-black mb-6 uppercase tracking-tighter">Proje Başlatın</h3>
+                  <h3 className="text-2xl font-black mb-6 uppercase tracking-tighter">{t("srv.startProject")}</h3>
                   <p className="text-white/70 mb-10 text-sm md:text-base leading-relaxed font-medium">
-                    {service.title} ve diğer hizmetlerimiz hakkında detaylı bilgi ve özel fiyat teklifi için mühendislik ekibimizle iletişime geçin.
+                    {language === 'en'
+                       ? `For detailed information and special price quotation about ${serviceTitle} and our other services, please contact our engineering team.`
+                       : `${serviceTitle} ve diğer hizmetlerimiz hakkında detaylı bilgi ve özel fiyat teklifi için mühendislik ekibimizle iletişime geçin.`
+                    }
                   </p>
                   <Link
                     href="/iletisim"
                     className="flex items-center justify-between px-8 py-5 md:py-6 bg-white text-primary-950 font-black uppercase tracking-widest text-[9px] md:text-[10px] rounded-2xl hover:scale-[1.02] transition-all shadow-xl group"
                   >
-                    TEKLİF ALIN
+                    {t("srv.getProposal")}
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
 
                 <div className="p-8 md:p-10 border border-slate-100 rounded-[2.5rem] space-y-6 bg-white shadow-sm">
-                  <h4 className="font-black text-primary-950 uppercase tracking-tighter text-lg mb-6 border-b border-slate-50 pb-4">Neden Yaman Kazan?</h4>
+                  <h4 className="font-black text-primary-950 uppercase tracking-tighter text-lg mb-6 border-b border-slate-50 pb-4">{t("srv.why")}</h4>
                   <div className="flex items-center gap-4 text-sm font-bold text-slate-600">
                     <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
                       <Target className="h-4 w-4 text-primary-800" />
                     </div>
-                    <span>Hedef Odaklı Çözümler</span>
+                    <span>{t("srv.goalOriented")}</span>
                   </div>
                   <div className="flex items-center gap-4 text-sm font-bold text-slate-600">
                     <div className="h-8 w-8 rounded-lg bg-slate-50 flex items-center justify-center shrink-0">
                       <Award className="h-4 w-4 text-primary-800" />
                     </div>
-                    <span>Üstün İşçilik Garantisi</span>
+                    <span>{t("srv.superiorWork")}</span>
                   </div>
                 </div>
               </aside>
@@ -494,7 +596,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
               <div className="h-px flex-1 bg-gradient-to-r from-primary-800/30 to-transparent" />
               <div className="flex items-center gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary-800" />
-                <span className="text-primary-950 font-black uppercase tracking-[0.3em] text-[9px] md:text-[11px]">Uygulama Detayları</span>
+                <span className="text-primary-950 font-black uppercase tracking-[0.3em] text-[9px] md:text-[11px]">{t("srv.appDetails")}</span>
                 <div className="w-1.5 h-1.5 rounded-full bg-primary-800" />
               </div>
               <div className="h-px flex-1 bg-gradient-to-l from-primary-800/30 to-transparent" />
@@ -529,7 +631,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                         <div className="h-px flex-1 bg-white/20" />
                       </div>
                       <h3 className="text-white text-sm md:text-[15px] font-bold leading-snug drop-shadow-lg">
-                        {section.title}
+                        {language === 'en' && section.titleEn ? section.titleEn : section.title}
                       </h3>
                     </div>
                   </div>
@@ -537,7 +639,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
                   {/* Card Content */}
                   <div className="p-4 md:p-5">
                     <div className="space-y-2">
-                      {section.paragraphs.map((paragraph, pIdx) => (
+                      {(language === 'en' && section.paragraphsEn ? section.paragraphsEn : section.paragraphs).map((paragraph, pIdx) => (
                         <p
                           key={pIdx}
                           className="text-slate-500 text-[11px] md:text-xs leading-relaxed"
@@ -560,7 +662,7 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
         <div className="absolute inset-0 z-0">
           <Image
             src="/img/industrial_standards.png"
-            alt="Endüstriyel Standartlar"
+            alt={t("srv.standards")}
             fill
             className="object-cover"
           />
@@ -576,9 +678,9 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
             viewport={{ once: true }}
             className="text-center mb-16 md:mb-20"
           >
-            <span className="inline-block text-primary-400 font-bold uppercase tracking-[0.5em] text-[8px] md:text-[10px] mb-4 md:mb-5">Mühendislik Gücü</span>
+            <span className="inline-block text-primary-400 font-bold uppercase tracking-[0.5em] text-[8px] md:text-[10px] mb-4 md:mb-5">{t("srv.engPower")}</span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter uppercase leading-none">
-              Hizmet <span className="text-primary-400">Standartlarımız</span>
+              {t("srv.standards").split(' ').slice(0, -1).join(' ')} <span className="text-primary-400">{t("srv.standards").split(' ').slice(-1)[0]}</span>
             </h2>
             <div className="flex items-center justify-center gap-3 mt-6">
               <div className="h-px w-12 md:w-20 bg-gradient-to-r from-transparent to-primary-400/50" />
@@ -593,26 +695,26 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
               {
                 icon: <Target className="h-7 w-7" />,
                 number: "01",
-                title: "Analiz ve Tasarım",
-                desc: "Saha keşfi ve teknik analizler ile ihtiyaca en uygun sistem tasarımı gerçekleştiriyoruz."
+                title: t("srv.std1.title"),
+                desc: t("srv.std1.desc")
               },
               {
                 icon: <ShieldCheck className="h-7 w-7" />,
                 number: "02",
-                title: "Kalite Kontrol",
-                desc: "ISO ve ASME standartlarında belgelendirilmiş kalite güvence süreçleri uyguluyoruz."
+                title: t("srv.std2.title"),
+                desc: t("srv.std2.desc")
               },
               {
                 icon: <Zap className="h-7 w-7" />,
                 number: "03",
-                title: "Kurulum ve Montaj",
-                desc: "Sertifikalı ekipler ve modern ekipmanlar ile hatasız saha operasyonları yürütüyoruz."
+                title: t("srv.std3.title"),
+                desc: t("srv.std3.desc")
               },
               {
                 icon: <Award className="h-7 w-7" />,
                 number: "04",
-                title: "Devreye Alma",
-                desc: "Tüm sistemlerin sorunsuz çalışması için kapsamlı test ve devreye alma süreçleri."
+                title: t("srv.std4.title"),
+                desc: t("srv.std4.desc")
               }
             ].map((item, idx) => (
               <motion.div
@@ -658,14 +760,13 @@ export default function ServiceDetailClient({ service }: { service: Service }) {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <h2 className="text-3xl md:text-6xl font-black text-primary-950 tracking-tighter uppercase leading-none mb-8 md:mb-12">
-              GÜCÜMÜZE <br /> <span className="text-primary-800">ORTAK OLUN.</span>
+            <h2 className="text-3xl md:text-6xl font-black text-primary-950 tracking-tighter uppercase leading-none mb-8 md:mb-12" dangerouslySetInnerHTML={{ __html: t("srv.partner").replace('ORTAK OLUN.', '<br /> <span class="text-primary-800">ORTAK OLUN.</span>').replace('PARTNER IN OUR STRENGTH.', '<br /> <span class="text-primary-800">PARTNER IN OUR STRENGTH.</span>') }}>
             </h2>
             <Link
               href="/faaliyet-alanlari"
               className="group flex items-center gap-4 md:gap-6 px-8 md:px-12 py-5 md:py-6 bg-slate-900 text-white font-black uppercase tracking-widest text-[9px] md:text-[10px] rounded-xl md:rounded-2xl hover:bg-primary-950 transition-all shadow-2xl w-full sm:w-auto justify-center"
             >
-              DİĞER HİZMETLERİMİZİ GÖRÜN
+              {t("srv.otherServices")}
               <ArrowRight className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-2 transition-transform" />
             </Link>
           </motion.div>

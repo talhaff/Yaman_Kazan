@@ -7,8 +7,11 @@ import { ShieldCheck, Target, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslation } from "@/lib/LanguageContext";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Hero />
@@ -52,7 +55,7 @@ export default function Home() {
               <div className="absolute top-6 right-6 z-30">
                 <div className="relative bg-white shadow-xl px-5 py-2 rounded-lg flex items-center gap-2">
                   <span className="text-primary-800 text-xs">★</span>
-                  <span className="text-[9px] font-black uppercase tracking-widest text-primary-950">Endüstriyel Alan Öncü Şirket</span>
+                  <span className="text-[9px] font-black uppercase tracking-widest text-primary-950">{t("about.subtitle")}</span>
                 </div>
               </div>
             </div>
@@ -65,22 +68,20 @@ export default function Home() {
               </div>
 
               <h2 className="text-4xl md:text-6xl font-black text-primary-950 tracking-tighter uppercase leading-[0.9] mb-6">
-                HOŞGELDİNİZ
+                {t("about.welcome")}
               </h2>
               
               <div 
                 className="inline-block px-8 py-3 bg-primary-950 text-white font-black uppercase tracking-widest text-[10px] mb-8 shadow-lg"
                 style={{ clipPath: "polygon(0 0, 100% 0, 90% 100%, 0% 100%)" }}
               >
-                Hakkımızda
+                {t("about.title")}
               </div>
               
               <div className="space-y-5 text-slate-500 font-medium text-base md:text-lg leading-relaxed mb-8">
-                <p>
-                  <strong className="text-primary-950">Yaman Kazan ve Makine</strong>, endüstriyel tesislerin ihtiyaç duyduğu yüksek teknolojili buhar sistemleri ve mekanik çözümler konusunda uzmanlaşmış, sektörün güvenilir mühendislik partneridir.
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: t("about.p1").replace('Yaman Kazan ve Makine', '<strong class="text-primary-950">Yaman Kazan ve Makine</strong>').replace('Yaman Kazan & Makine', '<strong class="text-primary-950">Yaman Kazan & Makine</strong>') }} />
                 <p className="text-sm opacity-80">
-                  Mühendislik disiplini ve yenilikçi üretim tekniklerini bir araya getirerek, anahtar teslim projelerden periyodik bakımlara kadar geniş bir spektrumda kesintisiz hizmet sağlıyoruz.
+                  {t("about.p2")}
                 </p>
               </div>
 
@@ -88,7 +89,7 @@ export default function Home() {
                 href="/kurumsal/hakkimizda"
                 className="inline-flex items-center gap-4 text-primary-950 font-black uppercase tracking-widest text-[10px] group"
               >
-                DAHA FAZLA BİLGİ
+                {t("about.moreInfo")}
                 <div className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-primary-950 group-hover:text-white transition-all">
                   <ArrowRight className="w-4 h-4" />
                 </div>
@@ -112,7 +113,7 @@ export default function Home() {
                     <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
                   </div>
                 </div>
-                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">Ülkeler</span>
+                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">{t("stats.countries")}</span>
               </div>
               
               {/* Stat 2 */}
@@ -125,7 +126,7 @@ export default function Home() {
                     <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
                   </div>
                 </div>
-                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">Projeler</span>
+                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">{t("stats.projects")}</span>
               </div>
 
               {/* Stat 3 */}
@@ -138,7 +139,7 @@ export default function Home() {
                     <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
                   </div>
                 </div>
-                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">Yıllık Deneyim</span>
+                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">{t("stats.years")}</span>
               </div>
 
               {/* Stat 4 */}
@@ -151,7 +152,7 @@ export default function Home() {
                     <div className="w-0 group-hover:w-full h-full bg-primary-600 transition-all duration-700" />
                   </div>
                 </div>
-                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">Mutlu Müşteri</span>
+                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-primary-950/30 group-hover:text-primary-950 transition-colors">{t("stats.clients")}</span>
               </div>
             </div>
           </div>
@@ -184,13 +185,12 @@ export default function Home() {
             <div className="space-y-12">
               <div>
                 <span className="inline-block px-4 py-1.5 bg-primary-800/30 border border-primary-400/20 text-primary-400 text-[9px] font-black uppercase tracking-[0.3em] rounded-full mb-6">
-                  Neden Biz?
+                  {t("features.whyUs")}
                 </span>
-                <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase leading-[1.1] mb-8">
-                  TEKNOLOJİ VE <br /> <span className="text-primary-500">GÜVENİN</span> MERKEZİ.
+                <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase leading-[1.1] mb-8" dangerouslySetInnerHTML={{ __html: t("features.title").replace(' GÜVENİN', '<br /> <span class="text-primary-500">GÜVENİN</span>').replace(' TRUST', '<br /> <span class="text-primary-500">TRUST</span>') }}>
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed max-w-xl font-medium">
-                  Yaman Kazan ve Makine, her projede kaliteli işçilik, iş güvenliği ve zamanında teslim anlayışı ile hareket eder.
+                  {t("features.description")}
                 </p>
               </div>
 
@@ -206,8 +206,8 @@ export default function Home() {
                     <ShieldCheck className="h-6 w-6 text-primary-400 group-hover:text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-black text-white uppercase tracking-tighter mb-2">Yüksek Güvenlik</h4>
-                    <p className="text-sm text-gray-500 leading-relaxed max-w-sm font-medium">Uluslararası İSG standartlarını tüm operasyonlarımızın merkezine koyuyoruz.</p>
+                    <h4 className="text-lg font-black text-white uppercase tracking-tighter mb-2">{t("features.1.title")}</h4>
+                    <p className="text-sm text-gray-500 leading-relaxed max-w-sm font-medium">{t("features.1.desc")}</p>
                   </div>
                 </motion.div>
 
@@ -223,8 +223,8 @@ export default function Home() {
                     <Target className="h-6 w-6 text-primary-400 group-hover:text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-black text-white uppercase tracking-tighter mb-2">Hassas Mühendislik</h4>
-                    <p className="text-sm text-gray-500 leading-relaxed max-w-sm font-medium">En zorlu toleranslarda bile kusursuz sonuçlar için uzman kadro ve ileri teknoloji.</p>
+                    <h4 className="text-lg font-black text-white uppercase tracking-tighter mb-2">{t("features.2.title")}</h4>
+                    <p className="text-sm text-gray-500 leading-relaxed max-w-sm font-medium">{t("features.2.desc")}</p>
                   </div>
                 </motion.div>
 
@@ -240,8 +240,8 @@ export default function Home() {
                     <Award className="h-6 w-6 text-primary-400 group-hover:text-white" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-black text-white uppercase tracking-tighter mb-2">Kalite Belgesi</h4>
-                    <p className="text-sm text-gray-500 leading-relaxed max-w-sm font-medium">ISO ve EN standartlarında sertifikalandırılmış sürdürülebilir kalite garantisi.</p>
+                    <h4 className="text-lg font-black text-white uppercase tracking-tighter mb-2">{t("features.3.title")}</h4>
+                    <p className="text-sm text-gray-500 leading-relaxed max-w-sm font-medium">{t("features.3.desc")}</p>
                   </div>
                 </motion.div>
               </div>
@@ -256,18 +256,17 @@ export default function Home() {
             >
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-16 relative overflow-hidden group">
                 <div className="relative z-10">
-                  <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-tight mb-8 uppercase">
-                    YENİ BİR <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-white">PROJE BAŞLATIN.</span>
+                  <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-tight mb-8 uppercase" dangerouslySetInnerHTML={{ __html: t("features.cta.title").replace(' PROJE BAŞLATIN', '<br /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-white">PROJE BAŞLATIN.</span>').replace(' NEW PROJECT', '<br /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-white">NEW PROJECT.</span>') }}>
                   </h3>
                   <p className="text-gray-400 mb-12 leading-relaxed font-medium">
-                    Endüstriyel tesisleriniz için profesyonel mühendislik çözümlerine mi ihtiyacınız var? Hemen iletişime geçin.
+                    {t("features.cta.desc")}
                   </p>
                   <div className="flex flex-col gap-4">
                     <Link
                       href="/iletisim"
                       className="w-full py-6 bg-white text-primary-950 font-black uppercase tracking-widest text-[10px] rounded-2xl hover:bg-primary-50 transition-all flex items-center justify-center gap-4 group shadow-2xl"
                     >
-                      BİZE ULAŞIN
+                      {t("features.cta.btn1")}
                       <div className="w-6 h-6 rounded-full bg-primary-950 text-white flex items-center justify-center group-hover:scale-110 transition-transform">
                         <ArrowRight className="h-3 w-3" />
                       </div>
@@ -276,7 +275,7 @@ export default function Home() {
                       href="/kurumsal/hakkimizda"
                       className="w-full py-6 bg-transparent border border-white/20 text-white font-black uppercase tracking-widest text-[10px] rounded-2xl hover:bg-white/5 transition-all flex items-center justify-center"
                     >
-                      TEKNİK KAPASİTEYİ İNCELEYİN
+                      {t("features.cta.btn2")}
                     </Link>
                   </div>
                 </div>

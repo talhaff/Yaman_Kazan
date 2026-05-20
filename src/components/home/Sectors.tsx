@@ -13,21 +13,24 @@ import {
   Hammer, 
   Building2 
 } from "lucide-react";
+import { useTranslation } from "@/lib/LanguageContext";
 
 const sectors = [
-  { id: "01", name: "Çay Fabrikaları", icon: Leaf },
-  { id: "02", name: "Şeker Fabrikaları", icon: Factory },
-  { id: "03", name: "Enerji Santralleri", icon: Zap },
-  { id: "04", name: "Biyokütle Enerji Tesisleri", icon: Flame },
-  { id: "05", name: "Gıda Sanayi Tesisleri", icon: Apple },
-  { id: "06", name: "Çimento Fabrikaları", icon: Layers },
-  { id: "07", name: "Endüstriyel Üretim Tesisleri", icon: Cpu },
-  { id: "08", name: "Buhar ve Proses Tesisleri", icon: Wind },
-  { id: "09", name: "Ağır Sanayi Tesisleri", icon: Hammer },
-  { id: "10", name: "Organize Sanayi Bölgesi Fabrikaları", icon: Building2 },
+  { id: "01", name: "Çay Fabrikaları", nameEn: "Tea Factories", icon: Leaf },
+  { id: "02", name: "Şeker Fabrikaları", nameEn: "Sugar Factories", icon: Factory },
+  { id: "03", name: "Enerji Santralleri", nameEn: "Power Plants", icon: Zap },
+  { id: "04", name: "Biyokütle Enerji Tesisleri", nameEn: "Biomass Energy Facilities", icon: Flame },
+  { id: "05", name: "Gıda Sanayi Tesisleri", nameEn: "Food Industry Facilities", icon: Apple },
+  { id: "06", name: "Çimento Fabrikaları", nameEn: "Cement Factories", icon: Layers },
+  { id: "07", name: "Endüstriyel Üretim Tesisleri", nameEn: "Industrial Production Facilities", icon: Cpu },
+  { id: "08", name: "Buhar ve Proses Tesisleri", nameEn: "Steam and Process Facilities", icon: Wind },
+  { id: "09", name: "Ağır Sanayi Tesisleri", nameEn: "Heavy Industry Facilities", icon: Hammer },
+  { id: "10", name: "Organize Sanayi Bölgesi Fabrikaları", nameEn: "Organized Industrial Zone Factories", icon: Building2 },
 ];
 
 export default function Sectors() {
+  const { t, language } = useTranslation();
+
   return (
     <section className="py-24 md:py-32 bg-[#091224] relative overflow-hidden border-t border-slate-900">
       {/* Soft Ambient Glow in the background */}
@@ -39,16 +42,14 @@ export default function Sectors() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-20">
           <div className="lg:col-span-7">
             <span className="inline-block px-4 py-1.5 bg-secondary-950/60 border border-secondary-500/20 text-secondary-400 text-[9px] font-black uppercase tracking-[0.3em] rounded-full mb-6">
-              Sektörel Çözümler
+              {t("sectors.subtitle")}
             </span>
-            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.95]">
-              HİZMET VERDİĞİMİZ <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-white">SEKTÖRLER</span>
+            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.95]" dangerouslySetInnerHTML={{ __html: t("sectors.title").replace(' SEKTÖRLER', '<br /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-white">SEKTÖRLER</span>').replace(' SECTORS', '<br /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-white">SECTORS</span>') }}>
             </h2>
           </div>
           <div className="lg:col-span-5 border-l-2 border-secondary-800/30 pl-6 lg:pl-8">
             <p className="text-slate-400 font-medium leading-relaxed text-sm md:text-base">
-              Yaman Kazan ve Makine, yüksek mühendislik disiplini ve teknik imalat gücüyle gıdadan enerjiye, çimentodan ağır sanayiye kadar birçok farklı endüstriyel sektöre anahtar teslim çözümler sunmaktadır.
+              {t("sectors.description")}
             </p>
           </div>
         </div>
@@ -84,7 +85,7 @@ export default function Sectors() {
 
                 {/* Sector Name */}
                 <h4 className="text-md font-black text-white tracking-tight leading-snug group-hover:text-secondary-400 transition-colors uppercase mt-12">
-                  {sector.name}
+                  {language === 'en' ? sector.nameEn : sector.name}
                 </h4>
                 
                 {/* Subtle Brand Dot on hover */}

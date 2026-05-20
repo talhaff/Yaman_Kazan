@@ -5,23 +5,25 @@ import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { CONTACT_INFO } from "@/lib/constants";
 import { usePathname } from "next/navigation";
-
-const footerLinks = {
-  kurumsal: [
-    { name: "Hakkımızda", href: "/kurumsal/hakkimizda" },
-    { name: "Referanslar", href: "/kurumsal/referanslar" },
-    { name: "Sertifikalar", href: "/kurumsal/sertifikalar" },
-    { name: "Entegre Yönetim Politikası", href: "/kurumsal/kalite-politikasi" },
-  ],
-  hizmetler: [
-    { name: "Faaliyet Alanları", href: "/faaliyet-alanlari" },
-    { name: "Projeler", href: "/projeler" },
-    { name: "İletişim", href: "/iletisim" },
-  ],
-};
+import { useTranslation } from "@/lib/LanguageContext";
 
 export default function Footer() {
   const pathname = usePathname();
+  const { t } = useTranslation();
+
+  const footerLinks = {
+    kurumsal: [
+      { name: t("nav.about"), href: "/kurumsal/hakkimizda" },
+      { name: t("nav.references"), href: "/kurumsal/referanslar" },
+      { name: t("nav.certificates"), href: "/kurumsal/sertifikalar" },
+      { name: t("nav.policy"), href: "/kurumsal/kalite-politikasi" },
+    ],
+    hizmetler: [
+      { name: t("nav.services"), href: "/faaliyet-alanlari" },
+      { name: t("nav.projects"), href: "/projeler" },
+      { name: t("nav.contact"), href: "/iletisim" },
+    ],
+  };
 
   const handleLogoClick = (e: React.MouseEvent) => {
     if (pathname === "/") {
@@ -55,7 +57,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-lg leading-relaxed mb-10 max-w-md font-medium">
-              Endüstriyel tesisler için yüksek kapasiteli buhar kazanları imalatı, anahtar teslim kurulumu ve yüksek basınçlı sistemlerin revizyon çalışmalarında güvenilir mühendislik çözümleri sunuyoruz.
+              {t("footer.desc")}
             </p>
             <div className="flex gap-4">
               <a 
@@ -79,7 +81,7 @@ export default function Footer() {
             {/* Navigation */}
             <div>
               <h4 className="text-white font-black text-[10px] uppercase tracking-[0.3em] mb-8 relative inline-block">
-                Kurumsal
+                {t("nav.corporate")}
                 <div className="absolute -bottom-2 left-0 w-8 h-1 bg-primary-800 rounded-full" />
               </h4>
               <ul className="space-y-4">
@@ -96,7 +98,7 @@ export default function Footer() {
 
             <div>
               <h4 className="text-white font-black text-[10px] uppercase tracking-[0.3em] mb-8 relative inline-block">
-                Hizmetler
+                {t("footer.quickLinks")}
                 <div className="absolute -bottom-2 left-0 w-8 h-1 bg-primary-800 rounded-full" />
               </h4>
               <ul className="space-y-4">
@@ -114,7 +116,7 @@ export default function Footer() {
             {/* Contact */}
             <div>
               <h4 className="text-white font-black text-[10px] uppercase tracking-[0.3em] mb-8 relative inline-block">
-                İletişim
+                {t("footer.contactInfo")}
                 <div className="absolute -bottom-2 left-0 w-8 h-1 bg-primary-800 rounded-full" />
               </h4>
               <ul className="space-y-6">
@@ -123,7 +125,7 @@ export default function Footer() {
                     <MapPin className="h-4 w-4 text-primary-400 group-hover:text-white transition-colors" />
                   </div>
                   <span className="text-gray-400 text-[13px] leading-relaxed font-medium">
-                    {CONTACT_INFO.address}
+                    {t("footer.address")}
                   </span>
                 </li>
                 <li className="flex gap-4 group">
@@ -131,7 +133,7 @@ export default function Footer() {
                     <Phone className="h-4 w-4 text-primary-400 group-hover:text-white transition-colors" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[9px] font-black uppercase tracking-widest text-gray-500 mb-1">Bizi Arayın</span>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-gray-500 mb-1">{t("nav.phone")}</span>
                     <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="text-gray-300 hover:text-white transition-colors text-sm font-black tracking-tight">
                       {CONTACT_INFO.phone}
                     </a>
@@ -146,14 +148,14 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-gray-500 text-[9px] font-black uppercase tracking-widest">
-            © {new Date().getFullYear()} Yaman Kazan. <span className="text-gray-700">Tüm hakları saklıdır.</span>
+            © {new Date().getFullYear()} Yaman Kazan. <span className="text-gray-700">{t("footer.rights")}</span>
           </p>
           <div className="flex gap-8">
             <Link href="/kurumsal/kalite-politikasi" className="text-gray-500 hover:text-white text-[9px] font-black uppercase tracking-widest transition-colors">
-              Politikalarımız
+              {t("nav.policy")}
             </Link>
             <Link href="/iletisim" className="text-gray-500 hover:text-white text-[9px] font-black uppercase tracking-widest transition-colors">
-              Bize Ulaşın
+              {t("nav.contactUs")}
             </Link>
           </div>
         </div>

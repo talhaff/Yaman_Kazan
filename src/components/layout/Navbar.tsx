@@ -3,42 +3,43 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, ChevronRight, Mail, MapPin } from "lucide-react";
+import { Menu, X, Phone, ChevronRight, Mail, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { CONTACT_INFO } from "@/lib/constants";
 import { usePathname } from "next/navigation";
-
-const navigation = [
-  { name: "Anasayfa", href: "/" },
-  { 
-    name: "Kurumsal", 
-    href: "/kurumsal/hakkimizda",
-    dropdown: [
-      { name: "Hakkımızda", href: "/kurumsal/hakkimizda" },
-      { name: "Referanslar", href: "/kurumsal/referanslar" },
-      { name: "Sertifikalar", href: "/kurumsal/sertifikalar" },
-      { name: "Entegre Yönetim Politikası", href: "/kurumsal/kalite-politikasi" },
-
-    ]
-  },
-  { name: "Faaliyet Alanları", href: "/faaliyet-alanlari" },
-  { 
-    name: "Projeler", 
-    href: "/projeler",
-    dropdown: [
-      { name: "Tamamlanan Projeler", href: "/projeler?filter=completed" },
-      { name: "Devam Eden Projeler", href: "/projeler?filter=ongoing" },
-    ]
-  },
-  { name: "İletişim", href: "/iletisim" },
-];
+import { useTranslation, Language } from "@/lib/LanguageContext";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const { t, language, setLanguage } = useTranslation();
+
+  const navigation = [
+    { name: t("nav.home"), href: "/" },
+    { 
+      name: t("nav.corporate"), 
+      href: "/kurumsal/hakkimizda",
+      dropdown: [
+        { name: t("nav.about"), href: "/kurumsal/hakkimizda" },
+        { name: t("nav.references"), href: "/kurumsal/referanslar" },
+        { name: t("nav.certificates"), href: "/kurumsal/sertifikalar" },
+        { name: t("nav.policy"), href: "/kurumsal/kalite-politikasi" },
+      ]
+    },
+    { name: t("nav.services"), href: "/faaliyet-alanlari" },
+    { 
+      name: t("nav.projects"), 
+      href: "/projeler",
+      dropdown: [
+        { name: t("nav.completedProjects"), href: "/projeler?filter=completed" },
+        { name: t("nav.ongoingProjects"), href: "/projeler?filter=ongoing" },
+      ]
+    },
+    { name: t("nav.contact"), href: "/iletisim" },
+  ];
 
   const handleLogoClick = (e: React.MouseEvent) => {
     if (pathname === "/") {
@@ -61,6 +62,27 @@ export default function Navbar() {
       document.body.style.overflow = "unset";
     }
   }, [mobileMenuOpen]);
+
+  const toggleLanguage = () => {
+    setLanguage(language === "tr" ? "en" : "tr");
+  };
+
+  const LanguageSwitcher = ({ mobile = false }: { mobile?: boolean }) => (
+    <button
+      onClick={toggleLanguage}
+      className={cn(
+        "flex items-center gap-2 px-3 py-1.5 rounded-full font-black text-xs uppercase tracking-widest transition-all",
+        mobile 
+          ? "bg-primary-50 text-primary-950 border border-primary-100 mt-4 mx-8 justify-center py-3"
+          : scrolled 
+            ? "bg-primary-50 text-primary-950 hover:bg-primary-100 border border-primary-100" 
+            : "bg-white/10 text-white hover:bg-white/20 backdrop-blur-md border border-white/20"
+      )}
+    >
+      <Globe className={cn("w-4 h-4", mobile ? "text-primary-600" : scrolled ? "text-primary-600" : "text-white")} />
+      <span>{language === "tr" ? "TR" : "EN"}</span>
+    </button>
+  );
 
   return (
     <>
@@ -129,7 +151,8 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-6">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
+            <LanguageSwitcher />
             <a
               href={`mailto:${CONTACT_INFO.email}`}
               className={cn(
@@ -140,12 +163,23 @@ export default function Navbar() {
               )}
             >
               <Mail className="h-4 w-4" />
-              HIZLI TEKLİF
+              {t("nav.quickProposal")}
             </a>
           </div>
 
           {/* Mobile Toggle */}
-          <div className="flex lg:hidden">
+          <div className="flex lg:hidden items-center gap-4">
+            <button
+              onClick={toggleLanguage}
+              className={cn(
+                "flex items-center justify-center h-10 w-10 rounded-xl font-black text-xs transition-all",
+                scrolled 
+                  ? "bg-primary-50 text-primary-950 border border-primary-100" 
+                  : "bg-white/10 text-white border border-white/20 backdrop-blur-md"
+              )}
+            >
+              {language === "tr" ? "TR" : "EN"}
+            </button>
             <button
               type="button"
               className={cn(
@@ -156,7 +190,7 @@ export default function Navbar() {
               )}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <span className="sr-only">Menüyü Aç</span>
+              <span className="sr-only">{t("nav.openMenu")}</span>
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -194,6 +228,8 @@ export default function Navbar() {
                   />
                 </Link>
               </div>
+
+              <LanguageSwitcher mobile={true} />
 
               <div className="flex-1 overflow-y-auto px-8 py-4">
                 <nav className="space-y-4">
@@ -262,14 +298,14 @@ export default function Navbar() {
                   transition={{ delay: 0.6 }}
                   className="mt-12 pt-8 border-t border-gray-100"
                 >
-                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">BİZE ULAŞIN</p>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-6">{t("nav.contactUs")}</p>
                   <div className="space-y-4">
                     <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="flex items-center gap-4 text-primary-950 group">
                       <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 group-hover:bg-primary-950 group-hover:text-white transition-all shadow-sm">
                         <Phone className="h-5 w-5" />
                       </div>
                       <div>
-                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">Telefon</p>
+                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">{t("nav.phone")}</p>
                         <span className="font-black text-lg tracking-tighter">{CONTACT_INFO.phone}</span>
                       </div>
                     </a>
@@ -278,7 +314,7 @@ export default function Navbar() {
                         <Mail className="h-5 w-5" />
                       </div>
                       <div>
-                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">E-Posta</p>
+                        <p className="text-[10px] font-bold text-gray-400 uppercase tracking-tighter">{t("nav.email")}</p>
                         <span className="font-black text-lg tracking-tighter">{CONTACT_INFO.email}</span>
                       </div>
                     </a>
@@ -292,7 +328,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center w-full rounded-2xl bg-primary-950 py-5 text-center text-base font-black text-white shadow-xl shadow-primary-950/20 active:scale-95 transition-transform uppercase tracking-tighter"
                 >
-                  E-POSTA İLE TEKLİF AL
+                  {t("nav.emailProposal")}
                 </a>
               </div>
             </motion.div>

@@ -6,15 +6,12 @@ export const metadata = {
   description: "Yaman Kazan faaliyet alanları ve uzmanlıkları.",
 };
 
+import FaaliyetAlanlariClient from "./FaaliyetAlanlariClient";
+
 export default function FaaliyetAlanlariPage() {
   return (
     <>
-      <PageHeader 
-        title="Faaliyet Alanlarımız" 
-        description="Endüstriyel tesis kurulumundan ağır ekipman montajına kadar mühendisliğin gücünü sahaya yansıtıyoruz."
-        imagePath="/img/faaliyetarka01.png"
-      />
-      
+      <FaaliyetAlanlariClient />
       <div className="bg-white">
         <GigesServicesGrid />
       </div>
