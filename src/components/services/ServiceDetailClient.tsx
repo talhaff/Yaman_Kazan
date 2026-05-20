@@ -134,6 +134,7 @@ Kondens sistemleri; yakıt tüketimini azaltır, enerji verimliliğini artırır
     id: 'elektrostatik-filtre', 
     title: 'Elektrostatik Filtre', 
     titleEn: 'Electrostatic Filter',
+    images: ['/img/filtre.jpeg'],
     contentEn: `The electrostatic filter is an emission control system that highly efficiently captures dust and particles in flue gas in industrial facilities.
 
 The system separates the particles in the flue gas by the principle of electrical charging and accumulates them on the collection plates, providing clean gas output to the environment. It is widely used in coal-fired boilers, biomass plants, steam boilers, thermal systems and processes with high emissions.
