@@ -2,8 +2,8 @@ export const metadata = {
   title: "Sanity Studio | Yaman Kazan",
   description: "Yaman Kazan Content Management Studio",
   icons: {
-    icon: "/img/logoarkaplansiz.png",
-    apple: "/img/logoarkaplansiz.png",
+    icon: "/img/logo-emblem-whitebg.png",
+    apple: "/img/logo-emblem-whitebg.png",
   },
 };
 

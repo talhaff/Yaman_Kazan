@@ -58,8 +58,8 @@ export const metadata: Metadata = {
   creator: "Yunus Yaman",
   publisher: "Yaman Kazan ve Makine",
   icons: {
-    icon: "/img/logoarkaplansiz.png",
-    apple: "/img/logoarkaplansiz.png",
+    icon: "/img/logo-emblem-whitebg.png",
+    apple: "/img/logo-emblem-whitebg.png",
   },
   openGraph: {
     title: "Yaman Kazan ve Makine | Buhar Kazanları, Mekanik Tesisat ve Çelik Konstrüksiyon",
