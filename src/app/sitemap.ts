@@ -25,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/kurumsal/hakkimizda",
     "/kurumsal/kalite-politikasi",
     "/kurumsal/referanslar",
+    "/kurumsal/sertifikalar",
     "/iletisim",
     "/faaliyet-alanlari",
     "/projeler",

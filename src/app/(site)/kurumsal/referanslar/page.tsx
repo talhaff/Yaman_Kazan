@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/kurumsal/referanslar",
   },
+  keywords: [
+    "Yaman Kazan Referansları",
+    "Kazan Montajı Referanslar",
+    "Endüstriyel Tesis Referansları",
+    "Çay Fabrikası Taahhüt İşleri",
+    "Yunus Yaman Referans Listesi"
+  ],
 };
 
 export default function ReferanslarPage() {

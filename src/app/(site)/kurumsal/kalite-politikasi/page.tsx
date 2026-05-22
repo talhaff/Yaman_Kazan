@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/kurumsal/kalite-politikasi",
   },
+  keywords: [
+    "Yaman Kazan Kalite Politikası",
+    "Yunus Yaman Kalite Standartları",
+    "Mühendislik Kalite Standartları",
+    "Endüstriyel Üretim Kalitesi",
+    "Kazan İmalatı Standartları"
+  ],
 };
 
 export default function KalitePolitikasiPage() {

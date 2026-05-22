@@ -7,6 +7,24 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  keywords: [
+    "Yaman Kazan",
+    "Yunus Yaman",
+    "Buhar Kazanı",
+    "Akışkan Yataklı Kazan",
+    "Biomass Kazanı",
+    "Kojenerasyon Tesisi",
+    "Kojenarasyon Tesisi",
+    "Sıcak Su Kazanı",
+    "Atık Isı Kazanı",
+    "Kat Kaloriferi",
+    "Kalorifer Kazanı",
+    "Mekanik Tesisat",
+    "Proses Borulama",
+    "Çelik Konstrüksiyon",
+    "Endüstriyel Bakım",
+    "Kazan revizyonu"
+  ],
 };
 
 export default function Home() {

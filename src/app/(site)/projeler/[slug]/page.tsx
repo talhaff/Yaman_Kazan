@@ -334,6 +334,14 @@ export async function generateMetadata({
     alternates: {
       canonical: `/projeler/${slug}`,
     },
+    keywords: [
+      project.title,
+      "Yaman Kazan Projeleri",
+      "Yunus Yaman",
+      "Kazan Montaj Projesi",
+      "Endüstriyel Kurulum",
+      "Kazan Revizyonu"
+    ],
     openGraph: {
       title,
       description,

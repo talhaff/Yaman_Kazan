@@ -36,6 +36,15 @@ export async function generateMetadata({
     alternates: {
       canonical: `/faaliyet-alanlari/${slug}`,
     },
+    keywords: [
+      service.title,
+      "Yaman Kazan",
+      "Yunus Yaman",
+      "Endüstriyel İmalat",
+      "Kazan İmalatı",
+      "Mekanik Tesisat",
+      "Mühendislik Çözümleri"
+    ],
     openGraph: {
       title,
       description,

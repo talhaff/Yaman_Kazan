@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/kurumsal/hakkimizda",
   },
+  keywords: [
+    "Yaman Kazan Hakkımızda",
+    "Yunus Yaman",
+    "Yaman Kazan Tarihçe",
+    "Kazan İmalat Sektörü",
+    "Endüstriyel İmalat Mirası",
+    "Kazan ve Makine Sanayi"
+  ],
 };
 
 export default function HakkimizdaPage() {

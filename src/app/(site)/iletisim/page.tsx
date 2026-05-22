@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/iletisim",
   },
+  keywords: [
+    "Yaman Kazan İletişim",
+    "Yunus Yaman İletişim",
+    "Adana Seyhan Kazan Fabrikası",
+    "Yaman Kazan Adres",
+    "Kazan İmalatı Fiyat Teklifi",
+    "Mekanik Tesisat Teklif Adana"
+  ],
 };
 
 export default function IletisimPage() {
@@ -15,7 +23,7 @@ export default function IletisimPage() {
     "@type": "LocalBusiness",
     "@id": "https://yamankazan.com/#localbusiness",
     "name": "Yaman Kazan ve Makine",
-    "image": "https://yamankazan.com/img/logoyaman-1.png",
+    "image": "https://yamankazan.com/img/logoarkaplansiz.png",
     "telephone": "+905383377701",
     "email": "yaman@yamankazan.com",
     "address": {

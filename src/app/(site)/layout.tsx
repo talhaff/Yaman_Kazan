@@ -21,9 +21,45 @@ export const metadata: Metadata = {
     template: "%s | Yaman Kazan",
   },
   description: "Yaman Kazan ve Makine, endüstriyel tesislere yönelik buhar kazanları, mekanik tesisat ve çelik konstrüksiyon alanlarında faaliyet gösteren bir imalat ve taahhüt firmasıdır.",
+  keywords: [
+    "Yunus Yaman",
+    "Yaman Kazan",
+    "Akışkan Yataklı Kazan",
+    "Buhar Kazanı",
+    "Biomass Kazanı",
+    "Kojenerasyon Tesisi",
+    "Kojenarasyon Tesisi",
+    "Sıcak Su Kazanı",
+    "Atık Isı Kazanı",
+    "Kat Kaloriferi",
+    "Kalorifer Kazanı",
+    "Mekanik Tesisat",
+    "Proses Borulama",
+    "Çelik Konstrüksiyon",
+    "Endüstriyel Bakım",
+    "Kazan revizyonu",
+    "Kazan İmalatı",
+    "Endüstriyel Buhar Kazanı",
+    "Yaman Kazan ve Makine",
+    "Adana Kazan Fabrikası"
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  authors: [{ name: "Yunus Yaman" }],
+  creator: "Yunus Yaman",
+  publisher: "Yaman Kazan ve Makine",
   icons: {
-    icon: "/img/logoyaman-1.png",
-    apple: "/img/logoyaman-1.png",
+    icon: "/img/logoarkaplansiz.png",
+    apple: "/img/logoarkaplansiz.png",
   },
   openGraph: {
     title: "Yaman Kazan ve Makine | Buhar Kazanları, Mekanik Tesisat ve Çelik Konstrüksiyon",
@@ -49,12 +85,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const organizationJsonLd = {
-    "@context": "https://schema.org",
     "@type": "Organization",
     "@id": "https://yamankazan.com/#organization",
     "name": "Yaman Kazan ve Makine",
     "url": "https://yamankazan.com",
-    "logo": "https://yamankazan.com/img/logoyaman-1.png",
+    "logo": "https://yamankazan.com/img/logoarkaplansiz.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+905383377701",
@@ -81,12 +116,91 @@ export default function RootLayout({
     ]
   };
 
+  const websiteJsonLd = {
+    "@type": "WebSite",
+    "@id": "https://yamankazan.com/#website",
+    "url": "https://yamankazan.com",
+    "name": "Yaman Kazan ve Makine",
+    "publisher": {
+      "@id": "https://yamankazan.com/#organization"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://yamankazan.com/?s={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    },
+    "inLanguage": "tr"
+  };
+
+  const navigationJsonLd = [
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://yamankazan.com/#nav-home",
+      "name": "Ana Sayfa",
+      "url": "https://yamankazan.com"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://yamankazan.com/#nav-about",
+      "name": "Hakkımızda",
+      "url": "https://yamankazan.com/kurumsal/hakkimizda"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://yamankazan.com/#nav-references",
+      "name": "Referanslar",
+      "url": "https://yamankazan.com/kurumsal/referanslar"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://yamankazan.com/#nav-certificates",
+      "name": "Sertifikalar",
+      "url": "https://yamankazan.com/kurumsal/sertifikalar"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://yamankazan.com/#nav-quality",
+      "name": "Kalite Politikası",
+      "url": "https://yamankazan.com/kurumsal/kalite-politikasi"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://yamankazan.com/#nav-services",
+      "name": "Faaliyet Alanları",
+      "url": "https://yamankazan.com/faaliyet-alanlari"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://yamankazan.com/#nav-projects",
+      "name": "Projeler",
+      "url": "https://yamankazan.com/projeler"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://yamankazan.com/#nav-contact",
+      "name": "İletişim",
+      "url": "https://yamankazan.com/iletisim"
+    }
+  ];
+
+  const schemaJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationJsonLd,
+      websiteJsonLd,
+      ...navigationJsonLd
+    ]
+  };
+
   return (
     <html lang="tr" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
         />
         <LanguageProviderWrapper>
           <Navbar />

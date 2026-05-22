@@ -1,11 +1,23 @@
+import type { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { ALL_CERTIFICATES_QUERY } from "@/sanity/lib/queries";
 import { urlForImage } from "@/sanity/lib/image";
 import SertifikalarClient from "./SertifikalarClient";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Kalite & Sertifikalar | Yaman Kazan",
-  description: "Yaman Kazan kalite ve yönetim sertifikaları. Quality & Management Certificates.",
+  description: "Yaman Kazan kalite ve yönetim sertifikaları. ISO 9001, ISO 14001, ISO 45001 standardı belgelerimiz.",
+  alternates: {
+    canonical: "/kurumsal/sertifikalar",
+  },
+  keywords: [
+    "Yaman Kazan Sertifikaları",
+    "Yunus Yaman Sertifikalar",
+    "ISO 9001 2015",
+    "ISO 14001 2015",
+    "ISO 45001 2018",
+    "Kazan İmalatı Kalite Belgeleri"
+  ],
 };
 
 export const revalidate = 60;

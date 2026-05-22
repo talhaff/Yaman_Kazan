@@ -1,10 +1,24 @@
+import type { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { ALL_PROJECTS_QUERY } from "@/sanity/lib/queries";
 import ProjelerClient from "./ProjelerClient";
 
-export const metadata = {
-  title: "Projeler | Yaman Kazan",
-  description: "Yaman Kazan tamamlanan ve devam eden projeler. Completed and ongoing projects.",
+export const metadata: Metadata = {
+  title: "Projelerimiz | Yaman Kazan ve Makine",
+  description: "Yaman Kazan ve Makine tarafından başarıyla tamamlanan ve devam eden endüstriyel kazan montaj, demontaj, revizyon ve çelik konstrüksiyon projelerimiz.",
+  alternates: {
+    canonical: "/projeler",
+  },
+  keywords: [
+    "Yaman Kazan Projeleri",
+    "Buhar Kazanı Montajı",
+    "Akışkan Yataklı Kazan Kurulumu",
+    "Kazan Demontajı",
+    "Çelik Konstrüksiyon İmalatı",
+    "Steam Drum İmalatı",
+    "Yunus Yaman Projeler",
+    "Adana Kazan Montajı"
+  ],
 };
 
 export const revalidate = 60;
