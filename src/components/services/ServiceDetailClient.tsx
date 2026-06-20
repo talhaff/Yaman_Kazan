@@ -62,26 +62,6 @@ Yaman Kazan olarak projeye özel sıcak su kazanı imalatı, montajı, revizyonu
     images: ['/img/sicaksukazani.jpeg']
   },
   { 
-    id: 'tanklar', 
-    title: 'Basınçlı Kaplar', 
-    titleEn: 'Pressure Vessels',
-    images: ['/img/basinclilap.jpeg'],
-    contentEn: `Pressure vessels are industrial equipment that allow liquids and gases to be stored safely under certain temperature and pressure values and to be used in a controlled manner in the process.
-
-Pressure vessel systems produced according to high engineering and quality standards are of critical importance for process safety, system continuity and operational efficiency. In the design and manufacturing stages, operating pressure, temperature values, fluid type, capacity requirements and international standards are taken as basis.
-
-Main application areas are condensate vessels, deaerator vessels, air vessels, expansion vessels, fuel vessels, process vessels, flash vessels and chemical storage vessels.
-
-As Yaman Kazan, we provide project-specific pressure vessel manufacturing, assembly, revision, and maintenance services.`,
-    content: `Basınçlı kaplar, sıvı ve gazların belirli sıcaklık ve basınç değerleri altında güvenli şekilde depolanması ve proses içerisinde kontrollü olarak kullanılmasını sağlayan endüstriyel ekipmanlardır.
-
-Yüksek mühendislik ve kalite standartlarına göre üretilen basınçlı kap sistemleri; proses güvenliği, sistem sürekliliği ve işletme verimliliği açısından kritik öneme sahiptir. Projelendirme ve imalat aşamalarında; çalışma basıncı, sıcaklık değerleri, akışkan tipi, kapasite ihtiyaçları ve uluslararası standartlar esas alınmaktadır.
-
-Başlıca uygulama alanları; kondens kapları, degazör kapları, hava kapları, genleşme kapları, yakıt kapları, proses kapları, flaş kaplar ve kimyasal depolama kaplarıdır.
-
-Yaman Kazan olarak projeye özel basınçlı kap imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız.` 
-  },
-  { 
     id: 'ekonomizer', 
     title: 'Ekonomizer', 
     titleEn: 'Economizer',

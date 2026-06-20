@@ -208,5 +208,43 @@ export const services: Service[] = [
         ]
       }
     ]
+  },
+  {
+    number: "6",
+    title: "Basınçlı Kaplar",
+    titleEn: "Pressure Vessels",
+    description: "Sıvı ve gazların belirli sıcaklık ve basınç değerleri altında güvenli şekilde depolanması ve proses içerisinde kontrollü olarak kullanılmasını sağlayan endüstriyel ekipmanların imalatı.",
+    descriptionEn: "Manufacturing of industrial equipment that allows liquids and gases to be stored safely under certain temperature and pressure values and used in a controlled manner in the process.",
+    image: "/img/basinclilap.jpeg",
+    slug: "basincli-kaplar",
+    color: "bg-primary-950 text-white",
+    detailSections: [
+      {
+        title: "Mühendislik ve İmalat Standartları",
+        titleEn: "Engineering and Manufacturing Standards",
+        image: "/img/basinclilap.jpeg",
+        paragraphs: [
+          "Yüksek mühendislik ve kalite standartlarına göre üretilen basınçlı kap sistemlerimiz; proses güvenliği, sistem sürekliliği ve işletme verimliliği açısından kritik öneme sahiptir.",
+          "Projelendirme ve imalat aşamalarında; çalışma basıncı, sıcaklık değerleri, akışkan tipi, kapasite ihtiyaçları ve uluslararası standartlar esas alınmaktadır. Yaman Kazan olarak projeye özel basınçlı kap imalatı, montajı, revizyonu ve bakım hizmetleri sunmaktayız."
+        ],
+        paragraphsEn: [
+          "Our pressure vessel systems, produced according to high engineering and quality standards, are of critical importance for process safety, system continuity and operational efficiency.",
+          "In the design and manufacturing stages, operating pressure, temperature values, fluid type, capacity requirements and international standards are taken as basis. As Yaman Kazan, we provide project-specific pressure vessel manufacturing, assembly, revision, and maintenance services."
+        ]
+      },
+      {
+        title: "Geniş Uygulama ve Kullanım Alanları",
+        titleEn: "Wide Application and Usage Areas",
+        image: "/img/islemler2.jpeg",
+        paragraphs: [
+          "Başlıca uygulama alanlarımız; kondens kapları, degazör kapları, hava kapları, genleşme kapları, yakıt kapları, proses kapları, flaş kaplar ve kimyasal depolama kaplarıdır.",
+          "Yaman Kazan güvencesiyle her bir basınçlı kap, sızdırmazlık ve mukavemet standartlarından ödün vermeden, sertifikalı kaynak yöntemleri ve deneyimli kadromuzla yüksek güvenlikli olarak imal edilmektedir."
+        ],
+        paragraphsEn: [
+          "Our main application areas are condensate vessels, deaerator vessels, air vessels, expansion vessels, fuel vessels, process vessels, flash vessels and chemical storage vessels.",
+          "With the assurance of Yaman Kazan, each pressure vessel is manufactured highly securely with certified welding methods and our experienced staff, without compromising leak tightness and strength standards."
+        ]
+      }
+    ]
   }
 ];

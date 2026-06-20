@@ -10,6 +10,7 @@ import {
   Settings, 
   Wrench,
   Construction,
+  Gauge,
   ArrowRight
 } from "lucide-react";
 
@@ -19,6 +20,7 @@ const iconMap: Record<string, React.ElementType> = {
   "3": Construction,
   "4": Settings,
   "5": Wrench,
+  "6": Gauge,
 };
 
 export default function GigesServicesGrid() {
